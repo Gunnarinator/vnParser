@@ -15,9 +15,8 @@ data Line =
     Label String |
     Cond Exp (Either Line | Line Line) | --either then or then else
     SetVar String a | --renPy has two types of these, one is for instantiation
-    Audio Bool String String [String] | --(true for play, false for stop) channel, file, options
-    Text String String | --speaker, text
-    Branch [Choice]
+    Branch [Choice] | --Player has dialog options
+    Jump Label -- Allows player to jump to a label
 
 
 
