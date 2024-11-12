@@ -10,40 +10,63 @@ $text = [$alpha $digit ' ' \' \( \) \/ \{ \. \, \! \? \} \•]
 
 tokens :-
 
+  
 
-  "#".*                              ;
+  -- labels and jumps
   label                     { \s -> Label}  
-  \"\"                      {\s -> ChoiceStart}
-  jump                      { \s -> Jump} 
+  jump                      { \s -> Jump}
+
+  --colons appear after labels, conditionals, and at the beginning of choices 
+  :                         {\s -> Colon}
+
+  --boolean stuff
+  or                        {\s -> BoolOr}
+  and                       {\s -> BoolAnd}
+
+
+  --conditionals
+  if                        {\s -> Cond If}
+  elif                      {\s -> Cond Elif}
+  else                      {\s -> Cond Else}
+
+  --default is used to define vars
+  default                   {\s -> VarDefine}
+  --$ is *normally* used when setting variables.
+  \$                        {\s -> Dollar}
+  [$alpha $digit \_]+       {\s -> Var s}
+  [\= \+ \> \< \!]+         {\s -> Symbol s}
+  
+
+  --variables, as far as I've seen, are Bool, Int, or String.
+  $digit+                   {\s -> Int (read s)}
+  \" [$text $white]+ \"     {\s -> Text (tail (reverse (tail (reverse s))))}
   True                      {\s -> Bool True}
   False                     {\s -> Bool False}
-  $digit+                   {\s -> Int (read s)}
-  [if elif else]            {\s -> Cond}
-  [\= \+ \> \< \!]+         {\s -> Symbol s}
-  [$alpha $digit \_]+       {\s -> Var s}
-  :                         {\s -> Colon}
-  \$                        {\s -> Dollar}
-  \" [$text $white]+ \"     {\s -> Text (tail (reverse (tail (reverse s))))}
+
+  --the choices always seem to have 'extend ""' at the beginning.
+  \"\"                      {\s -> ChoiceStart}
+
+  --ignore comments and blank lines
+  "#".*                              ;
   $white+                            ;
---  "default ".$varName." = ".$digit   { \s -> VarDefine s}    
---  "default ".$varName." = ".$alpha   { \s -> VarDefine s}    
---  "$ ".$varName." = ".$digit         { \s -> VarSet s}
---  "$ ".$varName." = ".$alpha         { \s -> VarSet s}
---  "if ".$varName                     { \s -> Cond s}
---  "{i}".*."{/i} if ".*               { \s -> CondBranch s}
---  "{i}".*."{/i}"                     { \s -> Branch s}
 
 {
 -- Each action has type :: String -> Token
+
+--Condition Enum
+data Cond = If | Elif | Else
 
 -- The token type:
 data Token
   = Label 
   | Colon
   | Jump 
-  | Cond
+  | Cond Cond
   | ChoiceStart
+  | BoolOr
+  | BoolAnd
   | Dollar
+  | VarDefine
   | Var String
   | Int Int 
   | Bool Bool
