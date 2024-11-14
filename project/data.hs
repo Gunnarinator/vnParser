@@ -1,24 +1,61 @@
-import diagrams
-import Data.Graph.DAG as dag
-import parsers 
+module Data where 
+
+    import Control.Exception
 
 
---we want the ... Variable variable to hold both name and value.
-newtype Var a = (String, a)
+    --type definitions 
+    type Label = String 
+    type Jump = String 
 
---Jumps just hold the destination of the jump statement
-data Jump = J dest
+    data Var = 
+        IntVar String Int 
+        | BoolVar String Bool 
+        | StringVar String String 
+        deriving (Show, Eq)
 
-data Choice = (String, [Line])
+    data Val = 
+        Int Int 
+        | Bool Bool 
+        | String String
+        deriving (Show, Eq)
 
-data Line = 
-    Label String |
-    Cond Exp (Either Line | Line Line) | --either then or then else
-    SetVar String a | --renPy has two types of these, one is for instantiation
-    Branch [Choice] | --Player has dialog options
-    Jump Label -- Allows player to jump to a label
+    --the conditional bit in an if statement
+    data Exp = 
+        EqExp Var Val 
+        | NeqExp Var Val 
+        | GTExp Var Val 
+        | LTExp Var Val 
+        | OrExp Exp Exp 
+        | AndExp Exp Exp
+        deriving (Show, Eq)
+
+    data Cond = 
+        If Exp 
+        | ElseIf Exp 
+        | Else Exp 
+        deriving (Show, Eq)
+
+    data Line = 
+        Label Label 
+        | Jump Jump 
+        | VarDefine Var Val 
+        | VarSet Var Val 
+        | Condition Cond [Line] 
+        | Choice [Line]
+        deriving (Show, Eq)
+
+    type Paragraph = (Label, [Line])
+    type VarEnv = [(Var, Val)]
 
 
+    -- Errors.
+    data VarError =
+        NotInEnv String
+        | TypeMisMatch Var Var
+        deriving (Show)
+    instance Exception VarError
 
-transferLine :: String -> Line
+
+    
+    data DTree = Leaf Paragraph | Node Paragraph [DTree]
 
