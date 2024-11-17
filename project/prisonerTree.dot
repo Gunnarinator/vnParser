@@ -1,0 +1,67 @@
+digraph graphname {
+    start [label="Chapter 2: The Prisoner"];
+    bladeChoice [label="Blade?"];
+    takeBlade [label="Blade"];
+    leaveBlade [label="No Blade"];
+
+    slay1 [label="Slay"]; 
+    fight [label="Fight"];
+    drop [label="Drop"] ;
+    slay2 [label="Slay"];
+
+    leaveSlay [label="Leave"];
+    leaveGive [label="Leave"];
+
+    basement [label="Enter Basement"]
+    takeBlade -- basement;
+
+    sit [label="Sit"];
+    inspect [label="Inspect Chain"];
+    giveKnife [label="Give Blade"];
+    patient [label="A Patient Heart",shape=box];
+    mirror [label="The Mirror"];
+    takeWith [label="Take her with you."];
+    cage [label="Chapter 3: The Cage",shape=box];
+    leaveBlade -- takeBlade [label="Forced"];
+    clever [label = "A Clever Heart",shape=box];
+
+
+    sit -- inspect ;
+    inspect -- patient;
+    basement -- sit ;
+    sit -- slay1;
+    sit -- giveKnife ;
+    giveKnife -- leaveGive ;
+
+    grey [label="Chapter 3: The Drowned Grey",shape=box];
+    leaveGive -- grey;
+
+ 
+
+    drop -- giveKnife;
+
+
+
+    
+    giveKnife -- takeWith;
+    
+    takeWith -- clever;
+
+    clever -- mirror;
+    
+
+    start -- bladeChoice; 
+    bladeChoice -- takeBlade; 
+    bladeChoice -- leaveBlade; 
+    
+    basement -- slay1;
+    slay1 -- fight;
+    fight -- drop; 
+    fight -- slay2;
+
+    patient -- mirror 
+
+    
+    slay2 -- leaveSlay;
+    leaveSlay -- cage;
+}
