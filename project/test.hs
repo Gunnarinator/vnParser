@@ -4,17 +4,17 @@ module Reading where
     import Lexer
 
 
-    lexOneLine :: [String] -> IO() 
-    lexOneLine [] = do print "done lexing!"
-    lexOneLine (x:xs) = do 
+    lexOneLine :: [String] -> Int -> IO() 
+    lexOneLine [] _ = do print "done lexing!"
+    lexOneLine (x:xs) i = do 
         -- handle <- openFile "lexedoutput.txt" ReadWriteMode
         -- hPutStr handle (show (alexScanTokens x))
-        print (alexScanTokens x)
-        lexOneLine xs
+        print ((alexScanTokens x))
+        lexOneLine xs (i+1)
 
     readingThings :: IO()
     readingThings = do 
-        content <- readFile "../scripts/paths/spectre/spectre_1/spectre_1_start.rpy"
+        content <- readFile "singleScript.rpy"
         let linesOfFiles = lines content
-        lexOneLine linesOfFiles
+        lexOneLine linesOfFiles 0
         
