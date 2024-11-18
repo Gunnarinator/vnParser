@@ -57,7 +57,7 @@ tokens :-
 
   --variables, as far as I've seen, are Bool, Int, or String.
   $digit+ [\.]* $digit*     {\s -> Num s}
-  \" [$text $white]+ \"     {\s -> Text (tail (reverse (tail (reverse s))))}
+  \" [$text $white \8211 \8226 \160]+ \"     {\s -> Text (tail (reverse (tail (reverse s))))}
   True                      {\s -> Bool True}
   False                     {\s -> Bool False}
   
