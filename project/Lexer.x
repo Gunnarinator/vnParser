@@ -6,16 +6,17 @@ module Lexer where
 
 $digit = [0-9 \-]            -- digits
 $alpha = [a-zA-Z]       -- alphabetic characters
-$text = [$alpha $digit '•' ' ' \- \[ \] \— \_ \\ \: \' \( \) \/ \{ \} \. \, \= \# \! \? \}]
+$text = [$alpha $digit \233 \243 \8211 \8226 \160 \224 ' ' \- \[ \] \— \_ \n \\ \: \; \' \* \( \) \/ \{ \} \. \, \= \# \! \? \}]
 
 tokens :-
 
   -- labels and jumps
   label                     { \s -> Label}  
   jump                      { \s -> Jump}
-  [$alpha] [$alpha $digit \_ \.]+ \( [$text \$ \" \']* \)   {\s -> FunctionCall s}
+  [$alpha] [$alpha $digit \_ \[ \] \.]+ \( [$text \$ \" \, \']* \)   {\s -> FunctionCall s}
 
-  _ \( [$text] \)                      {\s -> TitleShow}
+  \_                    {\s -> TitleShow}
+  \,                    {\s -> NextArg}
 
   \" \{ 'i' \} '•' [$text]+ \{ '/' 'i' \} \"    {\s -> Choice (takeWhile (/= '{') (drop 6 s))}
 
@@ -43,6 +44,11 @@ tokens :-
   onlayer                   {\s -> Layer}
   Position \( [$alpha \= \, $digit]+ \)                  {\s -> Pos}
   voice                     {\s -> VoiceLine}
+  menu                      {\s -> Menu}
+  extend                    {\s -> Extend}
+
+  \( {\s -> OpenParen} 
+  \) {\s -> CloseParen}
   
 
   --default is used to define vars
@@ -56,12 +62,14 @@ tokens :-
 
   --variables, as far as I've seen, are Bool, Int, or String.
   $digit* [\.]* $digit+     {\s -> Num s}
-  \" [$text $white]* \"     {\s -> Text (tail (reverse (tail (reverse s))))}
-  \' [$text $white \8211 \8226 \16]* \'     {\s -> Text (tail (reverse (tail (reverse s))))}
+
+  \" [$text $white \8211 \8226 \160]*  \"     {\s -> Text (tail (reverse (tail (reverse s))))}
+  \' [$text $white \8211 \8226 \160]* \'     {\s -> Text (tail (reverse (tail (reverse s))))}
   True                      {\s -> Bool True}
   False                     {\s -> Bool False}
+  \[ [$text $digit $white \" \' \,]+ \] {\s -> List s}
 
-  \[ [$text $white \" \'] \] {\s -> Index s}
+  \[ [$text $white \" \']+ \] {\s -> Index s}
   
 
   --the choices always seem to have 'extend ""' at the beginning.
@@ -69,7 +77,9 @@ tokens :-
 
   --ignore comments and blank lines
   "#".*                              ;
-  $white+                            ;
+  "    "                    {\s -> Tab}
+  [\n \ ];
+  
 
 
 {
@@ -83,8 +93,10 @@ data Cond = If | Elif | Else
 data Token
   = Label 
   | Colon
+  | Tab
   | Jump 
   | PythonComment
+  | NextArg
   | Cond Cond
   | ChoiceStart
   | Choice String
@@ -99,6 +111,7 @@ data Token
   | Bool Bool
   | Text String
   | Symbol String
+  | List String
   | TitleShow
   | FunctionCall String
   | Play 
@@ -107,6 +120,8 @@ data Token
   | LoopAudio 
   | Layer
   | VoiceLine
+  | Menu 
+  | Extend
   | Bg
   | Pos
 --  | VarDefine String String
