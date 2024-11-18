@@ -59,3 +59,23 @@ module Data where
     
     data DTree = Leaf Paragraph | Node Paragraph [DTree]
 
+
+    -- Evaluating expressions
+    evalExp :: Exp -> Bool
+    evalExp (EqExp (IntVar _ v) (Int i)) = v == i
+    evalExp (EqExp (BoolVar _ v) (Bool i)) = v == i
+    evalExp (EqExp (StringVar _ v) (String i)) = v == i
+    evalExp (NeqExp (IntVar _ v) (Int i)) = v /= i
+    evalExp (NeqExp (BoolVar _ v) (Bool i)) = v /= i
+    evalExp (NeqExp (StringVar _ v) (String i)) = v /= i
+    evalExp (GTExp (IntVar  _ v) (Int i)) = v > i
+    evalExp (LTExp (IntVar  _ v) (Int i)) = v < i
+    evalExp (OrExp e1 e2) = evalExp e1 || evalExp e2
+    evalExp (AndExp e1 e2) = evalExp e1 && evalExp e2
+    evalExp _ = error "Invalid expression or mismatched types."
+
+    -- Evaluating conditions
+    evalCond :: Cond -> Bool
+    evalCond (If e) = evalExp e
+    evalCond (ElseIf e) = evalExp e
+    evalCond (Else e) = evalExp e
