@@ -1,5 +1,5 @@
 {
-module Main (main) where
+module Tokens where
 }
 
 %wrapper "basic"
@@ -55,6 +55,7 @@ tokens :-
 
 --Condition Enum
 data Cond = If | Elif | Else
+  deriving (Eq, Show)
 
 -- The token type:
 data Token

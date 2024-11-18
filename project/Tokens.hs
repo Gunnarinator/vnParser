@@ -4,7 +4,7 @@
 {-# OPTIONS_GHC -fno-warn-unused-imports #-}
 {-# LANGUAGE CPP #-}
 {-# LINE 1 "Tokens.x" #-}
-module Main (main) where
+module Tokens where
 #include "ghcconfig.h"
 import qualified Data.Array
 #define ALEX_BASIC 1
@@ -8217,6 +8217,7 @@ alexRightContext IBOX(sc) user__ _ _ input__ =
 
 --Condition Enum
 data Cond = If | Elif | Else
+  deriving (Eq, Show)
 
 -- The token type:
 data Token
