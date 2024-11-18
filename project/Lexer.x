@@ -4,21 +4,19 @@ module Lexer where
 
 %wrapper "basic"
 
-$digit = 0-9            -- digits
+$digit = [0-9 \-]            -- digits
 $alpha = [a-zA-Z]       -- alphabetic characters
-$text = [$alpha $digit \8226 \• '•' ' ' \- \[ \] \— \_ \\ \' \( \) \/ \{ \} \. \, \= \# \! \? \}]
+$text = [$alpha $digit '•' ' ' \- \[ \] \— \_ \\ \: \' \( \) \/ \{ \} \. \, \= \# \! \? \}]
 
 tokens :-
-
-  
 
   -- labels and jumps
   label                     { \s -> Label}  
   jump                      { \s -> Jump}
+  [$alpha] [$alpha $digit \_ \.]+ \( [$text \$ \" \']* \)   {\s -> FunctionCall s}
 
-  _ \(                       {\s -> TitleShow}
-  \) {\s -> CloseParen}
-  \( {\s -> OpenParen}
+  _ \( [$text] \)                      {\s -> TitleShow}
+
   \" \{ 'i' \} '•' [$text]+ \{ '/' 'i' \} \"    {\s -> Choice (takeWhile (/= '{') (drop 6 s))}
 
   --colons appear after labels, conditionals, and at the beginning of choices 
@@ -34,7 +32,7 @@ tokens :-
   elif                      {\s -> Cond Elif}
   else                      {\s -> Cond Else}
 
-  [$alpha] [$alpha $digit \_ \.]+ \( [$alpha $digit \_ \.]* \)   {\s -> FunctionCall s}
+  
 
 
   --rpy AV stuff. We don't need them but it'd be cool to have it not crash
@@ -43,7 +41,7 @@ tokens :-
   loop                      {\s -> LoopAudio} 
   scene                     {\s -> Bg}
   onlayer                   {\s -> Layer}
-  Position \( [$alpha]+ \= [$digit]+ \)                  {\s -> Pos}
+  Position \( [$alpha \= \, $digit]+ \)                  {\s -> Pos}
   voice                     {\s -> VoiceLine}
   
 
@@ -52,18 +50,22 @@ tokens :-
   --$ is *normally* used when setting variables.
   \$                        {\s -> Dollar}
   [$alpha] [$alpha $digit \_ \, \.]*     {\s -> Var s}
+  [\_] [$alpha $digit \_ \, \.]+     {\s -> Var s}
   [\= \+ \> \< \!]+         {\s -> Symbol s}
   
 
   --variables, as far as I've seen, are Bool, Int, or String.
-  $digit+ [\.]* $digit*     {\s -> Num s}
-  \" [$text $white]+ \"     {\s -> Text (tail (reverse (tail (reverse s))))}
+  $digit* [\.]* $digit+     {\s -> Num s}
+  \" [$text $white]* \"     {\s -> Text (tail (reverse (tail (reverse s))))}
+  \' [$text $white \8211 \8226 \16]* \'     {\s -> Text (tail (reverse (tail (reverse s))))}
   True                      {\s -> Bool True}
   False                     {\s -> Bool False}
+
+  \[ [$text $white \" \'] \] {\s -> Index s}
   
 
   --the choices always seem to have 'extend ""' at the beginning.
-  \"\"                      {\s -> ChoiceStart}
+  \"\"\"                      {\s -> PythonComment}
 
   --ignore comments and blank lines
   "#".*                              ;
@@ -82,10 +84,12 @@ data Token
   = Label 
   | Colon
   | Jump 
+  | PythonComment
   | Cond Cond
   | ChoiceStart
   | Choice String
   | BoolOr
+  | Index String
   | BoolAnd
   | OpenParen
   | Dollar
