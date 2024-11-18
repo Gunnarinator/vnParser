@@ -55,13 +55,13 @@ label spectre_1_start:
         menu:
             extend ""
 
-            "{i}• (Explore) Oh, you bastard! You're in for it now. I'm wise to your tricks!{/i}" if spectre_1_forest_share_loop == False:
+            "{i} (Explore) Oh, you bastard! You're in for it now. I'm wise to your tricks!{/i}" if spectre_1_forest_share_loop == False:
                 $ spectre_1_forest_share_loop = True
                 voice "audio/voices/ch2/prisoner/narrator/ch2_pn_7.flac"
                 n "My tricks? What on earth are you talking about? We've just met for the first time.\n"
                 jump spectre_1_forest_narrator_share_join
 
-            "{i}• (Explore) I'm getting a terrible sense of deja vu.{/i}" if spectre_1_forest_share_loop == False:
+            "{i} (Explore) I'm getting a terrible sense of deja vu.{/i}" if spectre_1_forest_share_loop == False:
                 $ spectre_1_forest_deja_vu = True
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_1a.flac"
                 n "A terrible sense of deja vu? No, you don't have that. This is the first time either of us have been here.\n"
@@ -76,41 +76,41 @@ label spectre_1_start:
                     n "Well, if for whatever reason you're going to insist that this has happened before, at least your heart's in the right place.\n"
                     jump spectre_1_forest
 
-            "{i}• (Explore) This is more than just deja vu, though. I'm pretty sure this whole thing literally just happened.{/i}" if spectre_1_forest_deja_vu and spectre_1_forest_deja_vu_follow_up == False:
+            "{i} (Explore) This is more than just deja vu, though. I'm pretty sure this whole thing literally just happened.{/i}" if spectre_1_forest_deja_vu and spectre_1_forest_deja_vu_follow_up == False:
                 $ spectre_1_forest_deja_vu_follow_up = True
                 $ spectre_1_forest_count += 1
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_1.flac"
                 n "It hasn't. Or if it has, I certainly haven't been a part of it. Like I said, we've just met for the first time, you and I.\n"
                 jump spectre_1_forest
 
-            "{i}• (Explore) Wait... hasn't this already happened?{/i}" if spectre_1_forest_share_loop == False:
+            "{i} (Explore) Wait... hasn't this already happened?{/i}" if spectre_1_forest_share_loop == False:
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_1b.flac"
                 n "It hasn't. Or if it has, I certainly haven't been a part of it. We've just met for the first time, you and I.\n"
                 jump spectre_1_forest_narrator_share_join
 
-            "{i}• (Explore) Okay, no.{/i}" if spectre_1_forest_share_loop == False:
+            "{i} (Explore) Okay, no.{/i}" if spectre_1_forest_share_loop == False:
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_3a.flac"
                 n "Oh, don't you start grandstanding about morals. The fate of the world is at risk right now, and the life of a mere Princess shouldn't stop you from saving us all.\n"
                 jump spectre_1_forest_narrator_share_join
 
-            "{i}• (Explore) But I killed myself! What am I doing here?{/i}" if spectre_1_forest_share_loop == False:
+            "{i} (Explore) But I killed myself! What am I doing here?{/i}" if spectre_1_forest_share_loop == False:
                 $ spectre_1_forest_share_died = True
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_4.flac"
                 n "I can assure you that you're not dead. And to answer your second question, you're here to slay the Princess. I literally told you that a second ago.\n"
                 jump spectre_1_forest_narrator_share_join
 
-            "{i}• (Explore) But I already killed the Princess.{/i}" if current_princess == "ghost" and loop_2_forest_share_loop == False:
+            "{i} (Explore) But I already killed the Princess.{/i}" if current_princess == "ghost" and loop_2_forest_share_loop == False:
                 $ loop_2_forest_share_loop = True
                 voice "audio/voices/ch2/spectre/narrator/ch2_gn_2.flac"
                 n "I can assure you that you didn't.\n"
                 jump spectre_1_forest_narrator_share_join
 
-            "{i}• (Explore) You trapped me here after I slew her last time. I'm not going to play along this time.{/i}" if current_princess == "ghost":
+            "{i} (Explore) You trapped me here after I slew her last time. I'm not going to play along this time.{/i}" if current_princess == "ghost":
                 voice "audio/voices/ch2/spectre/narrator/ch2_gn_3.flac"
                 n "How unfortunate that the sole person capable of slaying the Princess also seems to be somewhat insane. Oh, well. So long as you get the job done, it doesn't matter what sort of mental state you're in.\n"
                 jump spectre_1_forest_narrator_share_join
 
-            "{i}• (Explore) Let's assume I'm telling the truth, and all of this really did already happen. Why should I listen to you? Why should I bother doing {i}anything{/i}?{/i}" if spectre_1_forest_share_loop and (spectre_1_forest_deja_vu == False or (spectre_1_forest_deja_vu_follow_up)) and spectre_1_forest_share_loop_insist == False:
+            "{i} (Explore) Let's assume I'm telling the truth, and all of this really did already happen. Why should I listen to you? Why should I bother doing {i}anything{/i}?{/i}" if spectre_1_forest_share_loop and (spectre_1_forest_deja_vu == False or (spectre_1_forest_deja_vu_follow_up)) and spectre_1_forest_share_loop_insist == False:
                 $ spectre_1_forest_share_loop_insist = True
                 $ spectre_1_forest_count += 1
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_6.flac"
@@ -141,7 +141,7 @@ label spectre_1_start:
                 n "Just stay focused, will you?\n"
                 jump spectre_1_forest
 
-            "{i}• (Explore) Let's talk about this Princess...{/i}" if spectre_1_forest_share_loop_insist and spectre_1_forest_princess_press == False:
+            "{i} (Explore) Let's talk about this Princess...{/i}" if spectre_1_forest_share_loop_insist and spectre_1_forest_princess_press == False:
                 $ spectre_1_forest_count += 1
                 $ spectre_1_forest_princess_press = True
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_14.flac"
@@ -157,7 +157,7 @@ label spectre_1_start:
                     menu:
                         extend ""
 
-                        "{i}• (Explore) If anything, the world ended {b}after{/b} I slew her. When I tried to leave, everything was gone.{/i}" if spectre_1_forest_princess_teleport == False:
+                        "{i} (Explore) If anything, the world ended {b}after{/b} I slew her. When I tried to leave, everything was gone.{/i}" if spectre_1_forest_princess_teleport == False:
                             $ spectre_1_forest_princess_teleport = True
                             voice "audio/voices/ch2/spectre/hero/ch2_gh_2.flac"
                             hero "That's a good point. How do we know we didn't have things backwards? Maybe slaying the Princess was what ended the world, not the other way around.\n"
@@ -175,21 +175,21 @@ label spectre_1_start:
                             n "Really? Living happily ever after sounds {i}that bad{/i} to you? Oh well, there's no use arguing over your masochism. The cabin awaits.\n"
                             jump spectre_1_forest_princess
 
-                        "{i}• (Explore) Last time around I stabbed her in the heart and she died. How can someone like that end the world?{/i}" if spectre_1_forest_princess_why_strong == False:
+                        "{i} (Explore) Last time around I stabbed her in the heart and she died. How can someone like that end the world?{/i}" if spectre_1_forest_princess_why_strong == False:
                             $ spectre_1_forest_princess_why_strong = True
                             $ spectre_1_forest_princess_count += 1
                             voice "audio/voices/ch2/spectre/narrator/ch2_gn_9a.flac"
                             n "She just can. You'll have to trust that what I'm saying is true.\n"
                             jump spectre_1_forest_princess
 
-                        "{i}• (Explore) Who locked her in that basement? What {b}is{/b} this place?{/i}" if spectre_1_forest_princess_basement_explain == False:
+                        "{i} (Explore) Who locked her in that basement? What {b}is{/b} this place?{/i}" if spectre_1_forest_princess_basement_explain == False:
                             $ spectre_1_forest_princess_basement_explain = True
                             $ spectre_1_forest_princess_count += 1
                             voice "audio/voices/ch2/shared/narrator/ch2_share_n_18.flac"
                             n "{i}People{/i} locked her in that basement. And I told you what this place is. It's a path in the woods. Don't overcomplicate things.\n"
                             jump spectre_1_forest_princess
 
-                        "{i}• (Explore) If people locked her away, why couldn't {b}they{/b} slay her? Why is this falling on me?{/i}" if spectre_1_forest_princess_basement_explain and spectre_1_forest_princess_why_me == False:
+                        "{i} (Explore) If people locked her away, why couldn't {b}they{/b} slay her? Why is this falling on me?{/i}" if spectre_1_forest_princess_basement_explain and spectre_1_forest_princess_why_me == False:
                             $ spectre_1_forest_princess_why_me = True
                             $ spectre_1_forest_princess_count += 1
                             voice "audio/voices/ch2/shared/narrator/ch2_share_n_19.flac"
@@ -200,7 +200,7 @@ label spectre_1_start:
                             cold "Of course we're special.\n"
                             jump spectre_1_forest_princess
 
-                        "{i}• (Explore) You're being cagey. What aren't you telling me?{/i}" if spectre_1_forest_princess_cagey == False and spectre_1_forest_princess_count > 1:
+                        "{i} (Explore) You're being cagey. What aren't you telling me?{/i}" if spectre_1_forest_princess_cagey == False and spectre_1_forest_princess_count > 1:
                             $ spectre_1_forest_princess_cagey = True
                             voice "audio/voices/ch2/shared/narrator/ch2_share_n_21.flac"
                             n "I've told you everything you need to know, going into more detail would just overcomplicate an otherwise very simple situation and make your job more difficult.\n"
@@ -208,19 +208,19 @@ label spectre_1_start:
                             cold "This is boring. He's clearly not interested in talking, so let's just do as He says and maybe He'll stop bothering us.\n"
                             jump spectre_1_forest_princess
 
-                        "{i}• Nevermind.{/i}" if spectre_1_forest_princess_count == 0:
+                        "{i} Nevermind.{/i}" if spectre_1_forest_princess_count == 0:
                             label spectre_1_forest_princess_leaving:
                                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_24.flac"
                                 n "Great. Now if you don't mind, the whole world is waiting with bated breath for you to save it from ruin.\n"
                                 jump spectre_1_forest
 
-                        "{i}• That's all.{/i}" if spectre_1_forest_princess_count != 0:
+                        "{i} That's all.{/i}" if spectre_1_forest_princess_count != 0:
                             jump spectre_1_forest_princess_leaving
 
-            "{i}• [[Proceed to the cabin.]{/i}":
+            "{i} [[Proceed to the cabin.]{/i}":
                 jump spectre_1_cabin_arrival
 
-            "{i}• [[Turn around and leave.]{/i}" if mound_can_attempt_flee:
+            "{i} [[Turn around and leave.]{/i}" if mound_can_attempt_flee:
                 if loops_finished >= 2:
                     $ mound_can_attempt_flee = False
                     voice "audio/voices/mound/bonus/flee.flac"
@@ -254,7 +254,7 @@ label spectre_1_cabin_arrival:
     menu:
         extend ""
 
-        "{i}• [[Proceed into the cabin.]{/i}":
+        "{i} [[Proceed into the cabin.]{/i}":
             label spectre_stranger_rejoin:
                 $ quick_menu = False
                 play audio "audio/one_shot/enter_cabin_audio.flac"
@@ -302,7 +302,7 @@ label spectre_1_cabin_arrival:
         menu:
             extend ""
 
-            "{i}• (Explore) You didn't say anything about the mirror on the wall.{/i}" if spectre_1_cabin_mirror_ask == False and spectre_1_cabin_mirror_present:
+            "{i} (Explore) You didn't say anything about the mirror on the wall.{/i}" if spectre_1_cabin_mirror_ask == False and spectre_1_cabin_mirror_present:
                 $ spectre_1_cabin_mirror_ask = True
                 $ current_run_mirror_comment = True
                 voice "audio/voices/ch2/shared/narrator/ch2_share_n_26.flac"
@@ -316,20 +316,20 @@ label spectre_1_cabin_arrival:
                 menu:
                     extend ""
 
-                    "{i}• I care about whether I'm being lied to.{/i}":
+                    "{i} I care about whether I'm being lied to.{/i}":
                         voice "audio/voices/ch2/adversary/hero/ch2_ah_5.flac"
                         hero "As do I.\n"
                         #n "I'm not lying to you, I {i}promise{/i}. There isn't a mirror. Really.\n"
                         voice "audio/voices/ch2/shared/narrator/ch2_share_n_30.flac"
                         n "I'm not lying to you. Use your eyes, there is no mirror. Why would I lie about something so meaningless? What good would a mirror even do? Let you waste time preening yourself instead of doing what needs to be done?\n"
 
-                    "{i}• I care. I want to look at myself. I want to see how {b}handsome{/b} I am.{/i}":
+                    "{i} I care. I want to look at myself. I want to see how {b}handsome{/b} I am.{/i}":
                         voice "audio/voices/ch2/adversary/hero/ch2_ah_6.flac"
                         hero "I care less about that and more about whether we're being lied to. If He's willing to lie about something as innocuous as a mirror, what else is He hiding from us?\n"
                         voice "audio/voices/ch2/shared/narrator/ch2_share_n_29.flac"
                         n "I'm not lying to you. Use your eyes, there is no mirror. Why would I lie about something so meaningless? What good would it even do?\n"
 
-                    "{i}• You're right. It doesn't matter.{/i}":
+                    "{i} You're right. It doesn't matter.{/i}":
                         $ spectre_1_cabin_mirror_present = False
                         voice "audio/voices/ch2/shared/hero/ch2_share_h_5.flac"
                         hero "But it {i}does{/i} matter! Don't you care if we're being lied to? If He's willing to lie about something as innocuous as a mirror, what else is He hiding from us?\n"
@@ -341,13 +341,13 @@ label spectre_1_cabin_arrival:
                         voice "audio/voices/ch2/spectre/cold/ch2_cold_12.flac"
                         cold "And now it's gone. Let's not spend much longer worrying over it. Clearly it's not even important enough to be acknowledged.\n"
 
-                    "{i}• [[Remain silent.]{/i}":
+                    "{i} [[Remain silent.]{/i}":
                         voice "audio/voices/ch2/shared/hero/ch2_share_h_7a.flac"
                         hero "I care about whether we're being lied to. If He's willing to lie about something as innocuous as a mirror, what else could He hiding from us?\n"
                         voice "audio/voices/ch2/shared/narrator/ch2_share_n_31.flac"
                         n "I'm not lying to you, I {i}promise{/i}. There isn't a mirror. Really.\n"
 
-                    "{i}• [[Approach the mirror.]{/i}" if spectre_1_cabin_mirror_approached == False:
+                    "{i} [[Approach the mirror.]{/i}" if spectre_1_cabin_mirror_approached == False:
                         label spectre_cabin_1_mirror_join:
                             $ spectre_1_cabin_mirror_approached = True
                             play audio "audio/one_shot/footsteps_creaky.flac"
@@ -372,7 +372,7 @@ label spectre_1_cabin_arrival:
                             menu:
                                 extend ""
 
-                                "{i}• [[Wipe the mirror clean.]{/i}":
+                                "{i} [[Wipe the mirror clean.]{/i}":
                                     $ spectre_1_cabin_mirror_present = False
                                     hide mirror onlayer front
                                     play audio "audio/one_shot/new/STP_claws_1.flac"
@@ -404,7 +404,7 @@ label spectre_1_cabin_arrival:
 
                 jump cabin_interior_2_spectre_menu
 
-            "{i}• (Explore) This whole cabin is different than last time.{/i}" if spectre_1_cabin_last_time_comment == False and spectre_1_forest_share_loop_insist:
+            "{i} (Explore) This whole cabin is different than last time.{/i}" if spectre_1_cabin_last_time_comment == False and spectre_1_forest_share_loop_insist:
                 $ spectre_1_cabin_last_time_comment = True
                 voice "audio/voices/ch2/shared/hero/ch2_share_h_11.flac"
                 hero "{i}Very{/i} different.\n"
@@ -414,11 +414,11 @@ label spectre_1_cabin_arrival:
                 n "So focus up. A lot's riding on this.\n"
                 jump cabin_interior_2_spectre_menu
 
-            "{i}• (Explore) [[Approach the mirror.]{/i}" if spectre_1_cabin_mirror_present and spectre_1_cabin_mirror_approached == False:
+            "{i} (Explore) [[Approach the mirror.]{/i}" if spectre_1_cabin_mirror_present and spectre_1_cabin_mirror_approached == False:
                 $ spectre_1_cabin_mirror_approached = True
                 jump spectre_cabin_1_mirror_join
 
-            "{i}• (Explore) [[Take the blade.]{/i}" if spectre_1_cabin_blade_taken == False:
+            "{i} (Explore) [[Take the blade.]{/i}" if spectre_1_cabin_blade_taken == False:
                 $ spectre_1_cabin_blade_taken = True
                 $ blade_held = True
                 $ default_mouse = "blade"
@@ -429,7 +429,7 @@ label spectre_1_cabin_arrival:
                 n "You take the blade from the table. It would be difficult to slay the Princess and save the world without a weapon.\n"
                 jump cabin_interior_2_spectre_menu
 
-            "{i}• [[Enter the basement.]{/i}":
+            "{i} [[Enter the basement.]{/i}":
                 # get to da basement.
                 $ quick_menu = False
                 play audio "audio/one_shot/door_bedroom.flac"
@@ -479,7 +479,7 @@ label spectre_1_cabin_arrival:
                 voice "audio/voices/ch2/spectre/hero/ch2_gh_6.flac"
                 hero "Okay. She's definitely dead.\n"
                 voice "audio/voices/ch2/spectre/cold/ch2_cold_15.flac"
-                cold "It's just like I told you—\n{w=2.2}{nw}"
+                cold "It's just like I told you-\n{w=2.2}{nw}"
                 show screen disableclick(0.5)
                 voice "audio/voices/ch2/spectre/narrator/ch2_gn_17.flac"
                 show spectre d head onlayer back with dissolve
