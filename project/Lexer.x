@@ -57,7 +57,7 @@ tokens :-
   \$                        {\s -> Dollar}
   [$alpha] [$alpha $digit \_ \, \.]*     {\s -> Var s}
   [\_] [$alpha $digit \_ \, \.]+     {\s -> Var s}
-  [\= \+ \> \< \!]+         {\s -> Symbol s}
+  [\= \+ \> \< \! \-]+         {\s -> Symbol s}
   
 
   --variables, as far as I've seen, are Bool, Int, or String.
