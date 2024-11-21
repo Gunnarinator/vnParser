@@ -3,7 +3,7 @@
 {-# OPTIONS_GHC -fno-warn-unused-binds #-}
 {-# OPTIONS_GHC -fno-warn-unused-imports #-}
 {-# LANGUAGE CPP #-}
-{-# LINE 1 "project/Lexer.x" #-}
+{-# LINE 1 "Lexer.x" #-}
 module Lexer where
 #include "ghcconfig.h"
 import qualified Data.Array
@@ -21639,7 +21639,7 @@ alexRightContext IBOX(sc) user__ _ _ input__ =
         -- match when checking the right context, just
         -- the first match will do.
 #endif
-{-# LINE 85 "project/Lexer.x" #-}
+{-# LINE 85 "Lexer.x" #-}
 -- Each action has type :: String -> Token
 
 --Condition Enum
@@ -21655,7 +21655,6 @@ data Token
   | PythonComment
   | NextArg
   | Cond Cond
-  | ChoiceStart
   | Choice String
   | BoolOr
   | Index String

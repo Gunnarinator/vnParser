@@ -98,7 +98,6 @@ data Token
   | PythonComment
   | NextArg
   | Cond Cond
-  | ChoiceStart
   | Choice String
   | BoolOr
   | Index String

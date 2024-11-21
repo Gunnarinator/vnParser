@@ -22,6 +22,7 @@ module Data where
         | Sub Exp Exp
         | Mul Exp Exp
         | Div Exp Exp
+        deriving (Show, Eq)
 
     -- Flags
     data Flag = Base Var
@@ -31,16 +32,19 @@ module Data where
         | Lt Exp Exp
         | And Flag Flag
         | Or Flag Flag
+        deriving (Show, Eq)
 
     -- Conditions
     data Cond = If Flag
         | Elif Flag
         | Else
+        deriving (Show, Eq)
 
     -- Assignment/increment
     data Asign = Asign Var Exp
         | Inc Var Exp
         | Dec Var Exp
+        deriving (Show, Eq)
 
     -- Full AST
     type Choice = AST
@@ -50,3 +54,4 @@ module Data where
             | ASTJump Label
             | ASTConds [Cond]
             | ASTAsign Asign
+            deriving (Show, Eq)
