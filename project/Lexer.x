@@ -61,7 +61,8 @@ tokens :-
   
 
   --variables, as far as I've seen, are Bool, Int, or String.
-  $digit* [\.]* $digit+     {\s -> Num s}
+  $digit* [\.] $digit+     {\s -> Float (read s)}
+  $digit+                   {\s -> Int (read s)}
 
   \" [$text $white \8211 \8226 \160]*  \"     {\s -> Text (tail (reverse (tail (reverse s))))}
   \' [$text $white \8211 \8226 \160]* \'     {\s -> Text (tail (reverse (tail (reverse s))))}
@@ -106,7 +107,8 @@ data Token
   | Dollar
   | VarDefine
   | Var String
-  | Num String
+  | Int Int
+  | Float Float
   | Bool Bool
   | Text String
   | Symbol String

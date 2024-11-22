@@ -638,8 +638,8 @@ alex_base = Data.Array.listArray (0 :: Int, 147)
   , 2393
   , 2418
   , -43
-  , 2417
-  , -30
+  , 2419
+  , -31
   , 2472
   , 2636
   , 2800
@@ -647,22 +647,22 @@ alex_base = Data.Array.listArray (0 :: Int, 147)
   , 3128
   , 3292
   , 3456
-  , -113
+  , -124
   , -129
   , 3620
   , 3784
   , 3948
   , 4112
   , 2441
-  , 2353
+  , 2340
   , 2436
-  , -144
+  , -145
   , 4276
   , 0
-  , -111
-  , 2451
-  , 2440
-  , -140
+  , -112
+  , 2353
+  , 2438
+  , -143
   , 4440
   , 4604
   , 4768
@@ -679,41 +679,41 @@ alex_base = Data.Array.listArray (0 :: Int, 147)
   , 5500
   , 5756
   , 5874
+  , -12
   , -11
   , -10
-  , -4
   , 0
   , 0
-  , -99
+  , -100
   , 0
-  , 4
-  , -75
-  , 15
-  , -50
+  , -5
+  , -87
+  , 11
+  , -51
+  , 16
   , 44
-  , 45
   , 5845
   , 6090
   , 6203
   , 6367
-  , -73
-  , -45
-  , 2442
-  , 2456
-  , -12
-  , 2447
-  , 2475
-  , -7
+  , -76
+  , -75
+  , 2439
+  , 2454
+  , -41
+  , 2440
+  , 2463
+  , -13
   , 6499
   , 6578
   , 0
   , 6692
   , 0
   , 6824
-  , -28
-  , 2448
-  , 2477
-  , 5
+  , -44
+  , 2443
+  , 2466
+  , -7
   , 6907
   , 6990
   , 7073
@@ -761,33 +761,33 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   [ 0
   , 77
   , 31
-  , 47
   , 62
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
   , 42
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
   , 51
   , 54
-  , 51
-  , 51
   , 57
+  , 51
+  , 51
   , 74
   , 75
+  , 76
   , 73
   , 30
   , 34
   , 72
   , 123
-  , 76
   , 48
+  , 79
   , 57
   , 120
   , 121
@@ -796,24 +796,24 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 100
   , 29
   , 47
-  , 79
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 102
   , 80
-  , 30
-  , 30
-  , 30
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 102
   , 81
+  , 30
+  , 30
+  , 30
   , 82
+  , 83
   , 126
   , 126
   , 126
@@ -841,11 +841,11 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 126
   , 126
   , 59
-  , 83
   , 84
-  , 0
-  , 99
   , 89
+  , 60
+  , 99
+  , 93
   , 125
   , 126
   , 126
@@ -873,25 +873,25 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 126
   , 126
   , 89
-  , 60
-  , 93
+  , 96
+  , 45
   , 0
   , 124
   , 11
   , 11
-  , 96
-  , 11
-  , 11
-  , 11
-  , 11
-  , 11
-  , 11
-  , 11
-  , 11
-  , 11
-  , 11
-  , 45
   , 106
+  , 11
+  , 11
+  , 11
+  , 11
+  , 11
+  , 11
+  , 11
+  , 11
+  , 11
+  , 11
+  , 0
+  , 0
   , 0
   , 0
   , 0
@@ -3199,16 +3199,16 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 29
   , 47
   , 0
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
-  , 31
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
+  , 32
   , 30
   , 0
   , 30
@@ -3220,30 +3220,8 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 0
   , 0
   , 30
-  , 32
-  , 30
-  , 0
-  , 32
-  , 32
-  , 32
-  , 32
-  , 32
-  , 32
-  , 32
-  , 32
-  , 32
-  , 32
-  , 0
-  , 0
   , 0
   , 30
-  , 30
-  , 30
-  , 51
-  , 51
-  , 51
-  , 51
-  , 51
   , 32
   , 47
   , 0
@@ -3258,9 +3236,31 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 32
   , 32
   , 0
+  , 30
+  , 30
+  , 30
   , 51
   , 51
+  , 51
+  , 51
+  , 51
+  , 31
+  , 51
+  , 51
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
+  , 31
   , 0
+  , 57
+  , 57
+  , 51
   , 0
   , 51
   , 51
@@ -3273,7 +3273,7 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 51
   , 51
   , 51
-  , 51
+  , 57
   , 51
   , 51
   , 51
@@ -3357,47 +3357,47 @@ alex_table = Data.Array.listArray (0 :: Int, 10106)
   , 51
   , 51
   , 57
-  , 57
-  , 57
+  , 60
+  , 89
+  , 60
+  , 60
+  , 45
   , 0
-  , 60
-  , 60
-  , 60
   , 51
   , 0
+  , 57
+  , 60
+  , 89
+  , 89
   , 89
   , 45
-  , 57
-  , 0
-  , 60
-  , 0
-  , 57
-  , 0
+  , 45
+  , 45
   , 51
-  , 89
-  , 45
   , 60
   , 57
-  , 0
   , 60
   , 89
-  , 89
+  , 0
+  , 0
   , 45
-  , 45
-  , 89
-  , 45
-  , 0
-  , 0
-  , 0
-  , 0
-  , 0
-  , 0
-  , 0
   , 0
   , 0
   , 89
   , 0
+  , 0
   , 45
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
+  , 0
   , 0
   , 0
   , 0
@@ -10872,8 +10872,8 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   [ -1
   , 10
   , 45
-  , 46
   , 34
+  , 128
   , 48
   , 49
   , 50
@@ -10884,12 +10884,12 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 55
   , 56
   , 57
-  , 128
   , 160
   , 128
+  , 160
   , 147
   , 148
-  , 160
+  , 32
   , 32
   , 32
   , 32
@@ -10897,8 +10897,8 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 34
   , 35
   , 36
-  , 32
   , 128
+  , 34
   , 39
   , 40
   , 41
@@ -10907,7 +10907,7 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 44
   , 45
   , 46
-  , 34
+  , 125
   , 48
   , 49
   , 50
@@ -10919,12 +10919,12 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 56
   , 57
   , 58
-  , 125
+  , 39
   , 60
   , 61
   , 62
-  , 39
   , 105
+  , 39
   , 65
   , 66
   , 67
@@ -10953,10 +10953,10 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 90
   , 91
   , 39
-  , 39
-  , -1
-  , 95
   , 160
+  , 160
+  , 95
+  , 128
   , 97
   , 98
   , 99
@@ -10984,8 +10984,8 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 121
   , 122
   , 40
-  , 160
   , 128
+  , 160
   , -1
   , 44
   , 45
@@ -11001,8 +11001,8 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 55
   , 56
   , 57
-  , 160
-  , 128
+  , -1
+  , -1
   , -1
   , -1
   , -1
@@ -13331,8 +13331,10 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , -1
   , -1
   , 43
+  , -1
   , 45
   , 45
+  , 46
   , -1
   , 48
   , 49
@@ -13344,8 +13346,6 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 55
   , 56
   , 57
-  , -1
-  , -1
   , -1
   , 60
   , 61
@@ -13356,8 +13356,8 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 12
   , 13
   , 45
-  , 46
-  , -1
+  , 147
+  , 148
   , 48
   , 49
   , 50
@@ -13371,7 +13371,7 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , -1
   , 147
   , 148
-  , -1
+  , 162
   , -1
   , 32
   , 33
@@ -13467,48 +13467,48 @@ alex_check = Data.Array.listArray (0 :: Int, 10106)
   , 123
   , 160
   , 125
+  , 160
+  , 160
+  , 160
   , 147
   , 148
   , 160
   , -1
-  , 160
+  , 169
+  , -1
+  , 169
+  , 169
+  , 169
   , 147
   , 148
   , 169
-  , -1
-  , 160
-  , 160
-  , 169
-  , -1
-  , 169
-  , -1
-  , 162
-  , -1
-  , 179
-  , 169
-  , 169
-  , 162
-  , 179
-  , -1
-  , 179
-  , 147
-  , 148
   , 147
   , 148
   , 179
+  , 162
+  , 179
+  , 179
   , 179
   , -1
   , -1
-  , -1
-  , -1
-  , -1
-  , -1
-  , -1
+  , 179
   , -1
   , -1
   , 162
   , -1
+  , -1
   , 162
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
+  , -1
   , -1
   , -1
   , -1
@@ -21313,13 +21313,13 @@ alex_actions = Data.Array.array (0 :: Int, 86)
   , (57,alex_action_27)
   , (56,alex_action_27)
   , (55,alex_action_28)
-  , (54,alex_action_28)
-  , (53,alex_action_29)
-  , (52,alex_action_29)
-  , (51,alex_action_30)
-  , (50,alex_action_33)
-  , (49,alex_action_35)
-  , (48,alex_action_37)
+  , (54,alex_action_29)
+  , (53,alex_action_30)
+  , (52,alex_action_30)
+  , (51,alex_action_31)
+  , (50,alex_action_34)
+  , (49,alex_action_36)
+  , (48,alex_action_38)
   , (47,alex_action_0)
   , (46,alex_action_1)
   , (45,alex_action_2)
@@ -21398,15 +21398,16 @@ alex_action_24 = \s -> Dollar
 alex_action_25 = \s -> Var s
 alex_action_26 = \s -> Var s
 alex_action_27 = \s -> Symbol s
-alex_action_28 = \s -> Num s
-alex_action_29 = \s -> Text (tail (reverse (tail (reverse s))))
+alex_action_28 = \s -> Float (read s)
+alex_action_29 = \s -> Int (read s)
 alex_action_30 = \s -> Text (tail (reverse (tail (reverse s))))
-alex_action_31 = \s -> Bool True
-alex_action_32 = \s -> Bool False
-alex_action_33 = \s -> List s
-alex_action_34 = \s -> Index s
-alex_action_35 = \s -> PythonComment
-alex_action_37 = \s -> Tab
+alex_action_31 = \s -> Text (tail (reverse (tail (reverse s))))
+alex_action_32 = \s -> Bool True
+alex_action_33 = \s -> Bool False
+alex_action_34 = \s -> List s
+alex_action_35 = \s -> Index s
+alex_action_36 = \s -> PythonComment
+alex_action_38 = \s -> Tab
 
 -- -----------------------------------------------------------------------------
 -- ALEX TEMPLATE
@@ -21639,7 +21640,7 @@ alexRightContext IBOX(sc) user__ _ _ input__ =
         -- match when checking the right context, just
         -- the first match will do.
 #endif
-{-# LINE 85 "Lexer.x" #-}
+{-# LINE 86 "Lexer.x" #-}
 -- Each action has type :: String -> Token
 
 --Condition Enum
@@ -21663,7 +21664,8 @@ data Token
   | Dollar
   | VarDefine
   | Var String
-  | Num String
+  | Int Int
+  | Float Float
   | Bool Bool
   | Text String
   | Symbol String
