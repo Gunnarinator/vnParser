@@ -40,15 +40,18 @@ import Generate
 
 %%
 
-AST : Label "{" AST "}"             { ASTLabel $1 $3 }
-      | jump Label                  { Jump $2 }
-      | menu "{" Choices "}"        { Menu $3 }
-      | menu "{" AST Choices "}"    { Menu2 $3 $4 }
-      | Asign                       { AstAsign $1 }
-      | Cond                        { AstCond $1 }
+Lines : AST Lines                     { Lines ($1 : unwrapLines $2 ) }
+      | AST                           { Lines [$1] }
 
-Choices : choice AST Choices        { Choice $2 $3 }
-      | choice AST                  { LastChoice $2 }
+Choices : choice Lines Choices        { Choices ($2 : unwrapChoices $3 ) }
+      | choice Lines                  { Choices [$2] }
+
+AST : Label "{" Lines "}"           { ASTLabel $1 $3 }
+    | jump Label                    { Jump $2 }
+    | menu "{" Choices "}"          { Menu $3 }
+    | menu "{" Lines Choices "}"    { Menu2 $3 $4 }
+    | Asign                         { AstAsign $1 }
+    | Cond                          { AstCond $1 }
 
 Asign : "=" Var Exp                 { Asign $2 $3 }
       | "+=" Var Exp                { Inc $2 $3 }
@@ -87,6 +90,12 @@ Label : label                        { Label $1 }
 
 parseError :: [Token] -> a
 parseError _ = error "Parse error"
+
+unwrapChoices :: Choices -> [Lines]
+unwrapChoices (Choices xs) = xs
+
+unwrapLines :: Lines -> [AST]
+unwrapLines (Lines x) = x
 
 data Token
       = TokenInt Int

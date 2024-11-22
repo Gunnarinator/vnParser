@@ -1,18 +1,22 @@
 module Generate where
 
+
 -- The abstract syntax tree for our program
-data AST = ASTLabel Label AST
+data AST = ASTLabel Label Lines
       | Jump Label
       | Menu Choices
-      | Menu2 AST Choices
+      | Menu2 Lines Choices
       | AstAsign Asign
       | AstCond Cond
       deriving Show
 
+-- Structure for multiple lines
+newtype Lines = Lines [AST]
+                deriving Show
+
 -- The choices in the graph
-data Choices = Choice AST Choices
-            | LastChoice AST
-            deriving Show
+newtype Choices = Choices [Lines]
+                deriving Show
 
 -- A label
 newtype Label = Label String deriving Show
