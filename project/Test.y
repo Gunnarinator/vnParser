@@ -41,7 +41,8 @@ import Data.Char (isSpace, isDigit, isAlpha)
 
 AST : Label "{" AST "}"             { ASTLabel $1 $3 }
       | jump Label                  { Jump $2 }
-      | menu Choices                { Menu $2 }
+      | menu "{" Choices "}"        { Menu $3 }
+      | menu "{" AST Choices "}"    { Menu2 $3 $4 }
       | Asign                       { AstAsign $1 }
       | Cond                        { AstCond $1 }
 
@@ -89,6 +90,7 @@ parseError _ = error "Parse error"
 data AST = ASTLabel Label AST
       | Jump Label
       | Menu Choices
+      | Menu2 AST Choices
       | AstAsign Asign
       | AstCond Cond
 
