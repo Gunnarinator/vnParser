@@ -1,9 +1,8 @@
 module Generate where
 
-
 -- The abstract syntax tree for our program
 data AST = ASTLabel Label Lines
-      | Jump Label
+      | Jump String
       | Menu Choices
       | Menu2 Lines Choices
       | AstAsign Asign
@@ -28,9 +27,9 @@ data Asign = Asign Var Exp
       deriving Show
 
 -- Conditional logic
-data Cond = If Flag
-        | Elif Flag
-        | Else
+data Cond = If Flag Lines
+        | Elif Flag Lines
+        | Else Lines
         deriving Show
 
 -- Boolean conditions
@@ -61,3 +60,17 @@ data Val
 
 -- Variables
 newtype Var = Var String deriving Show
+
+
+-- Some examples
+-- parse [TokenAsign, TokenVar "x", TokenInt 1]
+test1 :: Lines
+test1 = Lines [AstAsign (Asign (Var "x") (ExpVal (Int 1)))]
+
+-- parse [TokenAsign, TokenVar "x", TokenInt 1, TokenLabel "start_label", TokenBlockStart, TokenMenu, TokenBlockStart, TokenChoice, TokenBlockStart, TokenJump, TokenLabel "start_label", TokenBlockEnd, TokenBlockEnd, TokenBlockEnd]
+test2 :: Lines
+test2 = Lines [AstAsign (Asign (Var "x") (ExpVal (Int 1))),ASTLabel (Label "start_label") (Lines [Menu (Choices [Lines [Jump "start_label"]])])]
+
+-- parse [TokenIf, TokenVar "x", TokenEq, TokenInt 1, TokenBlockStart, TokenInc, TokenVar "x", TokenInt 1, TokenBlockEnd]
+test3 :: Lines
+test3 = Lines [AstCond (If (Eq (ExpVar (Var "x")) (ExpVal (Int 1))) (Lines [AstAsign (Inc (Var "x") (ExpVal (Int 1)))]))]

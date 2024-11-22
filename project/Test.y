@@ -35,7 +35,7 @@ import Generate
       "{"             { TokenBlockStart }
       "}"             { TokenBlockEnd }
       menu            { TokenMenu }
-      jump            { TokenJump }
+      jump            { TokenJump $$ }
       choice          { TokenChoice }
 
 %%
@@ -43,11 +43,11 @@ import Generate
 Lines : AST Lines                     { Lines ($1 : unwrapLines $2 ) }
       | AST                           { Lines [$1] }
 
-Choices : choice Lines Choices        { Choices ($2 : unwrapChoices $3 ) }
-      | choice Lines                  { Choices [$2] }
+Choices : choice "{" Lines "}" Choices          { Choices ($3 : unwrapChoices $5 ) }
+      | choice "{" Lines "}"                    { Choices [$3] }
 
 AST : Label "{" Lines "}"           { ASTLabel $1 $3 }
-    | jump Label                    { Jump $2 }
+    | jump                          { Jump $1 }
     | menu "{" Choices "}"          { Menu $3 }
     | menu "{" Lines Choices "}"    { Menu2 $3 $4 }
     | Asign                         { AstAsign $1 }
@@ -57,9 +57,9 @@ Asign : "=" Var Exp                 { Asign $2 $3 }
       | "+=" Var Exp                { Inc $2 $3 }
       | "-=" Var Exp                { Dec $2 $3 }
 
-Cond  : if Flag                     { If $2}
-      | elif Flag                   { Elif $2}
-      | else                        { Else }
+Cond  : if Flag "{" Lines "}"       { If $2 $4 }
+      | elif Flag "{" Lines "}"     { Elif $2 $4 }
+      | else "{" Lines "}"          { Else $3 }
 
 Flag : Var                          { Flag $1 }
      | Exp "==" Exp                 { Eq $1 $3 }
@@ -123,7 +123,7 @@ data Token
         | TokenBlockStart
         | TokenBlockEnd
         | TokenMenu
-        | TokenJump
+        | TokenJump String
         | TokenChoice
  deriving Show
 
