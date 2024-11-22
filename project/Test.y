@@ -1,10 +1,11 @@
 {
 module Test where
 
-import Data.Char (isSpace, isDigit, isAlpha)
+import Generate
+
 }
 
-%name calc
+%name parse
 %tokentype { Token }
 %error { parseError }
 
@@ -86,53 +87,6 @@ Label : label                        { Label $1 }
 
 parseError :: [Token] -> a
 parseError _ = error "Parse error"
-
-data AST = ASTLabel Label AST
-      | Jump Label
-      | Menu Choices
-      | Menu2 AST Choices
-      | AstAsign Asign
-      | AstCond Cond
-
-data Choices = Choice AST Choices
-            | LastChoice AST
-
-newtype Label = Label String deriving Show
-
-data Asign = Asign Var Exp
-      | Inc Var Exp
-      | Dec Var Exp
-      deriving Show
-
-data Cond = If Flag
-        | Elif Flag
-        | Else
-        deriving Show
-
-data Flag = Flag Var
-      | Eq Exp Exp
-      | Neq Exp Exp
-      | Gt Exp Exp
-      | Lt Exp Exp
-      | And Flag Flag
-      | Or Flag Flag
-      deriving Show
-
-data Exp = ExpVal Val
-      | ExpVar Var
-      | Add Exp Exp
-      | Sub Exp Exp
-      | Mul Exp Exp
-      | Div Exp Exp
-      deriving Show
-
-data Val
-      = Int Int
-        | Float Float
-        | Bool Bool
-      deriving Show
-
-newtype Var = Var String deriving Show
 
 data Token
       = TokenInt Int
