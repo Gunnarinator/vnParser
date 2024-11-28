@@ -46,6 +46,8 @@ tokens :-
   voice                     {\s -> VoiceLine}
   menu                      {\s -> Menu}
   extend                    {\s -> Extend}
+  True                      {\s -> Bool True}
+  False                     {\s -> Bool False}
 
   \( {\s -> OpenParen} 
   \) {\s -> CloseParen}
@@ -65,8 +67,7 @@ tokens :-
 
   \" [$text $white \8211 \8226 \160]*  \"     {\s -> Text (tail (reverse (tail (reverse s))))}
   \' [$text $white \8211 \8226 \160]* \'     {\s -> Text (tail (reverse (tail (reverse s))))}
-  True                      {\s -> Bool True}
-  False                     {\s -> Bool False}
+  
   \[ [$text $digit $white \" \' \,]+ \] {\s -> List s}
 
   \[ [$text $white \" \']+ \] {\s -> Index s}

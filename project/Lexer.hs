@@ -21687,6 +21687,3 @@ data Token
 --  | Branch String
   deriving (Eq, Show)
 
-main = do
-  s <- getContents
-  print (alexScanTokens s)

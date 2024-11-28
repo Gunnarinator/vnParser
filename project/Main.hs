@@ -5,8 +5,8 @@ import Tokens ( alexScanTokens )
 
 main :: IO ()
 main = do
-  s <- readFile "singleScript.rpy"
+  s <- readFile "../scripts/ch_1/basement_1/.rpy"
   print (alexScanTokens s)
 
 
--- main = readFile "singleScript.rpy" >>= print . alexScanTokens
+-- 

@@ -7,6 +7,8 @@ module Data where
     type Jump = String
     type Var = String
 
+    type VarEnv = [(Var, Val)]
+
     -- Values
     data Val = String String
         | Bool Bool
@@ -35,23 +37,34 @@ module Data where
         deriving (Show, Eq)
 
     -- Conditions
-    data Cond = If Flag
-        | Elif Flag
-        | Else
+    data Cond = If Flag [AST]
+        | Elif Flag [AST]
+        | Else [AST]
         deriving (Show, Eq)
 
     -- Assignment/increment
-    data Asign = Asign Var Exp
+    data Assign = Assign Var Exp
         | Inc Var Exp
         | Dec Var Exp
         deriving (Show, Eq)
 
     -- Full AST
-    type Choice = AST
+    data Choice = Choice String (Maybe Cond) [AST]
+        deriving (Show, Eq)
+
     data AST = ASTLabel Label [AST]
             | ASTChoices [Choice]
-            | ASTLines [AST]
             | ASTJump Label
             | ASTConds [Cond]
-            | ASTAsign Asign
+            | ASTAssign Assign
             deriving (Show, Eq)
+
+
+    
+    --Each Node is its label and the list of things it points to
+    data Node = Node Label [Edge] deriving (Show, Eq)
+    
+    --CNodes are an intermediary so the node can hang onto the choice text
+    type CNode = (Node, String)
+    --edges are "from, to, (maybe edgeLabel)"
+    data Edge = Edge Node Node String deriving (Show, Eq)
