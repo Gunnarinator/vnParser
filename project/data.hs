@@ -34,7 +34,16 @@ module Data where
         | Lt Exp Exp
         | And Flag Flag
         | Or Flag Flag
-        deriving (Show, Eq)
+        deriving Eq
+    
+    instance Show Flag where 
+        show (And x y) = show x ++ " && " ++ show y 
+        show (Or x y) = show x ++ " || " ++ show y 
+        show (Base v) = show v 
+        show (Eq x y) = show x ++ " == " ++ show y 
+        show (Neq x y) = show x ++ " != " ++ show y 
+        show (Gt x y) = show x ++ " > " ++ show y
+        show (Lt x y) = show x ++ " < " ++ show y
 
     -- Conditions
     data Cond = If Flag [AST]
@@ -46,25 +55,55 @@ module Data where
     data Assign = Assign Var Exp
         | Inc Var Exp
         | Dec Var Exp
-        deriving (Show, Eq)
+        deriving Eq
+    
+    instance Show Assign where 
+        show (Assign v xp) = "Assign " ++ show v ++ " = " ++ show xp
+        show (Inc v xp) = "Assign " ++ show v ++ " += " ++ show xp
+        show (Dec v xp) = "Assign " ++ show v ++ " -= " ++ show xp
+    
 
     -- Full AST
     data Choice = Choice String (Maybe Cond) [AST]
-        deriving (Show, Eq)
+        deriving Eq
+    
+    instance Show Choice where 
+        show (Choice str mc xp) = case mc of 
+            Just c -> "Choice - " ++ str ++ show c ++ "\n" ++ show xp
+            Nothing -> "Choice - " ++ str ++ "\n" ++ show xp
 
     data AST = ASTLabel Label [AST]
             | ASTChoices [Choice]
             | ASTJump Label
             | ASTConds [Cond]
             | ASTAssign Assign
-            deriving (Show, Eq)
+            | ASTLine
+        deriving Eq
+
+    instance Show AST where 
+        show ASTLine = "" 
+        show (ASTLabel x xs) = "\n{Label: " ++ x ++ "\n" ++ show xs ++ "}\n"
+        show (ASTChoices cs) = "\n{Choice Branch: " ++ show cs ++ "}\n"
+        show (ASTAssign a) = "\n" ++ show a ++ ""
+        show (ASTConds cs) = "\n" ++ show cs ++ "\n"
+        show (ASTJump x) = "\nJump to " ++ x ++ "\n"
+
 
 
     
     --Each Node is its label and the list of things it points to
-    data Node = Node Label [Edge] deriving (Show, Eq)
+    data Node = Node Label [Edge] deriving Eq 
+    instance Show Node where 
+        show (Node l _) = "\nNode: " ++ l
+
+    instance Ord Node where 
+        (Node one _) <= (Node two _) = one <= two
     
     --CNodes are an intermediary so the node can hang onto the choice text
     type CNode = (Node, String)
     --edges are "from, to, (maybe edgeLabel)"
-    data Edge = Edge Node Node String deriving (Show, Eq)
+    data Edge = Edge Node Node String deriving Eq 
+    instance Show Edge where 
+        show (Edge (Node f _) (Node t _) c) = case c of 
+            "" -> "\nEdge\n\tFrom: " ++ f ++ "\n\tTo: " ++ t ++ "\n\n"
+            _ -> "\nEdge\n\tFrom: " ++ f ++ "\n\tTo: " ++ t ++ "\n\tVia: " ++ c ++ "\n"

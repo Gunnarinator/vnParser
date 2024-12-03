@@ -7,6 +7,7 @@ module TokenParser where
     import Lexer as L
     import Utils
 
+    
 
     sat :: (Token -> Bool) -> P.Parser Token
     sat p = do 
@@ -26,8 +27,10 @@ module TokenParser where
         return (length xs)
 
     --there are a bunch of lines we don't care about 
-    eatLine :: P.Parser [Token]
-    eatLine = do many (sat (not . isTabToken))
+    eatLine :: P.Parser AST
+    eatLine = do 
+        _ <- many (sat (not . isTabToken))
+        return ASTLine
         
 
     var :: P.Parser Var 
@@ -66,6 +69,12 @@ module TokenParser where
 
     jumpToken :: P.Parser Token 
     jumpToken = sat isJumpToken
+    
+    menu :: P.Parser Token 
+    menu = sat isMenuToken 
+    
+    extend :: P.Parser Token 
+    extend = sat isExtendToken
 
 
 
@@ -96,44 +105,33 @@ module TokenParser where
         _ <- text
         ASTChoices <$> many (choice d)
 
-    menu :: P.Parser Token 
-    menu = sat isMenuToken 
-
-
-    extend :: P.Parser Token 
-    extend = sat isExtendToken
-
     --a choice itself is text and maybe a condition followed by lines
     -- I don't like that I can't just do "parserName" in a do block when it's inside the lambda :(
     choice :: Int -> P.Parser Choice
-    choice d = P.P (\s -> 
-        let rest = snd $ head $ P.runParser tabs s in
-        case fst $ head $ P.runParser tabs s of
-            d -> do 
+    choice d = P.P (\s -> do
+        let (numTabs, rest) = head $ P.runParser tabs s
+        if numTabs /= d then empty else do 
                     let (str, strRest) = head $ P.runParser text rest
-                    let (cond, condRest) = head $ P.runParser inLineConditional strRest
-                    let (omg, idc) = head $ P.runParser col condRest
-                    let (body, finalRest) = head $ P.runParser (many (ls (d+1))) idc
-                    return (D.Choice (take 30 str) (Just cond) body, finalRest)
+                    let condResult = P.runParser inLineConditional strRest
+                    if (condResult /= []) then do
+                        let (cond, condRest) = head condResult
+                        let (omg, idc) = head $ P.runParser col condRest
+                        let (body, finalRest) = head $ P.runParser (many (ls (d+1))) idc
+                        return (D.Choice (take 30 (drop 4 str) ++ "...") (Just cond) body, finalRest)
+                    else do
+                        let (omg, idc) = head $ P.runParser col strRest
+                        let (body, finalRest) = head $ P.runParser (many (ls (d+1))) idc
+                        return (D.Choice (take 30 (drop 4 str) ++ "...") Nothing body, finalRest)
+                    
         )
 
 
     inLineConditional :: P.Parser D.Cond 
     inLineConditional = do 
-        ifType <- condition
-        case ifType of 
-            (Cond L.Else) -> do 
-                _ <- col
-                return (D.Else [])
-            _ -> do 
-                exp <- boolExp
-                case ifType of 
-                    (Cond L.If) -> do 
-                        _ <- col 
-                        return (D.If exp [])
-                    (Cond L.Elif) -> do 
-                        _ <- col 
-                        return (D.Elif exp [])
+        _ <- condition
+        exp <- boolExp
+        return (D.If exp [])
+
 
     --conditional will parse the entire expression 
     conditional :: Int -> P.Parser D.Cond
@@ -178,16 +176,16 @@ module TokenParser where
     innerCheck :: P.Parser Flag 
     innerCheck = do
         v1 <- var 
-        do 
-            s <- symbol
-            v2 <- val 
-            case s of 
-                "==" -> return (Eq (D.Var v1) (Val v2))
-                "!=" -> return (Neq (D.Var v1) (Val v2))
-                ">" -> return (Gt (D.Var v1) (Val v2))
-                "<" -> return (Lt (D.Var v1) (Val v2))
-            <|> do
-                return (Base v1) 
+        s <- symbol
+        v2 <- val 
+        case s of 
+            "==" -> return (Eq (D.Var v1) (Val v2))
+            "!=" -> return (Neq (D.Var v1) (Val v2))
+            ">" -> return (Gt (D.Var v1) (Val v2))
+            "<" -> return (Lt (D.Var v1) (Val v2))
+        <|> do
+            v1 <- var 
+            return (Base v1) 
 
     
     define :: P.Parser (Var, Val)
@@ -219,21 +217,18 @@ module TokenParser where
         -- label | jump | start of choices
         --D is expected number of tabs, since renPy is based on whitespace the same way Python is.
     ls :: Int -> P.Parser AST
-    ls d = do 
-        tDepth <- tabs 
-        if tDepth == d then 
-            do label d 
-            <|> do jump 
-            <|> do 
-                cond <- conditional d 
-                return (ASTConds [cond])            
-            <|> do assign
-            <|> do choiceBranch
-            <|> do
-                _ <- eatLine
-                ls d
-
-        else empty
+    ls d = P.P (\s -> do 
+        let (tDepth, tabRest) = head $ P.runParser tabs s
+        if tDepth /= d then empty else case head tabRest of
+            Label -> P.runParser (label d) tabRest 
+            Jump -> P.runParser jump tabRest 
+            Dollar -> P.runParser assign tabRest 
+            Menu -> P.runParser choiceBranch tabRest
+            Cond _ -> do 
+                let (conds, condRest) = head $ P.runParser (conditional d) tabRest 
+                return (ASTConds [conds], condRest)
+            _ -> P.runParser eatLine tabRest
+        )
 
     top :: P.Parser [AST]
     top = do many (label 0)

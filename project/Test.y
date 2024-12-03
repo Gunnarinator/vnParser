@@ -45,7 +45,7 @@ AST : Label "{" AST "}"             { ASTLabel $1 $3 }
       | menu "{" Choices "}"        { Menu $3 }
       | menu "{" AST Choices "}"    { Menu2 $3 $4 }
       | Asign                       { AstAsign $1 }
-      | Cond                        { AstCond $1 }
+      | Cond AST                    { AstCond $1 }
 
 Choices : choice AST Choices        { Choice $2 $3 }
       | choice AST                  { LastChoice $2 }

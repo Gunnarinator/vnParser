@@ -30,16 +30,16 @@ module HTMLify where
     htmlIfyEdges (x:xs) = 
         case xs of
             [] -> htmlIfyEdgeInner x "]);"
-            anything -> htmlIfyEdgeInner x ","
+            anything -> htmlIfyEdgeInner x "," ++ htmlIfyEdges xs
                 
     --{"arrows": "to", "from": "fromLabel", "label": "edgeLabelText", "to": "toLabel", "width": 1}
     htmlIfyEdgeInner :: Edge -> String -> String 
     htmlIfyEdgeInner (Edge (Node from es) (Node to es2) label) backEnd =
-        let front = "{\"arrows\"}: \"to\", \"from\": \"" ++ from in 
+        let front = "{\"arrows\": \"to\", \"from\": \"" ++ from ++ "\"" in 
             let back = ", \"to\": \"" ++ to ++ "\", \"width\": 1}" in 
                 case label of 
                     "" -> front ++ back ++ backEnd
-                    thing -> front ++ ", \"label\": \"" ++ thing ++ "\"" ++ backEnd
+                    thing -> front ++ ", label: \"" ++ thing ++ "\"" ++ back ++ backEnd
 
 
     htmlStart :: String 

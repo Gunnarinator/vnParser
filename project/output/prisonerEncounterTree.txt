@@ -1,0 +1,86 @@
+[
+{Label: prisoner_encounter_start
+[,,,,,,
+{Choice Branch: [Choice - I'm not sure I need to do much...If Var "prisoner_locked" == Val (Bool False) []
+[
+{Label: prisoner_locked_join
+[
+Assign "prisoner_locked" = Val (Bool True),
+[If "prisoner_1_forest_share_loop_insist" || "prisoner_narrator_agree" [,]]
+,,,,
+[If Var "prisoner_position" == Val (String "close") [,]]
+,,,,,,,,
+[If "prisoner_abandoned_comment_flag" [,
+[If Var "prisoner_position" == Val (String "close") []]
+,
+[Else [,]]
+,,,
+[If Var "prisoner_position" == Val (String "close") []]
+,
+[Else []]
+,,]]
+,
+[Elif "prisoner_narrator_agree" [,
+[If Var "prisoner_position" == Val (String "close") []]
+,
+[Else []]
+,,]]
+,
+[Else [,
+[If Var "prisoner_position" == Val (String "close") []]
+,
+[Else []]
+,,]]
+,
+[If Var "prisoner_position" == Val (String "close") []]
+,
+[Else []]
+]}
+,
+[If Var "prisoner_position" == Val (String "start") [
+Jump to prisoner_encounter_start
+]]
+,
+[Else [
+Jump to prisoner_menu
+]]
+],Choice - [[Sit with her.]{/i}...
+[,,,,,,,,,,,,,,,,,
+{Choice Branch: [Choice - [[Sit where you were told to s...
+[
+Assign "prisoner_position" = Val (String "close"),,,,,,,,,,,],Choice - [[Sit closer.]{/i}...
+[
+Assign "prisoner_position" = Val (String "tooclose"),
+Assign "prisoner_sit_closer" = Val (Bool True),
+Jump to prisoner_strangle_join
+]]}
+,
+Jump to prisoner_menu
+],Choice - [[Slay the Princess.]{/i}...If "blade_held" && "prisoner_can_slay_attempt" []
+[
+[If "grey_encountered" [
+Assign "prisoner_can_slay_attempt" = Val (Bool False),,,
+Jump to prisoner_encounter_start
+]]
+,
+Assign "prisoner_attack" = Val (Bool True),
+Assign "prisoner_position" = Val (String "attack"),,,,,,,,,,,,,,,
+Jump to prisoner_strangle_join
+]]}
+]}
+,
+{Label: prisoner_narrator_loop_join
+[
+Assign "prisoner_narrator_agree" = Val (Bool True),
+Assign "prisoner_go_to_narrator_reveal" = Val (Bool False),
+[If "prisoner_1_forest_share_loop_insist" [,]]
+,
+[Elif "prisoner_1_forest_share_loop" [,]]
+,
+[Else [,]]
+,,,,,,,,,,,,,
+[If "prisoner_1_forest_share_loop_insist" [,,,]]
+,
+[Else [,,,]]
+,,,,,,,,,,,,,,,,,,]}
+]

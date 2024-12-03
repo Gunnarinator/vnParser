@@ -1,0 +1,8 @@
+[ASTLabel "prisoner_encounter_start" 
+    [ASTLine,ASTLine,ASTLine,ASTLine,ASTLine,ASTLine,
+    ASTChoices 
+        [Choice "I'm not sure I need to do much..." 
+            (Just (If (Eq (Var "prisoner_locked") (Val (Bool False))) [])) []
+        ]
+    ]
+]
