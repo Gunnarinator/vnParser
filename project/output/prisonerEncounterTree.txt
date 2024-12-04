@@ -5,7 +5,8 @@
 [
 {Label: prisoner_locked_join
 [
-Assign "prisoner_locked" = Val (Bool True),
+Assign "prisoner_locked" = Val (Bool True)
+,
 [If "prisoner_1_forest_share_loop_insist" || "prisoner_narrator_agree" [,]]
 ,,,,
 [If Var "prisoner_position" == Val (String "close") [,]]
@@ -48,10 +49,13 @@ Jump to prisoner_menu
 [,,,,,,,,,,,,,,,,,
 {Choice Branch: [Choice - [[Sit where you were told t...
 [
-Assign "prisoner_position" = Val (String "close"),,,,,,,,,,,],Choice - [[Sit closer.]
+Assign "prisoner_position" = Val (String "close")
+,,,,,,,,,,,],Choice - [[Sit closer.]
 [
-Assign "prisoner_position" = Val (String "tooclose"),
-Assign "prisoner_sit_closer" = Val (Bool True),
+Assign "prisoner_position" = Val (String "tooclose")
+,
+Assign "prisoner_sit_closer" = Val (Bool True)
+,
 Jump to prisoner_strangle_join
 ]]}
 ,
@@ -59,20 +63,25 @@ Jump to prisoner_menu
 ],Choice - [[Slay the Princess.]If "blade_held" && "prisoner_can_slay_attempt" []
 [
 [If "grey_encountered" [
-Assign "prisoner_can_slay_attempt" = Val (Bool False),,,
+Assign "prisoner_can_slay_attempt" = Val (Bool False)
+,,,
 Jump to prisoner_encounter_start
 ]]
 ,
-Assign "prisoner_attack" = Val (Bool True),
-Assign "prisoner_position" = Val (String "attack"),,,,,,,,,,,,,,,
+Assign "prisoner_attack" = Val (Bool True)
+,
+Assign "prisoner_position" = Val (String "attack")
+,,,,,,,,,,,,,,,
 Jump to prisoner_strangle_join
 ]]}
 ]}
 ,
 {Label: prisoner_narrator_loop_join
 [
-Assign "prisoner_narrator_agree" = Val (Bool True),
-Assign "prisoner_go_to_narrator_reveal" = Val (Bool False),
+Assign "prisoner_narrator_agree" = Val (Bool True)
+,
+Assign "prisoner_go_to_narrator_reveal" = Val (Bool False)
+,
 [If "prisoner_1_forest_share_loop_insist" [,]]
 ,
 [Elif "prisoner_1_forest_share_loop" [,]]
@@ -92,10 +101,12 @@ Jump to prisoner_menu
 ,
 {Label: prisoner_menu
 [,,,,,,,,,,,,,,,,,,,
-Assign "prisoner_position" = Val (String "close"),
+Assign "prisoner_position" = Val (String "close")
+,
 {Choice Branch: [Choice - (Explore) [[Inspect the sha...If "prisoner_other_chain_ask" && Var "prisoner_try_shackle" == Val (Bool False) []
 [
-Assign "prisoner_try_shackle" = Val (Bool True),,,,,,,,,,,,,,,,,,,
+Assign "prisoner_try_shackle" = Val (Bool True)
+,,,,,,,,,,,,,,,,,,,
 {Choice Branch: [Choice - [[Inspect the shackle.]
 [
 Jump to prisoner_self_prison
@@ -105,8 +116,10 @@ Jump to prisoner_menu
 ]]}
 ],Choice - (Explore) Hey! Let me out o...If "prisoner_locked" && Var "prisoner_door_open_beg" == Val (Bool False) []
 [
-Assign "prisoner_menu_count" += Val (Int 1),
-Assign "prisoner_door_open_beg" = Val (Bool True),,,,,,,,,,,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
+Assign "prisoner_door_open_beg" = Val (Bool True)
+,,,,,,,,,,,
 Jump to prisoner_menu
 ],Choice - (Explore) ''You were asking...If Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" != Val (Int 0) []
 [
@@ -115,8 +128,10 @@ Jump to prisoner_intentions_join
 [
 {Label: prisoner_intentions_join
 [
-Assign "prisoner_menu_count" += Val (Int 1),
-Assign "prisoner_intentions_explore" = Val (Bool True),,,,,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
+Assign "prisoner_intentions_explore" = Val (Bool True)
+,,,,,
 [If "prisoner_narrator_agree" [,,,]]
 ,
 [Else [,,,]]
@@ -125,14 +140,17 @@ Jump to prisoner_menu
 ]}
 ],Choice - (Explore) ''I've been here ...If Var "prisoner_narrator_agree" == Val (Bool False) []
 [
-Assign "prisoner_menu_count" += Val (Int 1),,,,,,,
+Assign "prisoner_menu_count" += Val (Int 1)
+,,,,,,,
 Jump to prisoner_narrator_loop_join
 ],Choice - (Explore) ''What happened a...If Var "prisoner_death_ask" == Val (Bool False) []
 [
 {Label: prisoner_what_happened_died
 [
-Assign "prisoner_death_ask" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),
+Assign "prisoner_death_ask" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
 [If Var "prisoner_narrator_agree" == Val (Bool False) [,,,]]
 ,,,,,,,,,,,,,,,,,,,,,,,
 [If Var "prisoner_narrator_agree" == Val (Bool False) [
@@ -143,63 +161,83 @@ Jump to prisoner_menu
 ]}
 ],Choice - (Explore) ''How am I suppos...If "prisoner_intentions_explore" && Var "prisoner_head_ask" == Val (Bool False) && Var "prisoner_what_do" == Val (Bool False) []
 [
-Assign "prisoner_head_ask" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),
-Assign "prisoner_what_do" = Val (Bool True),,,,,,,,,,,,,
+Assign "prisoner_head_ask" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
+Assign "prisoner_what_do" = Val (Bool True)
+,,,,,,,,,,,,,
 Jump to prisoner_what_do_join
 ],Choice - (Explore) ''That other chai...If Var "prisoner_other_chain_ask" == Val (Bool False) []
 [
-Assign "prisoner_other_chain_ask" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),,,,,,,,,,,,,
+Assign "prisoner_other_chain_ask" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,,,,,,,,,,,,,
 Jump to prisoner_menu
 ],Choice - (Explore) ''What would you ...If Var "prisoner_what_do" == Val (Bool False) []
 [
-Assign "prisoner_what_do" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),,,,,,,,,,,,,,,,,
+Assign "prisoner_what_do" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,,,,,,,,,,,,,,,,,
 {Label: prisoner_what_do_join
 [,,,,,,,,,,,,,,
 Jump to prisoner_menu
 ]}
 ],Choice - (Explore) ''I'm not giving ...If "prisoner_what_do" && Var "prisoner_no_give_explore" == Val (Bool False) []
 [
-Assign "prisoner_no_give_explore" = Val (Bool True),
+Assign "prisoner_no_give_explore" = Val (Bool True)
+,
 Jump to prisoner_no_give_explore_join
 ],Choice - (Explore) ''You realize tha...If "prisoner_what_do" && Var "prisoner_patient_line" == Val (Bool False) []
 [,,,,
-Assign "prisoner_patient_line" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),,,,,,,,,
+Assign "prisoner_patient_line" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,,,,,,,,,
 Jump to prisoner_menu
 ],Choice - (Explore) ''If you don't gi...If "prisoner_no_give_explore" && Var "prisoner_threaten_1" == Val (Bool False) []
 [
-Assign "prisoner_threaten_1" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),,,,,,,,,,,,,,,
+Assign "prisoner_threaten_1" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,,,,,,,,,,,,,,,
 Jump to prisoner_menu
 ],Choice - (Explore) ''I'm not giving ...If Var "prisoner_no_give_explore" == Val (Bool False) && "prisoner_what_do" []
 [
-Assign "prisoner_no_give_explore" = Val (Bool True),
-Assign "prisoner_go_to_narrator_reveal" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),
+Assign "prisoner_no_give_explore" = Val (Bool True)
+,
+Assign "prisoner_go_to_narrator_reveal" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
 [If Var "prisoner_narrator_agree" == Val (Bool False) [,,,]]
 ,,,,,
 Jump to prisoner_no_give_explore_join
 ],Choice - (Explore) ''You're the one ...If "prisoner_no_give_explore" && Var "prisoner_negotiate_attempt" == Val (Bool False) []
 [
-Assign "prisoner_negotiate_attempt" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),
+Assign "prisoner_negotiate_attempt" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
 [If "prisoner_locked" [,,,]]
 ,
 [Else [,,,]]
 ,
 [If Var "prisoner_patient_line" == Val (Bool False) [
-Assign "prisoner_patient_line" = Val (Bool True),,,,]]
+Assign "prisoner_patient_line" = Val (Bool True)
+,,,,]]
 ,
 [Else [,,,]]
 ,,,
 Jump to prisoner_menu
 ],Choice - (Explore) ''{b}I{/b} can cu...If "prisoner_what_do" && Var "prisoner_no_give_explore" == Val (Bool False) []
 [
-Assign "prisoner_no_give_explore" = Val (Bool True),
-Assign "prisoner_menu_count" += Val (Int 1),
+Assign "prisoner_no_give_explore" = Val (Bool True)
+,
+Assign "prisoner_menu_count" += Val (Int 1)
+,
 {Label: prisoner_no_give_explore_join
 [
 [If "prisoner_narrator_agree" [,,,]]
@@ -219,56 +257,69 @@ Jump to prisoner_menu
 Jump to prisoner_knife_given
 ],Choice - ''If you want to leave, I'm...If "prisoner_what_do" []
 [
-Assign "prisoner_player_attempt_cut" = Val (Bool True),
+Assign "prisoner_player_attempt_cut" = Val (Bool True)
+,
 Jump to prisoner_strangle_join
 ],Choice - ''If that's how you're goin...If "blade_held" && "prisoner_no_give_explore" && "prisoner_can_slay_attempt" []
 [
 [If "grey_encountered" [
-Assign "prisoner_can_slay_attempt" = Val (Bool False),,,
+Assign "prisoner_can_slay_attempt" = Val (Bool False)
+,,,
 Jump to prisoner_menu
 ]]
 ,
-Assign "prisoner_attack" = Val (Bool True),,,
+Assign "prisoner_attack" = Val (Bool True)
+,,,
 Jump to prisoner_strangle_join
 ],Choice - ''It seems I don't have muc...If "blade_held" && "prisoner_locked" && "prisoner_can_slay_attempt" []
 [
 [If "grey_encountered" [
-Assign "prisoner_can_slay_attempt" = Val (Bool False),,,
+Assign "prisoner_can_slay_attempt" = Val (Bool False)
+,,,
 Jump to prisoner_menu
 ]]
 ,
-Assign "prisoner_attack" = Val (Bool True),,,,,
+Assign "prisoner_attack" = Val (Bool True)
+,,,,,
 Jump to prisoner_strangle_join
 ],Choice - ''If you're so immovable, t...If Var "prisoner_locked" == Val (Bool False) && "prisoner_negotiate_attempt" || "prisoner_threaten_1" []
 [
-Assign "prisoner_abandoned_comment_flag" = Val (Bool True),,,,,,,
+Assign "prisoner_abandoned_comment_flag" = Val (Bool True)
+,,,,,,,
 Jump to prisoner_locked_join
 ],Choice - ''I think I'm just going to...If Var "prisoner_locked" == Val (Bool False) []
 [
-Assign "prisoner_abandoned_comment_flag" = Val (Bool True),,,,,,,
+Assign "prisoner_abandoned_comment_flag" = Val (Bool True)
+,,,,,,,
 Jump to prisoner_locked_join
 ],Choice - [[Slay the Princess.]If "blade_held" && "prisoner_can_slay_attempt" []
 [
 [If "grey_encountered" [
-Assign "prisoner_can_slay_attempt" = Val (Bool False),,,
+Assign "prisoner_can_slay_attempt" = Val (Bool False)
+,,,
 Jump to prisoner_menu
 ]]
 ,
-Assign "prisoner_attack" = Val (Bool True),
+Assign "prisoner_attack" = Val (Bool True)
+,
 Jump to prisoner_strangle_join
 ]]}
 ]}
 ,
 {Label: prisoner_self_prison
 [,,,,,,,,,,,,,,,,,,,,,,,,
-Assign "blade_held" = Val (Bool False),
-Assign "default_mouse" = Val (String "default"),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 {Label: prisoner_self_prison_menu
 [,,,,,
 {Choice Branch: [Choice - (Explore) ''So we're both s...If Var "prisoner_self_prison_stuck" == Val (Bool False) []
 [
-Assign "prisoner_self_prison_stuck" = Val (Bool True),
-Assign "prisoner_self_prison_count" += Val (Int 1),
+Assign "prisoner_self_prison_stuck" = Val (Bool True)
+,
+Assign "prisoner_self_prison_count" += Val (Int 1)
+,
 [If Var "prisoner_self_prison_small_talk" == Val (Bool False) [,,,,,]]
 ,
 [Else []]
@@ -276,8 +327,10 @@ Assign "prisoner_self_prison_count" += Val (Int 1),
 Jump to prisoner_self_prison_menu
 ],Choice - (Explore) ''What should we ...If Var "prisoner_self_prison_what" == Val (Bool False) []
 [
-Assign "prisoner_self_prison_what" = Val (Bool True),
-Assign "prisoner_self_prison_count" += Val (Int 1),
+Assign "prisoner_self_prison_what" = Val (Bool True)
+,
+Assign "prisoner_self_prison_count" += Val (Int 1)
+,
 [If Var "prisoner_self_prison_small_talk" == Val (Bool False) [,,,,,]]
 ,
 [Else []]
@@ -285,8 +338,10 @@ Assign "prisoner_self_prison_count" += Val (Int 1),
 Jump to prisoner_self_prison_menu
 ],Choice - (Explore) ''Did you know th...If Var "prisoner_self_prison_know" == Val (Bool False) []
 [
-Assign "prisoner_self_prison_know" = Val (Bool True),
-Assign "prisoner_self_prison_count" += Val (Int 1),
+Assign "prisoner_self_prison_know" = Val (Bool True)
+,
+Assign "prisoner_self_prison_count" += Val (Int 1)
+,
 [If Var "prisoner_self_prison_small_talk" == Val (Bool False) [,,,,,]]
 ,
 [Else []]
@@ -294,7 +349,8 @@ Assign "prisoner_self_prison_count" += Val (Int 1),
 Jump to prisoner_self_prison_menu
 ],Choice - (Explore) ''Not one for sma...If Var "prisoner_self_prison_small_talk" == Val (Bool False) && Var "prisoner_self_prison_count" >= Val (Int 2) []
 [
-Assign "prisoner_self_prison_small_talk" = Val (Bool True),,,,,,,,,
+Assign "prisoner_self_prison_small_talk" = Val (Bool True)
+,,,,,,,,,
 Jump to prisoner_self_prison_menu
 ],Choice - [[Wait in silence.]
 [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -302,7 +358,8 @@ Jump to prisoner_self_prison_menu
 [,
 {Choice Branch: [Choice - (Explore) ''Hey, have you n...If Var "prisoner_forever_menu_2_explore" == Val (Bool False) []
 [
-Assign "prisoner_forever_menu_2_explore" = Val (Bool True),
+Assign "prisoner_forever_menu_2_explore" = Val (Bool True)
+,
 [If "prisoner_self_prison_small_talk" [,,,,,,,]]
 ,
 [Else [,,,,,,,]]
@@ -310,15 +367,20 @@ Assign "prisoner_forever_menu_2_explore" = Val (Bool True),
 Jump to prisoner_forever_menu_2
 ],Choice - [[Continue to wait in silen...
 [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Assign "blade_held" = Val (Bool False),
-Assign "default_mouse" = Val (String "default"),,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,
 [If Var "loops_finished" != Val (Int 0) []]
 ,
 [Else []]
 ,
-Assign "prisoner_end" = Val (String "stuck"),
-Assign "princess_free" += Val (Int 1),
-Assign "current_princess" = Val (String "prisonerchain"),
+Assign "prisoner_end" = Val (String "stuck")
+,
+Assign "princess_free" += Val (Int 1)
+,
+Assign "current_princess" = Val (String "prisonerchain")
+,
 Jump to mirror_start
 ]]}
 ]}
@@ -328,35 +390,47 @@ Jump to mirror_start
 ,
 {Label: prisoner_knife_given
 [,
-Assign "prisoner_decapitate" = Val (Bool True),,,,,,,,,
+Assign "prisoner_decapitate" = Val (Bool True)
+,,,,,,,,,
 [If "prisoner_narrator_agree" [,,,,,,,,,,,]]
 ,
 [Else [,,,,,,,,,,,,,,,,,,,]]
 ,
-Assign "blade_held" = Val (Bool False),
-Assign "default_mouse" = Val (String "default"),,,
-Assign "blade_held" = Val (Bool False),
-Assign "default_mouse" = Val (String "default"),,,,,,,,,,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,,,,,,,,
 {Label: prisoner_knife_given_late_join
 [
-Assign "prisoner_decapitate" = Val (Bool True),,,,,,,,,,,,
+Assign "prisoner_decapitate" = Val (Bool True)
+,,,,,,,,,,,,
 {Choice Branch: [Choice - [[Look away.]
 [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],Choice - [[Watch in uneasy silence.]
 [,,
-Assign "prisoner_decapitation_watch" = Val (Bool True),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]]}
+Assign "prisoner_decapitation_watch" = Val (Bool True)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]]}
 ,,,,,,,,,,,,,,,,,,,,
 {Label: prisoner_head_choice
 [
 {Choice Branch: [Choice - [[Leave the basement to cla...
 [
-Assign "quick_menu" = Val (Bool False),,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,
 Jump to prisoner_dead_late_join
 ],Choice - [[Take the Princess with you.]
 [,
-Assign "princess_head_taken" = Val (Bool True),
-Assign "quick_menu" = Val (Bool False),
-Assign "blade_held" = Val (Bool True),
-Assign "default_mouse" = Val (String "blood"),,,,,,,,,,,,,,,
+Assign "princess_head_taken" = Val (Bool True)
+,
+Assign "quick_menu" = Val (Bool False)
+,
+Assign "blade_held" = Val (Bool True)
+,
+Assign "default_mouse" = Val (String "blood")
+,,,,,,,,,,,,,,,
 Jump to prisoner_free_join
 ]]}
 ]}
@@ -365,26 +439,36 @@ Jump to prisoner_free_join
 ,
 {Label: prisoner_free_join
 [
-Assign "quick_menu" = Val (Bool False),,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,
 [If "persistent.quick_menu" [
-Assign "quick_menu" = Val (Bool True)]]
+Assign "quick_menu" = Val (Bool True)
+]]
 ,,,,,,,,,,
 {Choice Branch: [Choice - [[Leave the cabin and claim...
 [
-Assign "quick_menu" = Val (Bool False),,,,,,,,,,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,,,,,,,,,
 [If "persistent.quick_menu" [
-Assign "quick_menu" = Val (Bool True)]]
+Assign "quick_menu" = Val (Bool True)
+]]
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Assign "blade_held" = Val (Bool False),
-Assign "default_mouse" = Val (String "default"),,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,
 [If Var "loops_finished" != Val (Int 0) []]
 ,
 [Else []]
 ,
-Assign "princess_free" += Val (Int 1),
-Assign "princess_satisfy" += Val (Int 1),
-Assign "current_princess" = Val (String "prisonerhead"),
-Assign "prisoner_end" = Val (String "free"),
+Assign "princess_free" += Val (Int 1)
+,
+Assign "princess_satisfy" += Val (Int 1)
+,
+Assign "current_princess" = Val (String "prisonerhead")
+,
+Assign "prisoner_end" = Val (String "free")
+,
 Jump to mirror_start
 ]]}
 ]}
@@ -412,16 +496,22 @@ Jump to mirror_start
 {Choice Branch: [Choice - [[Slay the Princess.]If "prisoner_can_slay_attempt" []
 [,
 [If "grey_encountered" [
-Assign "prisoner_can_slay_attempt" = Val (Bool False),,,,,
+Assign "prisoner_can_slay_attempt" = Val (Bool False)
+,,,,,
 Jump to prisoner_fight_menu
 ]]
 ,
-Assign "prisoner_slain_by_player" = Val (Bool True),,,,,,
-Assign "default_mouse" = Val (String "blood"),,,,,,,,,,,,,,,
-Assign "quick_menu" = Val (Bool False),,,,,,,],Choice - [[Drop it.]
+Assign "prisoner_slain_by_player" = Val (Bool True)
+,,,,,,
+Assign "default_mouse" = Val (String "blood")
+,,,,,,,,,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,],Choice - [[Drop it.]
 [
-Assign "blade_held" = Val (Bool False),
-Assign "default_mouse" = Val (String "default"),,,,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,,
 [If "prisoner_attack" [,,,,,,,,,,,,]]
 ,
 [Else [,,,,,,]]
@@ -432,22 +522,30 @@ Jump to prisoner_knife_given_late_join
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 {Label: prisoner_dead_late_join
 [,,
-Assign "blade_held" = Val (Bool True),
-Assign "quick_menu" = Val (Bool False),
-Assign "default_mouse" = Val (String "blood"),,,,,,,,,,,
+Assign "blade_held" = Val (Bool True)
+,
+Assign "quick_menu" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "blood")
+,,,,,,,,,,,
 [If "persistent.quick_menu" [
-Assign "quick_menu" = Val (Bool True)]]
+Assign "quick_menu" = Val (Bool True)
+]]
 ,,,,,,
 {Choice Branch: [Choice - [[Open the door and accept ...
 [
-Assign "quick_menu" = Val (Bool False),,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,
 [If "persistent.quick_menu" [
-Assign "quick_menu" = Val (Bool True)]]
+Assign "quick_menu" = Val (Bool True)
+]]
 ,,,,,,,]]}
 ,,,,,
-Assign "quick_menu" = Val (Bool False),,,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,,
 [If "persistent.quick_menu" [
-Assign "quick_menu" = Val (Bool True)]]
+Assign "quick_menu" = Val (Bool True)
+]]
 ,,,,
 {Choice Branch: [Choice - That's bullshit! Let us out...
 [,],Choice - I don't know. I'm pretty ok...
@@ -458,11 +556,13 @@ Assign "quick_menu" = Val (Bool True)]]
 [,,,
 {Choice Branch: [Choice - (Explore) Didn't you hear T...If Var "prisoner_happy_menu_happy_explore" == Val (Bool False) []
 [
-Assign "prisoner_happy_menu_happy_explore" = Val (Bool True),,,,,
+Assign "prisoner_happy_menu_happy_explore" = Val (Bool True)
+,,,,,
 Jump to prisoner_happy_menu
 ],Choice - (Explore) What do you sugge...If Var "prisoner_happy_menu_suggestion_explore" == Val (Bool False) []
 [
-Assign "prisoner_happy_menu_suggestion_explore" = Val (Bool True),,,,,
+Assign "prisoner_happy_menu_suggestion_explore" = Val (Bool True)
+,,,,,
 Jump to prisoner_happy_menu
 ],Choice - I don't want to die again. ...If Var "prisoner_happy_menu_explore" == Val (Bool False) []
 [
@@ -474,7 +574,8 @@ Jump to prisoner_happy_join
 [
 {Label: prisoner_happy_join
 [,
-Assign "prisoner_happy_seen" = Val (Bool True),,,,,,,,,,,,,,,,,
+Assign "prisoner_happy_seen" = Val (Bool True)
+,,,,,,,,,,,,,,,,,
 [If Var "_preferences.language" != Val (String "None") []]
 ,,,,,,,,,,,,,,,,,,
 [If Var "prisoner_happy_menu_suggestion_explore" == Val (Bool False) [,,,]]
@@ -485,22 +586,26 @@ Assign "prisoner_happy_seen" = Val (Bool True),,,,,,,,,,,,,,,,,
 [,,,,
 {Choice Branch: [Choice - (Explore) Is there really n...If Var "prisoner_post_happy_no_other_way" == Val (Bool False) []
 [
-Assign "prisoner_post_happy_no_other_way" = Val (Bool True),,,
+Assign "prisoner_post_happy_no_other_way" = Val (Bool True)
+,,,
 Jump to prisoner_post_happy_menu
 ],Choice - (Explore) But I liked being...If Var "prisoner_post_happy_sad" == Val (Bool False) []
 [
-Assign "prisoner_post_happy_sad" = Val (Bool True),,,
+Assign "prisoner_post_happy_sad" = Val (Bool True)
+,,,
 Jump to prisoner_post_happy_menu
 ],Choice - [[Give the blade to the Voi...If "prisoner_post_happy_no_other_way" []
 [
-Assign "prisoner_give_skeptic_blade" = Val (Bool True),,,
+Assign "prisoner_give_skeptic_blade" = Val (Bool True)
+,,,
 Jump to prisoner_slay_self_join
 ],Choice - [[Slay yourself.]
 [
 Jump to prisoner_slay_self_join
 ],Choice - Sorry, but we're not doing ...
 [
-Assign "prisoner_heart_stop" = Val (Bool True),,,,,,,,,,,,,,,,,,
+Assign "prisoner_heart_stop" = Val (Bool True)
+,,,,,,,,,,,,,,,,,,
 Jump to prisoner_slay_self_join
 ]]}
 ]}

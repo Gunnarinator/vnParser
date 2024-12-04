@@ -2,6 +2,8 @@ module Utils where
     import Control.Exception
     import Lexer as L
     import Data as D
+    import State as S
+    import qualified Data.Set as Set
 
     isColonToken :: Token -> Bool 
     isColonToken Colon = True 
@@ -112,21 +114,9 @@ module Utils where
     hasThings [] = False 
     hasThings _ = True
 
-    --draw edges from n to everything in xs
-    connect :: Node -> [CNode] -> [Edge]
-    connect _ [] = [] 
-    connect ((x, str):xs) = Edge n x str : connect n xs
-
     cleanStr :: String -> String 
     cleanStr s = let s2 = drop 4 (reverse $ drop 4 (reverse s)) in 
         if length s2 > 30 then take 27 s2 ++ "..." else s2
-
-    --if a node doesn't have edges I sometimes don't care about it
-    removeEmpty :: [CNode] -> [CNode]
-    removeEmpty [] = [] 
-    removeEmpty (x:xs) = case x of 
-        (Node _ [], _) -> removeEmpty xs 
-        _ -> x:removeEmpty xs
     
 
     toString :: [Token] -> String 
@@ -141,10 +131,43 @@ module Utils where
         Tab -> "\n" ++ show x ++ ", " ++ toString xs 
         y -> show y ++ ", " ++ lineToString xs
 
+    getFlag :: D.Cond -> String 
+    getFlag (D.If cond body) = show cond 
+    getFlag (D.Elif cond body) = show cond 
+    getFlag _ = ""
+
+
+    --finds a node in a list with a given label or adds that node
+    findNode :: String -> [Node] -> NodeColor -> (Node, [Node]) 
+    findNode str ns c = let (b, n) = strInNEnv str ns in 
+        if b then (n, ns) else let new = Node str (length ns) c in (new, new:ns)
+
+    strInNEnv :: String -> [Node] -> (Bool, Node)
+    strInNEnv _ [] = (False, Node "" 0 Red)
+    strInNEnv str ((Node l i c):ns) = if str == l then (True, Node l i c) else strInNEnv str ns
 
     dropDupes :: Ord a => [a] -> [a] 
     dropDupes xs = Set.toList $ Set.fromList xs
 
+    --delete edges that point to themselves
+    delSame :: [Edge] -> [Edge]
+    delSame [] = [] 
+    delSame (e:es) = 
+        if getF e == getT e then delSame es 
+        else e:delSame es
+
     cleanResults :: ([Node], [Edge]) -> ([Node], [Edge])
-    cleanResults (ns, es) = (dropDupes $ (ns++ readEdges es), dropDupes es)
+    cleanResults (ns, es) = (dropDupes $ readEdges es, dropDupes (delSame es))
+
+    --connect the node to the first node in each of the edges
+    connect :: Node -> [Edge] -> [Edge]
+    connect _ [] = [] 
+    connect n ((Edge f t l):es) = 
+        if n /= f && n /= t then Edge n f "" : connect n es
+        else connect n es
+    
+    --we got all the edges from node 1 to node 2, just make a list of nodes
+    readEdges :: [Edge] -> [Node]
+    readEdges [] = []
+    readEdges ((Edge from to _):es) = [from, to] ++ readEdges es
     

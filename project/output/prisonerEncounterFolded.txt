@@ -1,192 +1,425 @@
 ([
-Node 0: ''I think I'm just going to...,
-Node 1: ''If that's how you're goin...,
-Node 2: ''If you want to leave, I'm...,
-Node 3: ''If you're so immovable, t...,
-Node 4: ''It seems I don't have muc...,
-Node 5: ''Okay. I'm trusting you.''...,
-Node 6: (Explore) ''How am I suppos...,
-Node 7: (Explore) ''I'm not giving ...,
-Node 8: (Explore) ''I'm not giving ...,
-Node 9: (Explore) ''I've been here ...,
-Node 10: (Explore) ''If you don't gi...,
-Node 11: (Explore) ''My intentions? ...,
-Node 12: (Explore) ''That other chai...,
-Node 13: (Explore) ''What happened a...,
-Node 14: (Explore) ''What would you ...,
-Node 15: (Explore) ''You realize tha...,
-Node 16: (Explore) ''You were asking...,
-Node 17: (Explore) ''You're the one ...,
-Node 18: (Explore) ''{b}I{/b} can cu...,
-Node 19: (Explore) Hey! Let me out o...,
-Node 20: (Explore) [[Inspect the sha...,
-Node 21: I'm not sure I need to do m...,
-Node 22: [[Leave the cabin and claim...,
-Node 23: [[Sit with her.],
-Node 24: [[Slay the Princess.],
-Node 25: [[Slay the Princess.],
-Node 26: prisoner_encounter_start,
-Node 27: prisoner_fight_menu,
-Node 28: prisoner_free_join,
-Node 29: prisoner_knife_given,
-Node 30: prisoner_knife_given_late_join,
-Node 31: prisoner_menu,
-Node 32: prisoner_narrator_loop_join,
-Node 33: prisoner_self_prison,
-Node 34: prisoner_self_prison_menu,
-Node 35: prisoner_strangle_join],[
+Node 0: prisoner_encounter_start,
+Node 1: I'm not sure I need to do m...,
+Node 2: prisoner_locked_join,
+Node 3: prisoner_menu,
+Node 5: [[Sit with her.],
+Node 7: prisoner_strangle_join,
+Node 9: [[Slay the Princess.],
+Node 11: prisoner_narrator_loop_join,
+Node 12: (Explore) [[Inspect the sha...,
+Node 14: prisoner_self_prison,
+Node 19: prisoner_intentions_join,
+Node 20: (Explore) ''My intentions? ...,
+Node 23: (Explore) ''What happened a...,
+Node 24: prisoner_what_happened_died,
+Node 27: prisoner_what_do_join,
+Node 29: (Explore) ''What would you ...,
+Node 32: prisoner_no_give_explore_join,
+Node 37: (Explore) ''{b}I{/b} can cu...,
+Node 40: prisoner_knife_given,
+Node 42: ''If that's how you're goin...,
+Node 44: ''It seems I don't have muc...,
+Node 48: [[Slay the Princess.],
+Node 50: prisoner_self_prison_menu,
+Node 55: [[Wait in silence.],
+Node 56: prisoner_forever_menu_2,
+Node 59: mirror_start,
+Node 61: prisoner_knife_given_late_join,
+Node 62: prisoner_head_choice,
+Node 64: prisoner_dead_late_join,
+Node 66: prisoner_free_join,
+Node 68: prisoner_fight_menu,
+Node 71: prisoner_happy_menu,
+Node 75: prisoner_happy_join,
+Node 77: Well, you might not be happ...,
+Node 78: prisoner_post_happy_menu,
+Node 82: prisoner_slay_self_join,
+Node 86: [[Slay yourself.],
+Node 87: grey_start,
+Node 88: cage_start],[
 Edge
-	From: prisoner_encounter_start
-	To: I'm not sure I need to do m...
-	Via: I'm not sure I need to do m...
-,
-Edge
-	From: prisoner_encounter_start
-	To: [[Sit with her.]
-	Via: [[Sit with her.]
-,
-Edge
-	From: prisoner_encounter_start
-	To: [[Slay the Princess.]
-	Via: [[Slay the Princess.]
-,
-Edge
-	From: prisoner_free_join
-	To: [[Leave the cabin and claim...
-	Via: [[Leave the cabin and claim...
-,
-Edge
-	From: prisoner_knife_given
-	To: prisoner_knife_given_late_join
+	From: 0 ( prisoner_encounter_start)
+	To: 1 ( I'm not sure I need to do m...)
 
 ,
 Edge
-	From: prisoner_menu
-	To: ''I think I'm just going to...
-	Via: ''I think I'm just going to...
+	From: 0 ( prisoner_encounter_start)
+	To: 5 ( [[Sit with her.])
+
 ,
 Edge
-	From: prisoner_menu
-	To: ''If that's how you're goin...
-	Via: ''If that's how you're goin...
+	From: 0 ( prisoner_encounter_start)
+	To: 9 ( [[Slay the Princess.])
+
 ,
 Edge
-	From: prisoner_menu
-	To: ''If you want to leave, I'm...
-	Via: ''If you want to leave, I'm...
-,
-Edge
-	From: prisoner_menu
-	To: ''If you're so immovable, t...
-	Via: ''If you're so immovable, t...
-,
-Edge
-	From: prisoner_menu
-	To: ''It seems I don't have muc...
-	Via: ''It seems I don't have muc...
-,
-Edge
-	From: prisoner_menu
-	To: ''Okay. I'm trusting you.''...
-	Via: ''Okay. I'm trusting you.''...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''How am I suppos...
-	Via: (Explore) ''How am I suppos...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''I'm not giving ...
-	Via: (Explore) ''I'm not giving ...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''I'm not giving ...
-	Via: (Explore) ''I'm not giving ...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''I've been here ...
-	Via: (Explore) ''I've been here ...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''If you don't gi...
-	Via: (Explore) ''If you don't gi...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''My intentions? ...
-	Via: (Explore) ''My intentions? ...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''That other chai...
-	Via: (Explore) ''That other chai...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''What happened a...
-	Via: (Explore) ''What happened a...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''What would you ...
-	Via: (Explore) ''What would you ...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''You realize tha...
-	Via: (Explore) ''You realize tha...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''You were asking...
-	Via: (Explore) ''You were asking...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''You're the one ...
-	Via: (Explore) ''You're the one ...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) ''{b}I{/b} can cu...
-	Via: (Explore) ''{b}I{/b} can cu...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) Hey! Let me out o...
-	Via: (Explore) Hey! Let me out o...
-,
-Edge
-	From: prisoner_menu
-	To: (Explore) [[Inspect the sha...
-	Via: (Explore) [[Inspect the sha...
-,
-Edge
-	From: prisoner_menu
-	To: [[Slay the Princess.]
-	Via: [[Slay the Princess.]
-,
-Edge
-	From: prisoner_narrator_loop_join
-	To: prisoner_encounter_start
+	From: 11 ( prisoner_narrator_loop_join)
+	To: 0 ( prisoner_encounter_start)
 	Via: Var "prisoner_position" == Val (String "start")
 ,
 Edge
-	From: prisoner_narrator_loop_join
-	To: prisoner_menu
+	From: 11 ( prisoner_narrator_loop_join)
+	To: 3 ( prisoner_menu)
 
 ,
 Edge
-	From: prisoner_self_prison
-	To: prisoner_self_prison_menu
+	From: 12 ( (Explore) [[Inspect the sha...)
+	To: 14 ( prisoner_self_prison)
+	Via: [[Inspect the shackle.]
+,
+Edge
+	From: 12 ( (Explore) [[Inspect the sha...)
+	To: 3 ( prisoner_menu)
+	Via: [[Let it go.]
+,
+Edge
+	From: 14 ( prisoner_self_prison)
+	To: 50 ( prisoner_self_prison_menu)
 
 ,
 Edge
-	From: prisoner_strangle_join
-	To: prisoner_fight_menu
+	From: 19 ( prisoner_intentions_join)
+	To: 3 ( prisoner_menu)
+	Via: Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" == Val (Int 0)
+,
+Edge
+	From: 1 ( I'm not sure I need to do m...)
+	To: 0 ( prisoner_encounter_start)
+	Via: Var "prisoner_position" == Val (String "start")
+,
+Edge
+	From: 1 ( I'm not sure I need to do m...)
+	To: 2 ( prisoner_locked_join)
+	Via: Var "prisoner_locked" == Val (Bool False)
+,
+Edge
+	From: 1 ( I'm not sure I need to do m...)
+	To: 3 ( prisoner_menu)
+	Via: Else
+,
+Edge
+	From: 20 ( (Explore) ''My intentions? ...)
+	To: 19 ( prisoner_intentions_join)
+	Via: Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" == Val (Int 0)
+,
+Edge
+	From: 23 ( (Explore) ''What happened a...)
+	To: 24 ( prisoner_what_happened_died)
+	Via: Var "prisoner_death_ask" == Val (Bool False)
+,
+Edge
+	From: 24 ( prisoner_what_happened_died)
+	To: 11 ( prisoner_narrator_loop_join)
+	Via: Var "prisoner_narrator_agree" == Val (Bool False)
+,
+Edge
+	From: 24 ( prisoner_what_happened_died)
+	To: 3 ( prisoner_menu)
+	Via: Var "prisoner_death_ask" == Val (Bool False)
+,
+Edge
+	From: 27 ( prisoner_what_do_join)
+	To: 3 ( prisoner_menu)
+	Via: Var "prisoner_what_do" == Val (Bool False)
+,
+Edge
+	From: 29 ( (Explore) ''What would you ...)
+	To: 27 ( prisoner_what_do_join)
+	Via: Var "prisoner_what_do" == Val (Bool False)
+,
+Edge
+	From: 37 ( (Explore) ''{b}I{/b} can cu...)
+	To: 11 ( prisoner_narrator_loop_join)
+	Via: Var "prisoner_narrator_agree" == Val (Bool False)
+,
+Edge
+	From: 37 ( (Explore) ''{b}I{/b} can cu...)
+	To: 32 ( prisoner_no_give_explore_join)
+	Via: "prisoner_what_do" && Var "prisoner_no_give_explore" == Val (Bool False)
+,
+Edge
+	From: 37 ( (Explore) ''{b}I{/b} can cu...)
+	To: 3 ( prisoner_menu)
+	Via: "prisoner_what_do" && Var "prisoner_no_give_explore" == Val (Bool False)
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 11 ( prisoner_narrator_loop_join)
+	Via: (Explore) ''I've been here ...Var "prisoner_narrator_agree" == Val (Bool False)
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 12 ( (Explore) [[Inspect the sha...)
 
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 19 ( prisoner_intentions_join)
+	Via: (Explore) ''You were asking...Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" != Val (Int 0)
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 20 ( (Explore) ''My intentions? ...)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 23 ( (Explore) ''What happened a...)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 24 ( prisoner_what_happened_died)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 27 ( prisoner_what_do_join)
+	Via: (Explore) ''How am I suppos..."prisoner_intentions_explore" && Var "prisoner_head_ask" == Val (Bool False) && Var "prisoner_what_do" == Val (Bool False)
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 29 ( (Explore) ''What would you ...)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 2 ( prisoner_locked_join)
+	Via: ''I think I'm just going to...Var "prisoner_locked" == Val (Bool False)
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 2 ( prisoner_locked_join)
+	Via: ''If you're so immovable, t...Var "prisoner_locked" == Val (Bool False) && "prisoner_negotiate_attempt" || "prisoner_threaten_1"
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 32 ( prisoner_no_give_explore_join)
+	Via: (Explore) ''I'm not giving ..."prisoner_what_do" && Var "prisoner_no_give_explore" == Val (Bool False)
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 32 ( prisoner_no_give_explore_join)
+	Via: (Explore) ''I'm not giving ...Var "prisoner_no_give_explore" == Val (Bool False) && "prisoner_what_do"
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 37 ( (Explore) ''{b}I{/b} can cu...)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 40 ( prisoner_knife_given)
+	Via: ''Okay. I'm trusting you.''..."prisoner_what_do"
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 42 ( ''If that's how you're goin...)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 44 ( ''It seems I don't have muc...)
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 48 ( [[Slay the Princess.])
+
+,
+Edge
+	From: 3 ( prisoner_menu)
+	To: 7 ( prisoner_strangle_join)
+	Via: ''If you want to leave, I'm..."prisoner_what_do"
+,
+Edge
+	From: 40 ( prisoner_knife_given)
+	To: 61 ( prisoner_knife_given_late_join)
+
+,
+Edge
+	From: 42 ( ''If that's how you're goin...)
+	To: 3 ( prisoner_menu)
+	Via: "grey_encountered"
+,
+Edge
+	From: 42 ( ''If that's how you're goin...)
+	To: 7 ( prisoner_strangle_join)
+	Via: "blade_held" && "prisoner_no_give_explore" && "prisoner_can_slay_attempt"
+,
+Edge
+	From: 44 ( ''It seems I don't have muc...)
+	To: 3 ( prisoner_menu)
+	Via: "grey_encountered"
+,
+Edge
+	From: 44 ( ''It seems I don't have muc...)
+	To: 7 ( prisoner_strangle_join)
+	Via: "blade_held" && "prisoner_locked" && "prisoner_can_slay_attempt"
+,
+Edge
+	From: 48 ( [[Slay the Princess.])
+	To: 3 ( prisoner_menu)
+	Via: "grey_encountered"
+,
+Edge
+	From: 48 ( [[Slay the Princess.])
+	To: 7 ( prisoner_strangle_join)
+	Via: "blade_held" && "prisoner_can_slay_attempt"
+,
+Edge
+	From: 50 ( prisoner_self_prison_menu)
+	To: 55 ( [[Wait in silence.])
+
+,
+Edge
+	From: 50 ( prisoner_self_prison_menu)
+	To: 56 ( prisoner_forever_menu_2)
+
+,
+Edge
+	From: 55 ( [[Wait in silence.])
+	To: 56 ( prisoner_forever_menu_2)
+
+,
+Edge
+	From: 56 ( prisoner_forever_menu_2)
+	To: 59 ( mirror_start)
+	Via: [[Continue to wait in silen...
+,
+Edge
+	From: 5 ( [[Sit with her.])
+	To: 3 ( prisoner_menu)
+
+,
+Edge
+	From: 5 ( [[Sit with her.])
+	To: 7 ( prisoner_strangle_join)
+	Via: [[Sit closer.]
+,
+Edge
+	From: 61 ( prisoner_knife_given_late_join)
+	To: 62 ( prisoner_head_choice)
+
+,
+Edge
+	From: 62 ( prisoner_head_choice)
+	To: 64 ( prisoner_dead_late_join)
+	Via: [[Leave the basement to cla...
+,
+Edge
+	From: 62 ( prisoner_head_choice)
+	To: 66 ( prisoner_free_join)
+	Via: [[Take the Princess with you.]
+,
+Edge
+	From: 64 ( prisoner_dead_late_join)
+	To: 71 ( prisoner_happy_menu)
+
+,
+Edge
+	From: 66 ( prisoner_free_join)
+	To: 59 ( mirror_start)
+	Via: [[Leave the cabin and claim...
+,
+Edge
+	From: 68 ( prisoner_fight_menu)
+	To: 61 ( prisoner_knife_given_late_join)
+	Via: [[Drop it.]
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 75 ( prisoner_happy_join)
+
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 75 ( prisoner_happy_join)
+	Via: I don't want to die again. ...Var "prisoner_happy_menu_explore" == Val (Bool False)
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 75 ( prisoner_happy_join)
+	Via: I dunno, I'm pretty happy. ...Var "prisoner_happy_menu_explore" == Val (Bool False)
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 77 ( Well, you might not be happ...)
+
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 78 ( prisoner_post_happy_menu)
+
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 82 ( prisoner_slay_self_join)
+
+,
+Edge
+	From: 71 ( prisoner_happy_menu)
+	To: 86 ( [[Slay yourself.])
+
+,
+Edge
+	From: 75 ( prisoner_happy_join)
+	To: 78 ( prisoner_post_happy_menu)
+	Via: "prisoner_happy_menu_explore"
+,
+Edge
+	From: 77 ( Well, you might not be happ...)
+	To: 75 ( prisoner_happy_join)
+	Via: "prisoner_happy_menu_explore"
+,
+Edge
+	From: 78 ( prisoner_post_happy_menu)
+	To: 82 ( prisoner_slay_self_join)
+	Via: Sorry, but we're not doing ...
+,
+Edge
+	From: 78 ( prisoner_post_happy_menu)
+	To: 82 ( prisoner_slay_self_join)
+	Via: [[Give the blade to the Voi..."prisoner_post_happy_no_other_way"
+,
+Edge
+	From: 78 ( prisoner_post_happy_menu)
+	To: 82 ( prisoner_slay_self_join)
+	Via: [[Slay yourself.]
+,
+Edge
+	From: 7 ( prisoner_strangle_join)
+	To: 64 ( prisoner_dead_late_join)
+
+,
+Edge
+	From: 7 ( prisoner_strangle_join)
+	To: 68 ( prisoner_fight_menu)
+
+,
+Edge
+	From: 82 ( prisoner_slay_self_join)
+	To: 87 ( grey_start)
+	Via: "prisoner_slain_by_player"
+,
+Edge
+	From: 82 ( prisoner_slay_self_join)
+	To: 88 ( cage_start)
+	Via: Else
+,
+Edge
+	From: 86 ( [[Slay yourself.])
+	To: 82 ( prisoner_slay_self_join)
+	Via: "prisoner_happy_menu_suggestion_explore"
+,
+Edge
+	From: 9 ( [[Slay the Princess.])
+	To: 0 ( prisoner_encounter_start)
+	Via: "grey_encountered"
+,
+Edge
+	From: 9 ( [[Slay the Princess.])
+	To: 7 ( prisoner_strangle_join)
+	Via: "blade_held" && "prisoner_can_slay_attempt"
 ])

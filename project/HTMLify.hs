@@ -2,25 +2,8 @@ module HTMLify where
     import Data 
     
 
-    data HTMLNode = HTMLNode Label Int
-    instance Show HTMLNode where 
-        show (HTMLNode l i) = 
-            "\nNode " ++ show i ++ ": " ++ l
-    htmlLabel (HTMLNode l i) = l 
-    htmlID (HTMLNode l i) = i
 
-    --adds id numbers to the nodes so that nodes with the same label are different
-    addIDs :: [Node] -> [HTMLNode]
-    addIDs ns = addIDsWeak ns 0 
-
-    --should this use a state transformer, maybe
-    --if I have time I'll go back and redo it
-    addIDsWeak :: [Node] -> Int -> [HTMLNode]
-    addIDsWeak [] _ = [] 
-    addIDsWeak ((Node l _):ns) i = 
-        HTMLNode l i :addIDsWeak ns (i+1)
-
-    htmlIfy :: ([HTMLNode], [Edge]) -> String 
+    htmlIfy :: ([Node], [Edge]) -> String 
     htmlIfy (ns, es) = let (htmlNs, htmlEs) = (htmlIfyNodes ns, htmlIfyEdges es) in
         htmlStart ++ 
         "nodes = new vis.DataSet([" ++ htmlNs ++ "\n" ++ 
@@ -28,16 +11,16 @@ module HTMLify where
         htmlEnd
         
 
-    htmlIfyNodes :: [HTMLNode] -> String
+    htmlIfyNodes :: [Node] -> String
     htmlIfyNodes [] = ""
     htmlIfyNodes (x:xs) = case xs of 
         [] -> htmlIfyNode x ++ "]);"
         thing -> htmlIfyNode x ++ "," ++ htmlIfyNodes xs 
 
 
-    htmlIfyNode :: HTMLNode -> String 
-    htmlIfyNode (HTMLNode l i) = 
-        "{\"color\": \"#97c2fc\", \"id\": \"" ++ (show i) ++ 
+    htmlIfyNode :: Node -> String 
+    htmlIfyNode (Node l i c) =
+        "{\"fill\": \"" ++ show c ++ "\", \"id\": \"" ++ show i ++ 
             "\", \"label\": \"" ++ l ++ 
             "\", \"shape\": \"dot\", \"size\": 10}"
 
@@ -50,12 +33,19 @@ module HTMLify where
                 
     --{"arrows": "to", "from": "fromLabel", "label": "edgeLabelText", "to": "toLabel", "width": 1}
     htmlIfyEdgeInner :: Edge -> String -> String 
-    htmlIfyEdgeInner (Edge (Node from i1) (Node to i2) label) backEnd =
-        let front = "{\"arrows\": \"to\", \"from\": \"" ++ i1 ++ "\""in 
-            let back = ", \"to\": \"" ++ i2 ++ "\", \"width\": 1}" in 
-                --case label of 
-                    {-"" -> -}front ++ back ++ backEnd
-                    --thing -> front ++ ", label: \"" ++ thing ++ "\"" ++ back ++ backEnd
+    htmlIfyEdgeInner (Edge (Node from i1 c) (Node to i2 c2) label) backEnd =
+        let front = "{\"arrows\": \"to\", \"from\": \"" ++ show i1 ++ "\""in 
+            let back = ", \"to\": \"" ++ show i2 ++ "\", \"width\": 1}" in 
+                case label of 
+                    "" -> front ++ back ++ backEnd
+                    thing -> front ++ ", label: \"" ++ cleanLabel thing ++ "\"" ++ back ++ backEnd
+
+    --replace " with \"
+    cleanLabel :: String -> String 
+    cleanLabel [] = [] 
+    cleanLabel (x:xs) = case x of 
+        '\"' -> "\\\"" ++ cleanLabel xs 
+        _ -> x:cleanLabel xs
 
 
     htmlStart :: String 
@@ -93,8 +83,8 @@ module HTMLify where
 \        <style type=\"text/css\">\n\
 \\n\
 \             #mynetwork {\n\
-\                 width: 800px;\n\
-\                 height: 800px;\n\
+\                 width: 2000px;\n\
+\                 height: 2000px;\n\
 \                 background-color: #ffffff;\n\
 \                 border: 1px solid lightgray;\n\
 \                 position: relative;\n\

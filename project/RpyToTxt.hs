@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use camelCase" #-}
 module Main where 
 
     import System.IO
@@ -9,81 +11,99 @@ module Main where
     import Utils
     import HTMLify as H
     import qualified Data.Set as Set
-    import qualified State as S
 
+    --at the top level... there should only be labels
+    getTopEdges :: [AST] -> [Node] -> ([Edge], [Node])
+    getTopEdges [] nodeEnv = ([], nodeEnv)
+    getTopEdges (a:as) nodeEnv = case a of 
+        (ASTLabel str body) -> do 
+            let (n, newEnv) = findNode str nodeEnv Red
+            let (bodyEdges, bodyEnv) = getEdges body n newEnv "" 
+            let (restOfEs, finalEnv) = getTopEdges as bodyEnv
+            (bodyEdges ++ restOfEs, finalEnv)
+        _ -> getTopEdges as nodeEnv
 
-    newtype GraphState = S.State Int ([Node], [Edge])
+    --getEdges is the supreme function, all hail getEdges 
+    getEdges :: [AST] -> Node -> [Node] -> String -> ([Edge], [Node])
+    getEdges [] _ nodeEnv _ = ([], nodeEnv) 
+    getEdges (a:as) curN nodeEnv curLabel = case a of 
+        --lines are trash, assigns are currently trash, keep moving
+        ASTLine -> getEdges as curN nodeEnv curLabel 
+        (ASTAssign a) -> getEdges as curN nodeEnv curLabel 
 
-    --just gimme a list of all the nodes and edges
-    flattenForest :: [AST] -> GraphState 
-    flattenForest [] = ([], [])
-    flattenForest (x:xs) = do 
-        let (Node l edges) = nodifyLabel x 
-        let (ns, es) = flattenForest xs 
-        return (Node l 0 : ns, edges++es)
+        --if we find a new label we want to draw a new edge then move into that one, then continue
+        (ASTLabel str body) -> do 
+            let (n, newEnv) = findNode str nodeEnv Red
+            let e = Edge curN n curLabel
+            let (bodyEdges, bodyEnv) = getEdges body n newEnv curLabel 
+            let (restOfEs, finalEnv) = getEdges as curN bodyEnv curLabel
+            (e:(bodyEdges ++ restOfEs), finalEnv)
 
-    --turns a label into a node
-    nodifyLabel :: AST -> Node
-    nodifyLabel (ASTLabel from xs) = 
-        let f = Node from 0 in 
-            Node from (getEdges xs f "")
-
-    --turns a choice into a node
-    nodifyChoice :: Choice -> Node 
-    nodifyChoice (Data.Choice opt cond body) = do
-        let o = Node opt 0
-        let edges = case cond of
-                Nothing -> getEdges body o ""
-                Just c -> getEdges body o (show c)
-        if edges /= []
-            then Node opt (replaceAll (Node opt edges) edges)
-            else Node opt []
-
-
-    replaceAll :: Node -> [Edge] -> [Edge]
-    replaceAll n [] = [] 
-    replaceAll n ((Edge from to cond):xs) = 
-        Edge n to cond : replaceAll n xs
-
-    --gets the edges
-    getEdges :: [AST] -> Node -> String -> [Edge]
-    getEdges [] _ _ = [] 
-    getEdges (x:xs) from cond = case x of 
-        ASTLine -> getEdges xs from cond 
-        (ASTLabel str t) -> [Edge from (nodifyLabel x) cond]
-        (ASTAssign a) -> getEdges xs from cond 
-        (ASTJump to) -> Edge from (Node to []) cond : getEdges xs from cond 
-        (ASTConds ys) -> travelConds ys from ++ getEdges xs from cond 
-        (ASTChoices ys) -> let cs = removeEmpty (travelChoices ys) in connect from cs ++ getEdges xs from cond 
+        --for Jumps we need to draw an edge from this node to that node
+        (ASTJump to) -> do 
+            let (n, newEnv) = findNode to nodeEnv Red
+            let e = Edge curN n curLabel
+            let (restOfEs, finalEnv) = getEdges as curN newEnv curLabel
+            (e:restOfEs, finalEnv)
+    
+        --Conditionals have many conds, and each cond has a body 
+        (ASTConds cs) -> do 
+            let (es, newEnv) = travelConds cs curN nodeEnv 
+            let (restOfEs, finalEnv) = getEdges as curN newEnv curLabel 
+            (es++restOfEs, finalEnv)
+        --For choices we want to... do complicated stuff
+        (ASTChoices cs) -> do 
+            let (es, newEnv) = travelChoices cs curN nodeEnv 
+            let (restOfEs, finalEnv) = getEdges as curN newEnv curLabel 
+            (es++restOfEs, finalEnv)
+ 
          
     --goes through a conditional branch
-    travelConds :: [Data.Cond] -> Node -> [Edge]
-    travelConds [] _ = [] 
-    travelConds (x:xs) from = case x of 
-        (Data.If cond body) -> getEdges body from (show cond) ++ travelConds xs from
-        (Data.Elif cond body) -> getEdges body from (show cond) ++ travelConds xs from
-        (Data.Else body) -> getEdges body from ""
+    travelConds :: [Data.Cond] -> Node -> [Node] -> ([Edge], [Node])
+    travelConds [] _ nodeEnv = ([], nodeEnv)
+    travelConds (c:cs) from nodeEnv = case c of 
+        (Data.If cond body) -> do 
+            let (es, newEnv) = getEdges body from nodeEnv (show cond)
+            let (restOfEs, finalEnv) = travelConds cs from newEnv
+            (es++restOfEs, finalEnv)
+        (Data.Elif cond body) -> do 
+            let (es, newEnv) = getEdges body from nodeEnv (show cond)
+            let (restOfEs, finalEnv) = travelConds cs from newEnv
+            (es++restOfEs, finalEnv)
+        (Data.Else body) -> getEdges body from nodeEnv "Else"
 
     --goes through a choice menu/branch
-    travelChoices :: [Choice] -> [CNode]
-    travelChoices [] = [] 
-    travelChoices ((Data.Choice opt cond body):xs) = 
-        let node = nodifyChoice (Data.Choice opt cond body) in 
-            (node, opt) : travelChoices xs
+    travelChoices :: [Choice] -> Node -> [Node] -> ([Edge], [Node])
+    travelChoices [] _ nodeEnv = ([], nodeEnv)
+    travelChoices ((Data.Choice opt cond body):cs) from nodeEnv = do
+        let temp = Node opt (length nodeEnv) Blue
+        let label = case cond of Nothing -> "" ; (Just x) -> getFlag x
+        let (es, newEnv) = getEdges body temp (temp:nodeEnv) label
+        --if there's only one edge i'd prefer it be "from -> to, via opt"
+        if length es == 1 then do 
+            let (Edge f t l) = head es 
+            let singleEdge = Edge from t (opt ++ l)
+            let (restOfEs, finalEnv) = travelChoices cs from newEnv  
+            (singleEdge:restOfEs, finalEnv)
+        else if es /= [] then do
+            --if there is more than one jump in this choice, then we can make the choice a node
+            --let hmm = [Edge from temp ""]
+            let thisChoiceEs = connect from es
+            let (restOfEs, finalEnv) = travelChoices cs from (temp:newEnv) 
+            (es++thisChoiceEs++restOfEs, finalEnv)
+        else 
+            --there are no real edges and the opt shouldn't be its own Node
+            travelChoices cs from nodeEnv
 
     
 
-    --flattenForest is good at getting edges but bad at getting nodes
-    readEdges :: [Edge] -> [Node]
-    readEdges [] = []
-    readEdges ((Edge from to _):es) = [from, to] ++ readEdges es
 
 
     --takes each line, parses it into tokens, unless it's only whitespace, adds them all together
     lexEachLine :: [String] -> [Token]
     lexEachLine [] = []
-    lexEachLine (x:xs) = if ((not . all isSpace) x) && (head x /= '#') then alexScanTokens x ++ lexEachLine xs else lexEachLine xs
-        --print (alexScanTokens x)
+    lexEachLine (x:xs) = if (not . all isSpace) x && (head x /= '#') then alexScanTokens x ++ lexEachLine xs else lexEachLine xs
+        
 
     main :: IO ()
     main = do 
@@ -94,10 +114,11 @@ module Main where
         let forest = fst $ head $ P.runParser top lexed
         writeFile "output/prisonerEncounterTree.txt" (show forest)
         print "finished parsing"
-        let bigTree = cleanResults $ flattenForest forest 
+        let (es, ns) = getTopEdges forest []
+        let bigTree = cleanResults (ns, es)
         writeFile "output/prisonerEncounterFolded.txt" (show bigTree)
         print "finished flattening"
-        let output = H.htmlIfy $ bigTree
+        let output = H.htmlIfy bigTree
         print "finished making it HTML"
         writeFile "output/prisonerEncounterOutput.html" output
         print "all done!"
