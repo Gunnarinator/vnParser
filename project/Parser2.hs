@@ -16,8 +16,7 @@ data HappyAbsSyn t4
 	| HappyAbsSyn4 t4
 
 happyExpList :: Happy_Data_Array.Array Prelude.Int Prelude.Int
-happyExpList = Happy_Data_Array.listArray (0,37) ([0,16,0,1024,0,0,0,0,0,0,0
-	])
+happyExpList = Happy_Data_Array.listArray (0,37) [0,16,0,1024,0,0,0,0,0,0,0]
 
 {-# NOINLINE happyExpListPerState #-}
 happyExpListPerState st =
@@ -32,6 +31,7 @@ happyExpListPerState st =
         f (Prelude.False, _) = []
         f (Prelude.True, nr) = [token_strs Prelude.!! nr]
 
+action_0 :: (Eq a, Num a) => a -> Int -> Token -> HappyState      Token      (HappyStk (HappyAbsSyn Exp)       -> [Token] -> HappyIdentity (HappyAbsSyn Exp)) -> [HappyState       Token       (HappyStk (HappyAbsSyn Exp)        -> [Token] -> HappyIdentity (HappyAbsSyn Exp))] -> HappyStk (HappyAbsSyn Exp) -> [Token] -> HappyIdentity (HappyAbsSyn Exp)
 action_0 (21) = happyShift action_2
 action_0 (4) = happyGoto action_3
 action_0 _ = happyFail (happyExpListPerState 0)
@@ -44,6 +44,7 @@ action_2 _ = happyReduce_1
 action_3 (38) = happyAccept
 action_3 _ = happyFail (happyExpListPerState 3)
 
+happyReduce_1 :: Int -> Token -> HappyState      Token (HappyStk (HappyAbsSyn Exp) -> [Token] -> HappyIdentity a) -> [HappyState       Token (HappyStk (HappyAbsSyn Exp) -> [Token] -> HappyIdentity a)] -> HappyStk (HappyAbsSyn Exp) -> [Token] -> HappyIdentity a
 happyReduce_1 = happySpecReduce_1  4 happyReduction_1
 happyReduction_1 (HappyTerminal (Lexer.Var happy_var_1))
 	 =  HappyAbsSyn4
@@ -105,6 +106,7 @@ instance Prelude.Functor HappyIdentity where
 
 instance Applicative HappyIdentity where
     pure  = HappyIdentity
+    (<*>) :: HappyIdentity (a -> b) -> HappyIdentity a -> HappyIdentity b
     (<*>) = ap
 instance Prelude.Monad HappyIdentity where
     return = pure

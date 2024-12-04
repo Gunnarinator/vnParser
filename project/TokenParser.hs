@@ -29,7 +29,7 @@ module TokenParser where
     --there are a bunch of lines we don't care about 
     eatLine :: P.Parser AST
     eatLine = do 
-        _ <- many (sat (not . isTabToken))
+        _ <- many (sat (not . isLineStartToken))
         return ASTLine
         
 
@@ -112,16 +112,17 @@ module TokenParser where
         let (numTabs, rest) = head $ P.runParser tabs s
         if numTabs /= d then empty else do 
                     let (str, strRest) = head $ P.runParser text rest
+                    let finalStr = cleanStr str
                     let condResult = P.runParser inLineConditional strRest
                     if (condResult /= []) then do
                         let (cond, condRest) = head condResult
                         let (omg, idc) = head $ P.runParser col condRest
                         let (body, finalRest) = head $ P.runParser (many (ls (d+1))) idc
-                        return (D.Choice (take 30 (drop 4 str) ++ "...") (Just cond) body, finalRest)
+                        return (D.Choice finalStr (Just cond) body, finalRest)
                     else do
                         let (omg, idc) = head $ P.runParser col strRest
                         let (body, finalRest) = head $ P.runParser (many (ls (d+1))) idc
-                        return (D.Choice (take 30 (drop 4 str) ++ "...") Nothing body, finalRest)
+                        return (D.Choice finalStr Nothing body, finalRest)
                     
         )
 
@@ -167,7 +168,7 @@ module TokenParser where
     check :: P.Parser Flag 
     check = do 
         oP <- openParen 
-        inC <- innerCheck 
+        inC <- boolExp 
         cP <- closeParen 
         return inC
         <|> do innerCheck
@@ -183,6 +184,16 @@ module TokenParser where
             "!=" -> return (Neq (D.Var v1) (Val v2))
             ">" -> return (Gt (D.Var v1) (Val v2))
             "<" -> return (Lt (D.Var v1) (Val v2))
+            "<=" -> return (LtEq (D.Var v1) (Val v2))
+            ">=" -> return (GtEq (D.Var v1) (Val v2))
+        <|> do 
+            v1 <- var 
+            is_ <- var 
+            not <- var 
+            none <- var 
+            if (is_ == "is" && not == "not" && none == "None") 
+                then return (Neq (D.Var v1) (Val (String "None"))) else empty
+        
         <|> do
             v1 <- var 
             return (Base v1) 
@@ -222,11 +233,17 @@ module TokenParser where
         if tDepth /= d then empty else case head tabRest of
             Label -> P.runParser (label d) tabRest 
             Jump -> P.runParser jump tabRest 
-            Dollar -> P.runParser assign tabRest 
+            --dollar sign just means "this line is in python" which can be var assign, but could mean nothing
+            Dollar -> case (head (tail tabRest)) of 
+                (L.Var x) -> P.runParser assign tabRest 
+                _ -> P.runParser eatLine tabRest
             Menu -> P.runParser choiceBranch tabRest
             Cond _ -> do 
-                let (conds, condRest) = head $ P.runParser (conditional d) tabRest 
-                return (ASTConds [conds], condRest)
+                let condResult = P.runParser (conditional d) tabRest 
+                if condResult /= [] then do 
+                    let (conds, condRest) = head $ condResult
+                    return (ASTConds [conds], condRest)
+                else P.runParser eatLine tabRest
             _ -> P.runParser eatLine tabRest
         )
 

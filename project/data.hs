@@ -32,6 +32,8 @@ module Data where
         | Neq Exp Exp
         | Gt Exp Exp
         | Lt Exp Exp
+        | GtEq Exp Exp 
+        | LtEq Exp Exp
         | And Flag Flag
         | Or Flag Flag
         deriving Eq
@@ -44,6 +46,8 @@ module Data where
         show (Neq x y) = show x ++ " != " ++ show y 
         show (Gt x y) = show x ++ " > " ++ show y
         show (Lt x y) = show x ++ " < " ++ show y
+        show (LtEq x y) = show x ++ " <= " ++ show y
+        show (GtEq x y) = show x ++ " >= " ++ show y
 
     -- Conditions
     data Cond = If Flag [AST]
@@ -92,12 +96,12 @@ module Data where
 
     
     --Each Node is its label and the list of things it points to
-    data Node = Node Label [Edge] deriving Eq 
+    data Node = Node Label Id deriving Eq 
     instance Show Node where 
-        show (Node l _) = "\nNode: " ++ l
+        show (Node l i) = "\nNode " ++ (show i) ++ ": " ++ l
 
     instance Ord Node where 
-        (Node one _) <= (Node two _) = one <= two
+        (Node _ a) <= (Node _ b) = a <= b
     
     --CNodes are an intermediary so the node can hang onto the choice text
     type CNode = (Node, String)
@@ -107,3 +111,6 @@ module Data where
         show (Edge (Node f _) (Node t _) c) = case c of 
             "" -> "\nEdge\n\tFrom: " ++ f ++ "\n\tTo: " ++ t ++ "\n\n"
             _ -> "\nEdge\n\tFrom: " ++ f ++ "\n\tTo: " ++ t ++ "\n\tVia: " ++ c ++ "\n"
+
+    instance Ord Edge where 
+        (Edge a1 a2 aC) <= (Edge b1 b2 bC) = (show a1 ++ show a2 ++ aC) <= (show b1 ++ show b2 ++ bC)

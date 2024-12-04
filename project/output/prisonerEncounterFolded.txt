@@ -1,18 +1,192 @@
 ([
-Node: prisoner_encounter_start,
-Node: prisoner_narrator_loop_join],[
+Node 0: ''I think I'm just going to...,
+Node 1: ''If that's how you're goin...,
+Node 2: ''If you want to leave, I'm...,
+Node 3: ''If you're so immovable, t...,
+Node 4: ''It seems I don't have muc...,
+Node 5: ''Okay. I'm trusting you.''...,
+Node 6: (Explore) ''How am I suppos...,
+Node 7: (Explore) ''I'm not giving ...,
+Node 8: (Explore) ''I'm not giving ...,
+Node 9: (Explore) ''I've been here ...,
+Node 10: (Explore) ''If you don't gi...,
+Node 11: (Explore) ''My intentions? ...,
+Node 12: (Explore) ''That other chai...,
+Node 13: (Explore) ''What happened a...,
+Node 14: (Explore) ''What would you ...,
+Node 15: (Explore) ''You realize tha...,
+Node 16: (Explore) ''You were asking...,
+Node 17: (Explore) ''You're the one ...,
+Node 18: (Explore) ''{b}I{/b} can cu...,
+Node 19: (Explore) Hey! Let me out o...,
+Node 20: (Explore) [[Inspect the sha...,
+Node 21: I'm not sure I need to do m...,
+Node 22: [[Leave the cabin and claim...,
+Node 23: [[Sit with her.],
+Node 24: [[Slay the Princess.],
+Node 25: [[Slay the Princess.],
+Node 26: prisoner_encounter_start,
+Node 27: prisoner_fight_menu,
+Node 28: prisoner_free_join,
+Node 29: prisoner_knife_given,
+Node 30: prisoner_knife_given_late_join,
+Node 31: prisoner_menu,
+Node 32: prisoner_narrator_loop_join,
+Node 33: prisoner_self_prison,
+Node 34: prisoner_self_prison_menu,
+Node 35: prisoner_strangle_join],[
 Edge
 	From: prisoner_encounter_start
-	To: I'm not sure I need to do much...
-	Via: I'm not sure I need to do much...
+	To: I'm not sure I need to do m...
+	Via: I'm not sure I need to do m...
 ,
 Edge
 	From: prisoner_encounter_start
-	To: [[Sit with her.]{/i}...
-	Via: [[Sit with her.]{/i}...
+	To: [[Sit with her.]
+	Via: [[Sit with her.]
 ,
 Edge
 	From: prisoner_encounter_start
-	To: [[Slay the Princess.]{/i}...
-	Via: [[Slay the Princess.]{/i}...
+	To: [[Slay the Princess.]
+	Via: [[Slay the Princess.]
+,
+Edge
+	From: prisoner_free_join
+	To: [[Leave the cabin and claim...
+	Via: [[Leave the cabin and claim...
+,
+Edge
+	From: prisoner_knife_given
+	To: prisoner_knife_given_late_join
+
+,
+Edge
+	From: prisoner_menu
+	To: ''I think I'm just going to...
+	Via: ''I think I'm just going to...
+,
+Edge
+	From: prisoner_menu
+	To: ''If that's how you're goin...
+	Via: ''If that's how you're goin...
+,
+Edge
+	From: prisoner_menu
+	To: ''If you want to leave, I'm...
+	Via: ''If you want to leave, I'm...
+,
+Edge
+	From: prisoner_menu
+	To: ''If you're so immovable, t...
+	Via: ''If you're so immovable, t...
+,
+Edge
+	From: prisoner_menu
+	To: ''It seems I don't have muc...
+	Via: ''It seems I don't have muc...
+,
+Edge
+	From: prisoner_menu
+	To: ''Okay. I'm trusting you.''...
+	Via: ''Okay. I'm trusting you.''...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''How am I suppos...
+	Via: (Explore) ''How am I suppos...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''I'm not giving ...
+	Via: (Explore) ''I'm not giving ...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''I'm not giving ...
+	Via: (Explore) ''I'm not giving ...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''I've been here ...
+	Via: (Explore) ''I've been here ...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''If you don't gi...
+	Via: (Explore) ''If you don't gi...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''My intentions? ...
+	Via: (Explore) ''My intentions? ...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''That other chai...
+	Via: (Explore) ''That other chai...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''What happened a...
+	Via: (Explore) ''What happened a...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''What would you ...
+	Via: (Explore) ''What would you ...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''You realize tha...
+	Via: (Explore) ''You realize tha...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''You were asking...
+	Via: (Explore) ''You were asking...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''You're the one ...
+	Via: (Explore) ''You're the one ...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) ''{b}I{/b} can cu...
+	Via: (Explore) ''{b}I{/b} can cu...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) Hey! Let me out o...
+	Via: (Explore) Hey! Let me out o...
+,
+Edge
+	From: prisoner_menu
+	To: (Explore) [[Inspect the sha...
+	Via: (Explore) [[Inspect the sha...
+,
+Edge
+	From: prisoner_menu
+	To: [[Slay the Princess.]
+	Via: [[Slay the Princess.]
+,
+Edge
+	From: prisoner_narrator_loop_join
+	To: prisoner_encounter_start
+	Via: Var "prisoner_position" == Val (String "start")
+,
+Edge
+	From: prisoner_narrator_loop_join
+	To: prisoner_menu
+
+,
+Edge
+	From: prisoner_self_prison
+	To: prisoner_self_prison_menu
+
+,
+Edge
+	From: prisoner_strangle_join
+	To: prisoner_fight_menu
+
 ])

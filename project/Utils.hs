@@ -47,6 +47,10 @@ module Utils where
     isVarToken (L.Var x) = True
     isVarToken _ = False
 
+    varVal :: Token -> String 
+    varVal (L.Var x) = x 
+    varval _ = ""
+
     isOpenParen :: Token -> Bool 
     isOpenParen OpenParen = True 
     isOpenParen _ = False
@@ -74,6 +78,12 @@ module Utils where
     isValToken (L.Bool x) = True 
     isValToken (Text x) = True 
     isValToken _ = False 
+
+    --There are SO MANY tokens we don't care about
+    isLineStartToken :: Token -> Bool
+    isLineStartToken Tab = True 
+    isLineStartToken Label = True 
+    isLineStartToken _ = False
 
     getVal :: Token -> Val 
     getVal (Num x) = Int (read x) 
@@ -105,7 +115,11 @@ module Utils where
     --draw edges from n to everything in xs
     connect :: Node -> [CNode] -> [Edge]
     connect _ [] = [] 
-    connect n ((x, str):xs) = Edge n x str : connect n xs
+    connect ((x, str):xs) = Edge n x str : connect n xs
+
+    cleanStr :: String -> String 
+    cleanStr s = let s2 = drop 4 (reverse $ drop 4 (reverse s)) in 
+        if length s2 > 30 then take 27 s2 ++ "..." else s2
 
     --if a node doesn't have edges I sometimes don't care about it
     removeEmpty :: [CNode] -> [CNode]
@@ -126,3 +140,11 @@ module Utils where
     lineToString (x:xs) = case x of 
         Tab -> "\n" ++ show x ++ ", " ++ toString xs 
         y -> show y ++ ", " ++ lineToString xs
+
+
+    dropDupes :: Ord a => [a] -> [a] 
+    dropDupes xs = Set.toList $ Set.fromList xs
+
+    cleanResults :: ([Node], [Edge]) -> ([Node], [Edge])
+    cleanResults (ns, es) = (dropDupes $ (ns++ readEdges es), dropDupes es)
+    
