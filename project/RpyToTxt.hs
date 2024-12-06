@@ -102,25 +102,37 @@ module Main where
     --takes each line, parses it into tokens, unless it's only whitespace, adds them all together
     lexEachLine :: [String] -> [Token]
     lexEachLine [] = []
-    lexEachLine (x:xs) = if (not . all isSpace) x && (head x /= '#') then alexScanTokens x ++ lexEachLine xs else lexEachLine xs
+    lexEachLine (x:xs) = 
+        if (not . all isSpace) x && (not . elem '#') x 
+            then alexScanTokens x ++ lexEachLine xs 
+            else lexEachLine xs
         
+    printEachLine :: [String] -> IO [Token]
+    printEachLine [] = return []
+    printEachLine (x:xs) = 
+        if (not . all isSpace) x && (not . elem '#') x 
+            then do 
+                print (show $ alexScanTokens x)
+                printEachLine xs 
+            else printEachLine xs
 
     main :: IO ()
     main = do 
-        sourceFile <- readFile "../scripts/paths/prisoner/prisoner_1/prisoner_1_encounter.rpy"
+        sourceFile <- readFile "singleScript.rpy"
+        --printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
-        writeFile "output/prisonerEncounterLexed.txt" (toString lexed)
+        writeFile "output/finalLexed.txt" (toString lexed)
         print "finished lexing"
         let forest = fst $ head $ P.runParser top lexed
-        writeFile "output/prisonerEncounterTree.txt" (show forest)
+        writeFile "output/finalTree.txt" (show forest)
         print "finished parsing"
         let (es, ns) = getTopEdges forest []
         let bigTree = cleanResults (ns, es)
-        writeFile "output/prisonerEncounterFolded.txt" (show bigTree)
+        writeFile "output/finalFolded.txt" (show bigTree)
         print "finished flattening"
         let output = H.htmlIfy bigTree
         print "finished making it HTML"
-        writeFile "output/prisonerEncounterOutput.html" output
+        writeFile "output/finalOutput.html" output
         print "all done!"
         
     

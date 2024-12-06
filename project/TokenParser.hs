@@ -151,41 +151,57 @@ module TokenParser where
                     (Cond L.If) -> do return (D.If exp body)
                     (Cond L.Elif) -> do return (D.Elif exp body)
 
+
+    --bool exp = (exp) | var and exp | var or exp | var is not None | var
+
     --a bool exp = check | (check) | check OR exp | check AND exp 
     boolExp :: P.Parser Flag 
-    boolExp = do 
-        c <- check 
+    boolExp = 
         do 
-            o <- orToken
-            Or c <$> boolExp
-            <|> do 
-                a <- andToken
-                And c <$> boolExp
-            <|> do 
-                return c
+            c <- check 
+            do 
+                o <- orToken
+                Or c <$> boolExp
+                <|> do 
+                    a <- andToken
+                    And c <$> boolExp
+                <|> do 
+                    return c
+        <|> do 
+            oP <- openParen 
+            inC <- boolExp 
+            cP <- closeParen 
+            do 
+                o <- orToken
+                Or inC <$> boolExp
+                <|> do 
+                    a <- andToken
+                    And inC <$> boolExp
+                <|> do 
+                    return inC
 
-    --check = var == val | var != val | var > val, etc.
+
+    valVar :: P.Parser (Either Var Val)
+    valVar = do Right <$> val <|> do Left <$> var
+
     check :: P.Parser Flag 
-    check = do 
-        oP <- openParen 
-        inC <- boolExp 
-        cP <- closeParen 
-        return inC
-        <|> do innerCheck
-
-
-    innerCheck :: P.Parser Flag 
-    innerCheck = do
-        v1 <- var 
+    check = do
+        v1Temp <- var 
+        let v1 = D.Var v1Temp
         s <- symbol
-        v2 <- val 
+        v2Temp <- valVar
+
+        let v2 = case v2Temp of 
+                Left vr -> (D.Var vr)
+                Right vl -> (Val vl)
+            
         case s of 
-            "==" -> return (Eq (D.Var v1) (Val v2))
-            "!=" -> return (Neq (D.Var v1) (Val v2))
-            ">" -> return (Gt (D.Var v1) (Val v2))
-            "<" -> return (Lt (D.Var v1) (Val v2))
-            "<=" -> return (LtEq (D.Var v1) (Val v2))
-            ">=" -> return (GtEq (D.Var v1) (Val v2))
+            "==" -> return (Eq v1 v2)
+            "!=" -> return (Neq v1 v2)
+            ">" -> return (Gt v1 v2)
+            "<" -> return (Lt v1 v2)
+            "<=" -> return (LtEq v1 v2)
+            ">=" -> return (GtEq v1 v2)
         <|> do 
             v1 <- var 
             is_ <- var 
@@ -216,11 +232,16 @@ module TokenParser where
         s <- symbol 
         if s == "=" then do 
             ASTAssign . Assign name . D.Val <$> val
+            <|> do ASTAssign . Assign name . D.Var <$> var
         else if s == "+=" then do 
             ASTAssign . Inc name . D.Val <$> val
         else if s == "-=" then do 
             ASTAssign . Dec name . D.Val <$> val
         else empty
+        <|> do
+            _ <- dollarToken 
+            name <- var 
+            return (ASTAssign (Assign name (D.Val (D.Bool True))))
 
 
 
@@ -235,7 +256,11 @@ module TokenParser where
             Jump -> P.runParser jump tabRest 
             --dollar sign just means "this line is in python" which can be var assign, but could mean nothing
             Dollar -> case (head (tail tabRest)) of 
-                (L.Var x) -> P.runParser assign tabRest 
+                (L.Var x) -> do 
+                    let (as, restAgain) = head $ P.runParser assign tabRest 
+                    case (head restAgain) of 
+                        OpenParen -> P.runParser eatLine restAgain 
+                        _ -> P.runParser assign tabRest 
                 _ -> P.runParser eatLine tabRest
             Menu -> P.runParser choiceBranch tabRest
             Cond _ -> do 

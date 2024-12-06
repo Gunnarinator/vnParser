@@ -1,0 +1,26 @@
+"{i} [[Slay the Princess.]{/i}" 
+
+if 
+    (can_spectre and 
+        (spectre_encountered == False or razor_encountered == False)
+    ) 
+    
+    or 
+    
+    (basement_1_nerves_armed and razor_encountered == False) 
+    
+    or 
+    
+    (basement_1_nerves_steeled_hesitated and   
+        (adversary_encountered == False 
+        or tower_encountered == False 
+        or nightmare_encountered == False)
+    ) 
+    
+    or 
+    
+    (basement_1_nerves_fear and tower_encountered == False) 
+    
+    and 
+    
+    can_slay:
