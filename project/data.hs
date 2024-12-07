@@ -70,6 +70,9 @@ module Data where
     -- Full AST
     data Choice = Choice String (Maybe Cond) [AST]
         deriving Eq
+
+    getChoiceLabel :: Choice -> String
+    getChoiceLabel (Choice s _ _) = s
     
     instance Show Choice where 
         show (Choice str mc xp) = case mc of 
@@ -92,6 +95,9 @@ module Data where
         show (ASTConds cs) = "\n" ++ show cs ++ "\n"
         show (ASTJump x) = "\nJump to " ++ x ++ "\n"
 
+
+    getLabelText :: AST -> Label
+    getLabelText (ASTLabel x _) = x
 
     data NodeColor = Red | Blue | Green deriving (Eq)
     instance Show NodeColor where 

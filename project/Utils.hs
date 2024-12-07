@@ -2,7 +2,6 @@ module Utils where
     import Control.Exception
     import Lexer as L
     import Data as D
-    import State as S
     import qualified Data.Set as Set
 
     isColonToken :: Token -> Bool 
@@ -170,4 +169,27 @@ module Utils where
     readEdges :: [Edge] -> [Node]
     readEdges [] = []
     readEdges ((Edge from to _):es) = [from, to] ++ readEdges es
+
+
+    getEmptiesInner :: [Choice] -> [Edge] -> [Choice] -> [Edge] -> [Choice]
+    --for c in cs, if c is in no edges, then add it to the retval list
+    getEmptiesInner [] _ ret _ = ret 
+    getEmptiesInner (c:cs) [] ret ogEs = getEmptiesInner cs ogEs (c:ret) ogEs
+    getEmptiesInner (c:cs) ((Edge f t l):es) ret ogEs = 
+        if getChoiceLabel c == l 
+            then getEmptiesInner cs ogEs ret ogEs
+            else getEmptiesInner (c:cs) es ret ogEs
+
+    getEmpties :: [Choice] -> [Edge] -> [Choice]
+    getEmpties cs es = getEmptiesInner cs es [] es
+
+
+    --let checkEs = checkChoices cs curN (head as)
+    checkChoices :: [Choice] -> Node -> AST -> [Edge] -> [Choice]
+    checkChoices [] _ _ _ = []
+    checkChoices _ _ _ [] = []
+    checkChoices cs n a es = 
+        case a of 
+            ASTLabel _ _ -> getEmpties cs es
+            _ -> []
     

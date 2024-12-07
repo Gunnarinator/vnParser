@@ -207,12 +207,11 @@ module TokenParser where
             is_ <- var 
             not <- var 
             none <- var 
-            if (is_ == "is" && not == "not" && none == "None") 
+            if is_ == "is" && not == "not" && none == "None"
                 then return (Neq (D.Var v1) (Val (String "None"))) else empty
         
         <|> do
-            v1 <- var 
-            return (Base v1) 
+            Base <$> var
 
     
     define :: P.Parser (Var, Val)
@@ -255,10 +254,10 @@ module TokenParser where
             Label -> P.runParser (label d) tabRest 
             Jump -> P.runParser jump tabRest 
             --dollar sign just means "this line is in python" which can be var assign, but could mean nothing
-            Dollar -> case (head (tail tabRest)) of 
+            Dollar -> case head (tail tabRest) of 
                 (L.Var x) -> do 
                     let (as, restAgain) = head $ P.runParser assign tabRest 
-                    case (head restAgain) of 
+                    case head restAgain of 
                         OpenParen -> P.runParser eatLine restAgain 
                         _ -> P.runParser assign tabRest 
                 _ -> P.runParser eatLine tabRest
@@ -266,7 +265,7 @@ module TokenParser where
             Cond _ -> do 
                 let condResult = P.runParser (conditional d) tabRest 
                 if condResult /= [] then do 
-                    let (conds, condRest) = head $ condResult
+                    let (conds, condRest) = head condResult
                     return (ASTConds [conds], condRest)
                 else P.runParser eatLine tabRest
             _ -> P.runParser eatLine tabRest
