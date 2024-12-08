@@ -19,7 +19,7 @@ module Main where
             let (n, newEnv) = findNode str nodeEnv Red
             let (bodyEdges, bodyEnv) = getEdges body n newEnv ""
             let (restOfEs, finalEnv) = getTopEdges as bodyEnv
-            if bodyEdges == [] 
+            if null bodyEdges
                 then do
                     let (nextN, nextEnv) = findNode (getLabelText (head as)) finalEnv Red
                     let bodyEdges = [Edge n nextN ""]
@@ -42,7 +42,10 @@ module Main where
             let e = Edge curN n curLabel
             let (bodyEdges, bodyEnv) = getEdges body n newEnv curLabel 
             let (restOfEs, finalEnv) = getEdges as curN bodyEnv curLabel
-            (e:(bodyEdges ++ restOfEs), finalEnv)
+            if null bodyEdges
+                then (bodyEdges ++ restOfEs, finalEnv)
+                else (e:(bodyEdges ++ restOfEs), finalEnv)
+            
 
         --for Jumps we need to draw an edge from this node to that node
         (ASTJump to) -> do 
@@ -63,7 +66,7 @@ module Main where
             let (es, newEnv) = travelChoices cs curN nodeEnv 
             --if the next line is a label and there are choices that don't have jumps, do
                 --from curN to nextLabel via choiceText
-            if (not . null) as && (not . null) (checkChoices cs curN (head as) es)
+            if (not . null) as && (not . null) es && (not . null) (checkChoices cs curN (head as) es)
                 then do 
                     let empChoices = checkChoices cs curN (head as) es
                     let (n, finalEnv) = findNode (getLabelText (head as)) nodeEnv Red
@@ -136,6 +139,19 @@ module Main where
                 printEachLine xs 
             else printEachLine xs
 
+    --triple checks that all nodes referenced by edges actually exist in the list of nodes.
+    checkStuff :: ([Node], [Edge]) -> IO () 
+    checkStuff (_, []) = print "all good!"
+    checkStuff (ns, Edge f t l:es) = let e = Edge f t l in
+        if elem f ns && elem t ns 
+            then checkStuff (ns, es)
+        else if elem f ns 
+            then print ("hey wait we fucked up, t isn't real:" ++ show e) 
+        else if elem t ns  
+            then print ("hey wait we fucked up, f isn't real: " ++ show e)
+        else 
+            print ("super fuck, neither are real: " ++ show e)
+
     main :: IO ()
     main = do 
         sourceFile <- readFile "singleScript.rpy"
@@ -148,6 +164,7 @@ module Main where
         print "finished parsing"
         let (es, ns) = getTopEdges forest []
         let bigTree = cleanResults (ns, es)
+        --checkStuff bigTree
         writeFile "output/trueFolded.txt" (show bigTree)
         print "finished flattening"
         let output = H.htmlIfy bigTree
