@@ -3,6 +3,7 @@ module Utils where
     import Lexer as L
     import Data as D
     import qualified Data.Set as Set
+    import Data.List
 
     isColonToken :: Token -> Bool 
     isColonToken Colon = True 
@@ -155,8 +156,59 @@ module Utils where
         if getF e == getT e then delSame es 
         else e:delSame es
 
+    defEdge :: Edge 
+    defEdge = Edge (Node "" 0 Red) (Node "" 0 Red) ""
+
+    isLinear :: Node -> [Edge] -> Either Bool (Edge, Edge)
+    isLinear n es = isLinearInner n es (defEdge, defEdge)
+
+    --a node is "linear" if it points to one node and one node points to it.
+    isLinearInner :: Node -> [Edge] -> (Edge, Edge) -> Either Bool (Edge, Edge)
+    isLinearInner n [] (f1, t1) = 
+        if f1 == defEdge || t1 == defEdge 
+            then Left False 
+            else Right (f1, t1)
+            
+
+    isLinearInner n ((Edge f t l):es) (f1,t1) 
+        | n == f = if f1 == defEdge 
+                then isLinearInner n es (Edge f t l, t1)
+                else Left False
+        | n == t = if t1 == defEdge 
+            then isLinearInner n es (f1, Edge f t l)
+            else Left False
+        | otherwise = isLinearInner n es (f1, t1)
+
+
+    --this thing is backwards probably. 
+        --the node we're trying to remove is the from of the first and the to of the second
+        --isLinear will return (f, t) where the node n appears only as the from in f and to in t
+    weldEdge :: (Edge, Edge) -> Edge 
+    weldEdge (Edge f1 t1 l1, Edge f2 t2 l2) =
+        Edge f2 t1 ""
+
+    cullEdges :: [Node] -> [Edge] -> [Edge]
+    cullEdges [] es = es 
+    cullEdges (n:ns) es = 
+        case isLinear n es of 
+            Left _ -> cullEdges ns es 
+            Right (f, t) -> 
+                weldEdge (f, t) : delete f (delete t (cullEdges ns es))
+
+
+    fullCull :: [Node] -> [Edge] -> [Edge] 
+    fullCull ns es = 
+        let nextEs = cullEdges ns es in 
+            if nextEs == es then nextEs 
+            else fullCull ns nextEs
+
     cleanResults :: ([Node], [Edge]) -> ([Node], [Edge])
-    cleanResults (ns, es) = (dropDupes $ readEdges es, dropDupes (delSame es))
+    cleanResults (ns, es) = 
+        let finalEs = dropDupes (fullCull ns (delSame es)) in 
+            (dropDupes $ readEdges finalEs, dropDupes finalEs)
+
+    oldCleanResults :: ([Node], [Edge]) -> ([Node], [Edge])
+    oldCleanResults (ns, es) = (dropDupes $ readEdges es, es)
 
     --connect the node to the first node in each of the edges
     connect :: Node -> [Edge] -> [Edge]
@@ -193,3 +245,13 @@ module Utils where
             ASTLabel _ _ -> getEmpties cs es
             _ -> []
     
+
+    x = Node "x" 1 Red 
+    y = Node "y" 2 Red 
+    z = Node "z" 3 Red 
+
+    xy = Edge x y "" 
+    yz = Edge y z "" 
+
+    exNs = [x, y, z]
+    exEs = [xy, yz]

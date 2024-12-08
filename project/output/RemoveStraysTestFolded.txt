@@ -1,15 +1,6 @@
 ([
 Node 0: start_2,
-Node 1: adversary_1_start,
-Node 2: beast_1_start,
-Node 3: damsel_1_start,
-Node 4: nightmare_1_start,
-Node 5: prisoner_1_start,
-Node 6: razor_1_start,
-Node 7: spectre_1_start,
 Node 8: stranger_1_start,
-Node 9: tower_1_start,
-Node 10: witch_1_start,
 Node 11: chapter_2_stranger_rejoin_1,
 Node 12: adversary_1_cabin_arrival,
 Node 13: beast_1_cabin_arrival,
@@ -31,7 +22,6 @@ Node 28: spectre_stranger_rejoin,
 Node 29: tower_stranger_rejoin,
 Node 30: witch_stranger_rejoin,
 Node 31: basement_1_empty_start,
-Node 32: ''Hold on. Let's talk a bit...,
 Node 33: basement_1_empty_talk,
 Node 37: (Explore) ''I wasn't kiddin...,
 Node 38: basement_1_empty_task_share,
@@ -79,7 +69,6 @@ Node 166: basement_1_empty_shadows_join,
 Node 168: ''I'll wait.'',
 Node 170: [[Venture into the shadows.],
 Node 175: basement_1_knife_start,
-Node 176: basement_1_knife_confronted,
 Node 178: basement_1_nerves_steeled,
 Node 180: basement_1_knife_dropped,
 Node 182: basement_1_nerves_steeled_menu,
@@ -87,7 +76,6 @@ Node 186: ''I'm not dropping the blad...,
 Node 188: basement_1_knife_dropped_steeled,
 Node 190: basement_1_knife_slay_join,
 Node 196: [[Drop the blade.],
-Node 198: [[Slay the Princess.],
 Node 204: I'm not sure. I feel like s...,
 Node 205: ch1_razor_alt_start,
 Node 207: alt_razor_final_join,
@@ -122,12 +110,10 @@ Node 295: [[Warn her.],
 Node 296: [[Slay the Princess.],
 Node 330: [[Slay the Princess.],
 Node 331: [[Slay the Princess.],
-Node 337: start,
 Node 338: forest_dialogue,
 Node 352: start_get_this_over_with_join,
 Node 353: Okay, I'm sold. Let's get t...,
 Node 354: cabin_arrival_1,
-Node 359: [[Turn around and leave.],
 Node 360: turn_and_leave_join,
 Node 361: Okay, fine. You're persiste...,
 Node 363: Okay, fine. I'll go to the ...,
@@ -141,10 +127,8 @@ Node 376: cabin_arrival_1_menu,
 Node 378: [[Turn around (again) and l...,
 Node 379: caught_start,
 Node 380: There's no fighting this, i...,
-Node 387: cabin_interrior_1,
 Node 388: cabin_interrior_1_menu,
 Node 390: [[Enter the basement.],
-Node 392: adversary_1_fight_immediate,
 Node 393: adversary_1_fight_immediate_late_join,
 Node 394: [[Keep pushing.],
 Node 395: adversary_1_blade_fight_push_menu,
@@ -159,7 +143,6 @@ Node 410: adversary_penultimate,
 Node 414: (Explore) ''Don't you want ...,
 Node 419: ''Actually, I think I'm don...,
 Node 420: adversary_pacifism_explore,
-Node 424: [[Unlodge the blade and att...,
 Node 425: adversary_1_fight_agile,
 Node 427: adversary_no_die_join,
 Node 428: adversary_stabbed_heart_menu,
@@ -183,7 +166,6 @@ Node 491: ''Fine. Let's do this.'' [[...,
 Node 492: adversary_1_fight_unarmed,
 Node 494: [[Attack her unarmed.],
 Node 497: adversary_1_retrieve_knife,
-Node 499: adversary_1_close_join,
 Node 500: ''I don't know what happene...,
 Node 501: adversary_1_empty_leave,
 Node 504: adversary_free_attempt,
@@ -192,25 +174,19 @@ Node 507: adversary_1_close_menu,
 Node 508: (Explore) ''Why do you want...,
 Node 511: (Explore) ''If all you want...,
 Node 514: adversary_1_close_free_join,
-Node 515: (Explore) ''Don't you want ...,
-Node 517: (Explore) ''What happened a...,
 Node 518: adversary_1_close_post_death_menu,
 Node 524: [[Leave it at that.],
 Node 527: (Explore) ''We have to figu...,
 Node 530: adversary_1_princess_grin,
-Node 536: (Explore) ''The last time w...,
 Node 541: ''I'm not going to fight yo...,
 Node 542: adversary_1_refuse,
 Node 545: [[Turn around and leave.],
 Node 547: [[Remain silent.],
 Node 549: adversary_1_flee,
-Node 550: (Explore) Okay, team. What ...,
 Node 551: adversary_1_flee_die_join,
 Node 552: fury_start,
 Node 557: adversary_1_upstairs,
-Node 558: [[Die.],
 Node 559: adversary_1_flee_die_action,
-Node 561: [[Turn and fight.],
 Node 562: adversary_1_flee_free_stopped_join,
 Node 564: [[Run like hell.],
 Node 565: adversary_flee_late_join,
@@ -219,16 +195,13 @@ Node 569: adversary_1_pulverized_upstairs,
 Node 570: adversary_2_start,
 Node 575: adversary_pacifism,
 Node 579: adversary_pacifism_death_join,
-Node 580: [[Get up.],
 Node 581: adversary_pacifism_divert_menu,
-Node 590: [[Remain silent.],
 Node 592: adversary_pacifism_end,
 Node 596: [[Remain silent.],
 Node 599: adversary_1_retrieve_knife_menu,
 Node 602: ''We're doing it. We're sta...,
 Node 604: ''We're leaving.'',
 Node 609: adversary_1_face_missing_menu,
-Node 611: ''Can... can I go get my pr...,
 Node 612: adversary_1_face_missing_princess_attack_join,
 Node 613: adversary_1_face_missing_post,
 Node 620: adversary_delayed_fight_menu,
@@ -237,9 +210,7 @@ Node 625: We're doing it. [[Free the ...,
 Node 626: [[Attack the Princess.],
 Node 627: adversary_skeptic_fight_join,
 Node 640: adversary_1_forest,
-Node 641: (Explore) I'm getting a ter...,
 Node 642: adversary_1_forest_narrator_share_join,
-Node 651: (Explore) Let's talk about ...,
 Node 652: adversary_1_forest_princess,
 Node 659: Nevermind.,
 Node 660: adversary_1_forest_princess_leaving,
@@ -250,7 +221,6 @@ Node 670: [[Approach the mirror.],
 Node 671: adversary_cabin_1_mirror_join,
 Node 679: adversary_2_menu,
 Node 683: adversary_2_exterior,
-Node 687: adversary_2_interior,
 Node 688: adversary_2_interior_menu,
 Node 690: adversary_2_mirror_join,
 Node 692: (Explore) But there's no wa...,
@@ -270,9 +240,7 @@ Node 721: adversary_2_free_ending,
 Node 725: needle_freedom_cont,
 Node 730: adversary_2_freedom_join,
 Node 731: adversary_2_combat_ending_menu,
-Node 732: ''Are you sure you want to ...,
 Node 735: adversary_2_combat_finale_join,
-Node 736: [[Slay the Princess.],
 Node 738: beast_1_encounter_start,
 Node 739: beast_encounter_menu_1,
 Node 741: beast_1_encounter_dodged,
@@ -289,7 +257,6 @@ Node 766: wild_start,
 Node 768: beast_surrender,
 Node 773: beast_encounter_outside_menu,
 Node 774: beast_encounter_attack_staging,
-Node 783: [[Run for the stairs.],
 Node 784: beast_stairs_run,
 Node 786: beast_attack_2,
 Node 787: beast_attack_3,
@@ -306,11 +273,8 @@ Node 807: beast_attack_4_menu,
 Node 810: [[Play dead.],
 Node 812: [[Stand still.],
 Node 814: beast_2_ending_join,
-Node 815: beast_2_start,
 Node 816: beast_1_forest,
-Node 817: (Explore) I'm getting a ter...,
 Node 818: beast_1_forest_narrator_share_join,
-Node 826: (Explore) Let's talk about ...,
 Node 827: beast_1_forest_princess,
 Node 834: Nevermind.,
 Node 835: beast_1_forest_princess_leaving,
@@ -326,31 +290,23 @@ Node 857: beast_2_exterior_menu,
 Node 863: beast_2_exterior,
 Node 865: I'm done with this. Bye! [[...,
 Node 867: beast_2_stubborn_plan_join,
-Node 869: beast_2_interior,
 Node 870: beast_2_cabin_menu,
 Node 872: [[Approach the mirror.],
 Node 874: beast_2_stairs,
-Node 876: ''We have unfinished busine...,
 Node 877: beast_2_stairs_comment,
 Node 878: beast_2_basement,
 Node 884: beast_2_basement_menu,
 Node 888: beast_2_fight,
 Node 890: beast_2_free,
 Node 891: den_pristine_fight,
-Node 892: den_pristine_free,
-Node 893: damsel_1_encounter_start,
 Node 894: damsel_1_menu,
 Node 897: damsel_how_free_join,
-Node 898: (Explore) ''Do I have to cu...,
 Node 902: damsel_end_world_join,
-Node 903: (Explore) ''I have to ask.....,
-Node 907: damsel_1_free,
 Node 908: [[Slay the Princess.],
 Node 909: damsel_1_murder,
 Node 912: damsel_1_murder_2,
 Node 915: grey_start,
 Node 916: damsel_free_menu,
-Node 917: (Explore) ''What do you wan...,
 Node 918: damsel_depersonalization_menu,
 Node 920: damsel_happy_late_join,
 Node 921: (Explore) ''You're just par...,
@@ -373,9 +329,7 @@ Node 956: [[Say nothing.],
 Node 957: happy_start,
 Node 961: damsel_leave_jump_late,
 Node 963: damsel_1_forest,
-Node 964: (Explore) I'm getting a ter...,
 Node 965: damsel_1_forest_narrator_share_join,
-Node 974: (Explore) Let's talk about ...,
 Node 975: damsel_1_forest_princess,
 Node 980: Nevermind.,
 Node 981: damsel_1_forest_princess_leaving,
@@ -385,9 +339,7 @@ Node 990: (Explore) You didn't say an...,
 Node 991: [[Approach the mirror.],
 Node 992: damsel_cabin_1_mirror_join,
 Node 1000: nightmare_1_forest,
-Node 1001: (Explore) I'm getting a ter...,
 Node 1002: nightmare_1_forest_narrator_share_join,
-Node 1010: (Explore) Let's talk about ...,
 Node 1011: nightmare_1_forest_princess,
 Node 1017: Nevermind.,
 Node 1018: nightmare_1_forest_princess_leaving,
@@ -396,31 +348,22 @@ Node 1026: cabin_interior_2_nightmare_menu,
 Node 1027: (Explore) You didn't say an...,
 Node 1028: [[Approach the mirror.],
 Node 1029: nightmare_cabin_1_mirror_join,
-Node 1036: [[Enter the basement.],
 Node 1037: ch2_nightmare_stairs_menu,
 Node 1039: [[Step off into the void be...,
 Node 1041: nightmare_1_basement_stairs_void_join,
 Node 1046: nightmare_1_basement,
 Node 1049: nightmare_1_basement_direction_join,
-Node 1052: Go back the way you came.,
-Node 1053: nightmare_encounter_start,
 Node 1055: nightmare_encounter_menu,
 Node 1058: nightmare_want_leave_join,
-Node 1059: (Explore) ''What happened a...,
 Node 1070: (Explore) ''How about I jus...,
 Node 1071: nightmare_can_die_join,
-Node 1073: (Explore) ''Does that mean ...,
 Node 1076: (Explore) ''We don't have t...,
 Node 1079: nightmare_delusion_join,
-Node 1080: ''I'm not doing any of this...,
 Node 1081: nightmare_delusion_late_join,
-Node 1082: nightmare_2_start,
 Node 1085: nightmare_leave_together_start,
 Node 1088: [[Slay the Princess.],
-Node 1089: nightmare_kill_join,
 Node 1091: nightmare_leave_menu,
 Node 1094: nightmare_stairs_leave_join,
-Node 1095: [[Step onto the stairs.],
 Node 1096: nightmare_stairs_blade_menu,
 Node 1098: (Explore) [[Try the door.],
 Node 1099: nightmare_upstairs_slay_menu,
@@ -434,7 +377,6 @@ Node 1126: wraith_start,
 Node 1127: [[Wait.],
 Node 1129: nightmare_2_menu,
 Node 1132: nm2_how_many_join,
-Node 1133: (Explore) ''That's a good q...,
 Node 1141: nightmare_2_cabin_arrive,
 Node 1142: ''The only way out is to do...,
 Node 1144: [[Continue to do nothing.],
@@ -444,7 +386,6 @@ Node 1150: [[Approach the mirror.],
 Node 1151: [[Proceed.],
 Node 1153: nightmare_2_blade_join,
 Node 1161: nightmare_2_hand_join,
-Node 1166: [[Just take her hand, and s...,
 Node 1167: mirror_nightmare_2,
 Node 1169: prisoner_encounter_start,
 Node 1170: I'm not sure I need to do m...,
@@ -455,38 +396,26 @@ Node 1176: prisoner_strangle_join,
 Node 1178: [[Slay the Princess.],
 Node 1180: prisoner_narrator_loop_join,
 Node 1181: (Explore) [[Inspect the sha...,
-Node 1183: prisoner_self_prison,
 Node 1188: prisoner_intentions_join,
-Node 1189: (Explore) ''My intentions? ...,
-Node 1192: (Explore) ''What happened a...,
 Node 1193: prisoner_what_happened_died,
 Node 1196: prisoner_what_do_join,
-Node 1198: (Explore) ''What would you ...,
 Node 1201: prisoner_no_give_explore_join,
 Node 1206: (Explore) ''{b}I{/b} can cu...,
-Node 1209: prisoner_knife_given,
 Node 1211: ''If that's how you're goin...,
 Node 1213: ''It seems I don't have muc...,
 Node 1217: [[Slay the Princess.],
 Node 1219: prisoner_self_prison_menu,
-Node 1224: [[Wait in silence.],
 Node 1225: prisoner_forever_menu_2,
 Node 1229: prisoner_knife_given_late_join,
 Node 1230: prisoner_head_choice,
 Node 1232: prisoner_dead_late_join,
-Node 1234: prisoner_free_join,
-Node 1236: prisoner_fight_menu,
 Node 1239: prisoner_happy_menu,
 Node 1243: prisoner_happy_join,
-Node 1245: Well, you might not be happ...,
 Node 1246: prisoner_post_happy_menu,
 Node 1250: prisoner_slay_self_join,
-Node 1254: [[Slay yourself.],
 Node 1255: cage_start,
 Node 1257: prisoner_1_forest,
-Node 1258: (Explore) I'm getting a ter...,
 Node 1259: prisoner_1_forest_narrator_share_join,
-Node 1267: (Explore) Let's talk about ...,
 Node 1268: prisoner_1_forest_princess,
 Node 1273: Nevermind.,
 Node 1274: prisoner_1_forest_princess_leaving,
@@ -500,17 +429,12 @@ Node 1293: prisoner_knife_take_force,
 Node 1295: prisoner_knife_take_force_join,
 Node 1298: razor_1_basement_menu,
 Node 1299: razor_1_initiative,
-Node 1313: (Explore) ''What if we're b...,
 Node 1314: razor_world_end_join,
-Node 1321: razor_1_approach,
 Node 1323: razor_1_leave,
-Node 1326: razor_1_slay_attempt,
 Node 1327: razor_1_end,
 Node 1328: razor_2_start,
 Node 1329: razor_1_forest,
-Node 1330: (Explore) I'm getting a ter...,
 Node 1331: razor_1_forest_narrator_share_join,
-Node 1340: (Explore) Let's talk about ...,
 Node 1341: razor_1_forest_princess,
 Node 1347: Nevermind.,
 Node 1348: razor_1_forest_princess_leaving,
@@ -533,10 +457,8 @@ Node 1389: razor_2_armed_beat_2,
 Node 1390: razor_2_armed_montage,
 Node 1391: razor_2_armed_cold_early_join,
 Node 1393: razor_2_armed_montage,
-Node 1398: We're going to let her stab...,
 Node 1402: razor_2_armed_montage_loop,
 Node 1403: razor_final_staging,
-Node 1404: razor_2_unarmed_start,
 Node 1405: razor_2_unarmed_beat_1,
 Node 1406: We're fighting her, obviously.,
 Node 1408: razor_2_unarmed_cheated_join,
@@ -550,8 +472,6 @@ Node 1424: razor_2_unarmed_montage,
 Node 1432: razor_2_unarmed_montage_loop,
 Node 1433: razor_2_cabin_menu,
 Node 1434: [[Approach the mirror.],
-Node 1436: razor_final_start_knife,
-Node 1437: razor_final_start_unarmed,
 Node 1438: razor_final_basement,
 Node 1439: razor_knife_final_menu,
 Node 1440: razor_empty_final_menu,
@@ -559,8 +479,6 @@ Node 1441: razor_final_mirror,
 Node 1445: mirror_n_wipe,
 Node 1446: spectre_1_forest,
 Node 1448: spectre_1_forest_narrator_share_join,
-Node 1449: (Explore) I'm getting a ter...,
-Node 1458: (Explore) Let's talk about ...,
 Node 1459: spectre_1_forest_princess,
 Node 1465: Nevermind.,
 Node 1466: spectre_1_forest_princess_leaving,
@@ -570,23 +488,18 @@ Node 1475: (Explore) You didn't say an...,
 Node 1476: [[Approach the mirror.],
 Node 1477: spectre_cabin_1_mirror_join,
 Node 1485: spectre_encounter_start,
-Node 1486: [[Slay the Princess.],
 Node 1487: spectre_slay_join,
 Node 1488: spectre_hostile_join,
-Node 1490: [[Grab her.],
 Node 1491: spectre_grab_join,
 Node 1492: spectre_menu_hostile,
 Node 1495: spectre_menu_friendly,
-Node 1500: (Explore) ''And where are y...,
 Node 1501: spectre_friendly_home_reveal,
 Node 1504: spectre_friendly_possession_early_join,
-Node 1505: (Explore) ''Stop playing th...,
 Node 1506: spectre_victim_stop,
 Node 1507: (Explore) ''That knife coul...,
 Node 1509: (Return) [[Leave it at that.],
 Node 1513: (Explore) ''Do you want me ...,
 Node 1515: (Explore) ''I'm sorry. Is t...,
-Node 1518: (Explore) ''What do you wan...,
 Node 1519: spectre_friendly_possession_join,
 Node 1520: spectre_friendly_possession_menu,
 Node 1522: (Explore) ''You {b}won't{/b...,
@@ -597,13 +510,9 @@ Node 1530: spectre_world_end_join,
 Node 1532: spectre_possession_join,
 Node 1533: ''The answer's no.'',
 Node 1534: spectre_death,
-Node 1538: (Explore) ''If I knew I'd w...,
 Node 1539: spectre_had_talk_again,
-Node 1541: (Explore) ''I died too and ...,
 Node 1542: spectre_floating,
-Node 1544: (Explore) ''You're dead. Or...,
 Node 1545: spectre_how_hurt,
-Node 1550: (Explore) ''I was told you ...,
 Node 1551: spectre_world_end_menu,
 Node 1562: (Explore) ''If you can go t...,
 Node 1566: ''Okay. I've given it enoug...,
@@ -612,16 +521,12 @@ Node 1569: spectre_retrieve_abandon_join,
 Node 1571: ''Right. I don't think ther...,
 Node 1575: spectre_possession_menu,
 Node 1578: spectre_self_slay_join,
-Node 1580: spectre_free_start,
 Node 1581: spectre_pristine_start,
 Node 1582: spectre_leaving_menu,
 Node 1587: spectre_kill_player,
-Node 1588: ''Did you miss?'',
 Node 1589: spectre_kill_player_join,
-Node 1600: (Explore) ''Of course I att...,
 Node 1601: spectre_hostile_world_join,
 Node 1602: spectre_hostile_world_menu,
-Node 1609: (Explore) ''What do you wan...,
 Node 1610: spectre_hostile_possession_join,
 Node 1611: spectre_hostile_possession_menu,
 Node 1617: ''The answer is no.'',
@@ -632,7 +537,6 @@ Node 1628: [[Slay the Princess, harder.],
 Node 1630: [[Grab the Princess, but tr...,
 Node 1632: ''Fine. If I can't hurt you...,
 Node 1634: ''Right. I don't think ther...,
-Node 1636: stranger_1_cabin_start,
 Node 1637: cabin_interior_2_stranger_menu,
 Node 1638: (Explore) You didn't say an...,
 Node 1639: [[Approach the mirror.],
@@ -641,9 +545,7 @@ Node 1648: stranger_1_basement_stairs,
 Node 1649: stranger_1_basement,
 Node 1650: stranger_basement_menu,
 Node 1659: stranger_ending,
-Node 1663: stranger_end_say_nothing_join,
 Node 1664: stranger_1_woods,
-Node 1665: (Explore) I'm getting a ter...,
 Node 1666: stranger_1_no_memory,
 Node 1673: (Explore) Those walls weren...,
 Node 1677: cabin_arrival_stranger_1_menu,
@@ -651,34 +553,25 @@ Node 1680: ''If I can't run away from ...,
 Node 1682: tower_1_convo_start,
 Node 1683: tower_1_join_me_menu,
 Node 1684: tower_1_share_motive_menu,
-Node 1687: ''You're supposed to end th...,
 Node 1688: tower_1_motive_shared_join,
 Node 1691: tower_1_battle_motive_join,
 Node 1693: [[Remain silent.],
-Node 1698: (Explore) ''I have question...,
 Node 1699: tower_talk_refuse,
-Node 1702: ''I'm not going to help you...,
 Node 1703: tower_1_empty_refuse_join,
 Node 1704: tower_self_end_late_join,
 Node 1709: tower_pledge_join,
-Node 1710: [[Slay yourself.],
 Node 1711: tower_self_end_join,
 Node 1712: tower_2_start,
 Node 1715: tower_advance_1,
-Node 1716: [[Slay the Princess.],
 Node 1717: tower_post_advance_menu,
 Node 1721: tower_advance_2_join,
-Node 1722: [[Slay the Princess.],
 Node 1723: tower_final_choice,
 Node 1726: [[Slay the Princess.],
 Node 1729: tower_pledge_late_join,
 Node 1730: tower_pledge_chains_break_menu,
 Node 1735: tower_finale_join,
-Node 1736: [[Take her hand.],
 Node 1738: tower_1_forest,
-Node 1739: (Explore) I'm getting a ter...,
 Node 1740: tower_1_forest_narrator_share_join,
-Node 1748: (Explore) Let's talk about ...,
 Node 1749: tower_1_forest_princess,
 Node 1756: Nevermind.,
 Node 1757: tower_1_forest_princess_leaving,
@@ -688,7 +581,6 @@ Node 1766: (Explore) You didn't say an...,
 Node 1767: [[Approach the mirror.],
 Node 1768: tower_cabin_1_mirror_join,
 Node 1776: tower_variables,
-Node 1777: apotheosis_start_contrarian,
 Node 1778: apotheosis_explore_menu,
 Node 1781: apotheosis_generic_join,
 Node 1783: tower_2_cabin,
@@ -697,21 +589,16 @@ Node 1785: contrarian_pristine_apoth_menu,
 Node 1786: paranoid_pristine_apoth_menu,
 Node 1788: tower_2_mirror,
 Node 1789: mirror_start_2,
-Node 1790: witch_1_encounter_start,
 Node 1791: witch_1_menu,
 Node 1795: witch_chains_fall_join,
-Node 1804: (Explore) ''I didn't bring ...,
 Node 1805: witch_chains_no_cut,
 Node 1808: (Explore) ''Can't you get o...,
-Node 1813: witch_1_stairs,
-Node 1814: ''I don't want to hurt you,...,
 Node 1815: witch_blade_given_join,
 Node 1816: This isn't a democracy. We'...,
 Node 1818: witch_knife_trick,
 Node 1821: Haha. Yeah nevermind that w...,
 Node 1822: witch_1_stairs_menu,
 Node 1825: ''I don't trust you. Not en...,
-Node 1826: witch_1_flee,
 Node 1828: ''I'd like to be straightfo...,
 Node 1829: witch_attack_join,
 Node 1831: [[Slay the Princess.],
@@ -720,21 +607,15 @@ Node 1833: witch_basement_constriction_join,
 Node 1840: [[Give up, and await your d...,
 Node 1847: [[Step onto the stairs.],
 Node 1848: witch_stairs_princess_first,
-Node 1849: witch_stairs_player_first,
 Node 1851: witch_back_stab_menu,
 Node 1854: witch_leave_join,
 Node 1856: witch_back_stab,
-Node 1858: Ugh. Fine. [[Stab her in th...,
 Node 1859: witch_betrayal_menu,
-Node 1861: witch_leave_locked_menu,
 Node 1869: witch_locked_joke,
 Node 1871: witch_upstairs_menu,
 Node 1872: witch_upstairs_end,
-Node 1879: [[Give up, and await your d...,
 Node 1881: witch_1_forest,
-Node 1882: (Explore) I'm getting a ter...,
 Node 1883: witch_1_forest_narrator_share_join,
-Node 1892: (Explore) Let's talk about ...,
 Node 1893: witch_1_forest_princess,
 Node 1901: Nevermind.,
 Node 1902: witch_1_forest_princess_leaving,
@@ -754,60 +635,44 @@ Node 1938: witch_2_cabin_menu,
 Node 1943: witch_2_stairs,
 Node 1944: witch_2_stairs_menu,
 Node 1946: witch_2_stairs_join,
-Node 1949: (Explore) ''I just want to ...,
-Node 1952: witch_2_basement,
 Node 1953: witch_2_basement_menu,
 Node 1960: witch_2_take_blade_join,
 Node 1962: (Explore) [[Reach for the b...,
 Node 1965: witch_2_leave,
 Node 1969: witch_2_free,
-Node 1971: witch_2_slain,
 Node 1974: witch_2_free_join,
 Node 1977: witch_2_no_smile_join,
-Node 1982: fury_start_tower,
-Node 1983: fury_start_pacifism,
 Node 1984: fury_start_death_unarmed,
-Node 1985: fury_start_adversary_other,
 Node 1986: fury_start_late_join,
 Node 1987: fury_path_menu,
 Node 1988: fury_death_start_join,
-Node 1989: fury_start_join,
 Node 1993: fury_cabin_exterior,
 Node 1995: I'm done with this. Bye! [[...,
-Node 1998: fury_cabin_interior,
 Node 1999: fury_cabin_interior_menu,
 Node 2001: fury_no_door_join,
-Node 2003: (Explore) How are we suppos...,
 Node 2005: (Explore) [[Take the blade.],
 Node 2007: fury_pristine_toss_join,
 Node 2013: fury_stairs,
 Node 2014: fury_broken_intro,
 Node 2016: fury_no_fight_end,
-Node 2020: ''Please just listen to me!'',
 Node 2021: fury_mirror,
 Node 2024: fury_claim_charge_join,
-Node 2025: ''I'm going to end you.'' [...,
 Node 2026: fury_blade_charge_join,
-Node 2028: [[Slay the Princess.],
 Node 2033: fury_pristine,
 Node 2034: grey_woods_menu,
 Node 2036: grey_woods_different_join,
-Node 2037: (Explore) We haven't talked...,
 Node 2043: grey_cabin_exterior,
 Node 2044: I'm done with this. Bye! [[...,
 Node 2047: grey_cabin,
 Node 2048: grey_cabin_mirror,
 Node 2053: grey_stairs,
 Node 2054: grey_stairs_menu,
-Node 2055: (Explore) ''I'm sorry about...,
 Node 2056: grey_stairs_menu_explore_join,
 Node 2057: grey_stairs_late_join,
 Node 2063: grey_basement,
-Node 2064: grey_damsel,
 Node 2065: grey_prisoner,
 Node 2066: grey_damsel_menu,
 Node 2067: grey_damsel_end,
-Node 2068: (Explore) ''Why did you clo...,
 Node 2069: grey_damsel_together_explore_join,
 Node 2071: (Explore) ''Let me out! Are...,
 Node 2074: (Explore) ''What's wrong wi...,
@@ -817,31 +682,24 @@ Node 2079: (Explore) ''Are you mad at ...,
 Node 2083: grey_prisoner_menu,
 Node 2084: grey_prisoner_end,
 Node 2090: grey_prisoner_even_join,
-Node 2091: (Explore) ''I only killed y...,
 Node 2096: grey_prisoner_rush,
-Node 2097: [[Rush to the door.],
 Node 2099: wild_menu_1,
 Node 2102: wild_princess_join,
 Node 2104: wild_menu_narrator_push_1_join,
-Node 2105: [[Passively exist.],
 Node 2106: wild_menu_1_narrator_join,
 Node 2107: wild_dissonance_witch_early_join,
 Node 2108: wild_dissonance_witch_join,
 Node 2109: wild_dissonance_beast_early_join,
 Node 2110: wild_dissonance_beast_join,
 Node 2111: wild_menu_2,
-Node 2116: ''He's right! I don't want ...,
 Node 2117: wild_menu_1_options_join,
-Node 2120: ''This is how we're suppose...,
 Node 2121: (Explore) [[Remember how it...,
 Node 2124: wild_side_princess,
 Node 2131: wild_side_narrator,
 Node 2133: [[Bury it. Now. Before it's...,
-Node 2141: wraith_start_join,
 Node 2142: wraith_woods_menu,
 Node 2148: wraith_cabin_arrive,
 Node 2150: wraith_woods_leave,
-Node 2151: ''There's something else we...,
 Node 2153: wraith_cabin_ext_menu,
 Node 2156: wraith_cabin_interior,
 Node 2157: wraith_cabin_int_menu,
@@ -849,17 +707,11 @@ Node 2161: wraith_convo_menu,
 Node 2162: wraith_possession,
 Node 2164: (Explore) ''Look, we're eve...,
 Node 2165: wraith_even_join,
-Node 2172: ''Okay. Fine. Just do it.'',
 Node 2173: wraith_consent_join,
 Node 2177: wraith_end_free,
 Node 2178: wraith_reap_join,
-Node 2181: wraith_end_fall,
 Node 2182: restart_start,
 Node 2183: caught_1,
-Node 2184: caught_2,
-Node 2185: caught_3,
-Node 2186: caught_4,
-Node 2187: caught_5,
 Node 2188: caught_6,
 Node 2191: caught_loop,
 Node 2194: felina_cabin_gentle_start,
@@ -868,7 +720,6 @@ Node 2197: [[Sit with her.],
 Node 2198: felina_cabin_gentle_menu_blade,
 Node 2199: felina_cabin_gentle_menu_empty,
 Node 2212: felina_gentle_leave_join_menu,
-Node 2213: ''I think the only thing le...,
 Node 2214: felina_gentle_hand_menu,
 Node 2217: felina_leave_cabin_ending,
 Node 2222: felina_loop_gentle,
@@ -879,35 +730,26 @@ Node 2245: [[Sit with her.],
 Node 2246: felina_cabin_hostile_menu_blade,
 Node 2247: felina_cabin_hostile_menu_empty,
 Node 2260: felina_hostile_leave_join_menu,
-Node 2261: ''I think the only thing le...,
 Node 2262: felina_harsh_hand_menu,
 Node 2263: (Explore) [[Take her hand i...,
 Node 2270: felina_loop_hostile,
 Node 2277: loop_ending_hostile_menu,
-Node 2290: felina_cabin_start,
 Node 2291: felina_cabin_menu_start,
-Node 2292: (Explore) ''I'd like that. ...,
 Node 2293: felina_cabin_describe_join,
-Node 2299: (Explore) ''I don't actuall...,
 Node 2300: felina_cabin_complicated_feelings,
 Node 2302: (Explore) ''It's funny. Aft...,
 Node 2305: [[Enter the basement.],
 Node 2306: [[Continue down the stairs.],
-Node 2309: felina_cabin_strange_start,
 Node 2310: felina_cabin_strange_menu_start,
-Node 2311: (Explore) ''I'd like that d...,
 Node 2312: felina_cabin_strange_describe_join,
-Node 2318: (Explore) ''I don't actuall...,
 Node 2319: felina_cabin_strange_complicated_feelings,
 Node 2321: (Explore) ''It's funny. Aft...,
 Node 2327: felina_cabin_strange_basement,
 Node 2329: [[Sit with them.],
 Node 2330: felina_cabin_strange_talk_blade_menu,
 Node 2331: felina_cabin_strange_empty_talk_menu,
-Node 2341: (Explore) ''I only wanted t...,
 Node 2342: felina_strange_slay_cabin_join,
 Node 2347: felina_strange_leave_join_menu,
-Node 2348: ''I think the only thing le...,
 Node 2349: stranger_leave_hand_menu,
 Node 2350: (Explore) [[Take their hand...,
 Node 2353: felina_strange_pre_leave,
@@ -936,16 +778,12 @@ Node 2401: felina_dragon_start,
 Node 2402: felina_cage_start,
 Node 2403: felina_happy_start,
 Node 2404: felina_fight_intermission,
-Node 2405: felina_fight_intermission_winning,
-Node 2406: felina_fight_intermission_draw,
-Node 2407: felina_fight_intermission_losing,
 Node 2408: felina_fight_intermission_join,
 Node 2409: felina_fight_intermission_menu,
 Node 2413: felina_freedom_join,
 Node 2416: felina_intermission_post_menu,
 Node 2422: felina_intermission_late_join,
 Node 2423: felina_intermission_hero_menu,
-Node 2425: ''You have no idea how good...,
 Node 2426: felina_intermission_hero_join,
 Node 2427: felina_intermission_hero_late_join,
 Node 2435: felina_cabin_staging,
@@ -1012,55 +850,35 @@ Node 3079: felina_leave_cabin_hero_goodbye,
 Node 3085: felina_leave_cabin_leave_join,
 Node 3086: felina_leave_cabin_final_menu,
 Node 3088: felina_leave_cabin_final_join,
-Node 3092: [[Open the door.],
-Node 3094: slay_ending_linger,
 Node 3098: felina_slain_leave_join,
 Node 3099: [[Set yourself free.],
 Node 3101: felina_start,
-Node 3102: felina_menu,
 Node 3107: felina_debate,
 Node 3112: mound_no_understand,
 Node 3114: (Explore) ''There has to be...,
-Node 3118: ''I think it's time for us ...,
 Node 3119: felina_freedom_late_join,
 Node 3120: [[Free yourself.],
 Node 3121: felina_freedom_final_menu,
 Node 3127: loop_precredits,
-Node 3138: mirror_1_join,
 Node 3139: begin_quiet,
-Node 3140: mirror_2_join,
-Node 3141: mirror_3_join,
-Node 3142: mirror_4_join,
-Node 3143: mirror_finale,
 Node 3144: mirror_final_menu,
 Node 3145: mirror_shard,
 Node 3150: mirror_contains_death_join,
-Node 3151: (Explore) ''If I destroy He...,
 Node 3152: mirror_cycle_destroy_join,
 Node 3164: long_quiet_reveal_join,
 Node 3167: mirror_echo_join,
-Node 3168: (Explore) ''If you're not m...,
 Node 3171: mirror_multi_narrator_join,
-Node 3179: (Explore) ''You're the one ...,
-Node 3187: (Explore) ''I've met you ma...,
 Node 3190: (Explore) ''If you made me,...,
 Node 3195: mirror_princess_identity_join,
-Node 3197: (Explore) ''What is the Pri...,
 Node 3201: mirror_psychoanalyze_join,
 Node 3202: (Explore) ''Of all things, ...,
 Node 3209: mirror_construct_join,
-Node 3211: (Explore) ''You've called t...,
 Node 3216: mirror_fake_die_join,
-Node 3217: (Explore) ''Who cares about...,
 Node 3223: mirror_shaped_join,
-Node 3224: (Explore) ''What were we sh...,
 Node 3228: felina_start_join,
-Node 3229: ''Rest easy. I'm going to d...,
 Node 3230: mirror_destroy_join,
 Node 3231: mirror_echo_final_join,
 Node 3235: mirror_default_end,
-Node 3236: [[Say nothing, and watch hi...,
-Node 3238: [[Proceed to the cabin, one...,
 Node 3241: mirror_nightmare_2_wipe,
 Node 3243: mirror_n_gaze_join,
 Node 3244: mirror_1_menu,
@@ -1069,7 +887,6 @@ Node 3250: mirror_approach_join,
 Node 3253: mirror_n_menu,
 Node 3255: mirror_n_cruel,
 Node 3257: mirror_n_explore_join,
-Node 3258: (Explore) It's going to be ...,
 Node 3259: mirror_n_menu_comfort,
 Node 3260: It's not the end. Whatever'...,
 Node 3261: mirror_n_comfort_join,
@@ -1077,12 +894,7 @@ Node 3263: It's the end for you, but n...,
 Node 3270: mirror_sort,
 Node 3271: [[Proceed to the cabin.],
 Node 3272: [[Approach her.],
-Node 3273: quiet_1_start,
-Node 3274: quiet_2_start,
-Node 3275: quiet_3_start,
-Node 3276: quiet_4_start,
 Node 3279: quiet_1_menu,
-Node 3281: plore) ''What are yo,
 Node 3282: quiet1_what_menu_join,
 Node 3285: plore) ''The gift of a frag...,
 Node 3286: quiet_vessels,
@@ -1090,7 +902,6 @@ Node 3287: quiet_2_menu,
 Node 3288: quiet_3_menu,
 Node 3289: quiet_4_menu,
 Node 3296: plore) ''Are you the Princes,
-Node 3300: hat happens no,
 Node 3301: quiet1_decision,
 Node 3306: plore) ''I was sent to slay...,
 Node 3310: 'm not going back.'' [[Wa,
@@ -1099,26 +910,19 @@ Node 3314: quiet_1_forget_join,
 Node 3316: kay. Make me forge,
 Node 3322: mound_2_straight_answer,
 Node 3329: mound_2_nice_join,
-Node 3330: plore) ''You have been kind...,
 Node 3336: quiet_2_feelings_join,
-Node 3337: plore) ''What do you feel a...,
 Node 3340: plore) ''And what if I don'...,
 Node 3341: a,
-Node 3347: (Explore) ''Enough with all...,
-Node 3352: (Explore) ''Everything you ...,
 Node 3353: mound_3_straight_answer,
 Node 3361: quiet_3_threaten_join,
-Node 3362: plore) ''You know that at t...,
 Node 3370: plore) ''I don't want to go...,
 Node 3377: (Explore) ''Everything you ...,
 Node 3378: mound_4_straight_answer,
 Node 3390: plore) ''If this is the las...,
-Node 3394: plore) ''If this is the las...,
 Node 3395: quiet_4_wait_join,
 Node 3402: quiet_staging,
 Node 3406: [[Take the blade.],
 Node 3411: apotheosis_contrarian_freedom_join,
-Node 3413: [[Embrace your new goddess.],
 Node 3414: apotheosis_pristine_freedom,
 Node 3415: apotheosis_freedom_second_join,
 Node 3417: apotheosis_freedom_suffer_join,
@@ -1134,12 +938,10 @@ Node 3434: [[Still your doubts.],
 Node 3435: [[Fight back.],
 Node 3447: den_pristine_free_choice,
 Node 3449: den_approach_join,
-Node 3451: [[Approach her.],
 Node 3453: [[Offer her your hand.],
 Node 3454: den_flinch_end_join,
 Node 3457: [[Flinch.],
 Node 3461: den_collapse_join,
-Node 3462: [[Turn around and leave. Yo...,
 Node 3463: den_collapse_final_menu,
 Node 3464: (Explore) I still have the ...,
 Node 3465: den_collapse_circles,
@@ -1148,22 +950,15 @@ Node 3472: ''This is both of our fault...,
 Node 3473: den_collapse_okay,
 Node 3479: [[Wait in silence for your ...,
 Node 3482: fury_mirror_special,
-Node 3485: fury_pristine_pacifism_start,
 Node 3486: fury_pristine_tower,
-Node 3487: fury_pristine_unarmed,
-Node 3488: fury_pristine_other_start,
 Node 3489: fury_pristine_unwind_pre_menu,
-Node 3490: ''And what am I supposed to...,
 Node 3491: fury_pristine_other_talk_join,
 Node 3492: fury_pristine_unarmed_menu,
 Node 3497: fury_unwind_sequence,
-Node 3498: fury_cold_conclusion,
-Node 3499: fury_other_conclusion,
 Node 3500: fury_cold_conclusion_menu,
 Node 3501: (Explore) ''I'm not gone. I...,
 Node 3503: fury_cold_leave_final_option,
 Node 3508: fury_cold_final_nice_menu,
-Node 3509: (Explore) ''There's more to...,
 Node 3519: ''I think I'm going to go n...,
 Node 3521: fury_cold_leave_join,
 Node 3524: ''That's up to you.'',
@@ -1177,14 +972,11 @@ Node 3550: [[You don't have any muscle...,
 Node 3552: [[Take another step.],
 Node 3560: fury_pristine_tower_start_menu,
 Node 3562: fury_tower_talk_attempt,
-Node 3563: (Explore) ''I killed you la...,
 Node 3564: fury_pristine_tower_menu_2,
 Node 3570: fury_pristine_tower_battle,
 Node 3572: fury_pristine_tower_menu_2_choice,
 Node 3574: fury_tower_explode_join,
-Node 3575: (Explore) ''I said, give me...,
 Node 3582: fury_tower_lose_body_menu,
-Node 3588: fury_tower_battle_sequence,
 Node 3590: prisoner_rewrites,
 Node 3591: cage_woods_menu,
 Node 3593: (Explore) She died last tim...,
@@ -1195,7 +987,6 @@ Node 3598: cage_woods_head_cut_join,
 Node 3599: cage_woods_explain_join,
 Node 3600: cage_woods_broken_join,
 Node 3602: (Explore) I was happy with ...,
-Node 3604: (Explore) I'm not taking th...,
 Node 3605: cage_woods_blade_toss_menu,
 Node 3606: [[Do it. Toss the blade.],
 Node 3607: I'm in charge, and I say we...,
@@ -1210,11 +1001,8 @@ Node 3627: cage_basement_second_menu,
 Node 3633: cage_encounter_start,
 Node 3635: cage_second_menu_response,
 Node 3644: cage_action_join,
-Node 3645: cage_menu_2_start,
 Node 3646: cage_decap_menu_3,
 Node 3647: cage_free_menu,
-Node 3648: cage_slay_join,
-Node 3650: cage_decapitated,
 Node 3653: cage_free_penultimate_default_join,
 Node 3655: cage_free_final_menu,
 Node 3657: cage_final_default_join,
@@ -1223,12 +1011,9 @@ Node 3660: [[Take hold of the chain.],
 Node 3661: chain_free_menu_finale,
 Node 3669: dragon_start_flee_join,
 Node 3672: dragon_start_menu,
-Node 3675: (Explore) What just happened?,
 Node 3676: dragon_what_happened_join,
 Node 3679: (Explore) You're different....,
 Node 3688: dragon_start_wait_join,
-Node 3689: (Explore) What are we suppo...,
-Node 3694: This isn't what it was like...,
 Node 3695: dragon_title_card_menu,
 Node 3698: The first one I got said 'C...,
 Node 3699: You promised you wouldn't l...,
@@ -1239,7 +1024,6 @@ Node 3706: [[Say nothing.],
 Node 3707: dragon_title_avoid,
 Node 3711: [[Say nothing.],
 Node 3715: dragon_arrival,
-Node 3716: dragon_menu_pre_talk,
 Node 3719: dragon_menu_pre_talk_share_join,
 Node 3720: dragon_final_menu_pre_action,
 Node 3721: dragon_opportunist_start,
@@ -1247,11 +1031,7 @@ Node 3722: dragon_opportunist_sidebar_join,
 Node 3724: dragon_opportunist_soft_quiet,
 Node 3727: dragon_opportunist_attack,
 Node 3730: dragon_opportunist_soft_speak_up,
-Node 3731: I think you'll have to make...,
-Node 3733: [[Say nothing.],
 Node 3735: dragon_opportunist_fight_hostile,
-Node 3736: dragon_opportunist_fight_soft,
-Node 3737: ''Wait wait wait I'm back i...,
 Node 3738: dragon_harsh_opportunist_violent_end,
 Node 3739: dragon_harsh_opp_split_join,
 Node 3741: ''I'm back in here, but you...,
@@ -1262,12 +1042,10 @@ Node 3747: ''Now what?'',
 Node 3748: dragon_opp_alt_hand,
 Node 3754: dragon_soft_opp_choice_join,
 Node 3756: dragon_soft_opp_choice_sub,
-Node 3757: (Explore) ''Oh, hey. I'm ba...,
 Node 3759: dragon_soft_opp_slay_join,
 Node 3761: dragon_soft_leave_late_join,
 Node 3763: dragon_opp_soft_leave_suggest,
 Node 3765: dragon_opp_soft_leave_silent,
-Node 3767: Good to be back boys. [[Fin...,
 Node 3769: [[Drop the blade.],
 Node 3770: ''We do it right this time....,
 Node 3771: dragon_opp_soft_leave_join,
@@ -1286,29 +1064,20 @@ Node 3801: happy_encounter,
 Node 3802: happy_menu,
 Node 3803: (Explore) ''Hey! Smitten! Y...,
 Node 3804: happy_him_join,
-Node 3809: (Explore) ''It's just a tor...,
 Node 3810: happy_distraction_tree,
 Node 3811: happy_dinner_join,
 Node 3812: happy_game_join,
 Node 3813: happy_torches,
-Node 3819: (Explore) ''The shadow hold...,
 Node 3820: happy_shadow_discuss_join,
-Node 3823: (Explore) ''You said 'he.' ...,
-Node 3827: (Explore) ''You mentioned d...,
-Node 3831: (Explore) ''Well, we ate. W...,
 Node 3832: happy_game_early_join,
 Node 3836: happy_final_activity_join,
-Node 3837: (Explore) ''Okay, so... we'...,
 Node 3841: happy_get_up_attempt_join,
-Node 3843: [[Slay the Princess.],
 Node 3845: happy_torches_final,
 Node 3846: ''What do you think will ha...,
 Node 3848: happy_dance_comment_join,
 Node 3850: happy_torch_end,
-Node 3853: ''We don't have to let it g...,
 Node 3855: happy_climax,
 Node 3857: happy_climax_silent,
-Node 3865: [[Slay the Princess.],
 Node 3866: happy_slay,
 Node 3867: happy_murder_end,
 Node 3867: You're right. What was I th...,
@@ -1316,47 +1085,46 @@ Node 3868: happy_stairs_silent,
 Node 3871: happy_murder_end,
 Node 3875: happy_climax_stair,
 Node 3877: happy_stairs_leaving,
-Node 3883: [[Say nothing.],
 Node 3885: happy_leave_finale],[
 Edge
 	From: 0 ( start_2)
-	To: 10 ( witch_1_start)
-	Via: Var "current_princess" == Val (String "witch")
+	To: 1000 ( nightmare_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 1 ( adversary_1_start)
-	Via: Var "current_princess" == Val (String "adversary")
+	To: 1257 ( prisoner_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 2 ( beast_1_start)
-	Via: Var "current_princess" == Val (String "beast")
+	To: 1329 ( razor_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 3 ( damsel_1_start)
-	Via: Var "current_princess" == Val (String "damsel")
+	To: 1446 ( spectre_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 4 ( nightmare_1_start)
-	Via: Var "current_princess" == Val (String "nightmare")
+	To: 1738 ( tower_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 5 ( prisoner_1_start)
-	Via: Var "current_princess" == Val (String "prisoner")
+	To: 1881 ( witch_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 6 ( razor_1_start)
-	Via: Var "current_princess" == Val (String "razor")
+	To: 640 ( adversary_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
-	To: 7 ( spectre_1_start)
-	Via: Var "current_princess" == Val (String "spectre")
+	To: 816 ( beast_1_forest)
+
 ,
 Edge
 	From: 0 ( start_2)
@@ -1370,12 +1138,12 @@ Edge
 ,
 Edge
 	From: 0 ( start_2)
-	To: 9 ( tower_1_start)
-	Via: Var "current_princess" == Val (String "tower")
+	To: 963 ( damsel_1_forest)
+
 ,
 Edge
 	From: 1000 ( nightmare_1_forest)
-	To: 1001 ( (Explore) I'm getting a ter...)
+	To: 1002 ( nightmare_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -1400,11 +1168,6 @@ Edge
 ,
 Edge
 	From: 1000 ( nightmare_1_forest)
-	To: 1010 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 1000 ( nightmare_1_forest)
 	To: 1011 ( nightmare_1_forest_princess)
 
 ,
@@ -1424,19 +1187,9 @@ Edge
 	Via: [[Proceed to the cabin.]
 ,
 Edge
-	From: 1001 ( (Explore) I'm getting a ter...)
-	To: 1002 ( nightmare_1_forest_narrator_share_join)
-	Via: Var "nightmare_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 1002 ( nightmare_1_forest_narrator_share_join)
 	To: 1000 ( nightmare_1_forest)
 	Via: Var "nightmare_1_forest_share_loop" == Val (Bool False)
-,
-Edge
-	From: 1010 ( (Explore) Let's talk about ...)
-	To: 1011 ( nightmare_1_forest_princess)
-	Via: "nightmare_1_forest_share_loop_insist" && Var "nightmare_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 1011 ( nightmare_1_forest_princess)
@@ -1490,11 +1243,6 @@ Edge
 ,
 Edge
 	From: 1026 ( cabin_interior_2_nightmare_menu)
-	To: 1036 ( [[Enter the basement.])
-
-,
-Edge
-	From: 1026 ( cabin_interior_2_nightmare_menu)
 	To: 1037 ( ch2_nightmare_stairs_menu)
 
 ,
@@ -1527,11 +1275,6 @@ Edge
 	From: 1029 ( nightmare_cabin_1_mirror_join)
 	To: 1026 ( cabin_interior_2_nightmare_menu)
 	Via: [[Wipe the mirror clean.]
-,
-Edge
-	From: 1036 ( [[Enter the basement.])
-	To: 1037 ( ch2_nightmare_stairs_menu)
-
 ,
 Edge
 	From: 1037 ( ch2_nightmare_stairs_menu)
@@ -1599,13 +1342,8 @@ Edge
 	Via: Go right.
 ,
 Edge
-	From: 1046 ( nightmare_1_basement)
-	To: 1052 ( Go back the way you came.)
-
-,
-Edge
 	From: 1049 ( nightmare_1_basement_direction_join)
-	To: 1053 ( nightmare_encounter_start)
+	To: 1055 ( nightmare_encounter_menu)
 
 ,
 Edge
@@ -1614,13 +1352,8 @@ Edge
 	Via: Var "witch_encountered" == Val (Bool False)
 ,
 Edge
-	From: 1052 ( Go back the way you came.)
-	To: 1049 ( nightmare_1_basement_direction_join)
-
-,
-Edge
-	From: 1053 ( nightmare_encounter_start)
-	To: 1055 ( nightmare_encounter_menu)
+	From: 1055 ( nightmare_encounter_menu)
+	To: 1058 ( nightmare_want_leave_join)
 
 ,
 Edge
@@ -1630,17 +1363,12 @@ Edge
 ,
 Edge
 	From: 1055 ( nightmare_encounter_menu)
-	To: 1059 ( (Explore) ''What happened a...)
-
-,
-Edge
-	From: 1055 ( nightmare_encounter_menu)
 	To: 1070 ( (Explore) ''How about I jus...)
 
 ,
 Edge
 	From: 1055 ( nightmare_encounter_menu)
-	To: 1073 ( (Explore) ''Does that mean ...)
+	To: 1071 ( nightmare_can_die_join)
 
 ,
 Edge
@@ -1657,11 +1385,6 @@ Edge
 	From: 1055 ( nightmare_encounter_menu)
 	To: 1079 ( nightmare_delusion_join)
 	Via: ''I'm not doing any of this..."blade_held"
-,
-Edge
-	From: 1055 ( nightmare_encounter_menu)
-	To: 1080 ( ''I'm not doing any of this...)
-
 ,
 Edge
 	From: 1055 ( nightmare_encounter_menu)
@@ -1694,11 +1417,6 @@ Edge
 	Via: Var "nightmare_why_need" == Val (Bool False)
 ,
 Edge
-	From: 1059 ( (Explore) ''What happened a...)
-	To: 1058 ( nightmare_want_leave_join)
-	Via: Var "nightmare_why_need" == Val (Bool False)
-,
-Edge
 	From: 105 ( basement_1_empty_rescue_controlled_2_start)
 	To: 88 ( basement_1_empty_beast)
 	Via: Var "witch_encountered" == Val (Bool False)
@@ -1719,11 +1437,6 @@ Edge
 	Via: Var "nightmare_can_die_ask" == Val (Bool False) && "nightmare_kill_threaten"
 ,
 Edge
-	From: 1073 ( (Explore) ''Does that mean ...)
-	To: 1071 ( nightmare_can_die_join)
-	Via: Var "nightmare_can_die_ask" == Val (Bool False) && "nightmare_kill_threaten"
-,
-Edge
 	From: 1076 ( (Explore) ''We don't have t...)
 	To: 1055 ( nightmare_encounter_menu)
 	Via: Var "nightmare_friendship_offer" == Val (Bool False)
@@ -1739,17 +1452,7 @@ Edge
 	Via: Var "blade_held" == Val (Bool False)
 ,
 Edge
-	From: 1080 ( ''I'm not doing any of this...)
-	To: 1079 ( nightmare_delusion_join)
-	Via: Var "blade_held" == Val (Bool False)
-,
-Edge
 	From: 1081 ( nightmare_delusion_late_join)
-	To: 1082 ( nightmare_2_start)
-	Via: Var "blade_held" == Val (Bool False)
-,
-Edge
-	From: 1082 ( nightmare_2_start)
 	To: 1129 ( nightmare_2_menu)
 
 ,
@@ -1775,11 +1478,6 @@ Edge
 ,
 Edge
 	From: 1088 ( [[Slay the Princess.])
-	To: 1089 ( nightmare_kill_join)
-	Via: "nightmare_can_wraith" && "blade_held"
-,
-Edge
-	From: 1089 ( nightmare_kill_join)
 	To: 1110 ( nightmare_kill_join_late)
 
 ,
@@ -1792,11 +1490,6 @@ Edge
 	From: 1091 ( nightmare_leave_menu)
 	To: 1094 ( nightmare_stairs_leave_join)
 	Via: ''Okay. Fine'' [[Step onto ..."nightmare_leave_stairs_comment"
-,
-Edge
-	From: 1091 ( nightmare_leave_menu)
-	To: 1095 ( [[Step onto the stairs.])
-
 ,
 Edge
 	From: 1091 ( nightmare_leave_menu)
@@ -1826,11 +1519,6 @@ Edge
 Edge
 	From: 1094 ( nightmare_stairs_leave_join)
 	To: 1096 ( nightmare_stairs_blade_menu)
-	Via: Var "nightmare_leave_stairs_comment" == Val (Bool False)
-,
-Edge
-	From: 1095 ( [[Step onto the stairs.])
-	To: 1094 ( nightmare_stairs_leave_join)
 	Via: Var "nightmare_leave_stairs_comment" == Val (Bool False)
 ,
 Edge
@@ -1872,11 +1560,6 @@ Edge
 	From: 1099 ( nightmare_upstairs_slay_menu)
 	To: 1104 ( nightmare_free_outside)
 	Via: [[Leave the Cabin.]
-,
-Edge
-	From: 10 ( witch_1_start)
-	To: 1881 ( witch_1_forest)
-
 ,
 Edge
 	From: 1100 ( [[Slay the Princess.])
@@ -1925,8 +1608,8 @@ Edge
 ,
 Edge
 	From: 1126 ( wraith_start)
-	To: 2141 ( wraith_start_join)
-	Via: "trait_paranoid"
+	To: 2142 ( wraith_woods_menu)
+
 ,
 Edge
 	From: 1126 ( wraith_start)
@@ -1946,12 +1629,12 @@ Edge
 Edge
 	From: 1129 ( nightmare_2_menu)
 	To: 1132 ( nm2_how_many_join)
-	Via: (Explore) ''Getting back to...Var "nm2_count" != Val (Int 0) && Var "nm2_how_many" == Val (Bool False)
+
 ,
 Edge
 	From: 1129 ( nightmare_2_menu)
-	To: 1133 ( (Explore) ''That's a good q...)
-
+	To: 1132 ( nm2_how_many_join)
+	Via: (Explore) ''Getting back to...Var "nm2_count" != Val (Int 0) && Var "nm2_how_many" == Val (Bool False)
 ,
 Edge
 	From: 1129 ( nightmare_2_menu)
@@ -1971,11 +1654,6 @@ Edge
 Edge
 	From: 1132 ( nm2_how_many_join)
 	To: 1129 ( nightmare_2_menu)
-	Via: Var "nm2_count" == Val (Int 0) && Var "nm2_how_many" == Val (Bool False)
-,
-Edge
-	From: 1133 ( (Explore) ''That's a good q...)
-	To: 1132 ( nm2_how_many_join)
 	Via: Var "nm2_count" == Val (Int 0) && Var "nm2_how_many" == Val (Bool False)
 ,
 Edge
@@ -2014,11 +1692,6 @@ Edge
 	Via: [[You're just an object.]"false_choice"
 ,
 Edge
-	From: 1141 ( nightmare_2_cabin_arrive)
-	To: 1166 ( [[Just take her hand, and s...)
-
-,
-Edge
 	From: 1142 ( ''The only way out is to do...)
 	To: 1141 ( nightmare_2_cabin_arrive)
 	Via: [[Proceed to the cabin.]
@@ -2040,33 +1713,18 @@ Edge
 ,
 Edge
 	From: 1145 ( caught_late_join)
+	To: 2182 ( restart_start)
+
+,
+Edge
+	From: 1145 ( caught_late_join)
 	To: 2183 ( caught_1)
 	Via: Var "loops_destroyed" == Val (Int 0)
 ,
 Edge
 	From: 1145 ( caught_late_join)
-	To: 2184 ( caught_2)
-	Via: Var "loops_destroyed" == Val (Int 1)
-,
-Edge
-	From: 1145 ( caught_late_join)
-	To: 2185 ( caught_3)
-	Via: Var "loops_destroyed" == Val (Int 2)
-,
-Edge
-	From: 1145 ( caught_late_join)
-	To: 2186 ( caught_4)
-	Via: Var "loops_destroyed" == Val (Int 3)
-,
-Edge
-	From: 1145 ( caught_late_join)
-	To: 2187 ( caught_5)
-	Via: Var "loops_destroyed" == Val (Int 4)
-,
-Edge
-	From: 1145 ( caught_late_join)
-	To: 2188 ( caught_6)
-	Via: Else
+	To: 2191 ( caught_loop)
+
 ,
 Edge
 	From: 1148 ( nightmare_2_cabin_arrive_menu)
@@ -2111,11 +1769,6 @@ Edge
 Edge
 	From: 1161 ( nightmare_2_hand_join)
 	To: 1167 ( mirror_nightmare_2)
-
-,
-Edge
-	From: 1166 ( [[Just take her hand, and s...)
-	To: 1161 ( nightmare_2_hand_join)
 
 ,
 Edge
@@ -2186,17 +1839,12 @@ Edge
 Edge
 	From: 1172 ( prisoner_menu)
 	To: 1188 ( prisoner_intentions_join)
+
+,
+Edge
+	From: 1172 ( prisoner_menu)
+	To: 1188 ( prisoner_intentions_join)
 	Via: (Explore) ''You were asking...Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" != Val (Int 0)
-,
-Edge
-	From: 1172 ( prisoner_menu)
-	To: 1189 ( (Explore) ''My intentions? ...)
-
-,
-Edge
-	From: 1172 ( prisoner_menu)
-	To: 1192 ( (Explore) ''What happened a...)
-
 ,
 Edge
 	From: 1172 ( prisoner_menu)
@@ -2206,12 +1854,12 @@ Edge
 Edge
 	From: 1172 ( prisoner_menu)
 	To: 1196 ( prisoner_what_do_join)
-	Via: (Explore) ''How am I suppos..."prisoner_intentions_explore" && Var "prisoner_head_ask" == Val (Bool False) && Var "prisoner_what_do" == Val (Bool False)
+
 ,
 Edge
 	From: 1172 ( prisoner_menu)
-	To: 1198 ( (Explore) ''What would you ...)
-
+	To: 1196 ( prisoner_what_do_join)
+	Via: (Explore) ''How am I suppos..."prisoner_intentions_explore" && Var "prisoner_head_ask" == Val (Bool False) && Var "prisoner_what_do" == Val (Bool False)
 ,
 Edge
 	From: 1172 ( prisoner_menu)
@@ -2230,11 +1878,6 @@ Edge
 ,
 Edge
 	From: 1172 ( prisoner_menu)
-	To: 1209 ( prisoner_knife_given)
-	Via: ''Okay. I'm trusting you.''..."prisoner_what_do"
-,
-Edge
-	From: 1172 ( prisoner_menu)
 	To: 1211 ( ''If that's how you're goin...)
 
 ,
@@ -2249,6 +1892,11 @@ Edge
 
 ,
 Edge
+	From: 1172 ( prisoner_menu)
+	To: 1229 ( prisoner_knife_given_late_join)
+
+,
+Edge
 	From: 1174 ( [[Sit with her.])
 	To: 1172 ( prisoner_menu)
 
@@ -2260,12 +1908,12 @@ Edge
 ,
 Edge
 	From: 1176 ( prisoner_strangle_join)
-	To: 1232 ( prisoner_dead_late_join)
+	To: 1229 ( prisoner_knife_given_late_join)
 
 ,
 Edge
 	From: 1176 ( prisoner_strangle_join)
-	To: 1236 ( prisoner_fight_menu)
+	To: 1232 ( prisoner_dead_late_join)
 
 ,
 Edge
@@ -2295,11 +1943,6 @@ Edge
 ,
 Edge
 	From: 1181 ( (Explore) [[Inspect the sha...)
-	To: 1183 ( prisoner_self_prison)
-	Via: [[Inspect the shackle.]
-,
-Edge
-	From: 1183 ( prisoner_self_prison)
 	To: 1219 ( prisoner_self_prison_menu)
 
 ,
@@ -2307,16 +1950,6 @@ Edge
 	From: 1188 ( prisoner_intentions_join)
 	To: 1172 ( prisoner_menu)
 	Via: Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" == Val (Int 0)
-,
-Edge
-	From: 1189 ( (Explore) ''My intentions? ...)
-	To: 1188 ( prisoner_intentions_join)
-	Via: Var "prisoner_intentions_explore" == Val (Bool False) && Var "prisoner_menu_count" == Val (Int 0)
-,
-Edge
-	From: 1192 ( (Explore) ''What happened a...)
-	To: 1193 ( prisoner_what_happened_died)
-	Via: Var "prisoner_death_ask" == Val (Bool False)
 ,
 Edge
 	From: 1193 ( prisoner_what_happened_died)
@@ -2331,11 +1964,6 @@ Edge
 Edge
 	From: 1196 ( prisoner_what_do_join)
 	To: 1172 ( prisoner_menu)
-	Via: Var "prisoner_what_do" == Val (Bool False)
-,
-Edge
-	From: 1198 ( (Explore) ''What would you ...)
-	To: 1196 ( prisoner_what_do_join)
 	Via: Var "prisoner_what_do" == Val (Bool False)
 ,
 Edge
@@ -2404,11 +2032,6 @@ Edge
 	Via: "prisoner_what_do" && Var "prisoner_no_give_explore" == Val (Bool False)
 ,
 Edge
-	From: 1209 ( prisoner_knife_given)
-	To: 1229 ( prisoner_knife_given_late_join)
-
-,
-Edge
 	From: 1211 ( ''If that's how you're goin...)
 	To: 1172 ( prisoner_menu)
 	Via: "grey_encountered"
@@ -2440,16 +2063,6 @@ Edge
 ,
 Edge
 	From: 1219 ( prisoner_self_prison_menu)
-	To: 1224 ( [[Wait in silence.])
-
-,
-Edge
-	From: 1219 ( prisoner_self_prison_menu)
-	To: 1225 ( prisoner_forever_menu_2)
-
-,
-Edge
-	From: 1224 ( [[Wait in silence.])
 	To: 1225 ( prisoner_forever_menu_2)
 
 ,
@@ -2470,23 +2083,13 @@ Edge
 ,
 Edge
 	From: 1230 ( prisoner_head_choice)
-	To: 1234 ( prisoner_free_join)
-	Via: [[Take the Princess with you.]
+	To: 466 ( mirror_start)
+
 ,
 Edge
 	From: 1232 ( prisoner_dead_late_join)
 	To: 1239 ( prisoner_happy_menu)
 
-,
-Edge
-	From: 1234 ( prisoner_free_join)
-	To: 466 ( mirror_start)
-	Via: [[Leave the cabin and claim...
-,
-Edge
-	From: 1236 ( prisoner_fight_menu)
-	To: 1229 ( prisoner_knife_given_late_join)
-	Via: [[Drop it.]
 ,
 Edge
 	From: 1239 ( prisoner_happy_menu)
@@ -2505,11 +2108,6 @@ Edge
 ,
 Edge
 	From: 1239 ( prisoner_happy_menu)
-	To: 1245 ( Well, you might not be happ...)
-
-,
-Edge
-	From: 1239 ( prisoner_happy_menu)
 	To: 1246 ( prisoner_post_happy_menu)
 
 ,
@@ -2519,18 +2117,8 @@ Edge
 
 ,
 Edge
-	From: 1239 ( prisoner_happy_menu)
-	To: 1254 ( [[Slay yourself.])
-
-,
-Edge
 	From: 1243 ( prisoner_happy_join)
 	To: 1246 ( prisoner_post_happy_menu)
-	Via: "prisoner_happy_menu_explore"
-,
-Edge
-	From: 1245 ( Well, you might not be happ...)
-	To: 1243 ( prisoner_happy_join)
 	Via: "prisoner_happy_menu_explore"
 ,
 Edge
@@ -2559,18 +2147,13 @@ Edge
 	Via: "prisoner_slain_by_player"
 ,
 Edge
-	From: 1254 ( [[Slay yourself.])
-	To: 1250 ( prisoner_slay_self_join)
-	Via: "prisoner_happy_menu_suggestion_explore"
-,
-Edge
 	From: 1255 ( cage_start)
 	To: 3591 ( cage_woods_menu)
 
 ,
 Edge
 	From: 1257 ( prisoner_1_forest)
-	To: 1258 ( (Explore) I'm getting a ter...)
+	To: 1259 ( prisoner_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -2595,11 +2178,6 @@ Edge
 ,
 Edge
 	From: 1257 ( prisoner_1_forest)
-	To: 1267 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 1257 ( prisoner_1_forest)
 	To: 1268 ( prisoner_1_forest_princess)
 
 ,
@@ -2619,19 +2197,9 @@ Edge
 	Via: [[Proceed to the cabin.]
 ,
 Edge
-	From: 1258 ( (Explore) I'm getting a ter...)
-	To: 1259 ( prisoner_1_forest_narrator_share_join)
-	Via: Var "prisoner_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 1259 ( prisoner_1_forest_narrator_share_join)
 	To: 1257 ( prisoner_1_forest)
 	Via: Var "prisoner_1_forest_share_loop" == Val (Bool False)
-,
-Edge
-	From: 1267 ( (Explore) Let's talk about ...)
-	To: 1268 ( prisoner_1_forest_princess)
-	Via: "prisoner_1_forest_share_loop_insist" && Var "prisoner_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 1268 ( prisoner_1_forest_princess)
@@ -2745,18 +2313,13 @@ Edge
 ,
 Edge
 	From: 1298 ( razor_1_basement_menu)
-	To: 1313 ( (Explore) ''What if we're b...)
+	To: 1314 ( razor_world_end_join)
 
 ,
 Edge
 	From: 1298 ( razor_1_basement_menu)
 	To: 1314 ( razor_world_end_join)
 	Via: (Explore) ''What if we're b...Var "razor_honest_mention" == Val (Bool False) && "razor_revival"
-,
-Edge
-	From: 1298 ( razor_1_basement_menu)
-	To: 1321 ( razor_1_approach)
-	Via: ''Okay, fine. I'm coming cl...
 ,
 Edge
 	From: 1298 ( razor_1_basement_menu)
@@ -2770,8 +2333,8 @@ Edge
 ,
 Edge
 	From: 1298 ( razor_1_basement_menu)
-	To: 1326 ( razor_1_slay_attempt)
-	Via: ''Screw it.'' [[Slay the Pr..."blade_held"
+	To: 1328 ( razor_2_start)
+
 ,
 Edge
 	From: 1299 ( razor_1_initiative)
@@ -2794,28 +2357,13 @@ Edge
 
 ,
 Edge
-	From: 1313 ( (Explore) ''What if we're b...)
-	To: 1314 ( razor_world_end_join)
-	Via: Var "razor_honest_mention" == Val (Bool False) && Var "razor_revival" == Val (Bool False)
-,
-Edge
 	From: 1314 ( razor_world_end_join)
 	To: 1298 ( razor_1_basement_menu)
 	Via: Var "razor_honest_mention" == Val (Bool False) && Var "razor_revival" == Val (Bool False)
 ,
 Edge
-	From: 1321 ( razor_1_approach)
-	To: 1328 ( razor_2_start)
-
-,
-Edge
 	From: 1323 ( razor_1_leave)
 	To: 1299 ( razor_1_initiative)
-
-,
-Edge
-	From: 1326 ( razor_1_slay_attempt)
-	To: 1328 ( razor_2_start)
 
 ,
 Edge
@@ -2830,7 +2378,7 @@ Edge
 ,
 Edge
 	From: 1329 ( razor_1_forest)
-	To: 1330 ( (Explore) I'm getting a ter...)
+	To: 1331 ( razor_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -2860,11 +2408,6 @@ Edge
 ,
 Edge
 	From: 1329 ( razor_1_forest)
-	To: 1340 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 1329 ( razor_1_forest)
 	To: 1341 ( razor_1_forest_princess)
 
 ,
@@ -2884,19 +2427,9 @@ Edge
 	Via: [[Proceed to the cabin.]
 ,
 Edge
-	From: 1330 ( (Explore) I'm getting a ter...)
-	To: 1331 ( razor_1_forest_narrator_share_join)
-	Via: Var "razor_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 1331 ( razor_1_forest_narrator_share_join)
 	To: 1329 ( razor_1_forest)
 	Via: Var "razor_1_forest_share_loop" == Val (Bool False)
-,
-Edge
-	From: 1340 ( (Explore) Let's talk about ...)
-	To: 1341 ( razor_1_forest_princess)
-	Via: "razor_1_forest_share_loop_insist" && Var "razor_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 1341 ( razor_1_forest_princess)
@@ -3164,11 +2697,6 @@ Edge
 	Via: [[All of these ideas suck. ...Var "trait_skeptic" == Val (Bool False)
 ,
 Edge
-	From: 1389 ( razor_2_armed_beat_2)
-	To: 1398 ( We're going to let her stab...)
-
-,
-Edge
 	From: 1391 ( razor_2_armed_cold_early_join)
 	To: 1393 ( razor_2_armed_montage)
 	Via: Var "trait_cold" == Val (Bool False) && Var "trait_stubborn" == Val (Bool False)
@@ -3184,11 +2712,6 @@ Edge
 
 ,
 Edge
-	From: 1398 ( We're going to let her stab...)
-	To: 1391 ( razor_2_armed_cold_early_join)
-	Via: Var "trait_cold" == Val (Bool False) && Var "trait_stubborn" == Val (Bool False)
-,
-Edge
 	From: 13 ( beast_1_cabin_arrival)
 	To: 23 ( beast_stranger_rejoin)
 	Via: [[Proceed into the cabin.]
@@ -3200,17 +2723,7 @@ Edge
 ,
 Edge
 	From: 1403 ( razor_final_staging)
-	To: 1436 ( razor_final_start_knife)
-	Via: "razor_blade"
-,
-Edge
-	From: 1403 ( razor_final_staging)
-	To: 1437 ( razor_final_start_unarmed)
-	Via: Else
-,
-Edge
-	From: 1404 ( razor_2_unarmed_start)
-	To: 1405 ( razor_2_unarmed_beat_1)
+	To: 1438 ( razor_final_basement)
 
 ,
 Edge
@@ -3450,17 +2963,7 @@ Edge
 ,
 Edge
 	From: 1434 ( [[Approach the mirror.])
-	To: 1404 ( razor_2_unarmed_start)
-	Via: Else
-,
-Edge
-	From: 1436 ( razor_final_start_knife)
-	To: 1438 ( razor_final_basement)
-
-,
-Edge
-	From: 1437 ( razor_final_start_unarmed)
-	To: 1438 ( razor_final_basement)
+	To: 1405 ( razor_2_unarmed_beat_1)
 
 ,
 Edge
@@ -3506,6 +3009,11 @@ Edge
 Edge
 	From: 1446 ( spectre_1_forest)
 	To: 1448 ( spectre_1_forest_narrator_share_join)
+
+,
+Edge
+	From: 1446 ( spectre_1_forest)
+	To: 1448 ( spectre_1_forest_narrator_share_join)
 	Via: (Explore) But I already kil...Var "current_princess" == Val (String "ghost") && Var "loop_2_forest_share_loop" == Val (Bool False)
 ,
 Edge
@@ -3535,16 +3043,6 @@ Edge
 ,
 Edge
 	From: 1446 ( spectre_1_forest)
-	To: 1449 ( (Explore) I'm getting a ter...)
-
-,
-Edge
-	From: 1446 ( spectre_1_forest)
-	To: 1458 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 1446 ( spectre_1_forest)
 	To: 1459 ( spectre_1_forest_princess)
 
 ,
@@ -3569,11 +3067,6 @@ Edge
 	Via: Var "spectre_1_forest_share_loop" == Val (Bool False)
 ,
 Edge
-	From: 1449 ( (Explore) I'm getting a ter...)
-	To: 1448 ( spectre_1_forest_narrator_share_join)
-	Via: Var "spectre_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 144 ( She's lost an arm. I'm lock...)
 	To: 145 ( (Lock her away) Tell you wh...)
 
@@ -3587,11 +3080,6 @@ Edge
 	From: 144 ( She's lost an arm. I'm lock...)
 	To: 66 ( nightmare_join)
 
-,
-Edge
-	From: 1458 ( (Explore) Let's talk about ...)
-	To: 1459 ( spectre_1_forest_princess)
-	Via: "spectre_1_forest_share_loop_insist" && Var "spectre_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 1459 ( spectre_1_forest_princess)
@@ -3680,22 +3168,12 @@ Edge
 ,
 Edge
 	From: 1485 ( spectre_encounter_start)
-	To: 1486 ( [[Slay the Princess.])
-
-,
-Edge
-	From: 1485 ( spectre_encounter_start)
 	To: 1487 ( spectre_slay_join)
 
 ,
 Edge
 	From: 1485 ( spectre_encounter_start)
 	To: 1488 ( spectre_hostile_join)
-
-,
-Edge
-	From: 1485 ( spectre_encounter_start)
-	To: 1490 ( [[Grab her.])
 
 ,
 Edge
@@ -3709,11 +3187,6 @@ Edge
 	Via: [[Wait and see how things p...
 ,
 Edge
-	From: 1486 ( [[Slay the Princess.])
-	To: 1487 ( spectre_slay_join)
-	Via: "blade_held" && Var "spectre_hostile" == Val (Bool False)
-,
-Edge
 	From: 1487 ( spectre_slay_join)
 	To: 1488 ( spectre_hostile_join)
 	Via: "blade_held" && Var "spectre_hostile" == Val (Bool False)
@@ -3721,11 +3194,6 @@ Edge
 Edge
 	From: 1488 ( spectre_hostile_join)
 	To: 1492 ( spectre_menu_hostile)
-	Via: Var "blade_held" == Val (Bool False)
-,
-Edge
-	From: 1490 ( [[Grab her.])
-	To: 1491 ( spectre_grab_join)
 	Via: Var "blade_held" == Val (Bool False)
 ,
 Edge
@@ -3760,22 +3228,12 @@ Edge
 ,
 Edge
 	From: 1492 ( spectre_menu_hostile)
-	To: 1600 ( (Explore) ''Of course I att...)
-
-,
-Edge
-	From: 1492 ( spectre_menu_hostile)
 	To: 1601 ( spectre_hostile_world_join)
 
 ,
 Edge
 	From: 1492 ( spectre_menu_hostile)
 	To: 1602 ( spectre_hostile_world_menu)
-
-,
-Edge
-	From: 1492 ( spectre_menu_hostile)
-	To: 1609 ( (Explore) ''What do you wan...)
 
 ,
 Edge
@@ -3840,7 +3298,7 @@ Edge
 ,
 Edge
 	From: 1495 ( spectre_menu_friendly)
-	To: 1500 ( (Explore) ''And where are y...)
+	To: 1501 ( spectre_friendly_home_reveal)
 
 ,
 Edge
@@ -3865,11 +3323,6 @@ Edge
 ,
 Edge
 	From: 1495 ( spectre_menu_friendly)
-	To: 1505 ( (Explore) ''Stop playing th...)
-
-,
-Edge
-	From: 1495 ( spectre_menu_friendly)
 	To: 1506 ( spectre_victim_stop)
 
 ,
@@ -3891,11 +3344,6 @@ Edge
 Edge
 	From: 1495 ( spectre_menu_friendly)
 	To: 1515 ( (Explore) ''I'm sorry. Is t...)
-
-,
-Edge
-	From: 1495 ( spectre_menu_friendly)
-	To: 1518 ( (Explore) ''What do you wan...)
 
 ,
 Edge
@@ -3950,17 +3398,7 @@ Edge
 ,
 Edge
 	From: 1495 ( spectre_menu_friendly)
-	To: 1538 ( (Explore) ''If I knew I'd w...)
-
-,
-Edge
-	From: 1495 ( spectre_menu_friendly)
 	To: 1539 ( spectre_had_talk_again)
-
-,
-Edge
-	From: 1495 ( spectre_menu_friendly)
-	To: 1541 ( (Explore) ''I died too and ...)
 
 ,
 Edge
@@ -3970,17 +3408,7 @@ Edge
 ,
 Edge
 	From: 1495 ( spectre_menu_friendly)
-	To: 1544 ( (Explore) ''You're dead. Or...)
-
-,
-Edge
-	From: 1495 ( spectre_menu_friendly)
 	To: 1545 ( spectre_how_hurt)
-
-,
-Edge
-	From: 1495 ( spectre_menu_friendly)
-	To: 1550 ( (Explore) ''I was told you ...)
 
 ,
 Edge
@@ -4024,11 +3452,6 @@ Edge
 
 ,
 Edge
-	From: 1500 ( (Explore) ''And where are y...)
-	To: 1501 ( spectre_friendly_home_reveal)
-	Via: Var "spectre_home_comment" == Val (Bool False) && "spectre_why_back"
-,
-Edge
 	From: 1501 ( spectre_friendly_home_reveal)
 	To: 1495 ( spectre_menu_friendly)
 	Via: Var "spectre_home_comment" == Val (Bool False) && "spectre_why_back"
@@ -4037,11 +3460,6 @@ Edge
 	From: 1504 ( spectre_friendly_possession_early_join)
 	To: 1519 ( spectre_friendly_possession_join)
 	Via: Var "spectre_possession_ask" == Val (Bool False)
-,
-Edge
-	From: 1505 ( (Explore) ''Stop playing th...)
-	To: 1506 ( spectre_victim_stop)
-	Via: Var "spectre_victim" == Val (Bool False)
 ,
 Edge
 	From: 1506 ( spectre_victim_stop)
@@ -4162,11 +3580,6 @@ Edge
 	From: 1515 ( (Explore) ''I'm sorry. Is t...)
 	To: 1504 ( spectre_friendly_possession_early_join)
 	Via: Else
-,
-Edge
-	From: 1518 ( (Explore) ''What do you wan...)
-	To: 1504 ( spectre_friendly_possession_early_join)
-	Via: Var "spectre_possession_ask" == Val (Bool False)
 ,
 Edge
 	From: 1519 ( spectre_friendly_possession_join)
@@ -4319,11 +3732,6 @@ Edge
 
 ,
 Edge
-	From: 1538 ( (Explore) ''If I knew I'd w...)
-	To: 1539 ( spectre_had_talk_again)
-	Via: Var "spectre_if_only" == Val (Bool False)
-,
-Edge
 	From: 1539 ( spectre_had_talk_again)
 	To: 1492 ( spectre_menu_hostile)
 	Via: "spectre_hostile"
@@ -4339,11 +3747,6 @@ Edge
 
 ,
 Edge
-	From: 1541 ( (Explore) ''I died too and ...)
-	To: 1542 ( spectre_floating)
-	Via: Var "spectre_also_dead" == Val (Bool False)
-,
-Edge
 	From: 1542 ( spectre_floating)
 	To: 1492 ( spectre_menu_hostile)
 	Via: "spectre_hostile"
@@ -4357,11 +3760,6 @@ Edge
 	From: 1542 ( spectre_floating)
 	To: 1519 ( spectre_friendly_possession_join)
 	Via: Else
-,
-Edge
-	From: 1544 ( (Explore) ''You're dead. Or...)
-	To: 1545 ( spectre_how_hurt)
-	Via: Var "spectre_how_hurt_explore" == Val (Bool False)
 ,
 Edge
 	From: 1545 ( spectre_how_hurt)
@@ -4397,11 +3795,6 @@ Edge
 	From: 154 ( basement_1_empty_sneak_join)
 	To: 159 ( loop_1_knife_roll_death)
 
-,
-Edge
-	From: 1550 ( (Explore) ''I was told you ...)
-	To: 1530 ( spectre_world_end_join)
-	Via: Var "spectre_world_end_explore" == Val (Bool False)
 ,
 Edge
 	From: 1551 ( spectre_world_end_menu)
@@ -4470,8 +3863,8 @@ Edge
 ,
 Edge
 	From: 1575 ( spectre_possession_menu)
-	To: 1580 ( spectre_free_start)
-	Via: [[Leave the basement.]
+	To: 1582 ( spectre_leaving_menu)
+
 ,
 Edge
 	From: 1578 ( spectre_self_slay_join)
@@ -4481,11 +3874,6 @@ Edge
 Edge
 	From: 1578 ( spectre_self_slay_join)
 	To: 466 ( mirror_start)
-
-,
-Edge
-	From: 1580 ( spectre_free_start)
-	To: 1582 ( spectre_leaving_menu)
 
 ,
 Edge
@@ -4515,11 +3903,6 @@ Edge
 ,
 Edge
 	From: 1587 ( spectre_kill_player)
-	To: 1588 ( ''Did you miss?'')
-
-,
-Edge
-	From: 1587 ( spectre_kill_player)
 	To: 1589 ( spectre_kill_player_join)
 
 ,
@@ -4537,11 +3920,6 @@ Edge
 	From: 1587 ( spectre_kill_player)
 	To: 1589 ( spectre_kill_player_join)
 	Via: [[Step away.]
-,
-Edge
-	From: 1588 ( ''Did you miss?'')
-	To: 1589 ( spectre_kill_player_join)
-
 ,
 Edge
 	From: 1589 ( spectre_kill_player_join)
@@ -4579,11 +3957,6 @@ Edge
 	Via: [[Proceed into the cabin.]
 ,
 Edge
-	From: 1600 ( (Explore) ''Of course I att...)
-	To: 1601 ( spectre_hostile_world_join)
-	Via: Var "spectre_world_end_explore" == Val (Bool False)
-,
-Edge
 	From: 1601 ( spectre_hostile_world_join)
 	To: 1602 ( spectre_hostile_world_menu)
 	Via: Var "spectre_world_end_explore" == Val (Bool False)
@@ -4592,11 +3965,6 @@ Edge
 	From: 1602 ( spectre_hostile_world_menu)
 	To: 1492 ( spectre_menu_hostile)
 	Via: (Return) [[Leave it at that.]
-,
-Edge
-	From: 1609 ( (Explore) ''What do you wan...)
-	To: 1610 ( spectre_hostile_possession_join)
-	Via: Var "spectre_possession_ask" == Val (Bool False)
 ,
 Edge
 	From: 1610 ( spectre_hostile_possession_join)
@@ -4714,11 +4082,6 @@ Edge
 	Via: Var "blade_held" == Val (Bool False) && "spectre_can_wraith"
 ,
 Edge
-	From: 1636 ( stranger_1_cabin_start)
-	To: 1637 ( cabin_interior_2_stranger_menu)
-
-,
-Edge
 	From: 1637 ( cabin_interior_2_stranger_menu)
 	To: 1638 ( (Explore) You didn't say an...)
 
@@ -4735,8 +4098,8 @@ Edge
 ,
 Edge
 	From: 1637 ( cabin_interior_2_stranger_menu)
-	To: 1648 ( stranger_1_basement_stairs)
-	Via: [[Enter the basement.]
+	To: 1649 ( stranger_1_basement)
+
 ,
 Edge
 	From: 1638 ( (Explore) You didn't say an...)
@@ -4765,11 +4128,6 @@ Edge
 ,
 Edge
 	From: 1648 ( stranger_1_basement_stairs)
-	To: 1649 ( stranger_1_basement)
-
-,
-Edge
-	From: 1649 ( stranger_1_basement)
 	To: 1650 ( stranger_basement_menu)
 
 ,
@@ -4805,17 +4163,12 @@ Edge
 ,
 Edge
 	From: 1659 ( stranger_ending)
-	To: 1663 ( stranger_end_say_nothing_join)
-	Via: [[Say nothing.]
-,
-Edge
-	From: 1663 ( stranger_end_say_nothing_join)
 	To: 466 ( mirror_start)
 
 ,
 Edge
 	From: 1664 ( stranger_1_woods)
-	To: 1665 ( (Explore) I'm getting a ter...)
+	To: 1666 ( stranger_1_no_memory)
 
 ,
 Edge
@@ -4869,11 +4222,6 @@ Edge
 
 ,
 Edge
-	From: 1665 ( (Explore) I'm getting a ter...)
-	To: 1666 ( stranger_1_no_memory)
-	Via: Var "stranger_1_woods_share_loop" == Val (Bool False)
-,
-Edge
 	From: 1666 ( stranger_1_no_memory)
 	To: 1664 ( stranger_1_woods)
 	Via: Var "stranger_1_woods_share_loop" == Val (Bool False)
@@ -4895,7 +4243,7 @@ Edge
 ,
 Edge
 	From: 1677 ( cabin_arrival_stranger_1_menu)
-	To: 1636 ( stranger_1_cabin_start)
+	To: 1637 ( cabin_interior_2_stranger_menu)
 
 ,
 Edge
@@ -4925,18 +4273,13 @@ Edge
 ,
 Edge
 	From: 1683 ( tower_1_join_me_menu)
-	To: 1698 ( (Explore) ''I have question...)
+	To: 1699 ( tower_talk_refuse)
 
 ,
 Edge
 	From: 1683 ( tower_1_join_me_menu)
 	To: 1699 ( tower_talk_refuse)
 	Via: (Explore) ''What happened t...Var "tower_priest_offer" == Val (Bool False)
-,
-Edge
-	From: 1683 ( tower_1_join_me_menu)
-	To: 1702 ( ''I'm not going to help you...)
-
 ,
 Edge
 	From: 1683 ( tower_1_join_me_menu)
@@ -4952,11 +4295,6 @@ Edge
 	From: 1683 ( tower_1_join_me_menu)
 	To: 1709 ( tower_pledge_join)
 	Via: ''I'm yours to command.'' [...
-,
-Edge
-	From: 1684 ( tower_1_share_motive_menu)
-	To: 1687 ( ''You're supposed to end th...)
-
 ,
 Edge
 	From: 1684 ( tower_1_share_motive_menu)
@@ -4979,11 +4317,6 @@ Edge
 
 ,
 Edge
-	From: 1687 ( ''You're supposed to end th...)
-	To: 1688 ( tower_1_motive_shared_join)
-
-,
-Edge
 	From: 1688 ( tower_1_motive_shared_join)
 	To: 1683 ( tower_1_join_me_menu)
 
@@ -4996,11 +4329,6 @@ Edge
 Edge
 	From: 1691 ( tower_1_battle_motive_join)
 	To: 1704 ( tower_self_end_late_join)
-
-,
-Edge
-	From: 1691 ( tower_1_battle_motive_join)
-	To: 1710 ( [[Slay yourself.])
 
 ,
 Edge
@@ -5019,11 +4347,6 @@ Edge
 	Via: [[Resist.]Var "tower_resist_count" >= Val (Int 3) && Var "tower_submit_count" > Val (Int 0)
 ,
 Edge
-	From: 1691 ( tower_1_battle_motive_join)
-	To: 1716 ( [[Slay the Princess.])
-
-,
-Edge
 	From: 1693 ( [[Remain silent.])
 	To: 1688 ( tower_1_motive_shared_join)
 
@@ -5032,11 +4355,6 @@ Edge
 	From: 1693 ( [[Remain silent.])
 	To: 1691 ( tower_1_battle_motive_join)
 	Via: Var "tower_submit_count" == Val (Int 0)
-,
-Edge
-	From: 1698 ( (Explore) ''I have question...)
-	To: 1699 ( tower_talk_refuse)
-	Via: Var "tower_priest_offer" == Val (Bool False)
 ,
 Edge
 	From: 1699 ( tower_talk_refuse)
@@ -5052,11 +4370,6 @@ Edge
 	From: 16 ( prisoner_1_cabin_arrival)
 	To: 26 ( prisoner_stranger_rejoin)
 	Via: [[Proceed into the cabin.]
-,
-Edge
-	From: 1702 ( ''I'm not going to help you...)
-	To: 1703 ( tower_1_empty_refuse_join)
-	Via: Var "tower_1_cabin_blade_taken" == Val (Bool False) && Var "tower_resist_count" >= Val (Int 2)
 ,
 Edge
 	From: 1703 ( tower_1_empty_refuse_join)
@@ -5079,19 +4392,9 @@ Edge
 
 ,
 Edge
-	From: 1710 ( [[Slay yourself.])
-	To: 1711 ( tower_self_end_join)
-
-,
-Edge
 	From: 1711 ( tower_self_end_join)
 	To: 1704 ( tower_self_end_late_join)
 
-,
-Edge
-	From: 1712 ( tower_2_start)
-	To: 1777 ( apotheosis_start_contrarian)
-	Via: "tower_1_cabin_blade_taken"
 ,
 Edge
 	From: 1712 ( tower_2_start)
@@ -5101,11 +4404,6 @@ Edge
 Edge
 	From: 1715 ( tower_advance_1)
 	To: 1717 ( tower_post_advance_menu)
-	Via: Var "tower_submit_count" == Val (Int 0)
-,
-Edge
-	From: 1716 ( [[Slay the Princess.])
-	To: 1715 ( tower_advance_1)
 	Via: Var "tower_submit_count" == Val (Int 0)
 ,
 Edge
@@ -5125,11 +4423,6 @@ Edge
 ,
 Edge
 	From: 1717 ( tower_post_advance_menu)
-	To: 1722 ( [[Slay the Princess.])
-
-,
-Edge
-	From: 1717 ( tower_post_advance_menu)
 	To: 1723 ( tower_final_choice)
 
 ,
@@ -5141,11 +4434,6 @@ Edge
 Edge
 	From: 1721 ( tower_advance_2_join)
 	To: 1723 ( tower_final_choice)
-	Via: Var "tower_submit_count" == Val (Int 0)
-,
-Edge
-	From: 1722 ( [[Slay the Princess.])
-	To: 1721 ( tower_advance_2_join)
 	Via: Var "tower_submit_count" == Val (Int 0)
 ,
 Edge
@@ -5189,23 +4477,13 @@ Edge
 	Via: (Explore) ''What happens no...[[Take her hand.]
 ,
 Edge
-	From: 1729 ( tower_pledge_late_join)
-	To: 1736 ( [[Take her hand.])
-
-,
-Edge
 	From: 1735 ( tower_finale_join)
 	To: 466 ( mirror_start)
 
 ,
 Edge
-	From: 1736 ( [[Take her hand.])
-	To: 1735 ( tower_finale_join)
-
-,
-Edge
 	From: 1738 ( tower_1_forest)
-	To: 1739 ( (Explore) I'm getting a ter...)
+	To: 1740 ( tower_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -5230,11 +4508,6 @@ Edge
 ,
 Edge
 	From: 1738 ( tower_1_forest)
-	To: 1748 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 1738 ( tower_1_forest)
 	To: 1749 ( tower_1_forest_princess)
 
 ,
@@ -5254,19 +4527,9 @@ Edge
 	Via: [[Proceed to the cabin.]
 ,
 Edge
-	From: 1739 ( (Explore) I'm getting a ter...)
-	To: 1740 ( tower_1_forest_narrator_share_join)
-	Via: Var "tower_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 1740 ( tower_1_forest_narrator_share_join)
 	To: 1738 ( tower_1_forest)
 	Via: Var "tower_1_forest_share_loop" == Val (Bool False)
-,
-Edge
-	From: 1748 ( (Explore) Let's talk about ...)
-	To: 1749 ( tower_1_forest_princess)
-	Via: "tower_1_forest_share_loop_insist" && Var "tower_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 1749 ( tower_1_forest_princess)
@@ -5295,7 +4558,7 @@ Edge
 ,
 Edge
 	From: 175 ( basement_1_knife_start)
-	To: 176 ( basement_1_knife_confronted)
+	To: 178 ( basement_1_nerves_steeled)
 
 ,
 Edge
@@ -5364,18 +4627,8 @@ Edge
 	Via: [[Wipe the mirror clean.]
 ,
 Edge
-	From: 176 ( basement_1_knife_confronted)
-	To: 178 ( basement_1_nerves_steeled)
-	Via: [[Steel your nerves and ste...
-,
-Edge
 	From: 1776 ( tower_variables)
 	To: 1712 ( tower_2_start)
-
-,
-Edge
-	From: 1777 ( apotheosis_start_contrarian)
-	To: 1778 ( apotheosis_explore_menu)
 
 ,
 Edge
@@ -5417,11 +4670,6 @@ Edge
 	From: 1785 ( contrarian_pristine_apoth_menu)
 	To: 3411 ( apotheosis_contrarian_freedom_join)
 	Via: [[Flee.][[Embrace your new goddess.]
-,
-Edge
-	From: 1785 ( contrarian_pristine_apoth_menu)
-	To: 3413 ( [[Embrace your new goddess.])
-
 ,
 Edge
 	From: 1785 ( contrarian_pristine_apoth_menu)
@@ -5514,19 +4762,9 @@ Edge
 
 ,
 Edge
-	From: 1790 ( witch_1_encounter_start)
-	To: 1791 ( witch_1_menu)
-
-,
-Edge
 	From: 1791 ( witch_1_menu)
 	To: 1795 ( witch_chains_fall_join)
 	Via: (Explore) ''Don't worry, th..."blade_held" && Var "witch_free" == Val (Bool False)
-,
-Edge
-	From: 1791 ( witch_1_menu)
-	To: 1804 ( (Explore) ''I didn't bring ...)
-
 ,
 Edge
 	From: 1791 ( witch_1_menu)
@@ -5545,16 +4783,6 @@ Edge
 ,
 Edge
 	From: 1791 ( witch_1_menu)
-	To: 1813 ( witch_1_stairs)
-	Via: ''Okay. Let's leave.'' [[Le..."witch_free"
-,
-Edge
-	From: 1791 ( witch_1_menu)
-	To: 1814 ( ''I don't want to hurt you,...)
-
-,
-Edge
-	From: 1791 ( witch_1_menu)
 	To: 1815 ( witch_blade_given_join)
 
 ,
@@ -5566,6 +4794,11 @@ Edge
 Edge
 	From: 1791 ( witch_1_menu)
 	To: 1821 ( Haha. Yeah nevermind that w...)
+
+,
+Edge
+	From: 1791 ( witch_1_menu)
+	To: 1822 ( witch_1_stairs_menu)
 
 ,
 Edge
@@ -5614,11 +4847,6 @@ Edge
 	Via: [[Proceed into the cabin.]
 ,
 Edge
-	From: 1804 ( (Explore) ''I didn't bring ...)
-	To: 1805 ( witch_chains_no_cut)
-	Via: "witch_leave_together_knowledge" && Var "witch_cut_ask" == Val (Bool False) && Var "blade_held" == Val (Bool False) && Var "witch_free" == Val (Bool False)
-,
-Edge
 	From: 1805 ( witch_chains_no_cut)
 	To: 1795 ( witch_chains_fall_join)
 	Via: "witch_leave_together_knowledge" && Var "witch_cut_ask" == Val (Bool False) && Var "blade_held" == Val (Bool False) && Var "witch_free" == Val (Bool False)
@@ -5637,16 +4865,6 @@ Edge
 	From: 180 ( basement_1_knife_dropped)
 	To: 225 ( basement_1_knife_dropped_menu)
 
-,
-Edge
-	From: 1813 ( witch_1_stairs)
-	To: 1822 ( witch_1_stairs_menu)
-
-,
-Edge
-	From: 1814 ( ''I don't want to hurt you,...)
-	To: 1815 ( witch_blade_given_join)
-	Via: "blade_held" && Var "witch_blade_offer" == Val (Bool False)
 ,
 Edge
 	From: 1815 ( witch_blade_given_join)
@@ -5695,11 +4913,6 @@ Edge
 ,
 Edge
 	From: 1825 ( ''I don't trust you. Not en...)
-	To: 1826 ( witch_1_flee)
-	Via: "witch_can_wild"
-,
-Edge
-	From: 1826 ( witch_1_flee)
 	To: 1871 ( witch_upstairs_menu)
 
 ,
@@ -5731,11 +4944,6 @@ Edge
 Edge
 	From: 182 ( basement_1_nerves_steeled_menu)
 	To: 196 ( [[Drop the blade.])
-
-,
-Edge
-	From: 182 ( basement_1_nerves_steeled_menu)
-	To: 198 ( [[Slay the Princess.])
 
 ,
 Edge
@@ -5830,8 +5038,8 @@ Edge
 ,
 Edge
 	From: 1847 ( [[Step onto the stairs.])
-	To: 1849 ( witch_stairs_player_first)
-	Via: Else
+	To: 1859 ( witch_betrayal_menu)
+
 ,
 Edge
 	From: 1848 ( witch_stairs_princess_first)
@@ -5842,11 +5050,6 @@ Edge
 	From: 1848 ( witch_stairs_princess_first)
 	To: 1854 ( witch_leave_join)
 	Via: Else
-,
-Edge
-	From: 1849 ( witch_stairs_player_first)
-	To: 1859 ( witch_betrayal_menu)
-
 ,
 Edge
 	From: 1851 ( witch_back_stab_menu)
@@ -5869,23 +5072,13 @@ Edge
 	Via: Wow, that's an amazing idea...
 ,
 Edge
-	From: 1851 ( witch_back_stab_menu)
-	To: 1858 ( Ugh. Fine. [[Stab her in th...)
-
-,
-Edge
 	From: 1854 ( witch_leave_join)
-	To: 1861 ( witch_leave_locked_menu)
-	Via: Else
+	To: 466 ( mirror_start)
+
 ,
 Edge
 	From: 1856 ( witch_back_stab)
 	To: 1859 ( witch_betrayal_menu)
-
-,
-Edge
-	From: 1858 ( Ugh. Fine. [[Stab her in th...)
-	To: 1856 ( witch_back_stab)
 
 ,
 Edge
@@ -5902,11 +5095,6 @@ Edge
 	From: 1859 ( witch_betrayal_menu)
 	To: 466 ( mirror_start)
 
-,
-Edge
-	From: 1861 ( witch_leave_locked_menu)
-	To: 466 ( mirror_start)
-	Via: Okay. What happens now? I'm...
 ,
 Edge
 	From: 186 ( ''I'm not dropping the blad...)
@@ -5929,23 +5117,13 @@ Edge
 	Via: Var "witch_upstairs_count" == Val (Int 3)
 ,
 Edge
-	From: 1871 ( witch_upstairs_menu)
-	To: 1879 ( [[Give up, and await your d...)
-
-,
-Edge
 	From: 1872 ( witch_upstairs_end)
 	To: 766 ( wild_start)
 
 ,
 Edge
-	From: 1879 ( [[Give up, and await your d...)
-	To: 1872 ( witch_upstairs_end)
-
-,
-Edge
 	From: 1881 ( witch_1_forest)
-	To: 1882 ( (Explore) I'm getting a ter...)
+	To: 1883 ( witch_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -5975,11 +5153,6 @@ Edge
 ,
 Edge
 	From: 1881 ( witch_1_forest)
-	To: 1892 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 1881 ( witch_1_forest)
 	To: 1893 ( witch_1_forest_princess)
 
 ,
@@ -5999,19 +5172,9 @@ Edge
 	Via: [[Proceed to the cabin.]
 ,
 Edge
-	From: 1882 ( (Explore) I'm getting a ter...)
-	To: 1883 ( witch_1_forest_narrator_share_join)
-	Via: Var "witch_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 1883 ( witch_1_forest_narrator_share_join)
 	To: 1881 ( witch_1_forest)
 	Via: Var "witch_1_forest_share_loop" == Val (Bool False)
-,
-Edge
-	From: 1892 ( (Explore) Let's talk about ...)
-	To: 1893 ( witch_1_forest_princess)
-	Via: "witch_1_forest_share_loop_insist" && Var "witch_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 1893 ( witch_1_forest_princess)
@@ -6130,8 +5293,8 @@ Edge
 ,
 Edge
 	From: 1910 ( cabin_interior_2_witch_menu)
-	To: 1790 ( witch_1_encounter_start)
-	Via: [[Enter the basement.]
+	To: 1791 ( witch_1_menu)
+
 ,
 Edge
 	From: 1910 ( cabin_interior_2_witch_menu)
@@ -6215,8 +5378,8 @@ Edge
 ,
 Edge
 	From: 1932 ( witch_2_exterior)
-	To: 1937 ( witch_2_cabin)
-	Via: [[Proceed into the cabin.]
+	To: 1938 ( witch_2_cabin_menu)
+
 ,
 Edge
 	From: 1934 ( I'm done with this. Bye! [[...)
@@ -6230,17 +5393,17 @@ Edge
 ,
 Edge
 	From: 1937 ( witch_2_cabin)
-	To: 1938 ( witch_2_cabin_menu)
+	To: 1943 ( witch_2_stairs)
 
 ,
 Edge
 	From: 1938 ( witch_2_cabin_menu)
-	To: 1943 ( witch_2_stairs)
-	Via: [[Approach the mirror.][[Wipe the mirror clean.][[Enter the basement.]
+	To: 1944 ( witch_2_stairs_menu)
+
 ,
 Edge
-	From: 1943 ( witch_2_stairs)
-	To: 1944 ( witch_2_stairs_menu)
+	From: 1944 ( witch_2_stairs_menu)
+	To: 1946 ( witch_2_stairs_join)
 
 ,
 Edge
@@ -6260,28 +5423,13 @@ Edge
 ,
 Edge
 	From: 1944 ( witch_2_stairs_menu)
-	To: 1949 ( (Explore) ''I just want to ...)
+	To: 1953 ( witch_2_basement_menu)
 
-,
-Edge
-	From: 1944 ( witch_2_stairs_menu)
-	To: 1952 ( witch_2_basement)
-	Via: [[Proceed down the stairs.]
 ,
 Edge
 	From: 1946 ( witch_2_stairs_join)
 	To: 1944 ( witch_2_stairs_menu)
 	Via: Var "witch_2_stairs_menu_explore" == Val (Bool False)
-,
-Edge
-	From: 1949 ( (Explore) ''I just want to ...)
-	To: 1946 ( witch_2_stairs_join)
-	Via: Var "witch_2_stairs_menu_explore" == Val (Bool False)
-,
-Edge
-	From: 1952 ( witch_2_basement)
-	To: 1953 ( witch_2_basement_menu)
-
 ,
 Edge
 	From: 1953 ( witch_2_basement_menu)
@@ -6320,8 +5468,8 @@ Edge
 ,
 Edge
 	From: 1953 ( witch_2_basement_menu)
-	To: 1971 ( witch_2_slain)
-	Via: [[Slay the Princess.]"blade_held"
+	To: 466 ( mirror_start)
+
 ,
 Edge
 	From: 1960 ( witch_2_take_blade_join)
@@ -6389,34 +5537,14 @@ Edge
 	Via: Var "must_spectre" == Val (Bool False)
 ,
 Edge
-	From: 1971 ( witch_2_slain)
-	To: 466 ( mirror_start)
-
-,
-Edge
-	From: 1982 ( fury_start_tower)
+	From: 1984 ( fury_start_death_unarmed)
 	To: 1986 ( fury_start_late_join)
-
-,
-Edge
-	From: 1983 ( fury_start_pacifism)
-	To: 1987 ( fury_path_menu)
 
 ,
 Edge
 	From: 1984 ( fury_start_death_unarmed)
 	To: 1988 ( fury_death_start_join)
 	Via: Else
-,
-Edge
-	From: 1984 ( fury_start_death_unarmed)
-	To: 1989 ( fury_start_join)
-
-,
-Edge
-	From: 1985 ( fury_start_adversary_other)
-	To: 1988 ( fury_death_start_join)
-
 ,
 Edge
 	From: 1987 ( fury_path_menu)
@@ -6434,19 +5562,9 @@ Edge
 
 ,
 Edge
-	From: 1989 ( fury_start_join)
-	To: 1986 ( fury_start_late_join)
-
-,
-Edge
-	From: 198 ( [[Slay the Princess.])
-	To: 190 ( basement_1_knife_slay_join)
-	Via: "can_spectre" && Var "spectre_encountered" == Val (Bool False) || Var "razor_encountered" == Val (Bool False) || "basement_1_nerves_armed" && Var "razor_encountered" == Val (Bool False) || "basement_1_nerves_steeled_hesitated" && Var "adversary_encountered" == Val (Bool False) || Var "tower_encountered" == Val (Bool False) || Var "nightmare_encountered" == Val (Bool False) || "basement_1_nerves_fear" && Var "tower_encountered" == Val (Bool False) && "can_slay"
-,
-Edge
 	From: 1993 ( fury_cabin_exterior)
-	To: 1998 ( fury_cabin_interior)
-	Via: [[Proceed into the cabin.]
+	To: 1999 ( fury_cabin_interior_menu)
+
 ,
 Edge
 	From: 1995 ( I'm done with this. Bye! [[...)
@@ -6459,8 +5577,8 @@ Edge
 	Via: "mound_can_attempt_flee"
 ,
 Edge
-	From: 1998 ( fury_cabin_interior)
-	To: 1999 ( fury_cabin_interior_menu)
+	From: 1999 ( fury_cabin_interior_menu)
+	To: 2001 ( fury_no_door_join)
 
 ,
 Edge
@@ -6472,11 +5590,6 @@ Edge
 	From: 1999 ( fury_cabin_interior_menu)
 	To: 2001 ( fury_no_door_join)
 	Via: (Explore) You didn't mentio...Var "fury_mirror_comment" == Val (Bool False)
-,
-Edge
-	From: 1999 ( fury_cabin_interior_menu)
-	To: 2003 ( (Explore) How are we suppos...)
-
 ,
 Edge
 	From: 1999 ( fury_cabin_interior_menu)
@@ -6494,18 +5607,8 @@ Edge
 	Via: [[Proceed into the cabin.]
 ,
 Edge
-	From: 1 ( adversary_1_start)
-	To: 640 ( adversary_1_forest)
-
-,
-Edge
 	From: 2001 ( fury_no_door_join)
 	To: 1999 ( fury_cabin_interior_menu)
-	Via: Var "fury_mirror_comment" == Val (Bool False)
-,
-Edge
-	From: 2003 ( (Explore) How are we suppos...)
-	To: 2001 ( fury_no_door_join)
 	Via: Var "fury_mirror_comment" == Val (Bool False)
 ,
 Edge
@@ -6570,11 +5673,6 @@ Edge
 ,
 Edge
 	From: 2013 ( fury_stairs)
-	To: 2020 ( ''Please just listen to me!'')
-
-,
-Edge
-	From: 2013 ( fury_stairs)
 	To: 2021 ( fury_mirror)
 	Via: [[Fight back.]Var "blade_held" == Val (Bool False) && Var "fury_source" != Val (String "unarmed")
 ,
@@ -6595,11 +5693,6 @@ Edge
 ,
 Edge
 	From: 2013 ( fury_stairs)
-	To: 2025 ( ''I'm going to end you.'' [...)
-
-,
-Edge
-	From: 2013 ( fury_stairs)
 	To: 2026 ( fury_blade_charge_join)
 
 ,
@@ -6609,18 +5702,8 @@ Edge
 	Via: [[Round three.]Var "fury_source" == Val (String "unarmed")
 ,
 Edge
-	From: 2013 ( fury_stairs)
-	To: 2028 ( [[Slay the Princess.])
-
-,
-Edge
 	From: 2016 ( fury_no_fight_end)
 	To: 2021 ( fury_mirror)
-
-,
-Edge
-	From: 2020 ( ''Please just listen to me!'')
-	To: 2016 ( fury_no_fight_end)
 
 ,
 Edge
@@ -6634,24 +5717,9 @@ Edge
 	Via: "blade_held" && Var "fury_source" != Val (String "pacifism")
 ,
 Edge
-	From: 2025 ( ''I'm going to end you.'' [...)
-	To: 2024 ( fury_claim_charge_join)
-	Via: "blade_held" && Var "fury_source" != Val (String "pacifism")
-,
-Edge
 	From: 2026 ( fury_blade_charge_join)
 	To: 2021 ( fury_mirror)
 	Via: "blade_held" && Var "fury_source" != Val (String "pacifism")
-,
-Edge
-	From: 2028 ( [[Slay the Princess.])
-	To: 2026 ( fury_blade_charge_join)
-	Via: "blade_held" && Var "fury_source" != Val (String "pacifism")
-,
-Edge
-	From: 2033 ( fury_pristine)
-	To: 3485 ( fury_pristine_pacifism_start)
-	Via: Var "fury_source" == Val (String "pacifism")
 ,
 Edge
 	From: 2033 ( fury_pristine)
@@ -6660,13 +5728,18 @@ Edge
 ,
 Edge
 	From: 2033 ( fury_pristine)
-	To: 3487 ( fury_pristine_unarmed)
-	Via: Var "fury_source" == Val (String "unarmed")
+	To: 3489 ( fury_pristine_unwind_pre_menu)
+
 ,
 Edge
 	From: 2033 ( fury_pristine)
-	To: 3488 ( fury_pristine_other_start)
-	Via: Else
+	To: 3492 ( fury_pristine_unarmed_menu)
+
+,
+Edge
+	From: 2034 ( grey_woods_menu)
+	To: 2036 ( grey_woods_different_join)
+
 ,
 Edge
 	From: 2034 ( grey_woods_menu)
@@ -6675,17 +5748,12 @@ Edge
 ,
 Edge
 	From: 2034 ( grey_woods_menu)
-	To: 2037 ( (Explore) We haven't talked...)
+	To: 2044 ( I'm done with this. Bye! [[...)
 
 ,
 Edge
 	From: 2034 ( grey_woods_menu)
-	To: 2043 ( grey_cabin_exterior)
-	Via: Whatever happens next, it s...
-,
-Edge
-	From: 2034 ( grey_woods_menu)
-	To: 2044 ( I'm done with this. Bye! [[...)
+	To: 2047 ( grey_cabin)
 
 ,
 Edge
@@ -6694,14 +5762,9 @@ Edge
 	Via: Var "grey_woods_different" == Val (Bool False)
 ,
 Edge
-	From: 2037 ( (Explore) We haven't talked...)
-	To: 2036 ( grey_woods_different_join)
-	Via: Var "grey_woods_different" == Val (Bool False)
-,
-Edge
 	From: 2043 ( grey_cabin_exterior)
-	To: 2047 ( grey_cabin)
-	Via: [[Proceed into the cabin.]
+	To: 2048 ( grey_cabin_mirror)
+
 ,
 Edge
 	From: 2044 ( I'm done with this. Bye! [[...)
@@ -6715,28 +5778,18 @@ Edge
 ,
 Edge
 	From: 2047 ( grey_cabin)
-	To: 2048 ( grey_cabin_mirror)
+	To: 2053 ( grey_stairs)
 
 ,
 Edge
 	From: 2048 ( grey_cabin_mirror)
-	To: 2053 ( grey_stairs)
-	Via: [[Approach the mirror.][[Wipe the mirror clean.][[Enter the basement.]
+	To: 2054 ( grey_stairs_menu)
+
 ,
 Edge
 	From: 204 ( I'm not sure. I feel like s...)
 	To: 205 ( ch1_razor_alt_start)
 	Via: Var "razor_encountered" == Val (Bool False)
-,
-Edge
-	From: 2053 ( grey_stairs)
-	To: 2054 ( grey_stairs_menu)
-
-,
-Edge
-	From: 2054 ( grey_stairs_menu)
-	To: 2055 ( (Explore) ''I'm sorry about...)
-
 ,
 Edge
 	From: 2054 ( grey_stairs_menu)
@@ -6762,11 +5815,6 @@ Edge
 	From: 2054 ( grey_stairs_menu)
 	To: 2063 ( grey_basement)
 	Via: [[Proceed down the stairs.]
-,
-Edge
-	From: 2055 ( (Explore) ''I'm sorry about...)
-	To: 2056 ( grey_stairs_menu_explore_join)
-	Via: Var "grey_stairs_menu_explore" == Val (Bool False)
 ,
 Edge
 	From: 2056 ( grey_stairs_menu_explore_join)
@@ -6795,16 +5843,11 @@ Edge
 ,
 Edge
 	From: 2063 ( grey_basement)
-	To: 2064 ( grey_damsel)
-	Via: Var "grey_source" == Val (String "damsel")
-,
-Edge
-	From: 2063 ( grey_basement)
 	To: 2065 ( grey_prisoner)
 	Via: Else
 ,
 Edge
-	From: 2064 ( grey_damsel)
+	From: 2063 ( grey_basement)
 	To: 2066 ( grey_damsel_menu)
 
 ,
@@ -6870,7 +5913,7 @@ Edge
 ,
 Edge
 	From: 2066 ( grey_damsel_menu)
-	To: 2068 ( (Explore) ''Why did you clo...)
+	To: 2069 ( grey_damsel_together_explore_join)
 
 ,
 Edge
@@ -6897,11 +5940,6 @@ Edge
 	From: 2067 ( grey_damsel_end)
 	To: 466 ( mirror_start)
 
-,
-Edge
-	From: 2068 ( (Explore) ''Why did you clo...)
-	To: 2069 ( grey_damsel_together_explore_join)
-	Via: Var "grey_damsel_together_explore" == Val (Bool False)
 ,
 Edge
 	From: 2069 ( grey_damsel_together_explore_join)
@@ -6961,12 +5999,12 @@ Edge
 Edge
 	From: 2083 ( grey_prisoner_menu)
 	To: 2090 ( grey_prisoner_even_join)
-	Via: (Explore) ''I didn't even k...Var "grey_prisoner_even" == Val (Bool False) && "prisoner_decapitate"
+
 ,
 Edge
 	From: 2083 ( grey_prisoner_menu)
-	To: 2091 ( (Explore) ''I only killed y...)
-
+	To: 2090 ( grey_prisoner_even_join)
+	Via: (Explore) ''I didn't even k...Var "grey_prisoner_even" == Val (Bool False) && "prisoner_decapitate"
 ,
 Edge
 	From: 2083 ( grey_prisoner_menu)
@@ -6977,11 +6015,6 @@ Edge
 	From: 2083 ( grey_prisoner_menu)
 	To: 2096 ( grey_prisoner_rush)
 	Via: [[Rush for the blade.]
-,
-Edge
-	From: 2083 ( grey_prisoner_menu)
-	To: 2097 ( [[Rush to the door.])
-
 ,
 Edge
 	From: 2084 ( grey_prisoner_end)
@@ -6999,18 +6032,8 @@ Edge
 	Via: Var "grey_prisoner_even" == Val (Bool False) && Var "prisoner_decapitate" == Val (Bool False)
 ,
 Edge
-	From: 2091 ( (Explore) ''I only killed y...)
-	To: 2090 ( grey_prisoner_even_join)
-	Via: Var "grey_prisoner_even" == Val (Bool False) && Var "prisoner_decapitate" == Val (Bool False)
-,
-Edge
 	From: 2096 ( grey_prisoner_rush)
 	To: 2084 ( grey_prisoner_end)
-
-,
-Edge
-	From: 2097 ( [[Rush to the door.])
-	To: 2096 ( grey_prisoner_rush)
 
 ,
 Edge
@@ -7042,11 +6065,6 @@ Edge
 	From: 2099 ( wild_menu_1)
 	To: 2104 ( wild_menu_narrator_push_1_join)
 	Via: ''Okay. Let's say I want to..."wild_menu_what_narrator"
-,
-Edge
-	From: 2099 ( wild_menu_1)
-	To: 2105 ( [[Passively exist.])
-
 ,
 Edge
 	From: 2099 ( wild_menu_1)
@@ -7085,11 +6103,6 @@ Edge
 ,
 Edge
 	From: 2099 ( wild_menu_1)
-	To: 2116 ( ''He's right! I don't want ...)
-
-,
-Edge
-	From: 2099 ( wild_menu_1)
 	To: 2117 ( wild_menu_1_options_join)
 
 ,
@@ -7102,11 +6115,6 @@ Edge
 	From: 2099 ( wild_menu_1)
 	To: 2117 ( wild_menu_1_options_join)
 	Via: ''Whatever we are right now...
-,
-Edge
-	From: 2099 ( wild_menu_1)
-	To: 2120 ( ''This is how we're suppose...)
-
 ,
 Edge
 	From: 2099 ( wild_menu_1)
@@ -7137,11 +6145,6 @@ Edge
 	From: 2104 ( wild_menu_narrator_push_1_join)
 	To: 2117 ( wild_menu_1_options_join)
 	Via: "trait_contrarian" && Var "wild_menu_what_narrator" == Val (Bool False)
-,
-Edge
-	From: 2105 ( [[Passively exist.])
-	To: 2106 ( wild_menu_1_narrator_join)
-	Via: "trait_contrarian"
 ,
 Edge
 	From: 2106 ( wild_menu_1_narrator_join)
@@ -7184,11 +6187,6 @@ Edge
 
 ,
 Edge
-	From: 2116 ( ''He's right! I don't want ...)
-	To: 2104 ( wild_menu_narrator_push_1_join)
-	Via: "trait_contrarian" && Var "wild_menu_what_narrator" == Val (Bool False)
-,
-Edge
 	From: 2117 ( wild_menu_1_options_join)
 	To: 2107 ( wild_dissonance_witch_early_join)
 	Via: Else
@@ -7197,11 +6195,6 @@ Edge
 	From: 2117 ( wild_menu_1_options_join)
 	To: 2109 ( wild_dissonance_beast_early_join)
 	Via: Var "wild_source" == Val (String "beast")
-,
-Edge
-	From: 2120 ( ''This is how we're suppose...)
-	To: 2102 ( wild_princess_join)
-	Via: Var "wild_menu_what_narrator" == Val (Bool False)
 ,
 Edge
 	From: 2121 ( (Explore) [[Remember how it...)
@@ -7239,16 +6232,6 @@ Edge
 	Via: ''But the past does exist. ...
 ,
 Edge
-	From: 2141 ( wraith_start_join)
-	To: 2142 ( wraith_woods_menu)
-	Via: "trait_paranoid"
-,
-Edge
-	From: 2142 ( wraith_woods_menu)
-	To: 2148 ( wraith_cabin_arrive)
-	Via: [[Proceed to the cabin.]
-,
-Edge
 	From: 2142 ( wraith_woods_menu)
 	To: 2150 ( wraith_woods_leave)
 
@@ -7260,12 +6243,12 @@ Edge
 ,
 Edge
 	From: 2142 ( wraith_woods_menu)
-	To: 2151 ( ''There's something else we...)
+	To: 2153 ( wraith_cabin_ext_menu)
 
 ,
 Edge
 	From: 2148 ( wraith_cabin_arrive)
-	To: 2153 ( wraith_cabin_ext_menu)
+	To: 2156 ( wraith_cabin_interior)
 
 ,
 Edge
@@ -7289,24 +6272,14 @@ Edge
 	Via: Var "wraith_woods_leave_explore" == Val (Bool False) && "mound_can_attempt_flee"
 ,
 Edge
-	From: 2151 ( ''There's something else we...)
-	To: 2150 ( wraith_woods_leave)
-	Via: Var "wraith_woods_leave_explore" == Val (Bool False) && "mound_can_attempt_flee"
-,
-Edge
 	From: 2153 ( wraith_cabin_ext_menu)
-	To: 2156 ( wraith_cabin_interior)
-	Via: [[Enter the cabin.]
-,
-Edge
-	From: 2156 ( wraith_cabin_interior)
 	To: 2157 ( wraith_cabin_int_menu)
 
 ,
 Edge
-	From: 2157 ( wraith_cabin_int_menu)
+	From: 2156 ( wraith_cabin_interior)
 	To: 2161 ( wraith_convo_menu)
-	Via: [[Approach the mirror.][[Wipe the mirror clean.]
+
 ,
 Edge
 	From: 2161 ( wraith_convo_menu)
@@ -7327,11 +6300,6 @@ Edge
 	From: 2161 ( wraith_convo_menu)
 	To: 2165 ( wraith_even_join)
 	Via: (Explore) ''Look, we're eve...Var "wraith_source" == Val (String "nightmare") && Var "wraith_water_bridge_explore" == Val (Bool False)
-,
-Edge
-	From: 2161 ( wraith_convo_menu)
-	To: 2172 ( ''Okay. Fine. Just do it.'')
-
 ,
 Edge
 	From: 2161 ( wraith_convo_menu)
@@ -7365,8 +6333,8 @@ Edge
 ,
 Edge
 	From: 2162 ( wraith_possession)
-	To: 2181 ( wraith_end_fall)
-	Via: [[Throw your body into the ...
+	To: 466 ( mirror_start)
+
 ,
 Edge
 	From: 2164 ( (Explore) ''Look, we're eve...)
@@ -7404,11 +6372,6 @@ Edge
 	Via: Anything to get out of this...
 ,
 Edge
-	From: 2172 ( ''Okay. Fine. Just do it.'')
-	To: 2173 ( wraith_consent_join)
-	Via: Var "wraith_convo_count" != Val (Int 0)
-,
-Edge
 	From: 2173 ( wraith_consent_join)
 	To: 2162 ( wraith_possession)
 	Via: Var "wraith_convo_count" != Val (Int 0)
@@ -7419,13 +6382,8 @@ Edge
 
 ,
 Edge
-	From: 2181 ( wraith_end_fall)
-	To: 466 ( mirror_start)
-
-,
-Edge
 	From: 2182 ( restart_start)
-	To: 337 ( start)
+	To: 338 ( forest_dialogue)
 
 ,
 Edge
@@ -7444,39 +6402,14 @@ Edge
 	Via: Var "loops_finished" > Val (Int 0)
 ,
 Edge
-	From: 2184 ( caught_2)
-	To: 2182 ( restart_start)
-
-,
-Edge
-	From: 2185 ( caught_3)
-	To: 2182 ( restart_start)
-
-,
-Edge
-	From: 2186 ( caught_4)
-	To: 2182 ( restart_start)
-
-,
-Edge
-	From: 2187 ( caught_5)
-	To: 2182 ( restart_start)
-
-,
-Edge
 	From: 2188 ( caught_6)
-	To: 2191 ( caught_loop)
+	To: 215 ( credits)
 
 ,
 Edge
 	From: 218 ( You'd better be right about...)
 	To: 219 ( cycle_1_princess_slain_die)
 	Via: "cycle_1_princess_slain_offer_heard_menu_explore"
-,
-Edge
-	From: 2191 ( caught_loop)
-	To: 215 ( credits)
-	Via: [[Consciousness fades away.]
 ,
 Edge
 	From: 2194 ( felina_cabin_gentle_start)
@@ -7490,7 +6423,7 @@ Edge
 ,
 Edge
 	From: 2196 ( felina_slain_start)
-	To: 3094 ( slay_ending_linger)
+	To: 3098 ( felina_slain_leave_join)
 
 ,
 Edge
@@ -7542,11 +6475,6 @@ Edge
 	From: 2199 ( felina_cabin_gentle_menu_empty)
 	To: 2212 ( felina_gentle_leave_join_menu)
 	Via: ''What if we just leave?''Var "felina_leave_count" < Val (Int 9)
-,
-Edge
-	From: 2199 ( felina_cabin_gentle_menu_empty)
-	To: 2213 ( ''I think the only thing le...)
-
 ,
 Edge
 	From: 2199 ( felina_cabin_gentle_menu_empty)
@@ -7614,18 +6542,13 @@ Edge
 	Via: Var "felina_leave_count" >= Val (Int 9)
 ,
 Edge
-	From: 2213 ( ''I think the only thing le...)
-	To: 2212 ( felina_gentle_leave_join_menu)
-	Via: Var "felina_leave_count" >= Val (Int 9)
-,
-Edge
 	From: 2214 ( felina_gentle_hand_menu)
 	To: 2217 ( felina_leave_cabin_ending)
 	Via: [[There's no need for words..."felina_cabin_leave_hand_hold"
 ,
 Edge
 	From: 2217 ( felina_leave_cabin_ending)
-	To: 3079 ( felina_leave_cabin_hero_goodbye)
+	To: 3085 ( felina_leave_cabin_leave_join)
 
 ,
 Edge
@@ -7760,11 +6683,6 @@ Edge
 ,
 Edge
 	From: 2247 ( felina_cabin_hostile_menu_empty)
-	To: 2261 ( ''I think the only thing le...)
-
-,
-Edge
-	From: 2247 ( felina_cabin_hostile_menu_empty)
 	To: 2262 ( felina_harsh_hand_menu)
 
 ,
@@ -7844,11 +6762,6 @@ Edge
 	Via: Var "felina_leave_count" >= Val (Int 9)
 ,
 Edge
-	From: 2261 ( ''I think the only thing le...)
-	To: 2260 ( felina_hostile_leave_join_menu)
-	Via: Var "felina_leave_count" >= Val (Int 9)
-,
-Edge
 	From: 2262 ( felina_harsh_hand_menu)
 	To: 2217 ( felina_leave_cabin_ending)
 	Via: [[There's no need for words..."felina_cabin_leave_hand_hold"
@@ -7919,13 +6832,8 @@ Edge
 	Via: ''Okay. Then let's do it. I...
 ,
 Edge
-	From: 2290 ( felina_cabin_start)
-	To: 2291 ( felina_cabin_menu_start)
-
-,
-Edge
 	From: 2291 ( felina_cabin_menu_start)
-	To: 2292 ( (Explore) ''I'd like that. ...)
+	To: 2293 ( felina_cabin_describe_join)
 
 ,
 Edge
@@ -7935,7 +6843,7 @@ Edge
 ,
 Edge
 	From: 2291 ( felina_cabin_menu_start)
-	To: 2299 ( (Explore) ''I don't actuall...)
+	To: 2300 ( felina_cabin_complicated_feelings)
 
 ,
 Edge
@@ -7954,19 +6862,9 @@ Edge
 
 ,
 Edge
-	From: 2292 ( (Explore) ''I'd like that. ...)
-	To: 2293 ( felina_cabin_describe_join)
-	Via: Var "felina_cabin_menu_count" == Val (Int 0) && Var "felina_cabin_describe" == Val (Bool False)
-,
-Edge
 	From: 2293 ( felina_cabin_describe_join)
 	To: 2291 ( felina_cabin_menu_start)
 	Via: Var "felina_cabin_menu_count" == Val (Int 0) && Var "felina_cabin_describe" == Val (Bool False)
-,
-Edge
-	From: 2299 ( (Explore) ''I don't actuall...)
-	To: 2300 ( felina_cabin_complicated_feelings)
-	Via: "felina_cabin_narrator_dead" && Var "felina_cabin_narrator_final_thoughts" == Val (String "")
 ,
 Edge
 	From: 229 ( ''You're supposed to end th...)
@@ -8002,11 +6900,6 @@ Edge
 	From: 2306 ( [[Continue down the stairs.])
 	To: 2243 ( felina_cabin_hostile_start)
 	Via: Var "first_princess" == Val (String "harsh")
-,
-Edge
-	From: 2309 ( felina_cabin_strange_start)
-	To: 2310 ( felina_cabin_strange_menu_start)
-
 ,
 Edge
 	From: 230 ( basement_1_shared_task_join)
@@ -8045,7 +6938,7 @@ Edge
 ,
 Edge
 	From: 2310 ( felina_cabin_strange_menu_start)
-	To: 2311 ( (Explore) ''I'd like that d...)
+	To: 2312 ( felina_cabin_strange_describe_join)
 
 ,
 Edge
@@ -8055,7 +6948,7 @@ Edge
 ,
 Edge
 	From: 2310 ( felina_cabin_strange_menu_start)
-	To: 2318 ( (Explore) ''I don't actuall...)
+	To: 2319 ( felina_cabin_strange_complicated_feelings)
 
 ,
 Edge
@@ -8069,19 +6962,9 @@ Edge
 	Via: [[Enter the basement.][[Continue down the stairs.]
 ,
 Edge
-	From: 2311 ( (Explore) ''I'd like that d...)
-	To: 2312 ( felina_cabin_strange_describe_join)
-	Via: Var "felina_cabin_menu_count" == Val (Int 0) && Var "felina_cabin_describe" == Val (Bool False)
-,
-Edge
 	From: 2312 ( felina_cabin_strange_describe_join)
 	To: 2310 ( felina_cabin_strange_menu_start)
 	Via: Var "felina_cabin_menu_count" == Val (Int 0) && Var "felina_cabin_describe" == Val (Bool False)
-,
-Edge
-	From: 2318 ( (Explore) ''I don't actuall...)
-	To: 2319 ( felina_cabin_strange_complicated_feelings)
-	Via: "felina_cabin_narrator_dead" && Var "felina_cabin_narrator_final_thoughts" == Val (String "")
 ,
 Edge
 	From: 2319 ( felina_cabin_strange_complicated_feelings)
@@ -8150,7 +7033,7 @@ Edge
 ,
 Edge
 	From: 2331 ( felina_cabin_strange_empty_talk_menu)
-	To: 2341 ( (Explore) ''I only wanted t...)
+	To: 2342 ( felina_strange_slay_cabin_join)
 
 ,
 Edge
@@ -8175,11 +7058,6 @@ Edge
 ,
 Edge
 	From: 2331 ( felina_cabin_strange_empty_talk_menu)
-	To: 2348 ( ''I think the only thing le...)
-
-,
-Edge
-	From: 2331 ( felina_cabin_strange_empty_talk_menu)
 	To: 2349 ( stranger_leave_hand_menu)
 
 ,
@@ -8194,11 +7072,6 @@ Edge
 
 ,
 Edge
-	From: 2341 ( (Explore) ''I only wanted t...)
-	To: 2342 ( felina_strange_slay_cabin_join)
-	Via: Var "felina_stated_goal" == Val (String "slay") && Var "felina_cabin_same_comment" == Val (Bool False) && Var "felina_strange_slay_comment" == Val (Bool False)
-,
-Edge
 	From: 2342 ( felina_strange_slay_cabin_join)
 	To: 2331 ( felina_cabin_strange_empty_talk_menu)
 	Via: Var "felina_stated_goal" == Val (String "slay") && Var "felina_cabin_same_comment" == Val (Bool False) && Var "felina_strange_slay_comment" == Val (Bool False)
@@ -8211,11 +7084,6 @@ Edge
 Edge
 	From: 2347 ( felina_strange_leave_join_menu)
 	To: 2353 ( felina_strange_pre_leave)
-	Via: Var "felina_stranger_count" >= Val (Int 9)
-,
-Edge
-	From: 2348 ( ''I think the only thing le...)
-	To: 2347 ( felina_strange_leave_join_menu)
 	Via: Var "felina_stranger_count" >= Val (Int 9)
 ,
 Edge
@@ -9050,31 +7918,6 @@ Edge
 ,
 Edge
 	From: 2404 ( felina_fight_intermission)
-	To: 2405 ( felina_fight_intermission_winning)
-	Via: Var "felina_fight_effective_resistance" > Val (Int 3)
-,
-Edge
-	From: 2404 ( felina_fight_intermission)
-	To: 2406 ( felina_fight_intermission_draw)
-	Via: Var "felina_fight_effective_resistance" > Val (Int 1)
-,
-Edge
-	From: 2404 ( felina_fight_intermission)
-	To: 2407 ( felina_fight_intermission_losing)
-	Via: Else
-,
-Edge
-	From: 2405 ( felina_fight_intermission_winning)
-	To: 2408 ( felina_fight_intermission_join)
-
-,
-Edge
-	From: 2406 ( felina_fight_intermission_draw)
-	To: 2408 ( felina_fight_intermission_join)
-
-,
-Edge
-	From: 2407 ( felina_fight_intermission_losing)
 	To: 2408 ( felina_fight_intermission_join)
 
 ,
@@ -9145,11 +7988,6 @@ Edge
 ,
 Edge
 	From: 2423 ( felina_intermission_hero_menu)
-	To: 2425 ( ''You have no idea how good...)
-
-,
-Edge
-	From: 2423 ( felina_intermission_hero_menu)
 	To: 2426 ( felina_intermission_hero_join)
 
 ,
@@ -9184,11 +8022,6 @@ Edge
 	Via: ''Where's everyone else?''
 ,
 Edge
-	From: 2425 ( ''You have no idea how good...)
-	To: 2426 ( felina_intermission_hero_join)
-
-,
-Edge
 	From: 2426 ( felina_intermission_hero_join)
 	To: 2427 ( felina_intermission_hero_late_join)
 
@@ -9205,13 +8038,13 @@ Edge
 ,
 Edge
 	From: 2435 ( felina_cabin_staging)
-	To: 2290 ( felina_cabin_start)
-	Via: Var "first_princess" == Val (String "harsh") || Var "first_princess" == Val (String "gentle")
+	To: 2291 ( felina_cabin_menu_start)
+
 ,
 Edge
 	From: 2435 ( felina_cabin_staging)
-	To: 2309 ( felina_cabin_strange_start)
-	Via: Else
+	To: 2310 ( felina_cabin_strange_menu_start)
+
 ,
 Edge
 	From: 2436 ( felina_violence_join)
@@ -12034,11 +10867,6 @@ Edge
 
 ,
 Edge
-	From: 2 ( beast_1_start)
-	To: 816 ( beast_1_forest)
-
-,
-Edge
 	From: 3019 ( felina_happy_menu)
 	To: 2413 ( felina_freedom_join)
 	Via: ''I get it. There's no need...Var "felina_round" >= Val (Int 2)
@@ -12295,11 +11123,6 @@ Edge
 ,
 Edge
 	From: 3079 ( felina_leave_cabin_hero_goodbye)
-	To: 3085 ( felina_leave_cabin_leave_join)
-	Via: [[Leave with the Princess.]
-,
-Edge
-	From: 3085 ( felina_leave_cabin_leave_join)
 	To: 3086 ( felina_leave_cabin_final_menu)
 
 ,
@@ -12329,24 +11152,9 @@ Edge
 	Via: ''Who's going to open it?''
 ,
 Edge
-	From: 3086 ( felina_leave_cabin_final_menu)
-	To: 3092 ( [[Open the door.])
-
-,
-Edge
 	From: 3088 ( felina_leave_cabin_final_join)
 	To: 215 ( credits)
 
-,
-Edge
-	From: 3092 ( [[Open the door.])
-	To: 3088 ( felina_leave_cabin_final_join)
-
-,
-Edge
-	From: 3094 ( slay_ending_linger)
-	To: 3098 ( felina_slain_leave_join)
-	Via: [[Leave the cabin.]
 ,
 Edge
 	From: 3098 ( felina_slain_leave_join)
@@ -12365,13 +11173,8 @@ Edge
 ,
 Edge
 	From: 3101 ( felina_start)
-	To: 3102 ( felina_menu)
-
-,
-Edge
-	From: 3102 ( felina_menu)
 	To: 3107 ( felina_debate)
-	Via: ''What happens now?''
+
 ,
 Edge
 	From: 3107 ( felina_debate)
@@ -12410,11 +11213,6 @@ Edge
 ,
 Edge
 	From: 3107 ( felina_debate)
-	To: 3118 ( ''I think it's time for us ...)
-
-,
-Edge
-	From: 3107 ( felina_debate)
 	To: 3119 ( felina_freedom_late_join)
 
 ,
@@ -12436,11 +11234,6 @@ Edge
 Edge
 	From: 3114 ( (Explore) ''There has to be...)
 	To: 3112 ( mound_no_understand)
-
-,
-Edge
-	From: 3118 ( ''I think it's time for us ...)
-	To: 2413 ( felina_freedom_join)
 
 ,
 Edge
@@ -12469,11 +11262,6 @@ Edge
 
 ,
 Edge
-	From: 3138 ( mirror_1_join)
-	To: 3139 ( begin_quiet)
-
-,
-Edge
 	From: 3139 ( begin_quiet)
 	To: 3271 ( [[Proceed to the cabin.])
 
@@ -12484,29 +11272,14 @@ Edge
 
 ,
 Edge
-	From: 3140 ( mirror_2_join)
-	To: 3139 ( begin_quiet)
-
-,
-Edge
-	From: 3141 ( mirror_3_join)
-	To: 3139 ( begin_quiet)
-
-,
-Edge
-	From: 3142 ( mirror_4_join)
-	To: 3139 ( begin_quiet)
-
-,
-Edge
-	From: 3143 ( mirror_finale)
-	To: 3144 ( mirror_final_menu)
-
-,
-Edge
 	From: 3144 ( mirror_final_menu)
 	To: 3145 ( mirror_shard)
 	Via: Var "mirror_countdown" == Val (Int 1)
+,
+Edge
+	From: 3144 ( mirror_final_menu)
+	To: 3150 ( mirror_contains_death_join)
+
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
@@ -12515,7 +11288,7 @@ Edge
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3151 ( (Explore) ''If I destroy He...)
+	To: 3152 ( mirror_cycle_destroy_join)
 
 ,
 Edge
@@ -12536,11 +11309,16 @@ Edge
 Edge
 	From: 3144 ( mirror_final_menu)
 	To: 3167 ( mirror_echo_join)
+
+,
+Edge
+	From: 3144 ( mirror_final_menu)
+	To: 3167 ( mirror_echo_join)
 	Via: (Explore) ''What are you? A...Var "mirror_echo_mention" == Val (Bool False) && Var "mirror_narrator_god" == Val (Bool False)
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3168 ( (Explore) ''If you're not m...)
+	To: 3171 ( mirror_multi_narrator_join)
 
 ,
 Edge
@@ -12555,28 +11333,18 @@ Edge
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3179 ( (Explore) ''You're the one ...)
-
-,
-Edge
-	From: 3144 ( mirror_final_menu)
-	To: 3187 ( (Explore) ''I've met you ma...)
-
-,
-Edge
-	From: 3144 ( mirror_final_menu)
 	To: 3190 ( (Explore) ''If you made me,...)
 
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
 	To: 3195 ( mirror_princess_identity_join)
-	Via: (Explore) ''If you want me ..."mirror_quest_lead" && Var "mirror_mound_reveal" == Val (Bool False)
+
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3197 ( (Explore) ''What is the Pri...)
-
+	To: 3195 ( mirror_princess_identity_join)
+	Via: (Explore) ''If you want me ..."mirror_quest_lead" && Var "mirror_mound_reveal" == Val (Bool False)
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
@@ -12591,11 +11359,16 @@ Edge
 Edge
 	From: 3144 ( mirror_final_menu)
 	To: 3209 ( mirror_construct_join)
+
+,
+Edge
+	From: 3144 ( mirror_final_menu)
+	To: 3209 ( mirror_construct_join)
 	Via: (Explore) ''What is this pl...Var "mirror_construct" == Val (Bool False) && Var "mirror_construct_follow_up" == Val (Bool False)
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3211 ( (Explore) ''You've called t...)
+	To: 3216 ( mirror_fake_die_join)
 
 ,
 Edge
@@ -12605,7 +11378,7 @@ Edge
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3217 ( (Explore) ''Who cares about...)
+	To: 3223 ( mirror_shaped_join)
 
 ,
 Edge
@@ -12615,22 +11388,12 @@ Edge
 ,
 Edge
 	From: 3144 ( mirror_final_menu)
-	To: 3224 ( (Explore) ''What were we sh...)
-
-,
-Edge
-	From: 3144 ( mirror_final_menu)
 	To: 3228 ( felina_start_join)
 	Via: [[Destroy the Mirror.][[Proceed to the cabin, one...
 ,
 Edge
 	From: 3145 ( mirror_shard)
 	To: 3228 ( felina_start_join)
-
-,
-Edge
-	From: 3145 ( mirror_shard)
-	To: 3229 ( ''Rest easy. I'm going to d...)
 
 ,
 Edge
@@ -12654,24 +11417,9 @@ Edge
 	Via: 'I haven't decided what I'm...
 ,
 Edge
-	From: 3145 ( mirror_shard)
-	To: 3236 ( [[Say nothing, and watch hi...)
-
-,
-Edge
-	From: 3145 ( mirror_shard)
-	To: 3238 ( [[Proceed to the cabin, one...)
-
-,
-Edge
 	From: 3150 ( mirror_contains_death_join)
 	To: 3144 ( mirror_final_menu)
 	Via: Var "mirror_narrator" == Val (Bool False) && Var "mirror_death_reveal" == Val (Bool False)
-,
-Edge
-	From: 3151 ( (Explore) ''If I destroy He...)
-	To: 3152 ( mirror_cycle_destroy_join)
-	Via: "mirror_death_reveal" && "mirror_mound_reveal" && Var "mirror_fates_worse_than_death" == Val (Bool False) && "mirror_why_kill_flag"
 ,
 Edge
 	From: 3152 ( mirror_cycle_destroy_join)
@@ -12684,23 +11432,8 @@ Edge
 	Via: Var "mirror_echo_mention" == Val (Bool False) && Var "mirror_narrator_god" == Val (Bool False)
 ,
 Edge
-	From: 3168 ( (Explore) ''If you're not m...)
-	To: 3167 ( mirror_echo_join)
-	Via: Var "mirror_echo_mention" == Val (Bool False) && Var "mirror_narrator_god" == Val (Bool False)
-,
-Edge
 	From: 3171 ( mirror_multi_narrator_join)
 	To: 3144 ( mirror_final_menu)
-	Via: Var "mirror_multi_narrator" == Val (Bool False)
-,
-Edge
-	From: 3179 ( (Explore) ''You're the one ...)
-	To: 3150 ( mirror_contains_death_join)
-	Via: Var "mirror_narrator" == Val (Bool False) && Var "mirror_death_reveal" == Val (Bool False)
-,
-Edge
-	From: 3187 ( (Explore) ''I've met you ma...)
-	To: 3171 ( mirror_multi_narrator_join)
 	Via: Var "mirror_multi_narrator" == Val (Bool False)
 ,
 Edge
@@ -12717,16 +11450,6 @@ Edge
 	From: 3195 ( mirror_princess_identity_join)
 	To: 3144 ( mirror_final_menu)
 	Via: Var "mirror_mound_reveal" == Val (Bool False) && "mirror_creation"
-,
-Edge
-	From: 3197 ( (Explore) ''What is the Pri...)
-	To: 3195 ( mirror_princess_identity_join)
-	Via: Var "mirror_mound_reveal" == Val (Bool False) && "mirror_creation"
-,
-Edge
-	From: 31 ( basement_1_empty_start)
-	To: 32 ( ''Hold on. Let's talk a bit...)
-
 ,
 Edge
 	From: 31 ( basement_1_empty_start)
@@ -12804,18 +11527,8 @@ Edge
 	Via: "mirror_construct" && Var "mirror_construct_follow_up" == Val (Bool False)
 ,
 Edge
-	From: 3211 ( (Explore) ''You've called t...)
-	To: 3209 ( mirror_construct_join)
-	Via: "mirror_construct" && Var "mirror_construct_follow_up" == Val (Bool False)
-,
-Edge
 	From: 3216 ( mirror_fake_die_join)
 	To: 3144 ( mirror_final_menu)
-	Via: Var "mirror_died_lots" == Val (Bool False) && "mirror_death_reveal" || "mirror_long_quiet_reveal"
-,
-Edge
-	From: 3217 ( (Explore) ''Who cares about...)
-	To: 3216 ( mirror_fake_die_join)
 	Via: Var "mirror_died_lots" == Val (Bool False) && "mirror_death_reveal" || "mirror_long_quiet_reveal"
 ,
 Edge
@@ -12824,18 +11537,8 @@ Edge
 	Via: "mirror_how_destroy_concept" && Var "mirror_shaped" == Val (Bool False)
 ,
 Edge
-	From: 3224 ( (Explore) ''What were we sh...)
-	To: 3223 ( mirror_shaped_join)
-	Via: "mirror_how_destroy_concept" && Var "mirror_shaped" == Val (Bool False)
-,
-Edge
 	From: 3228 ( felina_start_join)
 	To: 3101 ( felina_start)
-
-,
-Edge
-	From: 3229 ( ''Rest easy. I'm going to d...)
-	To: 3230 ( mirror_destroy_join)
 
 ,
 Edge
@@ -12846,16 +11549,6 @@ Edge
 Edge
 	From: 3235 ( mirror_default_end)
 	To: 3231 ( mirror_echo_final_join)
-
-,
-Edge
-	From: 3236 ( [[Say nothing, and watch hi...)
-	To: 3235 ( mirror_default_end)
-
-,
-Edge
-	From: 3238 ( [[Proceed to the cabin, one...)
-	To: 3228 ( felina_start_join)
 
 ,
 Edge
@@ -12905,11 +11598,6 @@ Edge
 ,
 Edge
 	From: 3253 ( mirror_n_menu)
-	To: 3258 ( (Explore) It's going to be ...)
-
-,
-Edge
-	From: 3253 ( mirror_n_menu)
 	To: 3259 ( mirror_n_menu_comfort)
 
 ,
@@ -12931,11 +11619,6 @@ Edge
 Edge
 	From: 3257 ( mirror_n_explore_join)
 	To: 3259 ( mirror_n_menu_comfort)
-	Via: Var "mirror_n_explore" == Val (Bool False) && "mirror_hero_scared_flag"
-,
-Edge
-	From: 3258 ( (Explore) It's going to be ...)
-	To: 3257 ( mirror_n_explore_join)
 	Via: Var "mirror_n_explore" == Val (Bool False) && "mirror_hero_scared_flag"
 ,
 Edge
@@ -12990,28 +11673,13 @@ Edge
 ,
 Edge
 	From: 3270 ( mirror_sort)
-	To: 3138 ( mirror_1_join)
-	Via: Var "loops_finished" == Val (Int 0)
+	To: 3139 ( begin_quiet)
+
 ,
 Edge
 	From: 3270 ( mirror_sort)
-	To: 3140 ( mirror_2_join)
-	Via: Var "loops_finished" == Val (Int 1)
-,
-Edge
-	From: 3270 ( mirror_sort)
-	To: 3141 ( mirror_3_join)
-	Via: Var "loops_finished" == Val (Int 2)
-,
-Edge
-	From: 3270 ( mirror_sort)
-	To: 3142 ( mirror_4_join)
-	Via: Var "loops_finished" == Val (Int 3)
-,
-Edge
-	From: 3270 ( mirror_sort)
-	To: 3143 ( mirror_finale)
-	Via: Else
+	To: 3144 ( mirror_final_menu)
+
 ,
 Edge
 	From: 3271 ( [[Proceed to the cabin.])
@@ -13025,47 +11693,22 @@ Edge
 ,
 Edge
 	From: 3272 ( [[Approach her.])
-	To: 3273 ( quiet_1_start)
-	Via: Var "loops_finished" == Val (Int 0)
-,
-Edge
-	From: 3272 ( [[Approach her.])
-	To: 3274 ( quiet_2_start)
-	Via: Var "loops_finished" == Val (Int 1)
-,
-Edge
-	From: 3272 ( [[Approach her.])
-	To: 3275 ( quiet_3_start)
-	Via: Var "loops_finished" == Val (Int 2)
-,
-Edge
-	From: 3272 ( [[Approach her.])
-	To: 3276 ( quiet_4_start)
-	Via: Var "loops_finished" == Val (Int 3)
-,
-Edge
-	From: 3273 ( quiet_1_start)
 	To: 3279 ( quiet_1_menu)
 
 ,
 Edge
-	From: 3274 ( quiet_2_start)
+	From: 3272 ( [[Approach her.])
 	To: 3287 ( quiet_2_menu)
 
 ,
 Edge
-	From: 3275 ( quiet_3_start)
+	From: 3272 ( [[Approach her.])
 	To: 3288 ( quiet_3_menu)
 
 ,
 Edge
-	From: 3276 ( quiet_4_start)
+	From: 3272 ( [[Approach her.])
 	To: 3289 ( quiet_4_menu)
-
-,
-Edge
-	From: 3279 ( quiet_1_menu)
-	To: 3281 ( plore) ''What are yo)
 
 ,
 Edge
@@ -13076,11 +11719,6 @@ Edge
 Edge
 	From: 3279 ( quiet_1_menu)
 	To: 3285 ( plore) ''The gift of a frag...)
-
-,
-Edge
-	From: 3279 ( quiet_1_menu)
-	To: 3300 ( hat happens no)
 
 ,
 Edge
@@ -13107,11 +11745,6 @@ Edge
 	From: 3279 ( quiet_1_menu)
 	To: 3316 ( kay. Make me forge)
 
-,
-Edge
-	From: 3281 ( plore) ''What are yo)
-	To: 3282 ( quiet1_what_menu_join)
-	Via: Var "quiet1_what" == Val (Bool False)
 ,
 Edge
 	From: 3282 ( quiet1_what_menu_join)
@@ -13156,7 +11789,17 @@ Edge
 Edge
 	From: 3287 ( quiet_2_menu)
 	To: 3322 ( mound_2_straight_answer)
+
+,
+Edge
+	From: 3287 ( quiet_2_menu)
+	To: 3322 ( mound_2_straight_answer)
 	Via: (Explore) ''Everything you ...Var "mound_pretention_explore" == Val (Bool False) && Var "quiet_2_count" > Val (Int 0)
+,
+Edge
+	From: 3287 ( quiet_2_menu)
+	To: 3329 ( mound_2_nice_join)
+
 ,
 Edge
 	From: 3287 ( quiet_2_menu)
@@ -13165,7 +11808,7 @@ Edge
 ,
 Edge
 	From: 3287 ( quiet_2_menu)
-	To: 3330 ( plore) ''You have been kind...)
+	To: 3336 ( quiet_2_feelings_join)
 
 ,
 Edge
@@ -13175,22 +11818,12 @@ Edge
 ,
 Edge
 	From: 3287 ( quiet_2_menu)
-	To: 3337 ( plore) ''What do you feel a...)
-
-,
-Edge
-	From: 3287 ( quiet_2_menu)
 	To: 3340 ( plore) ''And what if I don'...)
 
 ,
 Edge
 	From: 3287 ( quiet_2_menu)
 	To: 3341 ( a)
-
-,
-Edge
-	From: 3287 ( quiet_2_menu)
-	To: 3347 ( (Explore) ''Enough with all...)
 
 ,
 Edge
@@ -13205,7 +11838,7 @@ Edge
 ,
 Edge
 	From: 3288 ( quiet_3_menu)
-	To: 3352 ( (Explore) ''Everything you ...)
+	To: 3353 ( mound_3_straight_answer)
 
 ,
 Edge
@@ -13216,12 +11849,12 @@ Edge
 Edge
 	From: 3288 ( quiet_3_menu)
 	To: 3361 ( quiet_3_threaten_join)
-	Via: plore) ''I'm still planning...Var "quiet_3_threaten" == Val (Bool False) && "quiet_2_threaten"
+
 ,
 Edge
 	From: 3288 ( quiet_3_menu)
-	To: 3362 ( plore) ''You know that at t...)
-
+	To: 3361 ( quiet_3_threaten_join)
+	Via: plore) ''I'm still planning...Var "quiet_3_threaten" == Val (Bool False) && "quiet_2_threaten"
 ,
 Edge
 	From: 3288 ( quiet_3_menu)
@@ -13240,17 +11873,12 @@ Edge
 ,
 Edge
 	From: 3289 ( quiet_4_menu)
-	To: 3377 ( (Explore) ''Everything you ...)
+	To: 3378 ( mound_4_straight_answer)
 
 ,
 Edge
 	From: 3289 ( quiet_4_menu)
 	To: 3390 ( plore) ''If this is the las...)
-
-,
-Edge
-	From: 3289 ( quiet_4_menu)
-	To: 3394 ( plore) ''If this is the las...)
 
 ,
 Edge
@@ -13267,16 +11895,6 @@ Edge
 	From: 3296 ( plore) ''Are you the Princes)
 	To: 3279 ( quiet_1_menu)
 	Via: ay nothi
-,
-Edge
-	From: 32 ( ''Hold on. Let's talk a bit...)
-	To: 33 ( basement_1_empty_talk)
-
-,
-Edge
-	From: 3300 ( hat happens no)
-	To: 3301 ( quiet1_decision)
-
 ,
 Edge
 	From: 3301 ( quiet1_decision)
@@ -13354,18 +11972,8 @@ Edge
 	Via: Var "quiet_2_nice" == Val (Bool False)
 ,
 Edge
-	From: 3330 ( plore) ''You have been kind...)
-	To: 3329 ( mound_2_nice_join)
-	Via: Var "quiet_2_nice" == Val (Bool False)
-,
-Edge
 	From: 3336 ( quiet_2_feelings_join)
 	To: 3287 ( quiet_2_menu)
-	Via: Var "quiet_2_her_feelings" == Val (Bool False)
-,
-Edge
-	From: 3337 ( plore) ''What do you feel a...)
-	To: 3336 ( quiet_2_feelings_join)
 	Via: Var "quiet_2_her_feelings" == Val (Bool False)
 ,
 Edge
@@ -13389,16 +11997,6 @@ Edge
 	Via: ait forev
 ,
 Edge
-	From: 3347 ( (Explore) ''Enough with all...)
-	To: 3322 ( mound_2_straight_answer)
-	Via: Var "mound_pretention_explore" == Val (Bool False) && Var "quiet_2_count" > Val (Int 0)
-,
-Edge
-	From: 3352 ( (Explore) ''Everything you ...)
-	To: 3353 ( mound_3_straight_answer)
-	Via: Var "mound_pretention_explore" == Val (Bool False) && Var "quiet_3_count" > Val (Int 0)
-,
-Edge
 	From: 3353 ( mound_3_straight_answer)
 	To: 3288 ( quiet_3_menu)
 	Via: Var "mound_pretention_explore" == Val (Bool False) && Var "quiet_3_count" > Val (Int 0)
@@ -13406,11 +12004,6 @@ Edge
 Edge
 	From: 3361 ( quiet_3_threaten_join)
 	To: 3288 ( quiet_3_menu)
-	Via: Var "quiet_3_threaten" == Val (Bool False) && Var "quiet_2_threaten" == Val (Bool False)
-,
-Edge
-	From: 3362 ( plore) ''You know that at t...)
-	To: 3361 ( quiet_3_threaten_join)
 	Via: Var "quiet_3_threaten" == Val (Bool False) && Var "quiet_2_threaten" == Val (Bool False)
 ,
 Edge
@@ -13425,17 +12018,7 @@ Edge
 ,
 Edge
 	From: 3377 ( (Explore) ''Everything you ...)
-	To: 3378 ( mound_4_straight_answer)
-	Via: Var "mound_pretention_explore" == Val (Bool False) && Var "quiet_4_count" > Val (Int 0)
-,
-Edge
-	From: 3378 ( mound_4_straight_answer)
 	To: 3289 ( quiet_4_menu)
-	Via: Var "mound_pretention_explore" == Val (Bool False) && Var "quiet_4_count" > Val (Int 0)
-,
-Edge
-	From: 337 ( start)
-	To: 338 ( forest_dialogue)
 
 ,
 Edge
@@ -13462,11 +12045,6 @@ Edge
 	From: 338 ( forest_dialogue)
 	To: 354 ( cabin_arrival_1)
 	Via: [[Silently continue to the ..."ch1_can_cabin"
-,
-Edge
-	From: 338 ( forest_dialogue)
-	To: 359 ( [[Turn around and leave.])
-
 ,
 Edge
 	From: 338 ( forest_dialogue)
@@ -13532,11 +12110,6 @@ Edge
 	From: 3390 ( plore) ''If this is the las...)
 	To: 3312 ( wait_forever_join)
 	Via: a
-,
-Edge
-	From: 3394 ( plore) ''If this is the las...)
-	To: 3395 ( quiet_4_wait_join)
-	Via: Var "quiet_4_refuse" == Val (Bool False) && Var "quiet1_refuse_explore" == Val (Bool False)
 ,
 Edge
 	From: 3395 ( quiet_4_wait_join)
@@ -13636,11 +12209,6 @@ Edge
 Edge
 	From: 3411 ( apotheosis_contrarian_freedom_join)
 	To: 3415 ( apotheosis_freedom_second_join)
-
-,
-Edge
-	From: 3413 ( [[Embrace your new goddess.])
-	To: 3414 ( apotheosis_pristine_freedom)
 
 ,
 Edge
@@ -13820,11 +12388,6 @@ Edge
 ,
 Edge
 	From: 3447 ( den_pristine_free_choice)
-	To: 3451 ( [[Approach her.])
-
-,
-Edge
-	From: 3447 ( den_pristine_free_choice)
 	To: 3453 ( [[Offer her your hand.])
 
 ,
@@ -13847,11 +12410,6 @@ Edge
 	From: 3447 ( den_pristine_free_choice)
 	To: 3461 ( den_collapse_join)
 	Via: [[Turn back for the blade.]Var "blade_held" == Val (Bool False)
-,
-Edge
-	From: 3447 ( den_pristine_free_choice)
-	To: 3462 ( [[Turn around and leave. Yo...)
-
 ,
 Edge
 	From: 3447 ( den_pristine_free_choice)
@@ -13909,11 +12467,6 @@ Edge
 	Via: [[Strike her heart.]"blade_held"
 ,
 Edge
-	From: 3451 ( [[Approach her.])
-	To: 3449 ( den_approach_join)
-	Via: Var "blade_held" == Val (Bool False)
-,
-Edge
 	From: 3453 ( [[Offer her your hand.])
 	To: 3454 ( den_flinch_end_join)
 	Via: "blade_held"
@@ -13936,11 +12489,6 @@ Edge
 Edge
 	From: 3461 ( den_collapse_join)
 	To: 3463 ( den_collapse_final_menu)
-	Via: "blade_held"
-,
-Edge
-	From: 3462 ( [[Turn around and leave. Yo...)
-	To: 3461 ( den_collapse_join)
 	Via: "blade_held"
 ,
 Edge
@@ -14034,11 +12582,6 @@ Edge
 	Via: [[Approach the mirror.][[Gaze into your reflection.]
 ,
 Edge
-	From: 3485 ( fury_pristine_pacifism_start)
-	To: 3489 ( fury_pristine_unwind_pre_menu)
-
-,
-Edge
 	From: 3486 ( fury_pristine_tower)
 	To: 3497 ( fury_unwind_sequence)
 	Via: Var "fury_blade_taken" == Val (Bool False)
@@ -14046,21 +12589,6 @@ Edge
 Edge
 	From: 3486 ( fury_pristine_tower)
 	To: 3560 ( fury_pristine_tower_start_menu)
-
-,
-Edge
-	From: 3487 ( fury_pristine_unarmed)
-	To: 3492 ( fury_pristine_unarmed_menu)
-
-,
-Edge
-	From: 3488 ( fury_pristine_other_start)
-	To: 3489 ( fury_pristine_unwind_pre_menu)
-
-,
-Edge
-	From: 3489 ( fury_pristine_unwind_pre_menu)
-	To: 3490 ( ''And what am I supposed to...)
 
 ,
 Edge
@@ -14086,11 +12614,6 @@ Edge
 Edge
 	From: 3489 ( fury_pristine_unwind_pre_menu)
 	To: 3497 ( fury_unwind_sequence)
-
-,
-Edge
-	From: 3490 ( ''And what am I supposed to...)
-	To: 3491 ( fury_pristine_other_talk_join)
 
 ,
 Edge
@@ -14160,23 +12683,13 @@ Edge
 ,
 Edge
 	From: 3497 ( fury_unwind_sequence)
-	To: 3498 ( fury_cold_conclusion)
-	Via: "trait_cold" || "trait_broken" && Var "fury_source" != Val (String "tower")
-,
-Edge
-	From: 3497 ( fury_unwind_sequence)
-	To: 3499 ( fury_other_conclusion)
-	Via: Else
-,
-Edge
-	From: 3498 ( fury_cold_conclusion)
-	To: 3500 ( fury_cold_conclusion_menu)
+	To: 3270 ( mirror_sort)
 
 ,
 Edge
-	From: 3499 ( fury_other_conclusion)
-	To: 3270 ( mirror_sort)
-	Via: [[Approach the mirror.][[Gaze into your reflection.]
+	From: 3497 ( fury_unwind_sequence)
+	To: 3500 ( fury_cold_conclusion_menu)
+
 ,
 Edge
 	From: 3500 ( fury_cold_conclusion_menu)
@@ -14207,11 +12720,6 @@ Edge
 	From: 3500 ( fury_cold_conclusion_menu)
 	To: 3508 ( fury_cold_final_nice_menu)
 	Via: (Explore) ''I never stopped...Var "fury_cold_conclusion_explore" == Val (Bool False) && Var "fury_cold_conclusion_final_nice_seen" == Val (Bool False)
-,
-Edge
-	From: 3500 ( fury_cold_conclusion_menu)
-	To: 3509 ( (Explore) ''There's more to...)
-
 ,
 Edge
 	From: 3500 ( fury_cold_conclusion_menu)
@@ -14282,11 +12790,6 @@ Edge
 	From: 3508 ( fury_cold_final_nice_menu)
 	To: 3503 ( fury_cold_leave_final_option)
 	Via: ''You could always leave wi...
-,
-Edge
-	From: 3509 ( (Explore) ''There's more to...)
-	To: 3508 ( fury_cold_final_nice_menu)
-	Via: Var "fury_cold_conclusion_final_nice_seen" == Val (Bool False)
 ,
 Edge
 	From: 3519 ( ''I think I'm going to go n...)
@@ -14475,22 +12978,12 @@ Edge
 ,
 Edge
 	From: 3560 ( fury_pristine_tower_start_menu)
-	To: 3563 ( (Explore) ''I killed you la...)
-
-,
-Edge
-	From: 3560 ( fury_pristine_tower_start_menu)
 	To: 3570 ( fury_pristine_tower_battle)
 	Via: [[This is no time for words...
 ,
 Edge
 	From: 3562 ( fury_tower_talk_attempt)
 	To: 3564 ( fury_pristine_tower_menu_2)
-	Via: Var "fury_fail_talk" == Val (Bool False)
-,
-Edge
-	From: 3563 ( (Explore) ''I killed you la...)
-	To: 3562 ( fury_tower_talk_attempt)
 	Via: Var "fury_fail_talk" == Val (Bool False)
 ,
 Edge
@@ -14524,11 +13017,6 @@ Edge
 	Via: (Explore) ''I said, I'm goi...Var "fury_tower_talk_attempt_1_thing" == Val (String "slay")
 ,
 Edge
-	From: 3564 ( fury_pristine_tower_menu_2)
-	To: 3575 ( (Explore) ''I said, give me...)
-
-,
-Edge
 	From: 3570 ( fury_pristine_tower_battle)
 	To: 3574 ( fury_tower_explode_join)
 
@@ -14549,24 +13037,14 @@ Edge
 
 ,
 Edge
-	From: 3575 ( (Explore) ''I said, give me...)
-	To: 3572 ( fury_pristine_tower_menu_2_choice)
-	Via: Var "fury_tower_talk_attempt_1_thing" == Val (String "insides")
-,
-Edge
 	From: 3582 ( fury_tower_lose_body_menu)
 	To: 3497 ( fury_unwind_sequence)
 	Via: (Explore) ''And if we lose ..."can_unwound"
 ,
 Edge
 	From: 3582 ( fury_tower_lose_body_menu)
-	To: 3588 ( fury_tower_battle_sequence)
-	Via: [[Shed this vessel for the ...
-,
-Edge
-	From: 3588 ( fury_tower_battle_sequence)
 	To: 466 ( mirror_start)
-	Via: [[End this.]
+
 ,
 Edge
 	From: 3590 ( prisoner_rewrites)
@@ -14596,11 +13074,6 @@ Edge
 Edge
 	From: 3591 ( cage_woods_menu)
 	To: 3602 ( (Explore) I was happy with ...)
-
-,
-Edge
-	From: 3591 ( cage_woods_menu)
-	To: 3604 ( (Explore) I'm not taking th...)
 
 ,
 Edge
@@ -14674,11 +13147,6 @@ Edge
 	Via: "trait_broken"
 ,
 Edge
-	From: 359 ( [[Turn around and leave.])
-	To: 360 ( turn_and_leave_join)
-	Via: Var "stranger_encountered" == Val (Bool False)
-,
-Edge
 	From: 3600 ( cage_woods_broken_join)
 	To: 3595 ( cage_woods_sigh_join)
 	Via: "trait_broken"
@@ -14692,11 +13160,6 @@ Edge
 	From: 3602 ( (Explore) I was happy with ...)
 	To: 3599 ( cage_woods_explain_join)
 	Via: "trait_broken"
-,
-Edge
-	From: 3604 ( (Explore) I'm not taking th...)
-	To: 3605 ( cage_woods_blade_toss_menu)
-	Via: "blade_held" && Var "cage_woods_blade_toss_attempt" == Val (Bool False) && "cage_woods_blade_explore"
 ,
 Edge
 	From: 3605 ( cage_woods_blade_toss_menu)
@@ -14810,8 +13273,8 @@ Edge
 ,
 Edge
 	From: 3617 ( cage_cabin_exterior)
-	To: 3622 ( cage_cabin)
-	Via: [[Proceed into the cabin.]
+	To: 3624 ( cage_stairs_start)
+
 ,
 Edge
 	From: 3619 ( I'm done with this. Bye! [[...)
@@ -14835,11 +13298,6 @@ Edge
 ,
 Edge
 	From: 3622 ( cage_cabin)
-	To: 3624 ( cage_stairs_start)
-	Via: [[Approach the mirror.]
-,
-Edge
-	From: 3624 ( cage_stairs_start)
 	To: 3625 ( cage_basement_start)
 
 ,
@@ -14945,7 +13403,7 @@ Edge
 ,
 Edge
 	From: 3633 ( cage_encounter_start)
-	To: 3645 ( cage_menu_2_start)
+	To: 3646 ( cage_decap_menu_3)
 
 ,
 Edge
@@ -14964,8 +13422,8 @@ Edge
 	Via: "ch1_can_cabin"
 ,
 Edge
-	From: 3645 ( cage_menu_2_start)
-	To: 3646 ( cage_decap_menu_3)
+	From: 3646 ( cage_decap_menu_3)
+	To: 3270 ( mirror_sort)
 
 ,
 Edge
@@ -14975,13 +13433,8 @@ Edge
 ,
 Edge
 	From: 3646 ( cage_decap_menu_3)
-	To: 3648 ( cage_slay_join)
-	Via: "cage_cut_3"
-,
-Edge
-	From: 3646 ( cage_decap_menu_3)
-	To: 3650 ( cage_decapitated)
-	Via: (Explore) [[Say nothing.]
+	To: 466 ( mirror_start)
+
 ,
 Edge
 	From: 3647 ( cage_free_menu)
@@ -14992,16 +13445,6 @@ Edge
 	From: 3647 ( cage_free_menu)
 	To: 3653 ( cage_free_penultimate_default_join)
 	Via: ''Your pattern's broken. I'...
-,
-Edge
-	From: 3648 ( cage_slay_join)
-	To: 466 ( mirror_start)
-	Via: [[Give her your implement.]
-,
-Edge
-	From: 3650 ( cage_decapitated)
-	To: 3270 ( mirror_sort)
-	Via: [[Say nothing.]
 ,
 Edge
 	From: 3655 ( cage_free_final_menu)
@@ -15070,7 +13513,7 @@ Edge
 ,
 Edge
 	From: 3672 ( dragon_start_menu)
-	To: 3675 ( (Explore) What just happened?)
+	To: 3676 ( dragon_what_happened_join)
 
 ,
 Edge
@@ -15081,17 +13524,12 @@ Edge
 Edge
 	From: 3672 ( dragon_start_menu)
 	To: 3688 ( dragon_start_wait_join)
+
+,
+Edge
+	From: 3672 ( dragon_start_menu)
+	To: 3688 ( dragon_start_wait_join)
 	Via: (Explore) So what are we su...Var "dragon_loop_joke_count" == Val (Int 0) && "dragon_wait_first_explore"
-,
-Edge
-	From: 3672 ( dragon_start_menu)
-	To: 3689 ( (Explore) What are we suppo...)
-
-,
-Edge
-	From: 3672 ( dragon_start_menu)
-	To: 3694 ( This isn't what it was like...)
-
 ,
 Edge
 	From: 3672 ( dragon_start_menu)
@@ -15134,11 +13572,6 @@ Edge
 
 ,
 Edge
-	From: 3675 ( (Explore) What just happened?)
-	To: 3676 ( dragon_what_happened_join)
-	Via: Var "dragon_start_count" == Val (Int 0) && Var "dragon_what_happened" == Val (Bool False)
-,
-Edge
 	From: 3676 ( dragon_what_happened_join)
 	To: 3672 ( dragon_start_menu)
 	Via: Var "dragon_start_count" == Val (Int 0) && Var "dragon_what_happened" == Val (Bool False)
@@ -15159,19 +13592,9 @@ Edge
 	Via: Var "dragon_loop_joke_count" == Val (Int 0) && Var "dragon_wait_first_explore" == Val (Bool False)
 ,
 Edge
-	From: 3689 ( (Explore) What are we suppo...)
-	To: 3688 ( dragon_start_wait_join)
-	Via: Var "dragon_loop_joke_count" == Val (Int 0) && Var "dragon_wait_first_explore" == Val (Bool False)
-,
-Edge
 	From: 368 ( turn_around_1)
 	To: 366 ( turn_around_1_late_join)
 
-,
-Edge
-	From: 3694 ( This isn't what it was like...)
-	To: 3695 ( dragon_title_card_menu)
-	Via: "dragon_what_happened" && Var "dragon_title_card" == Val (Bool False)
 ,
 Edge
 	From: 3695 ( dragon_title_card_menu)
@@ -15270,13 +13693,8 @@ Edge
 ,
 Edge
 	From: 3715 ( dragon_arrival)
-	To: 3716 ( dragon_menu_pre_talk)
-
-,
-Edge
-	From: 3716 ( dragon_menu_pre_talk)
 	To: 3719 ( dragon_menu_pre_talk_share_join)
-	Via: ''Hey! Listen to me! I'm st...Var "dragon_speech_attempt" == Val (Bool False)
+
 ,
 Edge
 	From: 3720 ( dragon_final_menu_pre_action)
@@ -15319,16 +13737,6 @@ Edge
 	Via: Right? How rude.
 ,
 Edge
-	From: 3721 ( dragon_opportunist_start)
-	To: 3731 ( I think you'll have to make...)
-
-,
-Edge
-	From: 3721 ( dragon_opportunist_start)
-	To: 3733 ( [[Say nothing.])
-
-,
-Edge
 	From: 3722 ( dragon_opportunist_sidebar_join)
 	To: 3724 ( dragon_opportunist_soft_quiet)
 	Via: It's rude, though.Var "spectre_hostile" == Val (Bool False)
@@ -15360,8 +13768,8 @@ Edge
 ,
 Edge
 	From: 3727 ( dragon_opportunist_attack)
-	To: 3736 ( dragon_opportunist_fight_soft)
-	Via: Else
+	To: 3754 ( dragon_soft_opp_choice_join)
+
 ,
 Edge
 	From: 372 ( I'm actually pretty okay wi...)
@@ -15376,21 +13784,6 @@ Edge
 Edge
 	From: 3730 ( dragon_opportunist_soft_speak_up)
 	To: 3727 ( dragon_opportunist_attack)
-
-,
-Edge
-	From: 3731 ( I think you'll have to make...)
-	To: 3730 ( dragon_opportunist_soft_speak_up)
-
-,
-Edge
-	From: 3733 ( [[Say nothing.])
-	To: 3724 ( dragon_opportunist_soft_quiet)
-
-,
-Edge
-	From: 3735 ( dragon_opportunist_fight_hostile)
-	To: 3737 ( ''Wait wait wait I'm back i...)
 
 ,
 Edge
@@ -15436,16 +13829,6 @@ Edge
 Edge
 	From: 3735 ( dragon_opportunist_fight_hostile)
 	To: 3748 ( dragon_opp_alt_hand)
-
-,
-Edge
-	From: 3736 ( dragon_opportunist_fight_soft)
-	To: 3754 ( dragon_soft_opp_choice_join)
-
-,
-Edge
-	From: 3737 ( ''Wait wait wait I'm back i...)
-	To: 3738 ( dragon_harsh_opportunist_violent_end)
 
 ,
 Edge
@@ -15535,11 +13918,6 @@ Edge
 ,
 Edge
 	From: 3754 ( dragon_soft_opp_choice_join)
-	To: 3757 ( (Explore) ''Oh, hey. I'm ba...)
-
-,
-Edge
-	From: 3754 ( dragon_soft_opp_choice_join)
 	To: 3759 ( dragon_soft_opp_slay_join)
 
 ,
@@ -15556,11 +13934,6 @@ Edge
 Edge
 	From: 3754 ( dragon_soft_opp_choice_join)
 	To: 3765 ( dragon_opp_soft_leave_silent)
-
-,
-Edge
-	From: 3754 ( dragon_soft_opp_choice_join)
-	To: 3767 ( Good to be back boys. [[Fin...)
 
 ,
 Edge
@@ -15644,11 +14017,6 @@ Edge
 	Via: [[Say nothing.]
 ,
 Edge
-	From: 3757 ( (Explore) ''Oh, hey. I'm ba...)
-	To: 3756 ( dragon_soft_opp_choice_sub)
-	Via: Var "dragon_soft_opp_choice_explore" == Val (Bool False)
-,
-Edge
 	From: 3759 ( dragon_soft_opp_slay_join)
 	To: 3739 ( dragon_harsh_opp_split_join)
 
@@ -15696,11 +14064,6 @@ Edge
 Edge
 	From: 3765 ( dragon_opp_soft_leave_silent)
 	To: 3763 ( dragon_opp_soft_leave_suggest)
-
-,
-Edge
-	From: 3767 ( Good to be back boys. [[Fin...)
-	To: 3759 ( dragon_soft_opp_slay_join)
 
 ,
 Edge
@@ -15760,8 +14123,8 @@ Edge
 ,
 Edge
 	From: 376 ( cabin_arrival_1_menu)
-	To: 387 ( cabin_interrior_1)
-	Via: [[Proceed into the cabin.]
+	To: 388 ( cabin_interrior_1_menu)
+
 ,
 Edge
 	From: 3770 ( ''We do it right this time....)
@@ -15850,13 +14213,13 @@ Edge
 ,
 Edge
 	From: 3792 ( happy_down_menu)
-	To: 3798 ( happy_stairs)
-	Via: [[Approach the mirror.][[Reach forward.]
+	To: 3801 ( happy_encounter)
+
 ,
 Edge
 	From: 3798 ( happy_stairs)
-	To: 3801 ( happy_encounter)
-	Via: [[Proceed up the stairs.]
+	To: 3802 ( happy_menu)
+
 ,
 Edge
 	From: 379 ( caught_start)
@@ -15869,18 +14232,13 @@ Edge
 	Via: "basement_1_empty_kill_joke" && Var "basement_1_shared_task" == Val (Bool False)
 ,
 Edge
-	From: 3801 ( happy_encounter)
-	To: 3802 ( happy_menu)
-
-,
-Edge
 	From: 3802 ( happy_menu)
 	To: 3803 ( (Explore) ''Hey! Smitten! Y...)
 
 ,
 Edge
 	From: 3802 ( happy_menu)
-	To: 3809 ( (Explore) ''It's just a tor...)
+	To: 3804 ( happy_him_join)
 
 ,
 Edge
@@ -15920,28 +14278,13 @@ Edge
 ,
 Edge
 	From: 3802 ( happy_menu)
-	To: 3819 ( (Explore) ''The shadow hold...)
+	To: 3820 ( happy_shadow_discuss_join)
 
 ,
 Edge
 	From: 3802 ( happy_menu)
 	To: 3820 ( happy_shadow_discuss_join)
 	Via: (Explore) ''The shadow that..."happy_set_table" && Var "happy_shadow_commented" == Val (Bool False)
-,
-Edge
-	From: 3802 ( happy_menu)
-	To: 3823 ( (Explore) ''You said 'he.' ...)
-
-,
-Edge
-	From: 3802 ( happy_menu)
-	To: 3827 ( (Explore) ''You mentioned d...)
-
-,
-Edge
-	From: 3802 ( happy_menu)
-	To: 3831 ( (Explore) ''Well, we ate. W...)
-
 ,
 Edge
 	From: 3802 ( happy_menu)
@@ -15965,7 +14308,7 @@ Edge
 ,
 Edge
 	From: 3802 ( happy_menu)
-	To: 3837 ( (Explore) ''Okay, so... we'...)
+	To: 3841 ( happy_get_up_attempt_join)
 
 ,
 Edge
@@ -15977,11 +14320,6 @@ Edge
 	From: 3802 ( happy_menu)
 	To: 3841 ( happy_get_up_attempt_join)
 	Via: [[Silently push yourself fr...Var "happy_get_up_attempt" == Val (Bool False)
-,
-Edge
-	From: 3802 ( happy_menu)
-	To: 3843 ( [[Slay the Princess.])
-
 ,
 Edge
 	From: 3803 ( (Explore) ''Hey! Smitten! Y...)
@@ -15997,11 +14335,6 @@ Edge
 	From: 3804 ( happy_him_join)
 	To: 3802 ( happy_menu)
 	Via: "happy_him_mentioned" && Var "happy_him_explore" == Val (Bool False)
-,
-Edge
-	From: 3809 ( (Explore) ''It's just a tor...)
-	To: 3810 ( happy_distraction_tree)
-	Via: "happy_torch_comment_immediate" && Var "happy_torch_just_explore" == Val (Bool False) && Var "happy_torches" <= Val (Int 3)
 ,
 Edge
 	From: 380 ( There's no fighting this, i...)
@@ -16069,29 +14402,9 @@ Edge
 	Via: Else
 ,
 Edge
-	From: 3819 ( (Explore) ''The shadow hold...)
-	To: 3820 ( happy_shadow_discuss_join)
-	Via: "happy_set_table" && Var "happy_shadow_commented" == Val (Bool False) && "happy_get_up_attempt"
-,
-Edge
 	From: 3820 ( happy_shadow_discuss_join)
 	To: 3802 ( happy_menu)
 	Via: "happy_set_table" && Var "happy_shadow_commented" == Val (Bool False) && "happy_get_up_attempt"
-,
-Edge
-	From: 3823 ( (Explore) ''You said 'he.' ...)
-	To: 3804 ( happy_him_join)
-	Via: "happy_him_mentioned" && Var "happy_him_explore" == Val (Bool False)
-,
-Edge
-	From: 3827 ( (Explore) ''You mentioned d...)
-	To: 3811 ( happy_dinner_join)
-	Via: Var "happy_eaten" == Val (Bool False) && Var "happy_refused_food" == Val (Bool False)
-,
-Edge
-	From: 3831 ( (Explore) ''Well, we ate. W...)
-	To: 3832 ( happy_game_early_join)
-	Via: Var "happy_post_eat_explore" == Val (Bool False) && "happy_eaten" && Var "happy_played" == Val (Bool False)
 ,
 Edge
 	From: 3832 ( happy_game_early_join)
@@ -16104,18 +14417,8 @@ Edge
 	Via: Var "happy_final_activity_explore" == Val (Bool False) && "happy_eaten" && "happy_played"
 ,
 Edge
-	From: 3837 ( (Explore) ''Okay, so... we'...)
-	To: 3836 ( happy_final_activity_join)
-	Via: Var "happy_final_activity_explore" == Val (Bool False) && "happy_eaten" && "happy_played"
-,
-Edge
 	From: 3841 ( happy_get_up_attempt_join)
 	To: 3802 ( happy_menu)
-	Via: Var "happy_slay_explore" == Val (Bool False) && Var "happy_get_up_attempt" == Val (Bool False)
-,
-Edge
-	From: 3843 ( [[Slay the Princess.])
-	To: 3841 ( happy_get_up_attempt_join)
 	Via: Var "happy_slay_explore" == Val (Bool False) && Var "happy_get_up_attempt" == Val (Bool False)
 ,
 Edge
@@ -16134,11 +14437,6 @@ Edge
 
 ,
 Edge
-	From: 3845 ( happy_torches_final)
-	To: 3853 ( ''We don't have to let it g...)
-
-,
-Edge
 	From: 3846 ( ''What do you think will ha...)
 	To: 3848 ( happy_dance_comment_join)
 	Via: ''If you could do anything ...
@@ -16151,11 +14449,6 @@ Edge
 Edge
 	From: 3850 ( happy_torch_end)
 	To: 466 ( mirror_start)
-
-,
-Edge
-	From: 3853 ( ''We don't have to let it g...)
-	To: 3850 ( happy_torch_end)
 
 ,
 Edge
@@ -16205,11 +14498,6 @@ Edge
 ,
 Edge
 	From: 3855 ( happy_climax)
-	To: 3865 ( [[Slay the Princess.])
-
-,
-Edge
-	From: 3855 ( happy_climax)
 	To: 3866 ( happy_slay)
 
 ,
@@ -16227,11 +14515,6 @@ Edge
 	From: 3855 ( happy_climax)
 	To: 3875 ( happy_climax_stair)
 
-,
-Edge
-	From: 3865 ( [[Slay the Princess.])
-	To: 3866 ( happy_slay)
-	Via: Var "happy_slay_attempted" == Val (Bool False)
 ,
 Edge
 	From: 3866 ( happy_slay)
@@ -16319,11 +14602,6 @@ Edge
 	Via: ''Whatever we had between u...
 ,
 Edge
-	From: 3875 ( happy_climax_stair)
-	To: 3883 ( [[Say nothing.])
-
-,
-Edge
 	From: 3877 ( happy_stairs_leaving)
 	To: 3885 ( happy_leave_finale)
 	Via: [[Leave.]
@@ -16332,16 +14610,6 @@ Edge
 	From: 3877 ( happy_stairs_leaving)
 	To: 3885 ( happy_leave_finale)
 	Via: [[Offer her your hand.]
-,
-Edge
-	From: 387 ( cabin_interrior_1)
-	To: 388 ( cabin_interrior_1_menu)
-
-,
-Edge
-	From: 3883 ( [[Say nothing.])
-	To: 3868 ( happy_stairs_silent)
-
 ,
 Edge
 	From: 3885 ( happy_leave_finale)
@@ -16367,11 +14635,6 @@ Edge
 	From: 390 ( [[Enter the basement.])
 	To: 31 ( basement_1_empty_start)
 	Via: Else
-,
-Edge
-	From: 392 ( adversary_1_fight_immediate)
-	To: 393 ( adversary_1_fight_immediate_late_join)
-
 ,
 Edge
 	From: 393 ( adversary_1_fight_immediate_late_join)
@@ -16416,11 +14679,6 @@ Edge
 Edge
 	From: 393 ( adversary_1_fight_immediate_late_join)
 	To: 419 ( ''Actually, I think I'm don...)
-
-,
-Edge
-	From: 393 ( adversary_1_fight_immediate_late_join)
-	To: 424 ( [[Unlodge the blade and att...)
 
 ,
 Edge
@@ -16496,11 +14754,6 @@ Edge
 Edge
 	From: 39 ( basement_1_empty_task_share_late_join)
 	To: 45 ( ''No. Which is why I don't ...)
-
-,
-Edge
-	From: 3 ( damsel_1_start)
-	To: 963 ( damsel_1_forest)
 
 ,
 Edge
@@ -16610,17 +14863,7 @@ Edge
 ,
 Edge
 	From: 420 ( adversary_pacifism_explore)
-	To: 580 ( [[Get up.])
-
-,
-Edge
-	From: 420 ( adversary_pacifism_explore)
 	To: 581 ( adversary_pacifism_divert_menu)
-
-,
-Edge
-	From: 420 ( adversary_pacifism_explore)
-	To: 590 ( [[Remain silent.])
 
 ,
 Edge
@@ -16631,11 +14874,6 @@ Edge
 Edge
 	From: 420 ( adversary_pacifism_explore)
 	To: 596 ( [[Remain silent.])
-
-,
-Edge
-	From: 424 ( [[Unlodge the blade and att...)
-	To: 401 ( adversary_1_blade_fight_unlodge_join)
 
 ,
 Edge
@@ -16760,8 +14998,8 @@ Edge
 ,
 Edge
 	From: 468 ( adversary_1_distant_chat)
-	To: 392 ( adversary_1_fight_immediate)
-	Via: [[Slay the Princess.]"blade_held" && "adversary_can_attack_immediate"
+	To: 393 ( adversary_1_fight_immediate_late_join)
+
 ,
 Edge
 	From: 468 ( adversary_1_distant_chat)
@@ -16815,11 +15053,6 @@ Edge
 ,
 Edge
 	From: 468 ( adversary_1_distant_chat)
-	To: 499 ( adversary_1_close_join)
-	Via: [[Step closer.]"adversary_closer_comment"
-,
-Edge
-	From: 468 ( adversary_1_distant_chat)
 	To: 500 ( ''I don't know what happene...)
 
 ,
@@ -16831,6 +15064,11 @@ Edge
 Edge
 	From: 468 ( adversary_1_distant_chat)
 	To: 505 ( [[Turn around and leave wit...)
+
+,
+Edge
+	From: 468 ( adversary_1_distant_chat)
+	To: 507 ( adversary_1_close_menu)
 
 ,
 Edge
@@ -16954,16 +15192,6 @@ Edge
 
 ,
 Edge
-	From: 499 ( adversary_1_close_join)
-	To: 507 ( adversary_1_close_menu)
-
-,
-Edge
-	From: 4 ( nightmare_1_start)
-	To: 1000 ( nightmare_1_forest)
-
-,
-Edge
 	From: 500 ( ''I don't know what happene...)
 	To: 468 ( adversary_1_distant_chat)
 	Via: "fury_encountered"
@@ -16985,11 +15213,6 @@ Edge
 ,
 Edge
 	From: 501 ( adversary_1_empty_leave)
-	To: 550 ( (Explore) Okay, team. What ...)
-
-,
-Edge
-	From: 501 ( adversary_1_empty_leave)
 	To: 551 ( adversary_1_flee_die_join)
 
 ,
@@ -17000,11 +15223,6 @@ Edge
 ,
 Edge
 	From: 501 ( adversary_1_empty_leave)
-	To: 558 ( [[Die.])
-
-,
-Edge
-	From: 501 ( adversary_1_empty_leave)
 	To: 559 ( adversary_1_flee_die_action)
 
 ,
@@ -17012,11 +15230,6 @@ Edge
 	From: 501 ( adversary_1_empty_leave)
 	To: 559 ( adversary_1_flee_die_action)
 	Via: [[Die.]
-,
-Edge
-	From: 501 ( adversary_1_empty_leave)
-	To: 561 ( [[Turn and fight.])
-
 ,
 Edge
 	From: 501 ( adversary_1_empty_leave)
@@ -17096,17 +15309,12 @@ Edge
 Edge
 	From: 507 ( adversary_1_close_menu)
 	To: 514 ( adversary_1_close_free_join)
+
+,
+Edge
+	From: 507 ( adversary_1_close_menu)
+	To: 514 ( adversary_1_close_free_join)
 	Via: (Explore) ''So you're just....Var "adversary_ask_free" == Val (Bool False) && Var "adversary_1_chains_broken" == Val (Bool False) && "adversary_free_offer"
-,
-Edge
-	From: 507 ( adversary_1_close_menu)
-	To: 515 ( (Explore) ''Don't you want ...)
-
-,
-Edge
-	From: 507 ( adversary_1_close_menu)
-	To: 517 ( (Explore) ''What happened a...)
-
 ,
 Edge
 	From: 507 ( adversary_1_close_menu)
@@ -17126,12 +15334,12 @@ Edge
 Edge
 	From: 507 ( adversary_1_close_menu)
 	To: 530 ( adversary_1_princess_grin)
-	Via: (Explore) ''You were put do...Var "adversary_close_purpose" == Val (Bool False)
+
 ,
 Edge
 	From: 507 ( adversary_1_close_menu)
-	To: 536 ( (Explore) ''The last time w...)
-
+	To: 530 ( adversary_1_princess_grin)
+	Via: (Explore) ''You were put do...Var "adversary_close_purpose" == Val (Bool False)
 ,
 Edge
 	From: 507 ( adversary_1_close_menu)
@@ -17172,16 +15380,6 @@ Edge
 	From: 514 ( adversary_1_close_free_join)
 	To: 507 ( adversary_1_close_menu)
 	Via: Var "adversary_ask_free" == Val (Bool False) && Var "adversary_1_chains_broken" == Val (Bool False) && Var "adversary_free_offer" == Val (Bool False)
-,
-Edge
-	From: 515 ( (Explore) ''Don't you want ...)
-	To: 514 ( adversary_1_close_free_join)
-	Via: Var "adversary_ask_free" == Val (Bool False) && Var "adversary_1_chains_broken" == Val (Bool False) && Var "adversary_free_offer" == Val (Bool False)
-,
-Edge
-	From: 517 ( (Explore) ''What happened a...)
-	To: 518 ( adversary_1_close_post_death_menu)
-	Via: Var "adversary_ask_rebirth" == Val (Bool False)
 ,
 Edge
 	From: 518 ( adversary_1_close_post_death_menu)
@@ -17231,11 +15429,6 @@ Edge
 Edge
 	From: 530 ( adversary_1_princess_grin)
 	To: 507 ( adversary_1_close_menu)
-	Via: "basement_1_shared_task" && Var "adversary_close_purpose" == Val (Bool False)
-,
-Edge
-	From: 536 ( (Explore) ''The last time w...)
-	To: 530 ( adversary_1_princess_grin)
 	Via: "basement_1_shared_task" && Var "adversary_close_purpose" == Val (Bool False)
 ,
 Edge
@@ -17324,24 +15517,9 @@ Edge
 
 ,
 Edge
-	From: 550 ( (Explore) Okay, team. What ...)
-	To: 551 ( adversary_1_flee_die_join)
-
-,
-Edge
 	From: 551 ( adversary_1_flee_die_join)
 	To: 552 ( fury_start)
 
-,
-Edge
-	From: 552 ( fury_start)
-	To: 1982 ( fury_start_tower)
-	Via: Var "fury_source" == Val (String "tower")
-,
-Edge
-	From: 552 ( fury_start)
-	To: 1983 ( fury_start_pacifism)
-	Via: Var "fury_source" == Val (String "pacifism")
 ,
 Edge
 	From: 552 ( fury_start)
@@ -17350,8 +15528,18 @@ Edge
 ,
 Edge
 	From: 552 ( fury_start)
-	To: 1985 ( fury_start_adversary_other)
-	Via: Else
+	To: 1986 ( fury_start_late_join)
+
+,
+Edge
+	From: 552 ( fury_start)
+	To: 1987 ( fury_path_menu)
+
+,
+Edge
+	From: 552 ( fury_start)
+	To: 1988 ( fury_death_start_join)
+
 ,
 Edge
 	From: 557 ( adversary_1_upstairs)
@@ -17359,19 +15547,9 @@ Edge
 
 ,
 Edge
-	From: 558 ( [[Die.])
-	To: 559 ( adversary_1_flee_die_action)
-
-,
-Edge
 	From: 559 ( adversary_1_flee_die_action)
 	To: 551 ( adversary_1_flee_die_join)
 
-,
-Edge
-	From: 561 ( [[Turn and fight.])
-	To: 562 ( adversary_1_flee_free_stopped_join)
-	Via: "blade_held"
 ,
 Edge
 	From: 562 ( adversary_1_flee_free_stopped_join)
@@ -17444,11 +15622,6 @@ Edge
 
 ,
 Edge
-	From: 580 ( [[Get up.])
-	To: 581 ( adversary_pacifism_divert_menu)
-	Via: "adversary_pacifism_stuck"
-,
-Edge
 	From: 581 ( adversary_pacifism_divert_menu)
 	To: 490 ( adversary_1_fight)
 	Via: [[Attack the Princess.]"adversary_1_cabin_blade_taken" && Var "adversary_combat_to_pacifism" == Val (Bool False)
@@ -17477,11 +15650,6 @@ Edge
 	From: 581 ( adversary_pacifism_divert_menu)
 	To: 579 ( adversary_pacifism_death_join)
 	Via: [[Remain silent.]
-,
-Edge
-	From: 590 ( [[Remain silent.])
-	To: 579 ( adversary_pacifism_death_join)
-
 ,
 Edge
 	From: 592 ( adversary_pacifism_end)
@@ -17514,11 +15682,6 @@ Edge
 	Via: "basement_1_shared_task" || "basement_1_empty_kill_joke"
 ,
 Edge
-	From: 5 ( prisoner_1_start)
-	To: 1257 ( prisoner_1_forest)
-
-,
-Edge
 	From: 602 ( ''We're doing it. We're sta...)
 	To: 568 ( adversary_1_upstairs_late_join)
 	Via: "adversary_1_retrieve_knife_explore" && "adversary_can_fury"
@@ -17537,11 +15700,6 @@ Edge
 	From: 604 ( ''We're leaving.'')
 	To: 599 ( adversary_1_retrieve_knife_menu)
 	Via: "fury_encountered"
-,
-Edge
-	From: 609 ( adversary_1_face_missing_menu)
-	To: 611 ( ''Can... can I go get my pr...)
-
 ,
 Edge
 	From: 609 ( adversary_1_face_missing_menu)
@@ -17581,11 +15739,6 @@ Edge
 Edge
 	From: 60 ( basement_1_empty_no_kill)
 	To: 64 ( [[Lock her in the basement.])
-
-,
-Edge
-	From: 611 ( ''Can... can I go get my pr...)
-	To: 612 ( adversary_1_face_missing_princess_attack_join)
 
 ,
 Edge
@@ -17660,7 +15813,7 @@ Edge
 ,
 Edge
 	From: 640 ( adversary_1_forest)
-	To: 641 ( (Explore) I'm getting a ter...)
+	To: 642 ( adversary_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -17690,11 +15843,6 @@ Edge
 ,
 Edge
 	From: 640 ( adversary_1_forest)
-	To: 651 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 640 ( adversary_1_forest)
 	To: 652 ( adversary_1_forest_princess)
 
 ,
@@ -17707,11 +15855,6 @@ Edge
 	From: 640 ( adversary_1_forest)
 	To: 665 ( [[Turn around and leave.])
 
-,
-Edge
-	From: 641 ( (Explore) I'm getting a ter...)
-	To: 642 ( adversary_1_forest_narrator_share_join)
-	Via: Var "adversary_1_forest_share_loop" == Val (Bool False)
 ,
 Edge
 	From: 642 ( adversary_1_forest_narrator_share_join)
@@ -17727,11 +15870,6 @@ Edge
 	From: 64 ( [[Lock her in the basement.])
 	To: 68 ( basement_1_empty_retrieve_knife)
 	Via: Oh that's a relief! I was a...Var "beast_encountered" == Val (Bool False) || Var "witch_encountered" == Val (Bool False)
-,
-Edge
-	From: 651 ( (Explore) Let's talk about ...)
-	To: 652 ( adversary_1_forest_princess)
-	Via: "adversary_1_forest_share_loop_insist" && Var "adversary_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 652 ( adversary_1_forest_princess)
@@ -17835,11 +15973,6 @@ Edge
 ,
 Edge
 	From: 683 ( adversary_2_exterior)
-	To: 687 ( adversary_2_interior)
-	Via: [[Proceed into the cabin.]
-,
-Edge
-	From: 687 ( adversary_2_interior)
 	To: 688 ( adversary_2_interior_menu)
 
 ,
@@ -17860,8 +15993,8 @@ Edge
 ,
 Edge
 	From: 688 ( adversary_2_interior_menu)
-	To: 696 ( adversary_2_stairs)
-	Via: [[Approach the mirror.]
+	To: 697 ( adversary_2_stairs_menu)
+
 ,
 Edge
 	From: 68 ( basement_1_empty_retrieve_knife)
@@ -17880,17 +16013,7 @@ Edge
 ,
 Edge
 	From: 696 ( adversary_2_stairs)
-	To: 697 ( adversary_2_stairs_menu)
-
-,
-Edge
-	From: 697 ( adversary_2_stairs_menu)
 	To: 702 ( adversary_2_basement_arrive)
-	Via: [[Continue to the basement ...
-,
-Edge
-	From: 6 ( razor_1_start)
-	To: 1329 ( razor_1_forest)
 
 ,
 Edge
@@ -18075,11 +16198,6 @@ Edge
 ,
 Edge
 	From: 731 ( adversary_2_combat_ending_menu)
-	To: 732 ( ''Are you sure you want to ...)
-
-,
-Edge
-	From: 731 ( adversary_2_combat_ending_menu)
 	To: 735 ( adversary_2_combat_finale_join)
 
 ,
@@ -18089,23 +16207,8 @@ Edge
 	Via: (Explore) ''You've fallen r..."trait_hunted"
 ,
 Edge
-	From: 731 ( adversary_2_combat_ending_menu)
-	To: 736 ( [[Slay the Princess.])
-
-,
-Edge
-	From: 732 ( ''Are you sure you want to ...)
-	To: 730 ( adversary_2_freedom_join)
-
-,
-Edge
 	From: 735 ( adversary_2_combat_finale_join)
 	To: 466 ( mirror_start)
-
-,
-Edge
-	From: 736 ( [[Slay the Princess.])
-	To: 735 ( adversary_2_combat_finale_join)
 
 ,
 Edge
@@ -18360,11 +16463,6 @@ Edge
 ,
 Edge
 	From: 773 ( beast_encounter_outside_menu)
-	To: 783 ( [[Run for the stairs.])
-
-,
-Edge
-	From: 773 ( beast_encounter_outside_menu)
 	To: 784 ( beast_stairs_run)
 
 ,
@@ -18387,11 +16485,6 @@ Edge
 	From: 774 ( beast_encounter_attack_staging)
 	To: 788 ( beast_attack_4)
 	Via: Var "beast_encounter_phase" == Val (Int 3)
-,
-Edge
-	From: 783 ( [[Run for the stairs.])
-	To: 784 ( beast_stairs_run)
-	Via: "beast_encounter_can_try_flee"
 ,
 Edge
 	From: 784 ( beast_stairs_run)
@@ -18514,11 +16607,6 @@ Edge
 	Via: Var "witch_encountered" == Val (Bool False) || Var "damsel_encountered" == Val (Bool False)
 ,
 Edge
-	From: 7 ( spectre_1_start)
-	To: 1446 ( spectre_1_forest)
-
-,
-Edge
 	From: 803 ( [[Play dead.])
 	To: 787 ( beast_attack_3)
 	Via: "wild_encountered"
@@ -18580,11 +16668,6 @@ Edge
 ,
 Edge
 	From: 814 ( beast_2_ending_join)
-	To: 815 ( beast_2_start)
-
-,
-Edge
-	From: 815 ( beast_2_start)
 	To: 854 ( beast_2_path_menu)
 
 ,
@@ -18595,7 +16678,7 @@ Edge
 ,
 Edge
 	From: 816 ( beast_1_forest)
-	To: 817 ( (Explore) I'm getting a ter...)
+	To: 818 ( beast_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -18620,11 +16703,6 @@ Edge
 ,
 Edge
 	From: 816 ( beast_1_forest)
-	To: 826 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 816 ( beast_1_forest)
 	To: 827 ( beast_1_forest_princess)
 
 ,
@@ -18637,11 +16715,6 @@ Edge
 	From: 816 ( beast_1_forest)
 	To: 840 ( [[Turn around and leave.])
 
-,
-Edge
-	From: 817 ( (Explore) I'm getting a ter...)
-	To: 818 ( beast_1_forest_narrator_share_join)
-	Via: Var "beast_1_forest_share_loop" == Val (Bool False)
 ,
 Edge
 	From: 818 ( beast_1_forest_narrator_share_join)
@@ -18692,11 +16765,6 @@ Edge
 	From: 81 ( basement_1_empty_rescue_door)
 	To: 87 ( basement_1_empty_rescue_controlled_start)
 
-,
-Edge
-	From: 826 ( (Explore) Let's talk about ...)
-	To: 827 ( beast_1_forest_princess)
-	Via: "beast_1_forest_share_loop_insist" && Var "beast_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 827 ( beast_1_forest_princess)
@@ -18850,8 +16918,8 @@ Edge
 ,
 Edge
 	From: 857 ( beast_2_exterior_menu)
-	To: 869 ( beast_2_interior)
-	Via: [[Proceed into the cabin.]
+	To: 870 ( beast_2_cabin_menu)
+
 ,
 Edge
 	From: 85 ( [[Approach the locked door.])
@@ -18909,11 +16977,6 @@ Edge
 	Via: Var "loops_finished" >= Val (Int 2)
 ,
 Edge
-	From: 869 ( beast_2_interior)
-	To: 870 ( beast_2_cabin_menu)
-
-,
-Edge
 	From: 86 ( [[Slay the Princess.])
 	To: 87 ( basement_1_empty_rescue_controlled_start)
 	Via: Var "witch_encountered" == Val (Bool False)
@@ -18940,11 +17003,6 @@ Edge
 ,
 Edge
 	From: 874 ( beast_2_stairs)
-	To: 876 ( ''We have unfinished busine...)
-
-,
-Edge
-	From: 874 ( beast_2_stairs)
 	To: 877 ( beast_2_stairs_comment)
 
 ,
@@ -18967,11 +17025,6 @@ Edge
 	From: 874 ( beast_2_stairs)
 	To: 878 ( beast_2_basement)
 	Via: [[Say nothing, and silently...
-,
-Edge
-	From: 876 ( ''We have unfinished busine...)
-	To: 877 ( beast_2_stairs_comment)
-
 ,
 Edge
 	From: 877 ( beast_2_stairs_comment)
@@ -19015,13 +17068,13 @@ Edge
 ,
 Edge
 	From: 890 ( beast_2_free)
-	To: 466 ( mirror_start)
-	Via: "trait_stubborn"
+	To: 3447 ( den_pristine_free_choice)
+
 ,
 Edge
 	From: 890 ( beast_2_free)
-	To: 892 ( den_pristine_free)
-	Via: Else
+	To: 466 ( mirror_start)
+	Via: "trait_stubborn"
 ,
 Edge
 	From: 891 ( den_pristine_fight)
@@ -19034,13 +17087,8 @@ Edge
 	Via: [[Take the opening and stri...
 ,
 Edge
-	From: 892 ( den_pristine_free)
-	To: 3447 ( den_pristine_free_choice)
-
-,
-Edge
-	From: 893 ( damsel_1_encounter_start)
-	To: 894 ( damsel_1_menu)
+	From: 894 ( damsel_1_menu)
+	To: 897 ( damsel_how_free_join)
 
 ,
 Edge
@@ -19050,7 +17098,7 @@ Edge
 ,
 Edge
 	From: 894 ( damsel_1_menu)
-	To: 898 ( (Explore) ''Do I have to cu...)
+	To: 902 ( damsel_end_world_join)
 
 ,
 Edge
@@ -19060,27 +17108,17 @@ Edge
 ,
 Edge
 	From: 894 ( damsel_1_menu)
-	To: 903 ( (Explore) ''I have to ask.....)
+	To: 908 ( [[Slay the Princess.])
 
 ,
 Edge
 	From: 894 ( damsel_1_menu)
-	To: 907 ( damsel_1_free)
-	Via: [[Rescue the Princess.]
-,
-Edge
-	From: 894 ( damsel_1_menu)
-	To: 908 ( [[Slay the Princess.])
+	To: 916 ( damsel_free_menu)
 
 ,
 Edge
 	From: 897 ( damsel_how_free_join)
 	To: 894 ( damsel_1_menu)
-	Via: Var "damsel_how_free" == Val (Bool False) && "blade_held"
-,
-Edge
-	From: 898 ( (Explore) ''Do I have to cu...)
-	To: 897 ( damsel_how_free_join)
 	Via: Var "damsel_how_free" == Val (Bool False) && "blade_held"
 ,
 Edge
@@ -19092,16 +17130,6 @@ Edge
 	From: 902 ( damsel_end_world_join)
 	To: 894 ( damsel_1_menu)
 	Via: Var "damsel_after_die" == Val (Bool False) && Var "damsel_end_world" == Val (Bool False)
-,
-Edge
-	From: 903 ( (Explore) ''I have to ask.....)
-	To: 902 ( damsel_end_world_join)
-	Via: Var "damsel_after_die" == Val (Bool False) && Var "damsel_end_world" == Val (Bool False)
-,
-Edge
-	From: 907 ( damsel_1_free)
-	To: 916 ( damsel_free_menu)
-
 ,
 Edge
 	From: 908 ( [[Slay the Princess.])
@@ -19141,11 +17169,6 @@ Edge
 Edge
 	From: 915 ( grey_start)
 	To: 2034 ( grey_woods_menu)
-
-,
-Edge
-	From: 916 ( damsel_free_menu)
-	To: 917 ( (Explore) ''What do you wan...)
 
 ,
 Edge
@@ -19202,11 +17225,6 @@ Edge
 	From: 916 ( damsel_free_menu)
 	To: 942 ( ''Something isn't right her...)
 
-,
-Edge
-	From: 917 ( (Explore) ''What do you wan...)
-	To: 918 ( damsel_depersonalization_menu)
-	Via: Var "damsel_what_want" == Val (Bool False)
 ,
 Edge
 	From: 918 ( damsel_depersonalization_menu)
@@ -19270,7 +17288,7 @@ Edge
 ,
 Edge
 	From: 920 ( damsel_happy_late_join)
-	To: 957 ( happy_start)
+	To: 3792 ( happy_down_menu)
 
 ,
 Edge
@@ -19475,7 +17493,7 @@ Edge
 ,
 Edge
 	From: 957 ( happy_start)
-	To: 3792 ( happy_down_menu)
+	To: 3798 ( happy_stairs)
 
 ,
 Edge
@@ -19490,7 +17508,7 @@ Edge
 ,
 Edge
 	From: 963 ( damsel_1_forest)
-	To: 964 ( (Explore) I'm getting a ter...)
+	To: 965 ( damsel_1_forest_narrator_share_join)
 
 ,
 Edge
@@ -19515,11 +17533,6 @@ Edge
 ,
 Edge
 	From: 963 ( damsel_1_forest)
-	To: 974 ( (Explore) Let's talk about ...)
-
-,
-Edge
-	From: 963 ( damsel_1_forest)
 	To: 975 ( damsel_1_forest_princess)
 
 ,
@@ -19534,19 +17547,9 @@ Edge
 
 ,
 Edge
-	From: 964 ( (Explore) I'm getting a ter...)
-	To: 965 ( damsel_1_forest_narrator_share_join)
-	Via: Var "damsel_1_forest_share_loop" == Val (Bool False)
-,
-Edge
 	From: 965 ( damsel_1_forest_narrator_share_join)
 	To: 963 ( damsel_1_forest)
 	Via: Var "damsel_1_forest_share_loop" == Val (Bool False)
-,
-Edge
-	From: 974 ( (Explore) Let's talk about ...)
-	To: 975 ( damsel_1_forest_princess)
-	Via: "damsel_1_forest_share_loop_insist" && Var "damsel_1_forest_princess_press" == Val (Bool False)
 ,
 Edge
 	From: 975 ( damsel_1_forest_princess)
@@ -19585,8 +17588,8 @@ Edge
 ,
 Edge
 	From: 989 ( cabin_interior_2_damsel_menu)
-	To: 893 ( damsel_1_encounter_start)
-	Via: [[Enter the basement.]
+	To: 894 ( damsel_1_menu)
+
 ,
 Edge
 	From: 989 ( cabin_interior_2_damsel_menu)
@@ -19627,9 +17630,4 @@ Edge
 	From: 992 ( damsel_cabin_1_mirror_join)
 	To: 989 ( cabin_interior_2_damsel_menu)
 	Via: [[Wipe the mirror clean.]
-,
-Edge
-	From: 9 ( tower_1_start)
-	To: 1738 ( tower_1_forest)
-
 ])

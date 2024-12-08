@@ -141,18 +141,18 @@ module Main where
         sourceFile <- readFile "singleScript.rpy"
         --printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
-        writeFile "output/RemoveStraysTestLexed.txt" (toString lexed)
+        writeFile "output/trueLexed.txt" (toString lexed)
         print "finished lexing"
         let forest = fst $ head $ P.runParser top lexed
-        writeFile "output/RemoveStraysTestTree.txt" (show forest)
+        writeFile "output/trueTree.txt" (show forest)
         print "finished parsing"
         let (es, ns) = getTopEdges forest []
         let bigTree = cleanResults (ns, es)
-        writeFile "output/RemoveStraysTestFolded.txt" (show bigTree)
+        writeFile "output/trueFolded.txt" (show bigTree)
         print "finished flattening"
         let output = H.htmlIfy bigTree
         print "finished making it HTML"
-        writeFile "output/RemoveStraysTestOutput.html" output
+        writeFile "output/trueOutput.html" output
         print "all done!"
         
     
