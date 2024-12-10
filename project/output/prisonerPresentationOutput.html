@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 2000px;
+                 height: 2000px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+ nodes = new vis.DataSet([{"fill": "FF0000", "id": "0", "label": "prisoner_1_start", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "1", "label": "prisoner_1_cabin_arrival", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "2", "label": "prisoner_1_forest", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "13", "label": "prisoner_1_forest_princess", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "20", "label": "Nevermind.", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "21", "label": "prisoner_1_forest_princess_leaving", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "26", "label": "[[Turn around and leave.]", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "27", "label": "turn_and_leave_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "29", "label": "prisoner_encounter_start", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "33", "label": "cabin_interior_2_prisoner_menu", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "34", "label": "(Explore) You didn't say an...", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "39", "label": "[[Approach the mirror.]", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "40", "label": "prisoner_cabin_1_mirror_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "47", "label": "[[Enter the basement.]", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "48", "label": "prisoner_knife_take_force", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "51", "label": "prisoner_knife_take_force_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "55", "label": "prisoner_narrator_loop_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "56", "label": "I'm not sure I need to do m...", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "57", "label": "prisoner_locked_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "58", "label": "prisoner_menu", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "60", "label": "[[Sit with her.]", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "63", "label": "prisoner_strangle_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "65", "label": "[[Slay the Princess.]", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "68", "label": "(Explore) [[Inspect the sha...", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "79", "label": "prisoner_what_happened_died", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "87", "label": "prisoner_no_give_explore_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "92", "label": "(Explore) ''{b}I{/b} can cu...", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "97", "label": "''If that's how you're goin...", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "99", "label": "''It seems I don't have muc...", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "103", "label": "[[Slay the Princess.]", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "114", "label": "mirror_start", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "117", "label": "prisoner_knife_given_late_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "120", "label": "prisoner_head_choice", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "122", "label": "prisoner_dead_late_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "143", "label": "prisoner_slay_self_join", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "148", "label": "grey_start", "shape": "dot", "size": 10},{"fill": "FF0000", "id": "149", "label": "cage_start", "shape": "dot", "size": 10}]);
+edges = new vis.DataSet([{"arrows": "to", "from": "0", "to": "2", "width": 1},{"arrows": "to", "from": "103", label: "\"grey_encountered\"", "to": "58", "width": 1},{"arrows": "to", "from": "103", label: "\"blade_held\" && \"prisoner_can_slay_attempt\"", "to": "63", "width": 1},{"arrows": "to", "from": "117", "to": "120", "width": 1},{"arrows": "to", "from": "120", "to": "114", "width": 1},{"arrows": "to", "from": "120", label: "[[Leave the basement to cla...", "to": "122", "width": 1},{"arrows": "to", "from": "122", "to": "143", "width": 1},{"arrows": "to", "from": "13", "to": "20", "width": 1},{"arrows": "to", "from": "13", label: "That's all.Var \"prisoner_1_forest_princess_count\" != Val (Int 0)", "to": "21", "width": 1},{"arrows": "to", "from": "143", label: "\"prisoner_happy_menu_suggestion_explore\"", "to": "122", "width": 1},{"arrows": "to", "from": "143", label: "\"prisoner_slain_by_player\"", "to": "148", "width": 1},{"arrows": "to", "from": "143", label: "Else", "to": "149", "width": 1},{"arrows": "to", "from": "1", "to": "29", "width": 1},{"arrows": "to", "from": "1", "to": "33", "width": 1},{"arrows": "to", "from": "20", label: "Var \"prisoner_1_forest_princess_count\" == Val (Int 0)", "to": "21", "width": 1},{"arrows": "to", "from": "21", label: "Var \"prisoner_1_forest_princess_count\" == Val (Int 0)", "to": "2", "width": 1},{"arrows": "to", "from": "26", label: "\"mound_can_attempt_flee\"", "to": "27", "width": 1},{"arrows": "to", "from": "26", label: "Var \"loops_finished\" >= Val (Int 2)", "to": "2", "width": 1},{"arrows": "to", "from": "29", "to": "56", "width": 1},{"arrows": "to", "from": "29", "to": "57", "width": 1},{"arrows": "to", "from": "29", "to": "60", "width": 1},{"arrows": "to", "from": "29", "to": "65", "width": 1},{"arrows": "to", "from": "2", "to": "13", "width": 1},{"arrows": "to", "from": "2", label: "[[Proceed to the cabin.]", "to": "1", "width": 1},{"arrows": "to", "from": "2", "to": "20", "width": 1},{"arrows": "to", "from": "2", "to": "26", "width": 1},{"arrows": "to", "from": "2", "to": "2", "width": 1},{"arrows": "to", "from": "33", "to": "34", "width": 1},{"arrows": "to", "from": "33", "to": "39", "width": 1},{"arrows": "to", "from": "33", label: "(Explore) [[Approach the mi...\"prisoner_1_cabin_mirror_present\" && Var \"prisoner_1_cabin_mirror_approached\" == Val (Bool False)", "to": "40", "width": 1},{"arrows": "to", "from": "33", "to": "47", "width": 1},{"arrows": "to", "from": "33", "to": "48", "width": 1},{"arrows": "to", "from": "34", label: "Var \"prisoner_1_cabin_mirror_ask\" == Val (Bool False) && \"prisoner_1_cabin_mirror_present\"", "to": "33", "width": 1},{"arrows": "to", "from": "34", "to": "39", "width": 1},{"arrows": "to", "from": "34", "to": "40", "width": 1},{"arrows": "to", "from": "39", label: "Var \"prisoner_1_cabin_mirror_approached\" == Val (Bool False)", "to": "40", "width": 1},{"arrows": "to", "from": "40", label: "[[Wipe the mirror clean.]", "to": "33", "width": 1},{"arrows": "to", "from": "47", "to": "29", "width": 1},{"arrows": "to", "from": "47", label: "Var \"blade_held\" == Val (Bool False)", "to": "48", "width": 1},{"arrows": "to", "from": "48", label: "[[Take the blade.]Var \"prisoner_knife_take_force_explore\" == Val (Bool False)", "to": "51", "width": 1},{"arrows": "to", "from": "55", label: "Var \"prisoner_position\" == Val (String \"start\")", "to": "29", "width": 1},{"arrows": "to", "from": "55", "to": "58", "width": 1},{"arrows": "to", "from": "56", label: "Var \"prisoner_position\" == Val (String \"start\")", "to": "29", "width": 1},{"arrows": "to", "from": "56", label: "Var \"prisoner_locked\" == Val (Bool False)", "to": "55", "width": 1},{"arrows": "to", "from": "56", label: "Var \"prisoner_locked\" == Val (Bool False)", "to": "57", "width": 1},{"arrows": "to", "from": "56", label: "Else", "to": "58", "width": 1},{"arrows": "to", "from": "57", label: "Var \"prisoner_locked\" == Val (Bool False)", "to": "55", "width": 1},{"arrows": "to", "from": "58", "to": "103", "width": 1},{"arrows": "to", "from": "58", "to": "117", "width": 1},{"arrows": "to", "from": "58", label: "(Explore) ''I've been here ...Var \"prisoner_narrator_agree\" == Val (Bool False)", "to": "55", "width": 1},{"arrows": "to", "from": "58", label: "''I think I'm just going to...Var \"prisoner_locked\" == Val (Bool False)", "to": "57", "width": 1},{"arrows": "to", "from": "58", "to": "58", "width": 1},{"arrows": "to", "from": "58", label: "''If you want to leave, I'm...\"prisoner_what_do\"", "to": "63", "width": 1},{"arrows": "to", "from": "58", "to": "68", "width": 1},{"arrows": "to", "from": "58", "to": "79", "width": 1},{"arrows": "to", "from": "58", label: "(Explore) ''I'm not giving ...Var \"prisoner_no_give_explore\" == Val (Bool False) && \"prisoner_what_do\"", "to": "87", "width": 1},{"arrows": "to", "from": "58", "to": "92", "width": 1},{"arrows": "to", "from": "58", "to": "97", "width": 1},{"arrows": "to", "from": "58", "to": "99", "width": 1},{"arrows": "to", "from": "60", "to": "58", "width": 1},{"arrows": "to", "from": "60", label: "[[Sit closer.]", "to": "63", "width": 1},{"arrows": "to", "from": "63", "to": "117", "width": 1},{"arrows": "to", "from": "63", "to": "122", "width": 1},{"arrows": "to", "from": "65", label: "\"grey_encountered\"", "to": "29", "width": 1},{"arrows": "to", "from": "65", label: "\"blade_held\" && \"prisoner_can_slay_attempt\"", "to": "63", "width": 1},{"arrows": "to", "from": "68", "to": "114", "width": 1},{"arrows": "to", "from": "68", label: "[[Let it go.]", "to": "58", "width": 1},{"arrows": "to", "from": "79", label: "Var \"prisoner_narrator_agree\" == Val (Bool False)", "to": "55", "width": 1},{"arrows": "to", "from": "79", label: "Var \"prisoner_death_ask\" == Val (Bool False)", "to": "58", "width": 1},{"arrows": "to", "from": "87", label: "\"prisoner_what_do\" && Var \"prisoner_no_give_explore\" == Val (Bool False)", "to": "58", "width": 1},{"arrows": "to", "from": "92", label: "Var \"prisoner_narrator_agree\" == Val (Bool False)", "to": "55", "width": 1},{"arrows": "to", "from": "92", label: "\"prisoner_what_do\" && Var \"prisoner_no_give_explore\" == Val (Bool False)", "to": "58", "width": 1},{"arrows": "to", "from": "92", label: "\"prisoner_what_do\" && Var \"prisoner_no_give_explore\" == Val (Bool False)", "to": "87", "width": 1},{"arrows": "to", "from": "97", label: "\"grey_encountered\"", "to": "58", "width": 1},{"arrows": "to", "from": "97", label: "\"blade_held\" && \"prisoner_no_give_explore\" && \"prisoner_can_slay_attempt\"", "to": "63", "width": 1},{"arrows": "to", "from": "99", label: "\"grey_encountered\"", "to": "58", "width": 1},{"arrows": "to", "from": "99", label: "\"blade_held\" && \"prisoner_locked\" && \"prisoner_can_slay_attempt\"", "to": "63", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html> 

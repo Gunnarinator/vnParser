@@ -150,23 +150,23 @@ module Main where
 
     main :: IO ()
     main = do 
-        sourceFile <- readFile "singleScript.rpy"
+        sourceFile <- readFile "prisoner_1_encounter.rpy"
         --printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
-        writeFile "output/trueLexed.txt" (toString lexed)
+        --writeFile "output/trueLexed.txt" (toString lexed)
         print "finished lexing"
         let forest = fst $ head $ P.runParser top lexed
-        writeFile "output/trueTree.txt" (show forest)
+        --writeFile "output/trueTree.txt" (show forest)
         print "finished parsing"
         let (es, ns) = getTopEdges forest []
         let bigTree = cleanResults (ns, es)
-        writeFile "output/trueFolded.txt" (show bigTree)
+        --writeFile "output/trueFolded.txt" (show bigTree)
         print "finished flattening"
-        writeFile "output/trueDot.dot" (dotify bigTree)
+        --writeFile "output/trueDot.dot" (dotify bigTree)
         print "finished making it a DOT"
         let output = H.htmlIfy bigTree
         print "finished making it HTML"
-        writeFile "output/trueOutput.html" output
+        writeFile "output/prisonerPresentationOutput.html" output
         print "all done!"
         
     

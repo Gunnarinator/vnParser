@@ -5,6 +5,8 @@ module Utils where
     import qualified Data.Set as Set
     import Data.List
 
+    --single token satisfier functions
+
     isColonToken :: Token -> Bool 
     isColonToken Colon = True 
     isColonToken _ = False
@@ -49,10 +51,6 @@ module Utils where
     isVarToken (L.Var x) = True
     isVarToken _ = False
 
-    varVal :: Token -> String 
-    varVal (L.Var x) = x 
-    varval _ = ""
-
     isOpenParen :: Token -> Bool 
     isOpenParen OpenParen = True 
     isOpenParen _ = False
@@ -81,11 +79,15 @@ module Utils where
     isValToken (Text x) = True 
     isValToken _ = False 
 
-    --There are SO MANY tokens we don't care about
     isLineStartToken :: Token -> Bool
     isLineStartToken Tab = True 
     isLineStartToken Label = True 
     isLineStartToken _ = False
+
+    --the following functions are token unpackers
+    varName :: Token -> String 
+    varName (L.Var x) = x 
+    varName _ = ""
 
     getVal :: Token -> Val 
     getVal (Num x) = Int (read x) 
@@ -95,12 +97,6 @@ module Utils where
     getVal (L.Var "False") = D.Bool False
     getVal (Text x) = String x 
 
-
-
-    varName :: Token -> String 
-    varName (L.Var x) = x 
-    varName _ = ""
-
     textVal :: Token -> String 
     textVal (Text x) = x 
     textVal _ = ""
@@ -109,16 +105,17 @@ module Utils where
     symbVal (Symbol x) = x 
     symbVal _ = ""
 
+    getFlag :: D.Cond -> String 
+    getFlag (D.If cond body) = show cond 
+    getFlag (D.Elif cond body) = show cond 
+    getFlag _ = ""
 
-    hasThings :: [a] -> Bool 
-    hasThings [] = False 
-    hasThings _ = True
-
+    --the strings of text often have italic tags and we wanna drop those.
     cleanStr :: String -> String 
     cleanStr s = let s2 = drop 4 (reverse $ drop 4 (reverse s)) in 
         if length s2 > 30 then take 27 s2 ++ "..." else s2
     
-
+    --these two functions are just "Show" on a list of tokens but with newlines on tab
     toString :: [Token] -> String 
     toString [] = ""
     toString (x:xs) = case x of 
@@ -131,12 +128,8 @@ module Utils where
         Tab -> "\n" ++ show x ++ ", " ++ toString xs 
         y -> show y ++ ", " ++ lineToString xs
 
-    getFlag :: D.Cond -> String 
-    getFlag (D.If cond body) = show cond 
-    getFlag (D.Elif cond body) = show cond 
-    getFlag _ = ""
 
-
+    --wrapper for findNextNode
     getNext :: [AST] -> [Node] -> Node -> (Node, [Node])
     getNext as ns n = 
         let (cNext, cEnv) = findNextNode as ns in 
@@ -144,6 +137,7 @@ module Utils where
                 then (n, ns) 
                 else (cNext, cEnv)
 
+    --try to find the next node that we should be pointing to.
     findNextNode :: [AST] -> [Node] -> (Node, [Node])
     findNextNode [] nEnv = (defNode, nEnv)
     findNextNode (a:as) nEnv = 
@@ -158,9 +152,10 @@ module Utils where
         if b then (n, ns) else let new = Node str (length ns) c in (new, new:ns)
 
     strInNEnv :: String -> [Node] -> (Bool, Node)
-    strInNEnv _ [] = (False, Node "" 0 Red)
+    strInNEnv _ [] = (False, defNode)
     strInNEnv str ((Node l i c):ns) = if str == l then (True, Node l i c) else strInNEnv str ns
 
+    --if we turn it into a set, then turn it back... it'll get rid of the duplicates.
     dropDupes :: Ord a => [a] -> [a] 
     dropDupes xs = Set.toList $ Set.fromList xs
 
@@ -171,19 +166,19 @@ module Utils where
         if getF e == getT e then delSame es 
         else e:delSame es
 
+    --default Edge
     defEdge :: Edge 
     defEdge = Edge (Node "" 0 Red) (Node "" 0 Red) ""
 
+    --a node is "linear" if it points to one node and one node points to it.
     isLinear :: Node -> [Edge] -> Either Bool (Edge, Edge)
     isLinear n es = isLinearInner n es (defEdge, defEdge)
 
-    --a node is "linear" if it points to one node and one node points to it.
     isLinearInner :: Node -> [Edge] -> (Edge, Edge) -> Either Bool (Edge, Edge)
     isLinearInner n [] (f1, t1) = 
         if f1 == defEdge || t1 == defEdge 
             then Left False 
             else Right (f1, t1)
-            
 
     isLinearInner n ((Edge f t l):es) (f1,t1) 
         | n == f = if f1 == defEdge && Edge f t l /= f1 && Edge f t l /= t1
@@ -197,11 +192,12 @@ module Utils where
 
     --this thing is backwards probably. 
         --the node we're trying to remove is the from of the first and the to of the second
-        --isLinear will return (f, t) where the node n appears only as the from in f and to in t
+        --input: (n->t, f->n) output: (f->t)
     weldEdge :: (Edge, Edge) -> Edge 
     weldEdge (Edge f1 t1 l1, Edge f2 t2 l2) =
         Edge f2 t1 ""
 
+    --remove linear nodes from the list of nodes, remove their edges from the list of edges.
     cullEdges :: [Node] -> [Edge] -> [Edge]
     cullEdges [] es = es 
     cullEdges (n:ns) es = 
@@ -210,20 +206,18 @@ module Utils where
             Right (f, t) -> 
                 cullEdges ns (dropDupes (weldEdge (f, t) : delete f (delete t es)))
 
-
+    --remove all linear nodes and all of their edges
     fullCull :: [Node] -> [Edge] -> [Edge] 
     fullCull ns es = 
         let nextEs = cullEdges ns es in 
             if nextEs == es then nextEs 
             else fullCull ns nextEs
 
+    
     cleanResults :: ([Node], [Edge]) -> ([Node], [Edge])
     cleanResults (ns, es) = 
         let finalEs = dropDupes (fullCull ns (delSame es)) in 
             (dropDupes $ readEdges finalEs, dropDupes finalEs)
-
-    oldCleanResults :: ([Node], [Edge]) -> ([Node], [Edge])
-    oldCleanResults (ns, es) = (dropDupes $ readEdges es, es)
 
     --connect the node to the first node in each of the edges
     connect :: Node -> [Edge] -> [Edge]
@@ -238,6 +232,10 @@ module Utils where
     readEdges ((Edge from to _):es) = [from, to] ++ readEdges es
 
 
+    --return the choices from the list that don't go anywhere.
+    getEmpties :: [Choice] -> [Edge] -> [Choice]
+    getEmpties cs es = getEmptiesInner cs es [] es
+    
     getEmptiesInner :: [Choice] -> [Edge] -> [Choice] -> [Edge] -> [Choice]
     --for c in cs, if c is in no edges, then add it to the retval list
     getEmptiesInner [] _ ret _ = ret 
@@ -247,8 +245,6 @@ module Utils where
             then getEmptiesInner cs ogEs ret ogEs
             else getEmptiesInner (c:cs) es ret ogEs
 
-    getEmpties :: [Choice] -> [Edge] -> [Choice]
-    getEmpties cs es = getEmptiesInner cs es [] es
 
 
     --let checkEs = checkChoices cs curN (head as)
@@ -260,7 +256,7 @@ module Utils where
             ASTLabel _ _ -> getEmpties cs es
             _ -> []
     
-
+    --some vars for cull edges testing
     a = Node "a" 1 Red 
     b = Node "b" 2 Red 
     c = Node "c" 3 Red 
