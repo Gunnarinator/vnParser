@@ -12,7 +12,7 @@ module Main where
     import HTMLify as H
     import Dotify
 
-    --at the top level... there should only be labels
+    --at the top level there *should* only be labels
     getTopEdges :: [AST] -> [Node] -> ([Edge], [Node])
     getTopEdges [] nodeEnv = ([], nodeEnv)
     getTopEdges (a:as) nodeEnv = case a of

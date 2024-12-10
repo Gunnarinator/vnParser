@@ -4,9 +4,9 @@
 module Parser where 
 
 import Control.Applicative
-import Data.Char
-import Control.Monad (guard)
-import Data
+--import Data.Char
+--import Control.Monad (guard)
+--import Data
 import Lexer
 
 newtype Parser a = P ([Token] -> [(a,[Token])])
