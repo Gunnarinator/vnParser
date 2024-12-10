@@ -1,0 +1,28 @@
+label razor_2_unarmed_start:
+    label razor_2_unarmed_beat_1:
+        menu 
+            opt1 "{i} We're fighting her, obviously.{/i}" if trait_stubborn == False:
+                menu 
+                    opt 1-1 "{i} Maybe we'll win!{/i}":
+                        label razor_2_unarmed_cheated_join:
+                    opt 1-2 
+                        jump razor_2_unarmed_cheated_join
+                    opt 1-3 
+                        jump razor_2_unarmed_cheated_join
+            opt2 "{i} We're going to appeal to her authority. Puff her up a bit. There's no reason we can't talk this out.{/i}" if trait_opportunist == False:
+                menu 
+                    opt 2-1 
+                        jump razor_empty_opportunist_join
+                    opt 2-2
+                        label razor_empty_opportunist_join: 
+                    opt 2-3
+                        menu 
+            opt 3 "{i} We're going to unconditionally surrender.{/i}" if trait_broken == False: 
+                menu 
+                    opt 3-1 "{i} ''I give up. I'll do anything, just please don't stab me!''{/i}":
+                        label razor_empty_surrender:
+                    opt 3-2 "{i} [[Silently throw your hands in the air.]{/i}": 
+                        jump razor_empty_surrender 
+
+label razor_2_unarmed_beat_2
+

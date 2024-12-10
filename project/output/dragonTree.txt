@@ -1,0 +1,1015 @@
+[
+{Label: spectre_pristine_start
+[
+Assign "trait_opportunist" = Val (Bool True)
+,
+Assign "trait_cold" = Val (Bool True)
+,,,,,,,
+[If "spectre_hostile" [,,,,]]
+,
+[Else [,,,,]]
+,,,,,,
+[If "spectre_hostile" [,,,,,,]]
+,
+[Else [,,,,,,]]
+,
+[If "spectre_hostile" [,,,,,,,,,,,,]]
+,
+[Else [,,,,,,,,,,,,]]
+,,,,,,,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "princess")
+,
+[If "spectre_hostile" []]
+,
+[Else []]
+,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "princess")
+,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,,,,,
+{Choice Branch: [Choice - Is that me?! Is that what I...
+[
+[If "spectre_hostile" [,,,]]
+,
+[Else [,,,,,]]
+],Choice - This isn't what I wanted to...
+[
+[If "spectre_hostile" [,,,,,]]
+,
+[Else [,,,,,]]
+],Choice - Did you mean to take me wit...
+[
+[If "spectre_hostile" [,,,,,]]
+,
+[Else [,,,,,]]
+],Choice - Can anyone hear me?
+[
+[If "spectre_hostile" [,,,]]
+,
+[Else [,,,,,]]
+],Choice - [[Say nothing.]
+[
+[If "spectre_hostile" [,,,]]
+,
+[Else [,,,]]
+]]}
+,
+[If "spectre_hostile" [,]]
+,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+{Choice Branch: [Choice - But what about the body? Wh...
+[
+[If "spectre_hostile" [,,]]
+,
+[Else [,,]]
+],Choice - Agreed. Let's go.
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+{Label: dragon_start_flee_join
+[
+[If "spectre_upstairs" [,,,,,]]
+,
+[Else [,,,,,]]
+,
+[If "spectre_upstairs" [,,]]
+,
+[Else [,,]]
+,
+[If "spectre_hostile" [,,]]
+,
+[Else [,,]]
+]}
+],Choice - If you leave the cabin, the...
+[
+[If "spectre_hostile" [,,]]
+,
+[Else [,,]]
+],Choice - Hell no! We're staying righ...
+[
+[If "spectre_hostile" [,,
+Jump to dragon_start_flee_join
+]]
+,
+[Else [,,]]
+],Choice - Sorry I stabbed us.
+[
+Assign "dragon_apologize" = Val (Bool True)
+,
+[If "spectre_hostile" [,,]]
+,
+[Else [,,]]
+],Choice - [[Say nothing.]
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_flee_join
+]]}
+,,,,
+Assign "current_princess" = Val (String "dragon")
+,,,,,,,,,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]}
+,
+{Label: dragon_start_menu
+[,,,,,,,,,,,
+{Choice Branch: [Choice - (Explore) There has to be s...If Var "dragon_loop_joke_count" != Val (Int 0) || "dragon_wait_attempt" []
+[,
+Assign "dragon_start_count" += Val (Int 1)
+,
+Assign "dragon_loop_joke_count" += Val (Int 1)
+,
+[If Var "dragon_loop_joke_count" == Val (Int 1) [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Elif Var "dragon_loop_joke_count" == Val (Int 2) [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Elif Var "dragon_loop_joke_count" == Val (Int 3) [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Elif Var "dragon_loop_joke_count" == Val (Int 4) [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Elif Var "dragon_loop_joke_count" == Val (Int 4) [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Else [,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+Jump to dragon_start_menu
+],Choice - (Explore) I'm still here.If Var "dragon_start_count" == Val (Int 0) && Var "dragon_intro_explore" == Val (Bool False) []
+[
+Assign "dragon_intro_explore" = Val (Bool True)
+,
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+],Choice - (Explore) What just happened?If Var "dragon_start_count" == Val (Int 0) && Var "dragon_what_happened" == Val (Bool False) []
+[
+{Label: dragon_what_happened_join
+[
+Assign "dragon_what_happened" = Val (Bool True)
+,
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If Var "dragon_intro_explore" == Val (Bool False) && Var "dragon_start_count" == Val (Int 0) [
+Assign "dragon_intro_explore" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[If "spectre_hostile" [
+[If "spectre_death_shared" [,]]
+,
+[Else [,]]
+]]
+,
+[Else [
+[If "spectre_death_shared" [,]]
+,
+[Else [,]]
+,,]]
+,
+Jump to dragon_start_menu
+]}
+],Choice - (Explore) You're not mad at...If Var "dragon_still_mad" == Val (Bool False) && Var "dragon_tone_different" == Val (Bool False) []
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+Assign "dragon_still_mad" = Val (Bool True)
+,
+[If Var "dragon_intro_explore" == Val (Bool False) && Var "dragon_start_count" == Val (Int 0) [
+Assign "dragon_intro_explore" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+],Choice - (Explore) You're different....If Var "dragon_start_count" != Val (Int 0) && Var "dragon_tone_different" == Val (Bool False) []
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+Assign "dragon_tone_different" = Val (Bool True)
+,
+[If Var "dragon_intro_explore" == Val (Bool False) && Var "dragon_start_count" == Val (Int 0) [
+Assign "dragon_intro_explore" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[If "spectre_hostile" [
+[If "dragon_still_mad" [,]]
+,,,,]]
+,
+[Else [,,,]]
+,
+{Choice Branch: [Choice - I killed you, though. And I...
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+],Choice - [[Let it go, just like she ...
+[
+Jump to dragon_start_menu
+]]}
+],Choice - (Explore) Sorry I stabbed us.If Var "dragon_apologize" == Val (Bool False) []
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+Assign "dragon_apologize" = Val (Bool True)
+,
+[If "spectre_hostile" [,,,,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+],Choice - (Explore) How are we suppos...If Var "dragon_how_leave" == Val (Bool False) && Var "dragon_start_count" != Val (Int 1) []
+[
+Assign "dragon_how_leave" = Val (Bool True)
+,
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+],Choice - (Explore) If we're both her...If Var "dragon_where_others" == Val (Bool False) []
+[
+Assign "dragon_where_others" = Val (Bool True)
+,
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,,,,,]]
+,
+[Else [,,,]]
+,
+Jump to dragon_start_menu
+],Choice - (Explore) Are we still a gh...If Var "dragon_ghost_explore" == Val (Bool False) []
+[
+Assign "dragon_ghost_explore" = Val (Bool True)
+,
+Assign "dragon_start_count" += Val (Int 1)
+,
+Assign "dragon_hands_observe" = Val (Bool True)
+,
+[If Var "dragon_intro_explore" == Val (Bool False) && Var "dragon_start_count" == Val (Int 0) [
+Assign "dragon_intro_explore" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,,,,,,,,,
+[If "spectre_hostile" [,,,]]
+,
+[Else [,]]
+,,,,,
+Jump to dragon_start_menu
+],Choice - (Explore) So what are we su...If Var "dragon_loop_joke_count" == Val (Int 0) && "dragon_wait_first_explore" []
+[
+Jump to dragon_start_wait_join
+],Choice - (Explore) What are we suppo...If Var "dragon_loop_joke_count" == Val (Int 0) && Var "dragon_wait_first_explore" == Val (Bool False) []
+[
+{Label: dragon_start_wait_join
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+Assign "dragon_wait_first_explore" = Val (Bool True)
+,
+Assign "dragon_loop_joke_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+]}
+],Choice - (Explore) What happened to ...If Var "dragon_start_count" != Val (Int 0) && Var "dragon_what_happened" == Val (Bool False) []
+[
+Jump to dragon_what_happened_join
+],Choice - (Explore) [[Wait.]If Var "dragon_second_wait" == Val (Bool False) []
+[,
+Assign "dragon_wait_attempt" = Val (Bool True)
+,
+Assign "dragon_start_count" += Val (Int 1)
+,,
+[If Var "dragon_start_count" == Val (Int 0) [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Else [
+Assign "dragon_second_wait" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+]]
+],Choice - (Explore) [[Say nothing.]If Var "dragon_start_count" == Val (Int 0) []
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_start_menu
+],Choice - This isn't what it was like...If "dragon_what_happened" && Var "dragon_title_card" == Val (Bool False) []
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+{Label: dragon_title_card_menu
+[,,,
+{Choice Branch: [Choice - (Explore) No, this is stupi...If Var "dragon_title_card_no_laugh_exp" == Val (Bool False) []
+[
+Assign "dragon_title_card_no_laugh_exp" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [
+Assign "dragon_title_card_laugh_promise" = Val (Bool True)
+,,]]
+,
+Jump to dragon_title_card_menu
+],Choice - (Explore) If I'm going to t...If "dragon_title_card_no_laugh_exp" && "spectre_hostile" && Var "dragon_title_card_laugh_promise" == Val (Bool False) []
+[
+Assign "dragon_title_card_laugh_promise" = Val (Bool True)
+,,,
+Jump to dragon_title_card_menu
+],Choice - The first one I got said 'C...
+[
+Assign "dragon_title_card_shared" = Val (Bool True)
+,
+[If "spectre_hostile" [
+[If "dragon_title_card_laugh_promise" [,]]
+,
+[Else [,]]
+]]
+,
+[Else [,]]
+,
+{Choice Branch: [Choice - You promised you wouldn't l...If "dragon_title_card_laugh_promise" []
+[
+{Label: dragon_no_laugh_join
+[
+[If "spectre_hostile" [,,
+{Choice Branch: [Choice - You were laughing at me.
+[,],Choice - The futility of our lives?
+[,],Choice - Mhm.
+[,],Choice - [[Say nothing.]
+[,]]}
+,,,,,,,,]]
+,
+[Else [,,,,,,,,]]
+]}
+,
+{Label: princess_dragon_title_reveal
+[
+{Choice Branch: [Choice - Oooh. Reversing the order! ...
+[,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - Casting yourself as the mai...
+[,
+[If "spectre_hostile" [
+[If "dragon_title_card_shared" [,]]
+,
+[Else [,]]
+]]
+,
+[Else [,]]
+],Choice - The Princess and the {b}Dra...
+[,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - Wait, am I a dragon? Hell y...
+[,
+[If "spectre_hostile" [
+Assign "dragon_look_like" = Val (Bool True)
+,,]]
+,
+[Else [,]]
+],Choice - I... don't actually know wh...
+[,
+Assign "dragon_look_like" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - [[Say nothing.]
+[,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]}
+]}
+],Choice - Har har. Get your laughs out.
+[
+Jump to dragon_no_laugh_join
+],Choice - I'm still a hero! I've been...If Var "dragon_title_card_laugh_promise" == Val (Bool False) || Var "spectre_hostile" == Val (Bool False) []
+[
+[If "spectre_hostile" [,,,,,,,
+Jump to princess_dragon_title_reveal
+]]
+,
+[Else [,,,,,
+Jump to princess_dragon_title_reveal
+]]
+],Choice - [[Say nothing.]
+[
+[If "dragon_title_card_laugh_promise" [
+Jump to dragon_no_laugh_join
+]]
+,
+[Else [
+Jump to dragon_title_avoid
+]]
+]]}
+],Choice - Nevermind. Forget I said an...
+[
+Jump to dragon_title_avoid
+],Choice - [[Say nothing.]
+[
+{Label: dragon_title_avoid
+[
+[If "spectre_hostile" [,,,,,,]]
+,
+[Else [,,,,,,]]
+,
+Jump to princess_dragon_title_reveal
+]}
+]]}
+]}
+],Choice - Now that I think about it, ...If Var "dragon_loop_joke_count" == Val (Int 2) || "dragon_second_wait" []
+[
+Assign "dragon_start_count" += Val (Int 1)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_title_card_menu
+]]}
+]}
+,
+{Label: dragon_arrival
+[,,,,,,
+[If Var "dragon_hands_observe" == Val (Bool False) [,,,,,,
+[If "spectre_hostile" [,,,]]
+,
+[Else [,]]
+]]
+,
+[Else [
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,,,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,,,,,,,
+[If "spectre_hostile" [,,,,,]]
+,
+[Else [,,,,,]]
+,,,,
+{Choice Branch: [Choice - ''Hello?''
+[
+Assign "dragon_speech_attempt" = Val (Bool True)
+,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - ''Hey! Listen to me! I'm st...
+[
+Assign "dragon_speech_attempt" = Val (Bool True)
+,,
+[If "spectre_hostile" [,,,]]
+,
+[Else [,,,]]
+],Choice - Am I going to say anything?
+[,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - So... what do I look like?If Var "dragon_look_like" == Val (Bool False) []
+[
+Assign "dragon_look_like" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - [[Say nothing.]
+[,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]}
+,,,,,
+[If "spectre_hostile" [,,,,]]
+,
+[Else [,,,,]]
+,,,,,,,,,,]}
+,
+{Label: dragon_menu_pre_talk
+[,,
+{Choice Branch: [Choice - (Explore) What the hell am I?If Var "dragon_what_am_i" == Val (Bool False) []
+[
+Assign "dragon_what_am_i" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+Jump to dragon_menu_pre_talk
+],Choice - ''Hello?''If Var "dragon_speech_attempt" == Val (Bool False) []
+[
+Assign "dragon_speech_attempt" = Val (Bool True)
+,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - ''Hey! Listen to me! I'm st...If Var "dragon_speech_attempt" == Val (Bool False) []
+[
+Assign "dragon_speech_attempt" = Val (Bool True)
+,,
+[If "spectre_hostile" [,,,]]
+,
+[Else [,,,]]
+,
+{Label: dragon_menu_pre_talk_share_join
+[
+Assign "dragon_body_made_aware" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]}
+],Choice - Quick. Tell them I'm in here!
+[
+Assign "dragon_body_made_aware" = Val (Bool True)
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - Don't let them know I'm here!
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - What do you want to do?
+[
+[If "spectre_hostile" [
+Assign "dragon_body_made_aware" = Val (Bool True)
+,,]]
+,
+[Else [,]]
+],Choice - [[Say nothing.]
+[
+[If "spectre_hostile" [
+Assign "dragon_body_made_aware" = Val (Bool True)
+]]
+]]}
+,
+[If "dragon_body_made_aware" [,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,
+[Else [,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]
+,]}
+,
+{Label: dragon_final_menu_pre_action
+[
+{Choice Branch: [Choice - Why am I being so quiet? Is...
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - I hate this silence. It's p...
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - Am I arguing with myself in...
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+],Choice - [[Say nothing.]
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]]}
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+]}
+,
+{Label: dragon_opportunist_start
+[,,,,,,,,,,,,,
+[If "dragon_body_made_aware" [,,,,,
+{Label: dragon_opportunist_sidebar_join
+[,,,,,,,,,,,,,,,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,
+{Choice Branch: [Choice - We can wait for them to fin...If "spectre_hostile" []
+[,],Choice - Yeah, I guess there's nothi...If Var "spectre_hostile" == Val (Bool False) []
+[
+Jump to dragon_opportunist_soft_quiet
+],Choice - Right? How rude.If "spectre_hostile" []
+[
+[If "spectre_hostile" [,]]
+],Choice - It's rude, though.If Var "spectre_hostile" == Val (Bool False) []
+[,,
+Jump to dragon_opportunist_soft_quiet
+],Choice - I think you'll have to make...
+[
+[If "spectre_hostile" [,]]
+,
+[Else [,,,]]
+],Choice - [[Say nothing.]
+[
+[If "spectre_hostile" [,]]
+,
+[Else [
+Jump to dragon_opportunist_soft_quiet
+]]
+]]}
+,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,,,,,,,,,
+[If "spectre_hostile" [,,,,,,,,,]]
+,
+[Else [,,,,,,,,,]]
+,
+Jump to dragon_opportunist_attack
+]}
+]]
+,
+[Else [
+[If "spectre_hostile" [,,,,,,,,,,,
+Jump to dragon_opportunist_sidebar_join
+]]
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+{Choice Branch: [Choice - We can wait for them to fin...
+[,,
+Jump to dragon_opportunist_soft_quiet
+],Choice - Right? How rude.
+[,,
+Jump to dragon_opportunist_soft_speak_up
+],Choice - I think you'll have to make...
+[,,
+{Label: dragon_opportunist_soft_speak_up
+[,,,
+Assign "dragon_learn_late" = Val (Bool True)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Jump to dragon_opportunist_attack
+]}
+],Choice - [[Say nothing.]
+[,,
+{Label: dragon_opportunist_soft_quiet
+[,,,,,,,,,,,,,,,,,,,,,,,,,
+[If "dragon_body_made_aware" [,,,]]
+,
+[Else [,,,]]
+,
+Jump to dragon_opportunist_attack
+]}
+]]}
+]]
+,
+{Label: dragon_opportunist_attack
+[,,,,,,,,,,,,,,
+[If "spectre_hostile" [,,,,,,,,,,,,,,,]]
+,
+[Else [,,,,,,,]]
+,
+[If "spectre_hostile" [,,,,,,,]]
+,
+[Else [,,,,,,,,]]
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+[If "spectre_hostile" [,,,
+Jump to dragon_opportunist_fight_hostile
+]]
+,
+[Else [,,,
+Jump to dragon_opportunist_fight_soft
+]]
+]}
+]}
+,
+{Label: dragon_opportunist_fight_hostile
+[,,,,,,,,,,,,,,,,,,,,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Assign "dragon_arm_gone" = Val (Bool True)
+,,
+{Choice Branch: [Choice - ''Wait wait wait I'm back i...
+[,,,,,,,,,,,,,,
+{Label: dragon_harsh_opportunist_violent_end
+[,,
+Assign "dragon_harsh_stab_end" = Val (Bool True)
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+{Label: dragon_harsh_opp_split_join
+[,,
+Assign "default_mouse" = Val (String "fusion")
+,,
+[If "dragon_harsh_stab_end" [,,,,,,,,]]
+,
+[Else [,,,,,,,,,,]]
+,,
+[If "spectre_hostile" [
+[If "dragon_harsh_opp_no_comment_fight" [,
+[If "dragon_harsh_stab_end" []]
+,
+[Else []]
+,,]]
+,
+[Else [,
+[If "dragon_harsh_stab_end" []]
+,
+[Else []]
+,,]]
+]]
+,
+[Elif "dragon_opp_soft_leave_keep_blade" [,,,]]
+,
+[Else [,,,]]
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,,,,,,,,,,,,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,,,
+[If "spectre_hostile" [,,,,]]
+,
+[Else [,,,,]]
+,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,,,
+[If "spectre_hostile" [,]]
+,
+[Else [,]]
+,,,,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,,,,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,,
+[If "dragon_arm_gone" []]
+,
+[Else []]
+,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,
+[If Var "loops_finished" != Val (Int 0) []]
+,
+[Else []]
+,
+Assign "dragon_end" = Val (String "fusion")
+,,
+Assign "current_princess" = Val (String "dragonfused")
+,
+Assign "princess_kept" += Val (Int 1)
+,
+Assign "princess_satisfy" += Val (Int 1)
+,
+Jump to mirror_start
+]}
+]}
+],Choice - ''I'm back in here, but you...
+[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+{Choice Branch: [Choice - [[Take her hand in yours.]
+[,,,,,,,,,,,,
+{Label: dragon_opp_harsh_leave_together
+[,,,,,,,,,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,,,
+[If "persistent.quick_menu" [
+Assign "quick_menu" = Val (Bool True)
+]]
+,,
+{Label: dragon_opp_leave_together_join
+[,,,,,,,,
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,,
+[If "spectre_hostile" []]
+,
+[Else []]
+,,
+[If "persistent.quick_menu" [
+Assign "quick_menu" = Val (Bool True)
+]]
+,,,,
+[If "spectre_hostile" [,,,,,]]
+,
+[Else [,,,,,,,,,]]
+,
+{Choice Branch: [Choice - [[Step into your freedom.]
+[
+Assign "quick_menu" = Val (Bool False)
+,,,,,,,,,,,,,,
+[If "persistent.quick_menu" [
+Assign "quick_menu" = Val (Bool True)
+]]
+,,,,,,,
+[If "spectre_hostile" [,,,,,,,,,,,,,]]
+,
+[Else [,,,,,,,,,,,,,]]
+,,,,,,,,,,,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,,,,,,,,
+[If Var "loops_finished" != Val (Int 0) []]
+,
+[Else []]
+,,
+Assign "dragon_end" = Val (String "free")
+,
+Assign "princess_free" += Val (Int 1)
+,
+Assign "princess_satisfy" += Val (Int 1)
+,
+Jump to mirror_start
+]]}
+]}
+]}
+],Choice - ''Now what?''
+[,,,,
+{Label: dragon_opp_alt_hand
+[,,,,,,,,
+Jump to dragon_opp_harsh_leave_together
+]}
+],Choice - ''I guess the only thing fo...
+[,,,,
+Jump to dragon_opp_alt_hand
+],Choice - [[Say nothing.]
+[,,,,
+Jump to dragon_opp_alt_hand
+]]}
+],Choice - [[Say nothing.]
+[,
+Assign "dragon_harsh_opp_no_comment_fight" = Val (Bool True)
+,
+Jump to dragon_harsh_opportunist_violent_end
+]]}
+]}
+,
+{Label: dragon_opportunist_fight_soft
+[,,,,,,,,,,,,
+Assign "blade_held" = Val (Bool True)
+,
+Assign "default_mouse" = Val (String "blood")
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+{Label: dragon_soft_opp_choice_join
+[,
+{Choice Branch: [Choice - (Explore) ''Oh no! I am so ...If Var "dragon_soft_opp_choice_explore" == Val (Bool False) []
+[,,,,,,,,,,,,,,,
+Jump to dragon_soft_opp_choice_sub
+],Choice - (Explore) ''Oh, hey. I'm ba...If Var "dragon_soft_opp_choice_explore" == Val (Bool False) []
+[
+Assign "dragon_soft_opp_choice_explore" = Val (Bool True)
+,,,,,,,,,,,,,,,,,
+{Label: dragon_soft_opp_choice_sub
+[
+{Choice Branch: [Choice - ''Yeah. Sorry about that.''...
+[
+Jump to dragon_soft_opp_slay_join
+],Choice - ''I'm obviously not going t...
+[,,,,
+Jump to dragon_soft_leave_late_join
+],Choice - ''I don't know what I want ...
+[
+Jump to dragon_opp_soft_leave_suggest
+],Choice - [[Say nothing.]
+[
+Jump to dragon_opp_soft_leave_silent
+]]}
+]}
+],Choice - Good to be back boys. [[Fin...
+[,,,,,,
+{Label: dragon_soft_opp_slay_join
+[,,,,,,,,,,,,
+[If Var "dragon_soft_opp_choice_explore" == Val (Bool False) [,,,]]
+,
+[Elif "dragon_opp_soft_leave_betray" [,,,]]
+,
+[Else [,,,]]
+,,,,,,,,,,
+Jump to dragon_harsh_opp_split_join
+]}
+],Choice - [[Drop the blade.]
+[,
+Assign "dragon_dropped_blade" = Val (Bool True)
+,
+Assign "blade_held" = Val (Bool False)
+,
+Assign "default_mouse" = Val (String "default")
+,,,,,,,,,,,,,,]]}
+]}
+]}
+]

@@ -10,14 +10,16 @@ module Main where
     import Data
     import Utils
     import HTMLify as H
+    import Dotify
 
     --at the top level... there should only be labels
     getTopEdges :: [AST] -> [Node] -> ([Edge], [Node])
     getTopEdges [] nodeEnv = ([], nodeEnv)
-    getTopEdges (a:as) nodeEnv = case a of 
+    getTopEdges (a:as) nodeEnv = case a of
         (ASTLabel str body) -> do 
             let (n, newEnv) = findNode str nodeEnv Red
-            let (bodyEdges, bodyEnv) = getEdges body n newEnv ""
+            let (nextNode, nextNodeEnv) = getNext as newEnv n
+            let (bodyEdges, bodyEnv) = getEdges True body n nextNode nextNodeEnv ""
             let (restOfEs, finalEnv) = getTopEdges as bodyEnv
             if null bodyEdges
                 then do
@@ -29,21 +31,26 @@ module Main where
         _ -> getTopEdges as nodeEnv
 
     --getEdges is the supreme function, all hail getEdges 
-    getEdges :: [AST] -> Node -> [Node] -> String -> ([Edge], [Node])
-    getEdges [] _ nodeEnv _ = ([], nodeEnv) 
-    getEdges (a:as) curN nodeEnv curLabel = case a of 
+    getEdges :: Bool -> [AST] -> Node -> Node -> [Node] -> String -> ([Edge], [Node])
+    getEdges _ [] _ _ nodeEnv _ = ([], nodeEnv) 
+    getEdges getAll (a:as) curN nextN nodeEnv curLabel = case a of 
         --lines are trash, assigns are currently trash, keep moving
-        ASTLine -> getEdges as curN nodeEnv curLabel 
-        (ASTAssign a) -> getEdges as curN nodeEnv curLabel 
+        ASTLine -> case (getAll, as) of 
+            (True, []) -> ([Edge curN nextN curLabel], nodeEnv)
+            (_, _) -> getEdges getAll as curN nextN nodeEnv curLabel 
+        (ASTAssign a) -> case (getAll, as) of 
+            (True, []) -> ([Edge curN nextN curLabel], nodeEnv)
+            (_, _) -> getEdges getAll as curN nextN nodeEnv curLabel 
 
         --if we find a new label we want to draw a new edge then move into that one, then continue
         (ASTLabel str body) -> do 
             let (n, newEnv) = findNode str nodeEnv Red
             let e = Edge curN n curLabel
-            let (bodyEdges, bodyEnv) = getEdges body n newEnv curLabel 
-            let (restOfEs, finalEnv) = getEdges as curN bodyEnv curLabel
+            let (newNext, nextEnv) = getNext as newEnv nextN 
+            let (bodyEdges, bodyEnv) = getEdges True body n newNext nextEnv curLabel 
+            let (restOfEs, finalEnv) = getEdges getAll as curN newNext bodyEnv curLabel
             if null bodyEdges
-                then (bodyEdges ++ restOfEs, finalEnv)
+                then (e:restOfEs, finalEnv)
                 else (e:(bodyEdges ++ restOfEs), finalEnv)
             
 
@@ -51,30 +58,31 @@ module Main where
         (ASTJump to) -> do 
             let (n, newEnv) = findNode to nodeEnv Red
             let e = Edge curN n curLabel
-            let (restOfEs, finalEnv) = getEdges as curN newEnv curLabel
+            let (restOfEs, finalEnv) = getEdges True as curN nextN newEnv curLabel
             (e:restOfEs, finalEnv)
     
         --Conditionals have many conds, and each cond has a body 
         (ASTConds cs) -> do 
-            let (es, newEnv) = travelConds cs curN nodeEnv 
-            let (restOfEs, finalEnv) = getEdges as curN newEnv curLabel 
-            (es++restOfEs, finalEnv)
+            let (es, newEnv) = travelConds cs curN nextN nodeEnv 
+            case (getAll, as) of 
+                (_, []) -> (es++[Edge curN nextN curLabel], newEnv)
+                (_, _) -> let (restOfEs, finalEnv) = getEdges getAll as curN nextN newEnv curLabel in 
+                    (es++restOfEs, finalEnv)
         --For choices we want to... do complicated stuff
         (ASTChoices cs) -> do
             --look through the choices, if any have jumps, then do
                 --from curN to jumpDestination via choiceText
-            let (es, newEnv) = travelChoices cs curN nodeEnv 
+            let (es, newEnv) = travelChoices cs curN nextN nodeEnv 
             --if the next line is a label and there are choices that don't have jumps, do
                 --from curN to nextLabel via choiceText
             if (not . null) as && (not . null) es && (not . null) (checkChoices cs curN (head as) es)
                 then do 
                     let empChoices = checkChoices cs curN (head as) es
-                    let (n, finalEnv) = findNode (getLabelText (head as)) nodeEnv Red
-                    let (restOfEs, superDuperFinalEnv) = getEdges as curN newEnv curLabel
-                    let empEs = map (Edge curN n . getChoiceLabel) empChoices
+                    let (restOfEs, superDuperFinalEnv) = getEdges getAll as curN nextN newEnv curLabel
+                    let empEs = map (Edge curN nextN . getChoiceLabel) empChoices
                     (es ++ empEs ++ restOfEs, superDuperFinalEnv)
                 else do 
-                    let (restOfEs, finalEnv) = getEdges as curN newEnv curLabel
+                    let (restOfEs, finalEnv) = getEdges getAll as curN nextN newEnv curLabel
                     (es++restOfEs, finalEnv)
 
             --go get the rest of the edges
@@ -82,41 +90,42 @@ module Main where
  
          
     --goes through a conditional branch
-    travelConds :: [Data.Cond] -> Node -> [Node] -> ([Edge], [Node])
-    travelConds [] _ nodeEnv = ([], nodeEnv)
-    travelConds (c:cs) from nodeEnv = case c of 
+    travelConds :: [Data.Cond] -> Node -> Node -> [Node] -> ([Edge], [Node])
+    travelConds [] _ _ nodeEnv = ([], nodeEnv)
+    travelConds (c:cs) from next nodeEnv = case c of 
         (Data.If cond body) -> do 
-            let (es, newEnv) = getEdges body from nodeEnv (show cond)
-            let (restOfEs, finalEnv) = travelConds cs from newEnv
+            let (es, newEnv) = getEdges False body from next nodeEnv (show cond)
+            let (restOfEs, finalEnv) = travelConds cs from next newEnv
             (es++restOfEs, finalEnv)
         (Data.Elif cond body) -> do 
-            let (es, newEnv) = getEdges body from nodeEnv (show cond)
-            let (restOfEs, finalEnv) = travelConds cs from newEnv
+            let (es, newEnv) = getEdges False body from next nodeEnv (show cond)
+            let (restOfEs, finalEnv) = travelConds cs from next newEnv
             (es++restOfEs, finalEnv)
-        (Data.Else body) -> getEdges body from nodeEnv "Else"
+        (Data.Else body) -> getEdges False body from next nodeEnv "Else"
+
 
     --goes through a choice menu/branch
-    travelChoices :: [Choice] -> Node -> [Node] -> ([Edge], [Node])
-    travelChoices [] _ nodeEnv = ([], nodeEnv)
-    travelChoices ((Data.Choice opt cond body):cs) from nodeEnv = do
-        let temp = Node opt (length nodeEnv) Blue
+    travelChoices :: [Choice] -> Node -> Node -> [Node] -> ([Edge], [Node])
+    travelChoices [] _ _ nodeEnv = ([], nodeEnv)
+    travelChoices ((Data.Choice opt cond body):cs) from next nodeEnv = do
+        let temp = Node opt (length nodeEnv) Red
         let label = case cond of Nothing -> "" ; (Just x) -> getFlag x
-        let (es, newEnv) = getEdges body temp (temp:nodeEnv) label
+        let (es, newEnv) = getEdges False body temp next (temp:nodeEnv) label
         --if there's only one edge i'd prefer it be "from -> to, via opt"
         if length es == 1 then do 
             let (Edge f t l) = head es 
             let singleEdge = Edge from t (opt ++ l)
-            let (restOfEs, finalEnv) = travelChoices cs from newEnv  
+            let (restOfEs, finalEnv) = travelChoices cs from next newEnv  
             (singleEdge:restOfEs, finalEnv)
         else if es /= [] then do
             --if there is more than one jump in this choice, then we can make the choice a node
             --let hmm = [Edge from temp ""]
             let thisChoiceEs = connect from es
-            let (restOfEs, finalEnv) = travelChoices cs from (temp:newEnv) 
+            let (restOfEs, finalEnv) = travelChoices cs from next (temp:newEnv) 
             (es++thisChoiceEs++restOfEs, finalEnv)
         else 
             --there are no real edges and the opt shouldn't be its own Node
-            travelChoices cs from nodeEnv
+            travelChoices cs from next newEnv
 
     
 
@@ -139,19 +148,6 @@ module Main where
                 printEachLine xs 
             else printEachLine xs
 
-    --triple checks that all nodes referenced by edges actually exist in the list of nodes.
-    checkStuff :: ([Node], [Edge]) -> IO () 
-    checkStuff (_, []) = print "all good!"
-    checkStuff (ns, Edge f t l:es) = let e = Edge f t l in
-        if elem f ns && elem t ns 
-            then checkStuff (ns, es)
-        else if elem f ns 
-            then print ("hey wait we fucked up, t isn't real:" ++ show e) 
-        else if elem t ns  
-            then print ("hey wait we fucked up, f isn't real: " ++ show e)
-        else 
-            print ("super fuck, neither are real: " ++ show e)
-
     main :: IO ()
     main = do 
         sourceFile <- readFile "singleScript.rpy"
@@ -164,9 +160,10 @@ module Main where
         print "finished parsing"
         let (es, ns) = getTopEdges forest []
         let bigTree = cleanResults (ns, es)
-        --checkStuff bigTree
         writeFile "output/trueFolded.txt" (show bigTree)
         print "finished flattening"
+        writeFile "output/trueDot.dot" (dotify bigTree)
+        print "finished making it a DOT"
         let output = H.htmlIfy bigTree
         print "finished making it HTML"
         writeFile "output/trueOutput.html" output

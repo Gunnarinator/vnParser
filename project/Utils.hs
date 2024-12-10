@@ -137,6 +137,21 @@ module Utils where
     getFlag _ = ""
 
 
+    getNext :: [AST] -> [Node] -> Node -> (Node, [Node])
+    getNext as ns n = 
+        let (cNext, cEnv) = findNextNode as ns in 
+            if cNext == defNode
+                then (n, ns) 
+                else (cNext, cEnv)
+
+    findNextNode :: [AST] -> [Node] -> (Node, [Node])
+    findNextNode [] nEnv = (defNode, nEnv)
+    findNextNode (a:as) nEnv = 
+        case a of 
+            ASTLabel str _ -> findNode str nEnv Red
+            ASTJump str -> findNode str nEnv Red
+            _ -> findNextNode as nEnv
+
     --finds a node in a list with a given label or adds that node
     findNode :: String -> [Node] -> NodeColor -> (Node, [Node]) 
     findNode str ns c = let (b, n) = strInNEnv str ns in 
@@ -171,10 +186,10 @@ module Utils where
             
 
     isLinearInner n ((Edge f t l):es) (f1,t1) 
-        | n == f = if f1 == defEdge 
+        | n == f = if f1 == defEdge && Edge f t l /= f1 && Edge f t l /= t1
                 then isLinearInner n es (Edge f t l, t1)
                 else Left False
-        | n == t = if t1 == defEdge 
+        | n == t = if t1 == defEdge && Edge f t l /= f1 && Edge f t l /= t1
             then isLinearInner n es (f1, Edge f t l)
             else Left False
         | otherwise = isLinearInner n es (f1, t1)
@@ -193,7 +208,7 @@ module Utils where
         case isLinear n es of 
             Left _ -> cullEdges ns es 
             Right (f, t) -> 
-                weldEdge (f, t) : delete f (delete t (cullEdges ns es))
+                cullEdges ns (dropDupes (weldEdge (f, t) : delete f (delete t es)))
 
 
     fullCull :: [Node] -> [Edge] -> [Edge] 
@@ -246,12 +261,18 @@ module Utils where
             _ -> []
     
 
-    x = Node "x" 1 Red 
-    y = Node "y" 2 Red 
-    z = Node "z" 3 Red 
+    a = Node "a" 1 Red 
+    b = Node "b" 2 Red 
+    c = Node "c" 3 Red 
+    d = Node "d" 4 Red
+    e = Node "e" 5 Red
 
-    xy = Edge x y "" 
-    yz = Edge y z "" 
+    ab = Edge a b "" 
+    bc = Edge b c "" 
+    bd = Edge b d "" 
+    cd = Edge c d ""
+    de = Edge d e ""
 
-    exNs = [x, y, z]
-    exEs = [xy, yz]
+
+    ns = [a, b, c, d, e]
+    es = [ab, bc, bd, cd, de]

@@ -111,19 +111,26 @@ module Data where
     instance Show Node where 
         show (Node l i _) = "\nNode " ++ show i ++ ": " ++ l
 
+    --default node
+    defNode = Node "" 0 Red
+
     instance Ord Node where 
         (Node _ a _) <= (Node _ b _) = a <= b
     
     --edges are "from, to, (maybe edgeLabel)"
-    data Edge = Edge Node Node String deriving Eq 
+    data Edge = Edge Node Node String
     instance Show Edge where 
         show (Edge (Node f fi _) (Node t ti _) c) = case c of 
             "" -> "\nEdge\n\tFrom: " ++ show fi ++ " ( " ++ f ++ ")\n\tTo: " ++ show ti ++ " ( " ++ t ++ ")\n\n"
             "Nothing" -> "\nEdge\n\tFrom: " ++ show fi ++ " ( " ++ f ++ ")\n\tTo: " ++ show ti ++ " ( " ++ t ++ ")\n\n"
             thing -> "\nEdge\n\tFrom: " ++ show fi ++ " ( " ++ f ++ ")\n\tTo: " ++ show ti ++ " ( " ++ t ++ ")\n\tVia: " ++ c ++ "\n"
 
+    instance Eq Edge where 
+        (Edge f1 t1 _) == (Edge f2 t2 _) = 
+            f1 == f2 && t1 == t2
+
     instance Ord Edge where 
-        (Edge a1 a2 aC) <= (Edge b1 b2 bC) = (show a1 ++ show a2 ++ aC) <= (show b1 ++ show b2 ++ bC)
+        (Edge a1 a2 _) <= (Edge b1 b2 _) = (show a1 ++ show a2) <= (show b1 ++ show b2)
 
     
     getF :: Edge -> Node 
