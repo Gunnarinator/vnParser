@@ -151,6 +151,10 @@ module Utils where
     findNode str ns c = let (b, n) = strInNEnv str ns in 
         if b then (n, ns) else let new = Node str (length ns) c in (new, new:ns)
 
+    -- find a node in a list
+    findNode2 :: String -> [Node] -> Maybe Node
+    findNode2 l = find (\(Node l' _ _) -> l' == l)
+
     strInNEnv :: String -> [Node] -> (Bool, Node)
     strInNEnv _ [] = (False, defNode)
     strInNEnv str ((Node l i c):ns) = if str == l then (True, Node l i c) else strInNEnv str ns
@@ -252,7 +256,7 @@ module Utils where
         case a of 
             ASTLabel _ _ -> getEmpties cs es
             _ -> []
-    
+
     --some vars for cull edges testing
     a = Node "a" 1 Red 
     b = Node "b" 2 Red 

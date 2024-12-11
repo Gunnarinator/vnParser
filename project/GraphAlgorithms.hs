@@ -20,6 +20,8 @@ module GraphAlgorithms where
     ns = [a, b, c, d, e]
     es = [ab, bc, bd, cd, de]
 
+    g = (ns, es)
+
     -- get the edge going from a certain node
     edgeFromNode :: Node -> Edge -> Bool
     edgeFromNode n (Edge s _ _) = if s == n then True else False

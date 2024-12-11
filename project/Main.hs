@@ -11,6 +11,7 @@ module Main where
     import Utils
     import HTMLify as H
     import Dotify
+    import GraphAlgorithms as G
 
     --at the top level there *should* only be labels
     getTopEdges :: [AST] -> [Node] -> ([Edge], [Node])
@@ -148,10 +149,30 @@ module Main where
                 printEachLine xs 
             else printEachLine xs
 
+    -- functionality to render path between two points
+    -- try with showPath G.g
+    showPath :: ([Node], [Edge]) -> IO ()
+    showPath (ns, es) = do
+        putStrLn "Enter a starting node label:"
+        l1 <- getLine
+        let n1 = findNode2 l1 ns
+        putStrLn "Enter an ending node label:"
+        l2 <- getLine
+        let n2 = findNode2 l2 ns
+        case (n1, n2) of
+            (Just tn1, Just tn2) -> do
+                                let res = adjustColors (ns, es) tn1 tn2
+                                let output = H.htmlIfy res
+                                writeFile "test.html" output
+                                print "Path found"
+            (Just tn1, Nothing) -> print (l2 ++ " is not a valid label")
+            (Nothing, Just tn2) -> print (l1 ++ " is not a valid label")
+            (Nothing, Nothing) -> print "Both labels were invalid"
+
     main :: IO ()
     main = do 
         sourceFile <- readFile "prisoner_1_encounter.rpy"
-        --printEachLine (lines sourceFile)
+        -- printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
         --writeFile "output/trueLexed.txt" (toString lexed)
         print "finished lexing"
