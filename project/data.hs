@@ -107,9 +107,9 @@ module Data where
 
     
     --Each Node is its label and the list of things it points to
-    data Node = Node Label Int NodeColor deriving Eq 
+    data Node = Node Label Int NodeColor deriving Eq
     instance Show Node where 
-        show (Node l i c) = "\nNode " ++ show i ++ ": " ++ l ++ ", " ++ show c
+        show (Node l i c) = "\nNode " ++ l ++ " " ++ show i ++ " " ++ show c
 
     --default node
     defNode = Node "" 0 Red

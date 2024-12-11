@@ -13,6 +13,7 @@ module Main where
     import Dotify
     import GraphAlgorithms as G
 
+    
     --at the top level there *should* only be labels
     getTopEdges :: [AST] -> [Node] -> ([Edge], [Node])
     getTopEdges [] nodeEnv = ([], nodeEnv)
@@ -169,9 +170,9 @@ module Main where
             (Nothing, Just tn2) -> print (l1 ++ " is not a valid label")
             (Nothing, Nothing) -> print "Both labels were invalid"
 
-    main :: IO ()
-    main = do 
-        sourceFile <- readFile "prisoner_1_encounter.rpy"
+    main :: String -> String -> IO ()
+    main inF outF = do 
+        sourceFile <- readFile inF
         -- printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
         --writeFile "output/trueLexed.txt" (toString lexed)
@@ -185,9 +186,11 @@ module Main where
         print "finished flattening"
         --writeFile "output/trueDot.dot" (dotify bigTree)
         print "finished making it a DOT"
+        --let bigTree = G.adjustColors bigTree (Node "prisoner_1_start" 0 Red) (Node "prisoner_1_forest" 2 Red)
         let output = H.htmlIfy bigTree
         print "finished making it HTML"
-        writeFile "output/prisonerPresentationOutput.html" output
+        writeFile outF output
         print "all done!"
         
+    testMain = main "prisoner_1_encounter.rpy" "output/colorTest.html"
     

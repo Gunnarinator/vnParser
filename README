@@ -1,0 +1,12 @@
+Sam and Gunnar's RenPy Parser (name pending)
+
+The goal of this code is to create an HTML graph visualization of a game's decision tree
+
+it shouldn't require any special dependencies or building, just run the main function from the main module.
+
+Major Modules
+    - Lexer.hs handles turning the RenPy script into tokens
+    - TokenParser.hs turns the list of tokens into a list of ASTs
+    - Main.hs turns the list of ASTs into a graph structure 
+    - HTMLify.hs and Dotify.hs turn the graph structure into an HTML or DOT file. 
+
