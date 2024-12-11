@@ -20,13 +20,13 @@ module Main where
     getTopEdges [] nodeEnv = ([], nodeEnv)
     getTopEdges (a:as) nodeEnv = case a of
         (ASTLabel str body) -> do 
-            let (n, newEnv) = findNode str nodeEnv Red
+            let (n, newEnv) = findNode str nodeEnv Blue
             let (nextNode, nextNodeEnv) = getNext as newEnv n
             let (bodyEdges, bodyEnv) = getEdges True body n nextNode nextNodeEnv ""
             let (restOfEs, finalEnv) = getTopEdges as bodyEnv
             if null bodyEdges
                 then do
-                    let (nextN, nextEnv) = findNode (getLabelText (head as)) finalEnv Red
+                    let (nextN, nextEnv) = findNode (getLabelText (head as)) finalEnv Blue
                     let bodyEdges = [Edge n nextN ""]
                     (bodyEdges ++ restOfEs, finalEnv)
                 else 
@@ -47,7 +47,7 @@ module Main where
 
         --if we find a new label we want to draw a new edge then move into that one, then continue
         (ASTLabel str body) -> do 
-            let (n, newEnv) = findNode str nodeEnv Red
+            let (n, newEnv) = findNode str nodeEnv Blue
             let e = Edge curN n curLabel
             let (newNext, nextEnv) = getNext as newEnv nextN 
             let (bodyEdges, bodyEnv) = getEdges True body n newNext nextEnv curLabel 
@@ -59,7 +59,7 @@ module Main where
 
         --for Jumps we need to draw an edge from this node to that node
         (ASTJump to) -> do 
-            let (n, newEnv) = findNode to nodeEnv Red
+            let (n, newEnv) = findNode to nodeEnv Blue
             let e = Edge curN n curLabel
             let (restOfEs, finalEnv) = getEdges True as curN nextN newEnv curLabel
             (e:restOfEs, finalEnv)
@@ -111,7 +111,7 @@ module Main where
     travelChoices :: [Choice] -> Node -> Node -> [Node] -> ([Edge], [Node])
     travelChoices [] _ _ nodeEnv = ([], nodeEnv)
     travelChoices ((Data.Choice opt cond body):cs) from next nodeEnv = do
-        let temp = Node opt (length nodeEnv) Red
+        let temp = Node opt (length nodeEnv) Blue
         let label = case cond of Nothing -> "" ; (Just x) -> getFlag x
         let (es, newEnv) = getEdges False body temp next (temp:nodeEnv) label
         --if there's only one edge i'd prefer it be "from -> to, via opt"
@@ -163,6 +163,8 @@ module Main where
         let n2 = findNode2 l2 ns
         case (n1, n2) of
             (Just tn1, Just tn2) -> do
+                                print tn1
+                                print tn2
                                 let res = adjustColors (ns, es) tn1 tn2
                                 let output = H.htmlIfy res
                                 writeFile "test.html" output
@@ -177,6 +179,10 @@ module Main where
         inF <- getLine
         putStr "\nplease enter an output filename: \n"
         outF <- getLine
+        main' inF outF
+    
+    main' :: String -> String -> IO ()
+    main' inF outF = do 
         sourceFile <- readFile inF
         -- printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
@@ -191,12 +197,13 @@ module Main where
         print "finished flattening"
         --writeFile "output/trueDot.dot" (dotify bigTree)
         print "finished making it a DOT"
-        let bigTree2 = G.adjustColors bigTree (Node "prisoner_1_start" 0 Red) (Node "prisoner_1_forest" 2 Red)
-        let output = H.htmlIfy bigTree
+        let bigTree2 = G.adjustColors bigTree (Node "prisoner_1_start" 0 Blue) (Node "prisoner_1_forest" 2 Blue)
+        let output = H.htmlIfy bigTree2
+        -- let output = H.htmlIfy bigTree
         print "finished making it HTML"
         writeFile outF output
         print "all done!"
         -- showPath bigTree
-        
-    --testMain = main "prisoner_1_encounter.rpy" "output/colorTest.html"
+
+    testMain = main' "prisoner_1_encounter.rpy" "output/colorTest.html"
     

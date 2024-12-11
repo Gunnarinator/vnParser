@@ -142,8 +142,8 @@ module Utils where
     findNextNode [] nEnv = (defNode, nEnv)
     findNextNode (a:as) nEnv = 
         case a of 
-            ASTLabel str _ -> findNode str nEnv Red
-            ASTJump str -> findNode str nEnv Red
+            ASTLabel str _ -> findNode str nEnv Blue
+            ASTJump str -> findNode str nEnv Blue
             _ -> findNextNode as nEnv
 
     --finds a node in a list with a given label or adds that node
@@ -172,7 +172,7 @@ module Utils where
 
     --default Edge
     defEdge :: Edge 
-    defEdge = Edge (Node "" 0 Red) (Node "" 0 Red) ""
+    defEdge = Edge (Node "" 0 Blue) (Node "" 0 Blue) ""
 
     --a node is "linear" if it points to one node and one node points to it.
     isLinear :: Node -> [Edge] -> Either Bool (Edge, Edge)
@@ -258,11 +258,11 @@ module Utils where
             _ -> []
 
     --some vars for cull edges testing
-    a = Node "a" 1 Red 
-    b = Node "b" 2 Red 
-    c = Node "c" 3 Red 
-    d = Node "d" 4 Red
-    e = Node "e" 5 Red
+    a = Node "a" 1 Blue 
+    b = Node "b" 2 Blue 
+    c = Node "c" 3 Blue 
+    d = Node "d" 4 Blue
+    e = Node "e" 5 Blue
 
     ab = Edge a b "" 
     bc = Edge b c "" 
