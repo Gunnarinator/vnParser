@@ -20,7 +20,7 @@ module HTMLify where
 
     htmlIfyNode :: Node -> String 
     htmlIfyNode (Node l i c) =
-        "{\"fill\": \"" ++ show c ++ "\", \"id\": \"" ++ show i ++ 
+        "{\"color\": \"" ++ show c ++ "\",  \"id\": \"" ++ show i ++ 
             "\", \"label\": \"" ++ l ++ 
             "\", \"shape\": \"dot\", \"size\": 10}"
 
@@ -30,12 +30,19 @@ module HTMLify where
         case xs of
             [] -> htmlIfyEdgeInner x "]);"
             anything -> htmlIfyEdgeInner x "," ++ htmlIfyEdges xs
-                
+    
+    -- determine a color for an edge
+    determineColor :: Edge -> String
+    determineColor (Edge (Node _ _ c1) (Node _ _ c2) _) 
+        | c1 == c2 = "\"color\": {\"color\": \"" ++ show c1 ++ "\"}"
+        | ((c1 == Red) && (c2 == Green)) || ((c1 == Green) && (c2 == Red)) = "\"color\": {\"color\": \"" ++ show Green ++ "\"}"
+        | otherwise = "\"color\": {\"color\": \"" ++ show Blue ++ "\"}"
+
     --{"arrows": "to", "from": "fromLabel", "label": "edgeLabelText", "to": "toLabel", "width": 1}
     htmlIfyEdgeInner :: Edge -> String -> String 
-    htmlIfyEdgeInner (Edge (Node from i1 c) (Node to i2 c2) label) backEnd =
-        let front = "{\"arrows\": \"to\", \"from\": \"" ++ show i1 ++ "\""in 
-            let back = ", \"to\": \"" ++ show i2 ++ "\", \"width\": 1}" in 
+    htmlIfyEdgeInner e@(Edge (Node from i1 c) (Node to i2 c2) label) backEnd =
+        let front = "{\"arrows\": \"to\", \"from\": \"" ++ show i1 ++ "\"" 
+            back = ", \"to\": \"" ++ show i2 ++ "\", \"width\": 1, " ++ determineColor e ++ " }" in 
                 case label of 
                     "" -> front ++ back ++ backEnd
                     thing -> front ++ ", label: \"" ++ cleanLabel thing ++ "\"" ++ back ++ backEnd
@@ -153,9 +160,6 @@ module HTMLify where
 \        \"enabled\": false\n\
 \    },\n\
 \    \"edges\": {\n\
-\        \"color\": {\n\
-\            \"inherit\": true\n\
-\        },\n\
 \        \"smooth\": {\n\
 \            \"enabled\": true,\n\
 \            \"type\": \"dynamic\"\n\

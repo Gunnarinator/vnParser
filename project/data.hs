@@ -101,15 +101,15 @@ module Data where
 
     data NodeColor = Red | Blue | Green deriving (Eq)
     instance Show NodeColor where 
-        show Red = "FF0000"
-        show Blue = "0000FF"
-        show Green = "00FF00"
+        show Red = "#FF0000"
+        show Blue = "#0000FF"
+        show Green = "#00FF00"
 
     
     --Each Node is its label and the list of things it points to
     data Node = Node Label Int NodeColor deriving Eq 
     instance Show Node where 
-        show (Node l i _) = "\nNode " ++ show i ++ ": " ++ l
+        show (Node l i c) = "\nNode " ++ show i ++ ": " ++ l ++ ", " ++ show c
 
     --default node
     defNode = Node "" 0 Red
