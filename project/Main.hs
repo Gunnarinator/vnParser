@@ -12,7 +12,8 @@ module Main where
     import HTMLify as H
     import Dotify
     import GraphAlgorithms as G
-
+    import Control.Monad.IO.Class (MonadIO(liftIO))
+    
     
     --at the top level there *should* only be labels
     getTopEdges :: [AST] -> [Node] -> ([Edge], [Node])
@@ -170,8 +171,12 @@ module Main where
             (Nothing, Just tn2) -> print (l1 ++ " is not a valid label")
             (Nothing, Nothing) -> print "Both labels were invalid"
 
-    main :: String -> String -> IO ()
-    main inF outF = do 
+    main :: IO ()
+    main = do 
+        putStr "\nplease enter an input filename: \n"
+        inF <- getLine
+        putStr "\nplease enter an output filename: \n"
+        outF <- getLine
         sourceFile <- readFile inF
         -- printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
@@ -192,5 +197,5 @@ module Main where
         writeFile outF output
         print "all done!"
         
-    testMain = main "prisoner_1_encounter.rpy" "output/colorTest.html"
+    --testMain = main "prisoner_1_encounter.rpy" "output/colorTest.html"
     
