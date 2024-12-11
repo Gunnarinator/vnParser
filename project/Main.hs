@@ -170,12 +170,12 @@ module Main where
             (Nothing, Just tn2) -> print (l1 ++ " is not a valid label")
             (Nothing, Nothing) -> print "Both labels were invalid"
 
-    main :: String -> String -> IO ()
-    main inF outF = do 
+    main' :: String -> String -> IO ()
+    main' inF outF = do 
         sourceFile <- readFile inF
         -- printEachLine (lines sourceFile)
         let lexed = lexEachLine (lines sourceFile)
-        --writeFile "output/trueLexed.txt" (toString lexed)
+        -- writeFile "output/trueLexed.txt" (toString lexed)
         print "finished lexing"
         let forest = fst $ head $ P.runParser top lexed
         --writeFile "output/trueTree.txt" (show forest)
@@ -186,11 +186,13 @@ module Main where
         print "finished flattening"
         --writeFile "output/trueDot.dot" (dotify bigTree)
         print "finished making it a DOT"
-        --let bigTree = G.adjustColors bigTree (Node "prisoner_1_start" 0 Red) (Node "prisoner_1_forest" 2 Red)
+        let bigTree2 = G.adjustColors bigTree (Node "prisoner_1_start" 0 Red) (Node "prisoner_1_forest" 2 Red)
         let output = H.htmlIfy bigTree
         print "finished making it HTML"
         writeFile outF output
         print "all done!"
+        -- showPath bigTree
         
-    testMain = main "prisoner_1_encounter.rpy" "output/colorTest.html"
+    main :: IO ()
+    main = main' "prisoner_1_encounter.rpy" "output/colorTest.html"
     

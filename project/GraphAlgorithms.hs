@@ -43,11 +43,14 @@ module GraphAlgorithms where
 
     -- adjust node colors based on the path found
     adjustNodeColors :: [Node] -> [Node] -> [Node]
-    adjustNodeColors pns = map (\n@(Node l i c) -> if n `elem` pns then Node l i Red else n)
+    adjustNodeColors pns = map (\n@(Node l i c) -> if n `elem` pns then Node l i Red else Node l i Blue)
 
     -- adjust edges based on the updated nodes in the path
     adjustEdgeColors :: [Edge] -> [Edge] -> [Edge]
-    adjustEdgeColors pes = map (\e@(Edge (Node l1 i1 _) (Node l2 i2 _) label) -> if e `elem` pes then Edge (Node l1 i1 Red) (Node l2 i2 Red) label else e)
+    adjustEdgeColors pes = map (\e@(Edge (Node l1 i1 _) (Node l2 i2 _) label) -> 
+        if e `elem` pes 
+            then Edge (Node l1 i1 Red) (Node l2 i2 Red) label 
+            else Edge (Node l1 i1 Blue) (Node l2 i2 Blue) label )
 
     -- use the shortest path to adjust the colors of the path elements
     adjustColors :: ([Node], [Edge]) -> Node -> Node -> ([Node], [Edge])
