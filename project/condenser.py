@@ -1,3 +1,5 @@
+#The game's script is spread across multiple files, this script was used to pour them all into one file.
+
 import os
 
 

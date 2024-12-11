@@ -190,12 +190,9 @@ module Utils where
         | otherwise = isLinearInner n es (f1, t1)
 
 
-    --this thing is backwards probably. 
-        --the node we're trying to remove is the from of the first and the to of the second
-        --input: (n->t, f->n) output: (f->t)
     weldEdge :: (Edge, Edge) -> Edge 
     weldEdge (Edge f1 t1 l1, Edge f2 t2 l2) =
-        Edge f2 t1 ""
+        Edge f1 t2 ""
 
     --remove linear nodes from the list of nodes, remove their edges from the list of edges.
     cullEdges :: [Node] -> [Edge] -> [Edge]
@@ -203,7 +200,7 @@ module Utils where
     cullEdges (n:ns) es = 
         case isLinear n es of 
             Left _ -> cullEdges ns es 
-            Right (f, t) -> 
+            Right (t, f) -> 
                 cullEdges ns (dropDupes (weldEdge (f, t) : delete f (delete t es)))
 
     --remove all linear nodes and all of their edges
