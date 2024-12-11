@@ -10,3 +10,7 @@ Major Modules
     - Main.hs turns the list of ASTs into a graph structure 
     - HTMLify.hs and Dotify.hs turn the graph structure into an HTML or DOT file. 
 
+
+contact info:
+    Gunnar: gunnar.eastman@gmail.com
+    Sam: sagis2@rpi.edu
