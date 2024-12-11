@@ -3,6 +3,7 @@ module GraphAlgorithms where
     import HTMLify as H
     import Data.List (minimumBy)
     import Data.Ord (comparing)
+    import Data.Maybe (catMaybes)
 
     a = Node "a" 1 Blue 
     b = Node "b" 2 Blue
@@ -28,18 +29,22 @@ module GraphAlgorithms where
 
     -- get a list of the edges from a certain node
     edgesFromNode :: Node -> [Edge] -> [Edge]
-    edgesFromNode node edges = filter (\e -> edgeFromNode node e) edges
+    edgesFromNode node = filter (edgeFromNode node)
 
     -- get the result with the least distance
-    minRes :: [([Node], [Edge], Int)] -> ([Node], [Edge], Int)
-    minRes = minimumBy (comparing (\(_, _, i) -> i))
+    minRes :: [([Node], [Edge], Int)] -> Maybe ([Node], [Edge], Int)
+    minRes [] = Nothing
+    minRes paths = Just (minimumBy (comparing (\(_, _, i) -> i)) paths)
 
     -- find the shortest path between two points
-    pathFind :: ([Node], [Edge]) -> Node -> Node -> [Node] -> [Edge] -> Int -> ([Node], [Edge], Int)
+    pathFind :: ([Node], [Edge]) -> Node -> Node -> [Node] -> [Edge] -> Int -> Maybe ([Node], [Edge], Int)
     pathFind (ns, es) start end vN vE dist
-        | start == end = (end:vN, vE, dist + 1)
-        | (vN == ns) || (start `elem` vN) = ([], [], 1000000)
-        | otherwise = minRes (map (\e@(Edge _ s2 _) -> pathFind (ns, es) s2 end (start:vN) (e:vE) (dist + 1)) (filter (`notElem` vE) (edgesFromNode start es)))
+        | start == end = Just (end:vN, vE, dist + 1)
+        | (vN == ns) || (start `elem` vN) = Nothing
+        | otherwise = let
+                        outbound = filter (`notElem` vE) (edgesFromNode start es)
+                        paths = map (\e@(Edge _ s2 _) -> pathFind (ns, es) s2 end (start:vN) (e:vE) (dist + 1)) outbound
+                        in minRes (catMaybes paths)
 
     -- adjust node colors based on the path found
     adjustNodeColors :: [Node] -> [Node] -> [Node]
@@ -53,9 +58,11 @@ module GraphAlgorithms where
             else Edge (Node l1 i1 Blue) (Node l2 i2 Blue) label )
 
     -- use the shortest path to adjust the colors of the path elements
-    adjustColors :: ([Node], [Edge]) -> Node -> Node -> ([Node], [Edge])
-    adjustColors (ns, es) start end = let (pns, pes, _) = pathFind (ns, es) start end [] [] 0
-                                        in (adjustNodeColors pns ns, adjustEdgeColors pes es)
+    adjustColors :: ([Node], [Edge]) -> Node -> Node -> Maybe ([Node], [Edge])
+    adjustColors (ns, es) start end = case pathFind (ns, es) start end [] [] 0 of
+                                        Just (pns, pes, _) -> Just (adjustNodeColors pns ns, adjustEdgeColors pes es)
+                                        Nothing -> Nothing
+
     -- adjustColors (ns,es) a e 
     -- H.htmlIfy (adjustColors (ns,es) a e)
     -- writeFile "test.html" (H.htmlIfy (adjustColors (ns,es) a e))

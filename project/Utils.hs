@@ -4,6 +4,7 @@ module Utils where
     import Data as D
     import qualified Data.Set as Set
     import Data.List
+    import Data.Char (isDigit)
 
     --single token satisfier functions
 
@@ -151,9 +152,22 @@ module Utils where
     findNode str ns c = let (b, n) = strInNEnv str ns in 
         if b then (n, ns) else let new = Node str (length ns) c in (new, new:ns)
 
-    -- find a node in a list
-    findNode2 :: String -> [Node] -> Maybe Node
-    findNode2 l = find (\(Node l' _ _) -> l' == l)
+    -- tries to find a node by label and id
+    isNum :: String -> Bool
+    isNum "" = True
+    isNum (c:cs) = if isDigit c then isNum cs else False
+
+    -- tries to find a node by id first and then by label if that's not available
+    findNodeIdLabel :: String -> [Node] -> Maybe Node
+    findNodeIdLabel s = if isNum s then findNodeId (read s) else findNodeLabel s
+
+    -- find a node in a list by the label
+    findNodeLabel :: String -> [Node] -> Maybe Node
+    findNodeLabel l = find (\(Node l' _ _) -> l' == l)
+
+    -- find a node in a list by the id
+    findNodeId :: Int -> [Node] -> Maybe Node
+    findNodeId i = find (\(Node _ i' _) -> i' == i)
 
     strInNEnv :: String -> [Node] -> (Bool, Node)
     strInNEnv _ [] = (False, defNode)

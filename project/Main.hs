@@ -153,25 +153,35 @@ module Main where
 
     -- functionality to render path between two points
     -- try with showPath G.g
-    showPath :: ([Node], [Edge]) -> IO ()
-    showPath (ns, es) = do
-        putStrLn "Enter a starting node label:"
-        l1 <- getLine
-        let n1 = findNode2 l1 ns
-        putStrLn "Enter an ending node label:"
-        l2 <- getLine
-        let n2 = findNode2 l2 ns
-        case (n1, n2) of
-            (Just tn1, Just tn2) -> do
-                                print tn1
-                                print tn2
-                                let res = adjustColors (ns, es) tn1 tn2
-                                let output = H.htmlIfy res
-                                writeFile "test.html" output
-                                print "Path found"
-            (Just tn1, Nothing) -> print (l2 ++ " is not a valid label")
-            (Nothing, Just tn2) -> print (l1 ++ " is not a valid label")
-            (Nothing, Nothing) -> print "Both labels were invalid"
+    showPath :: ([Node], [Edge]) -> String -> IO ()
+    showPath (ns, es) outF = do
+        start <- getLine
+        case start of
+            "y" -> do
+                    print "Enter a starting node label or a node id:"
+                    l1 <- getLine
+                    let n1 = findNodeIdLabel l1 ns
+                    print "Enter an ending node label:"
+                    l2 <- getLine
+                    let n2 = findNodeIdLabel l2 ns
+                    case (n1, n2) of
+                        (Just tn1, Just tn2) -> do
+                                            print tn1
+                                            print tn2
+                                            let res = adjustColors (ns, es) tn1 tn2
+                                            case res of
+                                                Just final -> do
+                                                    let output = H.htmlIfy final
+                                                    writeFile outF output
+                                                    print ("Path found. See generated file " ++ outF)
+                                                Nothing -> print "No path found"
+                        (Just tn1, Nothing) -> print (l2 ++ " is not a valid label")
+                        (Nothing, Just tn2) -> print (l1 ++ " is not a valid label")
+                        (Nothing, Nothing) -> print "Both labels were invalid"
+                    print "Would you like to go again (y/n)?"
+                    showPath (ns, es) outF
+            _ -> print "Understood program complete"
+
 
     main :: IO ()
     main = do 
@@ -197,13 +207,12 @@ module Main where
         print "finished flattening"
         --writeFile "output/trueDot.dot" (dotify bigTree)
         print "finished making it a DOT"
-        let bigTree2 = G.adjustColors bigTree (Node "prisoner_1_start" 0 Blue) (Node "prisoner_1_forest" 2 Blue)
-        let output = H.htmlIfy bigTree2
-        -- let output = H.htmlIfy bigTree
+        let output = H.htmlIfy bigTree
         print "finished making it HTML"
         writeFile outF output
         print "all done!"
-        -- showPath bigTree
+        print "Woud you also like to find the path between two nodes? (y/n)"
+        showPath bigTree outF
 
     testMain = main' "prisoner_1_encounter.rpy" "output/colorTest.html"
     
