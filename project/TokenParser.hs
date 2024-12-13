@@ -101,9 +101,13 @@ module TokenParser where
         _ <- menu 
         _ <- col
         d <- tabs
-        _ <- extend 
-        _ <- text
-        ASTChoices <$> many (choice d)
+        do 
+            _ <- extend 
+            _ <- text 
+            ASTChoices <$> many (choice d)
+        <|> do
+            ASTChoices <$> many (choice d)
+        
 
     --a choice itself is text and maybe a condition followed by lines
     -- I don't like that I can't just do "parserName" in a do block when it's inside the lambda :(
@@ -192,8 +196,8 @@ module TokenParser where
         v2Temp <- valVar
 
         let v2 = case v2Temp of 
-                Left vr -> (D.Var vr)
-                Right vl -> (Val vl)
+                Left vr -> D.Var vr
+                Right vl -> Val vl
             
         case s of 
             "==" -> return (Eq v1 v2)

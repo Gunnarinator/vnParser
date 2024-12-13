@@ -180,7 +180,7 @@ module Main where
                         (Nothing, Nothing) -> print "Both labels were invalid"
                     print "Would you like to go again (y/n)?"
                     showPath (ns, es) outF
-            _ -> print "Understood program complete"
+            _ -> print "Understood, program complete!"
 
 
     main :: IO ()
